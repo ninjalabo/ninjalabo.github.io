@@ -1,7 +1,7 @@
 ---
-title: "ninjalabo.github.io"
+title: "AI Compression as-a-Service"
 ---
 
-This is a Quarto website.
+You upload DNN models, and we'll compress and optimize them!
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Run by NinjaLABO <https://ninjalabo.ai>.

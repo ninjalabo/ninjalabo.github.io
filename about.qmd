@@ -1,5 +1,6 @@
 ---
-title: "About"
+title: "NinjaLABO"
 ---
 
-About this site
+https://ninjalabo.ai
+
