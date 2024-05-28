@@ -2,17 +2,32 @@ project:
   type: website
 
 website:
+  site-url: https://ninjalabo.github.io/
+  repo-url: https://github.com/ninjalabo/ninjalabo.github.io
+  repo-actions: [edit, issue]
   title: "NinaLABO"
+  image: "images/logo.png"
+  favicon: "images/favicon.png"
+  search: true
+  page-footer: "Copyright 2023-2024, NinjaLABO"
+  twitter-card: true
+#    creator: "@ninjalabo"
+#   site: "@ninjalabo"
   navbar:
     left:
       - href: index.qmd
         text: Home
+      - features.qmd
+      - blog.qmd
+      - price.qmd
       - about.qmd
-
+    right:
+      - icon: twitter
+        href: https://twitter.com/ninjalabo
+      - icon: github
+        href: https://github.com/ninjalabo
 format:
   html:
     theme: lux
     css: styles.css
     toc: true
-
-

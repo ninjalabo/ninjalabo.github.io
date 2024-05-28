@@ -1,6 +1,6 @@
 ---
-title: "NinjaLABO"
+title: "About"
 ---
 
-https://ninjalabo.ai
 
+[NinjaLABO](https://ninjalabo.ai) is specialized at compressing AI models (DNN models) along with optimized tinyRuntime via our SaaS platform.

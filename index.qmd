@@ -4,4 +4,4 @@ title: "AI Compression as-a-Service"
 
 You upload DNN models, and we'll compress and optimize them!
 
-Run by NinjaLABO <https://ninjalabo.ai>.
+Run by [NinjaLABO](https://ninjalabo.ai).
