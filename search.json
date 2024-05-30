@@ -1,16 +1,9 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "AI Compression as-a-Service",
-    "section": "",
-    "text": "You upload DNN models, and we’ll compress and optimize them!\nRun by NinjaLABO https://ninjalabo.ai."
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "NinjaLABO",
+    "title": "About",
     "section": "",
-    "text": "https://ninjalabo.ai"
+    "text": "NinjaLABO is specialized at compressing AI models (DNN models) along with optimized tinyRuntime via our SaaS platform."
   }
 ]
