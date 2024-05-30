@@ -1,7 +1,25 @@
 ---
-title: "AI Compression as-a-Service"
+pagetitle: "AI Compression as-a-Service"
+page-layout: custom
+section-divs: false
+toc: false
+editor: source
+description: |
+  AI compression as-a-Service with optimized tiny Runtime for Deep Neural Network (DNN)
+hide-description: true
 ---
+
+# AI Compression as-a-Service
 
 You upload DNN models, and we'll compress and optimize them!
 
+<video id="myVideo" autoplay muted playsinline loop controls style="width: 65%; height: auto; display: block; margin: 0 auto;">
+  <source src="images/mvp2.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 Run by [NinjaLABO](https://ninjalabo.ai).
+
+# Next
+next
+

@@ -5,30 +5,47 @@ website:
   site-url: https://ninjalabo.github.io/
   repo-url: https://github.com/ninjalabo/ninjalabo.github.io
   repo-actions: [edit, issue]
+  page-navigation: true
   title: "NinjaLABO"
   image: "images/logo.png"
   favicon: "images/favicon.png"
-  search: true
   page-footer: "Copyright 2023-2024, NinjaLABO"
   twitter-card: true
-#    creator: "@ninjalabo"
-#   site: "@ninjalabo"
   navbar:
+    background: dark
     logo: "images/favicon.png"
+    logo-alt: "NinjaLABO log."
+    title: false
+    search: true
     left:
       - href: index.qmd
-        text: Home
+        text: Overview
       - features.qmd
-      - blog.qmd
       - price.qmd
+      - blog.qmd
       - about.qmd
     right:
       - icon: twitter
         href: https://twitter.com/ninjalabo
       - icon: github
-        href: https://github.com/ninjalabo
+        menu:
+          - text: Source Code
+            href: https://github.com/ninjalabo/ninjalabo.github.io
+          - text: Report a Bug
+            href: https://github.com/ninjalabo/ninjalabo.github.io/issues
+
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - section: "Basics"
+        contents:
+          - index.qmd
+      - section: "Layout"
+        contents:
+
 format:
   html:
-    theme: lux
+    theme: default
     css: styles.css
     toc: true
