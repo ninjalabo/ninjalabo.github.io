@@ -5,6 +5,8 @@ Hiroshi Doyu <<hiroshi.doyu@ninjalabo.ai>> 2nd of July, 2024
 
 # AI Compression as-a-Service: Revolutionizing Edge Computing
 
+![](images/tinymlaas.png)
+
 In the rapidly evolving landscape of artificial intelligence (AI), efficiency and resource optimization are paramount. AI Compression as-a-Service (ACaaS) and TinyML as-a-Service (TinyMLaaS) emerge as transformative solutions that address the growing demand for deploying AI on resource-constrained devices. These services offer scalable, cost-effective, and high-performance AI capabilities, enabling a new wave of innovation in edge computing.
 
 ## The Need for AI Compression
