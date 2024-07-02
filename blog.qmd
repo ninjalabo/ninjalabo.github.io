@@ -1,3 +1,8 @@
 ---
 title: "Blog"
 ---
+- [EdgeImpulse Studio reivew](edgeimplusestudio.qmd)
+- [Imagimob Studio reivew](imagimobstudio.qmd)
+- [IREE reivew](iree.qmd)
+- [AI compression SaaS](aicompressionsaas.qmd)
+
