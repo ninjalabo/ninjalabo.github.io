@@ -1,8 +1,10 @@
 ---
 title: "Blog"
 ---
-- [EdgeImpulse Studio reivew](edgeimplusestudio.qmd)
-- [Imagimob Studio reivew](imagimobstudio.qmd)
-- [IREE reivew](iree.qmd)
-- [AI compression SaaS](aicompressionsaas.qmd)
+- [AI Compression SaaS](aicompressionsaas.qmd)
+- [TinyML Use Cases](tinymlusecases.qmd)
+- [Review: EdgeImpulse Studio](edgeimplusestudio.qmd)
+- [Review: Imagimob Studio](imagimobstudio.qmd)
+- [Review: IREE](iree.qmd)
+
 
