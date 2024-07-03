@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="AI compression as-a-Service with optimized tiny Runtime for Deep Neural Network (DNN)">
 
-<title>AI Compression as-a-Service – NinjaLABO</title>
+<title>TinyML Use Cases – NinjaLABO</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,15 +70,15 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="styles.css">
-<meta name="twitter:title" content="AI Compression as-a-Service">
-<meta name="twitter:description" content="AI compression as-a-Service with optimized tiny Runtime for Deep Neural Network (DNN)">
+<meta name="twitter:title" content="TinyML Use Cases – NinjaLABO">
+<meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://ninjalabo.github.io/images/logo.png">
 <meta name="twitter:image-height" content="120">
 <meta name="twitter:image-width" content="486">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar nav-fixed fullcontent">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -146,28 +145,166 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">TinyML Use Cases</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Basics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AI Compression as-a-Service</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Layout</span></span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#harnessing-the-power-of-ai-with-ninjalabos-tinyml-as-a-service" id="toc-harnessing-the-power-of-ai-with-ninjalabos-tinyml-as-a-service" class="nav-link active" data-scroll-target="#harnessing-the-power-of-ai-with-ninjalabos-tinyml-as-a-service">Harnessing the Power of AI with NinjaLABO’s TinyML as-a-Service</a>
+  <ul class="collapse">
+  <li><a href="#iot-and-smart-cities" id="toc-iot-and-smart-cities" class="nav-link" data-scroll-target="#iot-and-smart-cities">IoT and Smart Cities</a></li>
+  <li><a href="#healthcare-and-wearables" id="toc-healthcare-and-wearables" class="nav-link" data-scroll-target="#healthcare-and-wearables">Healthcare and Wearables</a></li>
+  <li><a href="#industrial-automation" id="toc-industrial-automation" class="nav-link" data-scroll-target="#industrial-automation">Industrial Automation</a></li>
+  <li><a href="#agriculture" id="toc-agriculture" class="nav-link" data-scroll-target="#agriculture">Agriculture</a></li>
+  <li><a href="#automotive-and-mobility" id="toc-automotive-and-mobility" class="nav-link" data-scroll-target="#automotive-and-mobility">Automotive and Mobility</a></li>
+  <li><a href="#security-and-surveillance" id="toc-security-and-surveillance" class="nav-link" data-scroll-target="#security-and-surveillance">Security and Surveillance</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/tinymlusecases.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
 <!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">TinyML Use Cases</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<h1 id="ai-compression-as-a-service">AI Compression as-a-Service</h1>
-<p>You upload DNN models, and we’ll compress and optimize them!</p>
-<video id="myVideo" autoplay="" muted="" playsinline="" loop="" controls="" style="width: 65%; height: auto; display: block; margin: 0 auto;">
-<source src="images/mvp2.mp4" type="video/mp4">
-<p>Your browser does not support the video tag. </p>
-<p>Run by <a href="https://ninjalabo.ai">NinjaLABO</a>.</p>
-<h1 id="next">Next</h1>
-<p>next</p>
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
 
+<section id="harnessing-the-power-of-ai-with-ninjalabos-tinyml-as-a-service" class="level1">
+<h1>Harnessing the Power of AI with NinjaLABO’s TinyML as-a-Service</h1>
+<p>In today’s competitive landscape, every company is leveraging AI or exploring its integration into their business operations. As AI models become increasingly sophisticated, the operational expenditures (OPEX) associated with utilizing expensive GPUs in cloud datacenters also rise. Moreover, large AI models often cannot be executed on small devices without relying on cloud GPUs.</p>
+<p>NinjaLABO’s AI model compression (TinyML as-a-Service) addresses these challenges by offering versatile solutions applicable across various industries. Below, we explore specific focus areas and use cases where these solutions are particularly relevant:</p>
+<section id="iot-and-smart-cities" class="level2">
+<h2 class="anchored" data-anchor-id="iot-and-smart-cities">IoT and Smart Cities</h2>
+<ul>
+<li><strong>Data Types</strong>: Sensor data (temperature, humidity, air quality, noise levels), traffic data, utility usage data.</li>
+<li><strong>Use Cases</strong>: Predictive maintenance, energy management, traffic optimization, environmental monitoring.
+<ul>
+<li><strong>Advantage</strong>: Typically, 99% of data transmission is redundant, wasting network bandwidth and storage. Local AI execution with TinyML eliminates this inefficiency by transmitting data only when anomalies occur, thus optimizing communication and storage.</li>
+</ul></li>
+</ul>
+</section>
+<section id="healthcare-and-wearables" class="level2">
+<h2 class="anchored" data-anchor-id="healthcare-and-wearables">Healthcare and Wearables</h2>
+<ul>
+<li><strong>Data Types</strong>: Biometric data (heart rate, activity levels, sleep patterns), medical imaging data.</li>
+<li><strong>Use Cases</strong>: Health monitoring, early disease detection, personalized healthcare, fitness tracking.
+<ul>
+<li><strong>Advantage</strong>: Regulatory constraints often prohibit uploading private data to public clouds. Local AI execution with TinyML ensures that only processed, non-sensitive data is uploaded, preserving privacy.</li>
+</ul></li>
+</ul>
+</section>
+<section id="industrial-automation" class="level2">
+<h2 class="anchored" data-anchor-id="industrial-automation">Industrial Automation</h2>
+<ul>
+<li><strong>Data Types</strong>: Machine performance data, operational data, maintenance logs.</li>
+<li><strong>Use Cases</strong>: Predictive maintenance, process optimization, quality control.
+<ul>
+<li><strong>Advantage</strong>: Similar to IoT use cases, local AI execution minimizes unnecessary data transmission, enhancing efficiency and security.</li>
+</ul></li>
+</ul>
+</section>
+<section id="agriculture" class="level2">
+<h2 class="anchored" data-anchor-id="agriculture">Agriculture</h2>
+<ul>
+<li><strong>Data Types</strong>: Soil moisture levels, weather data, crop health data.</li>
+<li><strong>Use Cases</strong>: Precision farming, crop monitoring, irrigation management.
+<ul>
+<li><strong>Advantage</strong>: Agricultural fields often extend beyond network coverage. With TinyML, AI can be executed locally, enabling smart farming even in off-the-grid areas. This benefit extends to other off-the-grid network and battery-powered applications.</li>
+</ul></li>
+</ul>
+</section>
+<section id="automotive-and-mobility" class="level2">
+<h2 class="anchored" data-anchor-id="automotive-and-mobility">Automotive and Mobility</h2>
+<ul>
+<li><strong>Data Types</strong>: Vehicle performance data, driver behavior data, traffic data.</li>
+<li><strong>Use Cases</strong>: Autonomous driving, fleet management, driver safety systems.
+<ul>
+<li><strong>Advantage</strong>: Real-time response is critical. Local AI execution with TinyML ensures immediate processing, which is crucial for safety and efficiency in automotive applications.</li>
+</ul></li>
+</ul>
+</section>
+<section id="security-and-surveillance" class="level2">
+<h2 class="anchored" data-anchor-id="security-and-surveillance">Security and Surveillance</h2>
+<ul>
+<li><strong>Data Types</strong>: Video feeds, audio recordings, motion sensor data.</li>
+<li><strong>Use Cases</strong>: Intrusion detection, anomaly detection, crowd monitoring.
+<ul>
+<li><strong>Advantage</strong>: Local data execution enhances security by reducing the need to transmit sensitive data, mitigating potential breaches.</li>
+</ul></li>
+</ul>
+<p>These examples highlight the broad applicability of NinjaLABO’s solutions. By focusing on specific use cases within these industries, NinjaLABO can tailor its services to meet the unique needs and challenges of each sector, providing efficient, scalable, and impactful TinyML solutions.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -588,7 +725,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-</video></div> <!-- /content -->
+</div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
@@ -596,7 +733,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Copyright 2023-2024, NinjaLABO</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/tinymlusecases.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
