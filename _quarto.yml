@@ -34,18 +34,18 @@ website:
           - text: Report a Bug
             href: https://github.com/ninjalabo/ninjalabo.github.io/issues
 
-  sidebar:
-    style: "docked"
-    search: true
-    contents:
-      - section: "Basics"
-        contents:
-          - index.qmd
-      - section: "Layout"
-        contents:
+  # sidebar:
+  #   style: "docked"
+  #   search: true
+  #   contents:
+  #     - section: "Basics"
+  #       contents:
+  #         - index.qmd
+  #     - section: "Layout"
+  #       contents:
 
 format:
   html:
-    theme: default
+    theme: cosmo
     css: styles.css
     toc: true
