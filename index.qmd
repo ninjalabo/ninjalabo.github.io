@@ -1,6 +1,6 @@
 ---
 pagetitle: "AI Compression as-a-Service"
-page-layout: custom
+page-layout: full
 section-divs: false
 toc: false
 editor: source
