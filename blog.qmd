@@ -1,11 +1,7 @@
 ---
 title: "Blog"
 listing:
+  sort: "date desc"
   contents: "blogs/*.qmd"
+  type: default
 ---
-<!-- - [AI Compression SaaS](blogs/aicompressionsaas.qmd)
-- [TinyML Use Cases](blogs/tinymlusecases.qmd)
-- [Review: EdgeImpulse Studio](blogs/edgeimplusestudio.qmd)
-- [Review: Imagimob Studio](blogs/imagimobstudio.qmd)
-- [Review: IREE](blogs/iree.qmd)
- -->
