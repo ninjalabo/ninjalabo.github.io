@@ -1,4 +1,31 @@
 ---
-title: Imagimob Studio reivew
+title: "Imagimob Studio Review"
+description: "Brief overview of Imagimob Studio - A solution for Edge AI applications"
+author: "Nghi Vo"
+date: "08/07/2024"
 draft: true
 ---
+
+# Imagimob Studio Review
+
+![](../images/imagimob_logo.jpg)
+
+Imagimob Studio is an end-to-end platform designed for developing Edge AI and Machine Learning applications. The platform covers the machine learning workflow from data collection to model deployment in embedded devices to support both experts and non-experts in building production grade models.
+
+## Key Features
+### Intuitive Interface and Graph UX
+Imagimob Studio offers dynamic visualisations throughout the machine learning workflow, including the data distribution and model performance. Moreover, Imagimob Studio employs an intuitive interface to support its functionalities, an example of which is the session view with overlapping tracks for displaying the original audio track alongside labels, predicted labels, and processed tracks. This design choice facilitates the data annotation process, as well as providing an overview of model performance on a specific data file.
+
+In a recent development, Graph UX is introduced which enables a different approach to visualise the machine learning workflow. This approach aligns with the representation of neural networks, in which the original data is processed layer-by-layer by passing through nodes of a connected network. Graph UX adopts such a concept and adapts it to the machine learning workflow. Each process in the overall flow, including data collection and annotation, preprocessing, and inference, becomes a node drawn in a canvas with defined inputs and outputs. This design provides a comprehensive view of these processes for better management and understanding of the workflow.
+
+![Main Canvas for a Model Evaluation Graph UX project](../images/main_imunit.jpg)
+
+### Data Management
+- **Integration with Sensors**: Easily connect and collect data from various sensors and hardware platforms, including those running Python.  
+- **Annotation Tools**: Efficiently label and manage data with drag-and-drop capabilities, auto-annotation scripts, and visualisation tools to verify data consistency.  
+- **Dataset Management**: Create, shuffle, and manage training, validation, and test sets.  
+- **Error Detection**: Automatically detect and correct data inconsistencies to avoid costly mistakes.  
+
+![Data management & annotation for an audio file with Session view](../images/session.jpeg)
+
+For more detailed information, visit [Imagimob Studio homepage](https://www.imagimob.com/studio) and [Imagimob Studio documentation](https://developer.imagimob.com/).
