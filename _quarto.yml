@@ -19,11 +19,13 @@ website:
     search: true
     left:
       - href: index.qmd
-        text: Overview
-      - features.qmd
-      - price.qmd
-      - blog.qmd
-      - about.qmd
+        text: "Overview"
+      - href: features.qmd
+        text: "Features"
+      - href: price.qmd
+        text: "Price"
+      - href: blog.qmd
+        text: "Blog"
     right:
       - icon: twitter
         href: https://twitter.com/ninjalabo
@@ -35,17 +37,28 @@ website:
             href: https://github.com/ninjalabo/ninjalabo.github.io/issues
 
   sidebar:
-    style: "docked"
-    search: true
-    contents:
-      - section: "Basics"
-        contents:
-          - index.qmd
-      - section: "Layout"
-        contents:
+    - title: "Features"
+      style: "docked"
+      search: true
+      contents: 
+        - about.qmd
+        - features.qmd
+        # navigation items
+    - title: "Price"
+      style: "docked"
+      search: true
+      contents: 
+        - price.qmd
+        # navigation items
+    - title: "Blog"
+      style: "docked"
+      search: true
+      contents: 
+        - blog.qmd
+        # navigation items
 
 format:
   html:
-    theme: default
+    theme: solar
     css: styles.css
     toc: true
