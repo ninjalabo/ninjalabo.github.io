@@ -1,43 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ninjalabo.github.io/tinymlusecases.html</loc>
-    <lastmod>2024-07-03T15:37:13.107Z</lastmod>
-  </url>
-  <url>
     <loc>https://ninjalabo.github.io/about.html</loc>
-    <lastmod>2024-07-03T15:37:12.971Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/edgeimplusestudio.html</loc>
-    <lastmod>2024-07-03T15:37:12.971Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/index.html</loc>
-    <lastmod>2024-07-03T15:37:13.107Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/imagimobstudio.html</loc>
-    <lastmod>2024-07-03T15:37:13.107Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/iree.html</loc>
-    <lastmod>2024-07-03T15:37:13.107Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/features.html</loc>
-    <lastmod>2024-07-03T15:37:12.971Z</lastmod>
+    <lastmod>2024-07-08T11:12:38.495Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/price.html</loc>
-    <lastmod>2024-07-03T15:37:13.107Z</lastmod>
+    <lastmod>2024-07-08T11:12:38.631Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/tinymlusecases.html</loc>
+    <lastmod>2024-07-08T11:12:38.495Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/features.html</loc>
+    <lastmod>2024-07-08T11:12:38.495Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/aicompressionsaas.html</loc>
+    <lastmod>2024-07-08T11:12:38.495Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/index.html</loc>
+    <lastmod>2024-07-08T11:12:38.631Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/blog.html</loc>
-    <lastmod>2024-07-03T15:37:12.971Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/aicompressionsaas.html</loc>
-    <lastmod>2024-07-03T15:37:12.971Z</lastmod>
+    <lastmod>2024-07-08T11:12:38.495Z</lastmod>
   </url>
 </urlset>

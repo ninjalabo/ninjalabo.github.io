@@ -1,107 +1,121 @@
 [
   {
-    "objectID": "tinymlusecases.html",
-    "href": "tinymlusecases.html",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "NinjaLABO is specialized at compressing AI models (DNN models) along with optimized tinyRuntime via our SaaS platform.",
+    "crumbs": [
+      "Features",
+      "About"
+    ]
+  },
+  {
+    "objectID": "blogs/tinymlusecases.html",
+    "href": "blogs/tinymlusecases.html",
     "title": "TinyML Use Cases",
     "section": "",
     "text": "In today’s competitive landscape, every company is leveraging AI or exploring its integration into their business operations. As AI models become increasingly sophisticated, the operational expenditures (OPEX) associated with utilizing expensive GPUs in cloud datacenters also rise. Moreover, large AI models often cannot be executed on small devices without relying on cloud GPUs.\nNinjaLABO’s AI model compression (TinyML as-a-Service) addresses these challenges by offering versatile solutions applicable across various industries. Below, we explore specific focus areas and use cases where these solutions are particularly relevant:\n\n\n\nData Types: Sensor data (temperature, humidity, air quality, noise levels), traffic data, utility usage data.\nUse Cases: Predictive maintenance, energy management, traffic optimization, environmental monitoring.\n\nAdvantage: Typically, 99% of data transmission is redundant, wasting network bandwidth and storage. Local AI execution with TinyML eliminates this inefficiency by transmitting data only when anomalies occur, thus optimizing communication and storage.\n\n\n\n\n\n\nData Types: Biometric data (heart rate, activity levels, sleep patterns), medical imaging data.\nUse Cases: Health monitoring, early disease detection, personalized healthcare, fitness tracking.\n\nAdvantage: Regulatory constraints often prohibit uploading private data to public clouds. Local AI execution with TinyML ensures that only processed, non-sensitive data is uploaded, preserving privacy.\n\n\n\n\n\n\nData Types: Machine performance data, operational data, maintenance logs.\nUse Cases: Predictive maintenance, process optimization, quality control.\n\nAdvantage: Similar to IoT use cases, local AI execution minimizes unnecessary data transmission, enhancing efficiency and security.\n\n\n\n\n\n\nData Types: Soil moisture levels, weather data, crop health data.\nUse Cases: Precision farming, crop monitoring, irrigation management.\n\nAdvantage: Agricultural fields often extend beyond network coverage. With TinyML, AI can be executed locally, enabling smart farming even in off-the-grid areas. This benefit extends to other off-the-grid network and battery-powered applications.\n\n\n\n\n\n\nData Types: Vehicle performance data, driver behavior data, traffic data.\nUse Cases: Autonomous driving, fleet management, driver safety systems.\n\nAdvantage: Real-time response is critical. Local AI execution with TinyML ensures immediate processing, which is crucial for safety and efficiency in automotive applications.\n\n\n\n\n\n\nData Types: Video feeds, audio recordings, motion sensor data.\nUse Cases: Intrusion detection, anomaly detection, crowd monitoring.\n\nAdvantage: Local data execution enhances security by reducing the need to transmit sensitive data, mitigating potential breaches.\n\n\nThese examples highlight the broad applicability of NinjaLABO’s solutions. By focusing on specific use cases within these industries, NinjaLABO can tailor its services to meet the unique needs and challenges of each sector, providing efficient, scalable, and impactful TinyML solutions."
   },
   {
-    "objectID": "tinymlusecases.html#iot-and-smart-cities",
-    "href": "tinymlusecases.html#iot-and-smart-cities",
+    "objectID": "blogs/tinymlusecases.html#iot-and-smart-cities",
+    "href": "blogs/tinymlusecases.html#iot-and-smart-cities",
     "title": "TinyML Use Cases",
     "section": "",
     "text": "Data Types: Sensor data (temperature, humidity, air quality, noise levels), traffic data, utility usage data.\nUse Cases: Predictive maintenance, energy management, traffic optimization, environmental monitoring.\n\nAdvantage: Typically, 99% of data transmission is redundant, wasting network bandwidth and storage. Local AI execution with TinyML eliminates this inefficiency by transmitting data only when anomalies occur, thus optimizing communication and storage."
   },
   {
-    "objectID": "tinymlusecases.html#healthcare-and-wearables",
-    "href": "tinymlusecases.html#healthcare-and-wearables",
+    "objectID": "blogs/tinymlusecases.html#healthcare-and-wearables",
+    "href": "blogs/tinymlusecases.html#healthcare-and-wearables",
     "title": "TinyML Use Cases",
     "section": "",
     "text": "Data Types: Biometric data (heart rate, activity levels, sleep patterns), medical imaging data.\nUse Cases: Health monitoring, early disease detection, personalized healthcare, fitness tracking.\n\nAdvantage: Regulatory constraints often prohibit uploading private data to public clouds. Local AI execution with TinyML ensures that only processed, non-sensitive data is uploaded, preserving privacy."
   },
   {
-    "objectID": "tinymlusecases.html#industrial-automation",
-    "href": "tinymlusecases.html#industrial-automation",
+    "objectID": "blogs/tinymlusecases.html#industrial-automation",
+    "href": "blogs/tinymlusecases.html#industrial-automation",
     "title": "TinyML Use Cases",
     "section": "",
     "text": "Data Types: Machine performance data, operational data, maintenance logs.\nUse Cases: Predictive maintenance, process optimization, quality control.\n\nAdvantage: Similar to IoT use cases, local AI execution minimizes unnecessary data transmission, enhancing efficiency and security."
   },
   {
-    "objectID": "tinymlusecases.html#agriculture",
-    "href": "tinymlusecases.html#agriculture",
+    "objectID": "blogs/tinymlusecases.html#agriculture",
+    "href": "blogs/tinymlusecases.html#agriculture",
     "title": "TinyML Use Cases",
     "section": "",
     "text": "Data Types: Soil moisture levels, weather data, crop health data.\nUse Cases: Precision farming, crop monitoring, irrigation management.\n\nAdvantage: Agricultural fields often extend beyond network coverage. With TinyML, AI can be executed locally, enabling smart farming even in off-the-grid areas. This benefit extends to other off-the-grid network and battery-powered applications."
   },
   {
-    "objectID": "tinymlusecases.html#automotive-and-mobility",
-    "href": "tinymlusecases.html#automotive-and-mobility",
+    "objectID": "blogs/tinymlusecases.html#automotive-and-mobility",
+    "href": "blogs/tinymlusecases.html#automotive-and-mobility",
     "title": "TinyML Use Cases",
     "section": "",
     "text": "Data Types: Vehicle performance data, driver behavior data, traffic data.\nUse Cases: Autonomous driving, fleet management, driver safety systems.\n\nAdvantage: Real-time response is critical. Local AI execution with TinyML ensures immediate processing, which is crucial for safety and efficiency in automotive applications."
   },
   {
-    "objectID": "tinymlusecases.html#security-and-surveillance",
-    "href": "tinymlusecases.html#security-and-surveillance",
+    "objectID": "blogs/tinymlusecases.html#security-and-surveillance",
+    "href": "blogs/tinymlusecases.html#security-and-surveillance",
     "title": "TinyML Use Cases",
     "section": "",
     "text": "Data Types: Video feeds, audio recordings, motion sensor data.\nUse Cases: Intrusion detection, anomaly detection, crowd monitoring.\n\nAdvantage: Local data execution enhances security by reducing the need to transmit sensitive data, mitigating potential breaches.\n\n\nThese examples highlight the broad applicability of NinjaLABO’s solutions. By focusing on specific use cases within these industries, NinjaLABO can tailor its services to meet the unique needs and challenges of each sector, providing efficient, scalable, and impactful TinyML solutions."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "blogs/aicompressionsaas.html",
+    "href": "blogs/aicompressionsaas.html",
+    "title": "AI compression SaaS",
     "section": "",
-    "text": "NinjaLABO is specialized at compressing AI models (DNN models) along with optimized tinyRuntime via our SaaS platform."
+    "text": "Hiroshi Doyu &lt;hiroshi.doyu@ninjalabo.ai&gt;, 2nd July, 2024"
+  },
+  {
+    "objectID": "blogs/aicompressionsaas.html#the-need-for-ai-compression",
+    "href": "blogs/aicompressionsaas.html#the-need-for-ai-compression",
+    "title": "AI compression SaaS",
+    "section": "The Need for AI Compression",
+    "text": "The Need for AI Compression\nAI models, especially deep learning networks, have become increasingly complex and resource-intensive. Traditional deployment of these models on edge devices, such as smartphones, IoT sensors, and embedded systems, poses significant challenges due to limited computational power, memory, and energy resources. AI compression techniques, including model pruning, quantization, and knowledge distillation, aim to reduce the size and computational requirements of AI models without significantly compromising their performance."
+  },
+  {
+    "objectID": "blogs/aicompressionsaas.html#benefits-of-ai-compression-as-a-service",
+    "href": "blogs/aicompressionsaas.html#benefits-of-ai-compression-as-a-service",
+    "title": "AI compression SaaS",
+    "section": "Benefits of AI Compression as-a-Service",
+    "text": "Benefits of AI Compression as-a-Service\n\nResource Optimization: ACaaS allows businesses to deploy AI models on edge devices with constrained resources, ensuring efficient utilization of hardware capabilities.\nScalability: By leveraging cloud-based AI compression services, organizations can scale their AI deployments seamlessly, catering to diverse applications and devices.\nCost-Effectiveness: Reduced model sizes and lower computational demands translate to cost savings in terms of hardware investment and energy consumption.\nFaster Inference: Compressed models enable faster inference times, critical for real-time applications such as autonomous vehicles, surveillance, and industrial automation.\nEnhanced Security: Processing data locally on edge devices minimizes data transfer to the cloud, enhancing data privacy and security."
+  },
+  {
+    "objectID": "blogs/aicompressionsaas.html#tinyml-as-a-service-empowering-the-internet-of-things",
+    "href": "blogs/aicompressionsaas.html#tinyml-as-a-service-empowering-the-internet-of-things",
+    "title": "AI compression SaaS",
+    "section": "TinyML as-a-Service: Empowering the Internet of Things",
+    "text": "TinyML as-a-Service: Empowering the Internet of Things\nTinyMLaaS extends the concept of AI compression to the domain of microcontrollers and other ultra-low-power devices. By providing pre-trained, compressed AI models and tools for deploying them on TinyML platforms, this service empowers developers to create intelligent applications for the Internet of Things (IoT).\n\nKey Features of TinyMLaaS\n\nPre-trained Models: Access to a library of pre-trained, optimized models for various applications, from anomaly detection to image recognition.\nDeployment Tools: Comprehensive toolchains for converting, optimizing, and deploying models on TinyML hardware, simplifying the development process.\nCustom Solutions: Tailored AI solutions for specific use cases, ensuring optimal performance and efficiency.\nSeamless Integration: Easy integration with existing IoT ecosystems, enabling rapid deployment and scaling of intelligent applications."
+  },
+  {
+    "objectID": "blogs/aicompressionsaas.html#applications-and-use-cases",
+    "href": "blogs/aicompressionsaas.html#applications-and-use-cases",
+    "title": "AI compression SaaS",
+    "section": "Applications and Use Cases",
+    "text": "Applications and Use Cases\n\nSmart Home Devices: Enhancing the capabilities of home automation systems with intelligent voice assistants, security cameras, and energy management solutions.\nIndustrial IoT: Enabling predictive maintenance, quality control, and automation in manufacturing and logistics.\nHealthcare: Providing real-time monitoring and diagnostics through wearable devices and smart medical equipment.\nAgriculture: Facilitating precision farming with AI-powered sensors for soil health, weather conditions, and crop monitoring."
+  },
+  {
+    "objectID": "blogs/aicompressionsaas.html#conclusion",
+    "href": "blogs/aicompressionsaas.html#conclusion",
+    "title": "AI compression SaaS",
+    "section": "Conclusion",
+    "text": "Conclusion\nAI Compression as-a-Service and TinyML as-a-Service represent the next frontier in AI deployment, bridging the gap between advanced AI capabilities and resource-constrained edge devices. By offering scalable, efficient, and cost-effective solutions, these services empower a wide range of industries to harness the power of AI, driving innovation and transforming the way we interact with technology.\nAs the demand for edge computing continues to grow, ACaaS and TinyMLaaS will play a crucial role in shaping the future of AI, making intelligent applications more accessible and ubiquitous than ever before."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Compress your AI model",
+    "section": "",
+    "text": "Compress your AI model\nwith tinyMLaaS\nUpload your AI model on device for efficient run to save your costs, time, and cloud space\n\nGet Started See Demo\n\n\n\n\n\n\nRun by NinjaLABO.\nNext\nnext"
   },
   {
     "objectID": "blog.html",
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "AI Compression SaaS\nTinyML Use Cases\nReview: EdgeImpulse Studio\nReview: Imagimob Studio\nReview: IREE"
-  },
-  {
-    "objectID": "aicompressionsaas.html",
-    "href": "aicompressionsaas.html",
-    "title": "AI compression SaaS",
-    "section": "",
-    "text": "Hiroshi Doyu &lt;hiroshi.doyu@ninjalabo.ai&gt;, 2nd July, 2024"
-  },
-  {
-    "objectID": "aicompressionsaas.html#the-need-for-ai-compression",
-    "href": "aicompressionsaas.html#the-need-for-ai-compression",
-    "title": "AI compression SaaS",
-    "section": "The Need for AI Compression",
-    "text": "The Need for AI Compression\nAI models, especially deep learning networks, have become increasingly complex and resource-intensive. Traditional deployment of these models on edge devices, such as smartphones, IoT sensors, and embedded systems, poses significant challenges due to limited computational power, memory, and energy resources. AI compression techniques, including model pruning, quantization, and knowledge distillation, aim to reduce the size and computational requirements of AI models without significantly compromising their performance."
-  },
-  {
-    "objectID": "aicompressionsaas.html#benefits-of-ai-compression-as-a-service",
-    "href": "aicompressionsaas.html#benefits-of-ai-compression-as-a-service",
-    "title": "AI compression SaaS",
-    "section": "Benefits of AI Compression as-a-Service",
-    "text": "Benefits of AI Compression as-a-Service\n\nResource Optimization: ACaaS allows businesses to deploy AI models on edge devices with constrained resources, ensuring efficient utilization of hardware capabilities.\nScalability: By leveraging cloud-based AI compression services, organizations can scale their AI deployments seamlessly, catering to diverse applications and devices.\nCost-Effectiveness: Reduced model sizes and lower computational demands translate to cost savings in terms of hardware investment and energy consumption.\nFaster Inference: Compressed models enable faster inference times, critical for real-time applications such as autonomous vehicles, surveillance, and industrial automation.\nEnhanced Security: Processing data locally on edge devices minimizes data transfer to the cloud, enhancing data privacy and security."
-  },
-  {
-    "objectID": "aicompressionsaas.html#tinyml-as-a-service-empowering-the-internet-of-things",
-    "href": "aicompressionsaas.html#tinyml-as-a-service-empowering-the-internet-of-things",
-    "title": "AI compression SaaS",
-    "section": "TinyML as-a-Service: Empowering the Internet of Things",
-    "text": "TinyML as-a-Service: Empowering the Internet of Things\nTinyMLaaS extends the concept of AI compression to the domain of microcontrollers and other ultra-low-power devices. By providing pre-trained, compressed AI models and tools for deploying them on TinyML platforms, this service empowers developers to create intelligent applications for the Internet of Things (IoT).\n\nKey Features of TinyMLaaS\n\nPre-trained Models: Access to a library of pre-trained, optimized models for various applications, from anomaly detection to image recognition.\nDeployment Tools: Comprehensive toolchains for converting, optimizing, and deploying models on TinyML hardware, simplifying the development process.\nCustom Solutions: Tailored AI solutions for specific use cases, ensuring optimal performance and efficiency.\nSeamless Integration: Easy integration with existing IoT ecosystems, enabling rapid deployment and scaling of intelligent applications."
-  },
-  {
-    "objectID": "aicompressionsaas.html#applications-and-use-cases",
-    "href": "aicompressionsaas.html#applications-and-use-cases",
-    "title": "AI compression SaaS",
-    "section": "Applications and Use Cases",
-    "text": "Applications and Use Cases\n\nSmart Home Devices: Enhancing the capabilities of home automation systems with intelligent voice assistants, security cameras, and energy management solutions.\nIndustrial IoT: Enabling predictive maintenance, quality control, and automation in manufacturing and logistics.\nHealthcare: Providing real-time monitoring and diagnostics through wearable devices and smart medical equipment.\nAgriculture: Facilitating precision farming with AI-powered sensors for soil health, weather conditions, and crop monitoring."
-  },
-  {
-    "objectID": "aicompressionsaas.html#conclusion",
-    "href": "aicompressionsaas.html#conclusion",
-    "title": "AI compression SaaS",
-    "section": "Conclusion",
-    "text": "Conclusion\nAI Compression as-a-Service and TinyML as-a-Service represent the next frontier in AI deployment, bridging the gap between advanced AI capabilities and resource-constrained edge devices. By offering scalable, efficient, and cost-effective solutions, these services empower a wide range of industries to harness the power of AI, driving innovation and transforming the way we interact with technology.\nAs the demand for edge computing continues to grow, ACaaS and TinyMLaaS will play a crucial role in shaping the future of AI, making intelligent applications more accessible and ubiquitous than ever before."
+    "text": "AI compression SaaS\n\n\n\n\n\nBrief overview of AI Compression\n\n\n\n\n\nJul 2, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nTinyML Use Cases\n\n\n\n\n\nUse cases for TinyML offered by NinjaLABO\n\n\n\n\n\nJul 2, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Blog"
+    ]
   }
 ]
