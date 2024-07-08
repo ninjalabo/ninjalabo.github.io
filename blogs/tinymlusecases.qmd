@@ -1,5 +1,9 @@
 ---
-title: TinyML Use Cases
+title: "TinyML Use Cases"
+description: "Use cases for TinyML offered by NinjaLABO"
+author: "Hiroshi Doyu"
+date: "07/02/2024"
+draft: false
 ---
 # Harnessing the Power of AI with NinjaLABO's TinyML as-a-Service
 

@@ -1,3 +1,4 @@
 ---
 title: EdgeImpulse Studio reivew
+draft: true
 ---

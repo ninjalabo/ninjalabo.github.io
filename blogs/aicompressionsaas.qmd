@@ -1,5 +1,9 @@
 ---
 title: "AI compression SaaS"
+description: "Brief overview of AI Compression"
+author: "Hiroshi Doyu"
+date: "07/02/2024"
+draft: false
 ---
 Hiroshi Doyu <<hiroshi.doyu@ninjalabo.ai>>, 2nd July, 2024
 

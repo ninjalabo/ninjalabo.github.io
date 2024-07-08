@@ -1,10 +1,11 @@
 ---
 title: "Blog"
+listing:
+  contents: "blogs/*.qmd"
 ---
-- [AI Compression SaaS](blogs/aicompressionsaas.qmd)
+<!-- - [AI Compression SaaS](blogs/aicompressionsaas.qmd)
 - [TinyML Use Cases](blogs/tinymlusecases.qmd)
 - [Review: EdgeImpulse Studio](blogs/edgeimplusestudio.qmd)
 - [Review: Imagimob Studio](blogs/imagimobstudio.qmd)
 - [Review: IREE](blogs/iree.qmd)
-
-
+ -->
