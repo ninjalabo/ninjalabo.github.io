@@ -1,12 +1,12 @@
 ---
 title: "Imagimob Studio Review"
 description: "Brief overview of Imagimob Studio - A solution for Edge AI applications"
-author: "Nghi Vo<<nghi.vo@ninjalabo.ai>>"
+author: "Nghi Vo <<nghi.vo@ninjalabo.ai>>"
 date: "08/07/2024"
 draft: false
 ---
 
-# Imagimob Studio Review
+# Imagimob Studio Review - End-to-End platform for Edge AI applications
 
 ![](../images/imagimob_logo.jpg)
 
@@ -35,7 +35,7 @@ In a recent development, Graph UX is introduced which enables a different approa
 - **Real-Time Evaluation**: Visualise model predictions on the same timeline as your data, allowing for thorough performance analysis before deployment.  
 - **One-Click Deployment**: Convert models into optimised C code with a simple API for deployment on any platform supporting C.  
 
-### Use Cases
+## Use Cases
 - **Predictive Maintenance**: Detects machine anomalies in real-time.  
 - **Audio Applications**: Classifies sound events and recognises sound environments.  
 - **Gesture Recognition**: Detects hand gestures using sensors.  
