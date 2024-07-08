@@ -1,9 +1,9 @@
 ---
 title: "Imagimob Studio Review"
 description: "Brief overview of Imagimob Studio - A solution for Edge AI applications"
-author: "Nghi Vo"
+author: "Nghi Vo<<nghi.vo@ninjalabo.ai>>"
 date: "08/07/2024"
-draft: true
+draft: false
 ---
 
 # Imagimob Studio Review
@@ -27,5 +27,23 @@ In a recent development, Graph UX is introduced which enables a different approa
 - **Error Detection**: Automatically detect and correct data inconsistencies to avoid costly mistakes.  
 
 ![Data management & annotation for an audio file with Session view](../images/session.jpeg)
+
+### Model Building 
+- **AutoML**: Automatically generate high-performance models tailored to your data.  
+- **Parallel Training**: Train multiple models simultaneously in the cloud for faster results.  
+- **Custom Models**: Import and modify models from TensorFlow if needed.  
+- **Real-Time Evaluation**: Visualise model predictions on the same timeline as your data, allowing for thorough performance analysis before deployment.  
+- **One-Click Deployment**: Convert models into optimised C code with a simple API for deployment on any platform supporting C.  
+
+### Use Cases
+- **Predictive Maintenance**: Detects machine anomalies in real-time.  
+- **Audio Applications**: Classifies sound events and recognises sound environments.  
+- **Gesture Recognition**: Detects hand gestures using sensors.  
+- **Signal Classification**: Identifies repeatable patterns from any sensor data.  
+- **Fall Detection**: Utilises IMUs or accelerometers for accurate fall detection.  
+- **Material Detection**: Performs real-time material detection with low-power radars.  
+
+## Conclusion
+Imagimob Studio is a powerful, user-friendly solution for developing edge AI applications. Its comprehensive feature set, intuitive interface, and robust support make it an ideal choice for both novice and experienced developers aiming to deploy machine learning models on edge devices.  
 
 For more detailed information, visit [Imagimob Studio homepage](https://www.imagimob.com/studio) and [Imagimob Studio documentation](https://developer.imagimob.com/).
