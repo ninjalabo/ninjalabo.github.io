@@ -26,7 +26,7 @@ Upload your AI model on device for efficient run to save your costs, time, and c
   <source src="images/mvp2.mp4" type="video/mp4">
 </video>
 
-::: {.content}
+::: {.hero-content}
 Run by [NinjaLABO](https://ninjalabo.ai).
 
 # Next
