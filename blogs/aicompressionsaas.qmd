@@ -1,12 +1,10 @@
 ---
 title: "AI compression SaaS"
 description: "Brief overview of AI Compression"
-author: "Hiroshi Doyu"
+author: "Hiroshi Doyu <<hiroshi.doyu@ninjalabo.ai>>"
 date: "07/02/2024"
 draft: false
 ---
-Hiroshi Doyu <<hiroshi.doyu@ninjalabo.ai>>, 2nd July, 2024
-
 # AI Compression as-a-Service: Revolutionizing Edge Computing
 
 It has been nearly five years since I first wrote about [TinyML](https://www.ericsson.com/en/blog/2019/12/tinyml-as-a-service) and [TinyML as-a-Service](https://www.ericsson.com/en/blog/2020/2/how-can-we-democratize-machine-learning-iot-devices) (TinyMLaaS) on the [Ericsson](https://www.ericsson.com/en) blog.
