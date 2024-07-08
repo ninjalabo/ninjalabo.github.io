@@ -9,17 +9,26 @@ description: |
 hide-description: true
 ---
 
-# AI Compression as-a-Service
+::: {.hero-title}
 
-You upload DNN models, and we'll compress and optimize them!
+# [Compress your AI model]{#first-headline}
+# with tinyMLaaS
 
-<video id="myVideo" autoplay muted playsinline loop controls style="width: 65%; height: auto; display: block; margin: 0 auto;">
+Upload your AI model on device for efficient run to save your costs, time, and cloud space
+
+::: {.hero-buttons}
+[Get Started](/docs/get-started/index.qmd){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
+[See Demo](/docs/guide/){#btn-guide .btn-action .btn .btn-light .btn-lg role="button"}
+:::
+
+:::
+<video id="myVideo" autoplay muted playsinline loop controls style="width: 80%; height: auto; display: block; margin: 0 auto;">
   <source src="images/mvp2.mp4" type="video/mp4">
-  Your browser does not support the video tag.
 </video>
 
+::: {.content}
 Run by [NinjaLABO](https://ninjalabo.ai).
 
 # Next
 next
-
+:::
