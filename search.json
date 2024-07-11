@@ -1,14 +1,10 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Compress your AI model",
     "section": "",
-    "text": "NinjaLABO is specialized at compressing AI models (DNN models) along with optimized tinyRuntime via our SaaS platform.",
-    "crumbs": [
-      "Features",
-      "About"
-    ]
+    "text": "Compress your AI model\nwith tinyMLaaS\nUpload your AI model on device for efficient run to save your costs, time, and cloud space\n\nGet Started See Demo\n\n\n\n\n\n\nRun by NinjaLABO.\nNext\nnext"
   },
   {
     "objectID": "blogs/tinymlusecases.html",
@@ -60,6 +56,24 @@
     "text": "Data Types: Video feeds, audio recordings, motion sensor data.\nUse Cases: Intrusion detection, anomaly detection, crowd monitoring.\n\nAdvantage: Local data execution enhances security by reducing the need to transmit sensitive data, mitigating potential breaches.\n\n\nThese examples highlight the broad applicability of NinjaLABO’s solutions. By focusing on specific use cases within these industries, NinjaLABO can tailor its services to meet the unique needs and challenges of each sector, providing efficient, scalable, and impactful TinyML solutions."
   },
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "NinjaLABO is specialized at compressing AI models (DNN models) along with optimized tinyRuntime via our SaaS platform.",
+    "crumbs": [
+      "Features",
+      "About"
+    ]
+  },
+  {
+    "objectID": "blogs/iree.html",
+    "href": "blogs/iree.html",
+    "title": "IREE review",
+    "section": "",
+    "text": "IREE Review\nImportant review…"
+  },
+  {
     "objectID": "blogs/aicompressionsaas.html",
     "href": "blogs/aicompressionsaas.html",
     "title": "AI compression SaaS",
@@ -102,18 +116,11 @@
     "text": "Conclusion\nAI Compression as-a-Service and TinyML as-a-Service represent the next frontier in AI deployment, bridging the gap between advanced AI capabilities and resource-constrained edge devices. By offering scalable, efficient, and cost-effective solutions, these services empower a wide range of industries to harness the power of AI, driving innovation and transforming the way we interact with technology.\nAs the demand for edge computing continues to grow, ACaaS and TinyMLaaS will play a crucial role in shaping the future of AI, making intelligent applications more accessible and ubiquitous than ever before."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Compress your AI model",
-    "section": "",
-    "text": "Compress your AI model\nwith tinyMLaaS\nUpload your AI model on device for efficient run to save your costs, time, and cloud space\n\nGet Started See Demo\n\n\n\n\n\n\nRun by NinjaLABO.\nNext\nnext"
-  },
-  {
     "objectID": "blog.html",
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "AI compression SaaS\n\n\n\n\n\nBrief overview of AI Compression\n\n\n\n\n\nJul 2, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nTinyML Use Cases\n\n\n\n\n\nUse cases for TinyML offered by NinjaLABO\n\n\n\n\n\nJul 2, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\nNo matching items",
+    "text": "IREE review\n\n\n\n\n\nSome description\n\n\n\n\n\nNov 7, 2024\n\n\nHaruka Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nAI compression SaaS\n\n\n\n\n\nBrief overview of AI Compression\n\n\n\n\n\nJul 2, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nTinyML Use Cases\n\n\n\n\n\nUse cases for TinyML offered by NinjaLABO\n\n\n\n\n\nJul 2, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Blog"
     ]
