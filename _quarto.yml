@@ -59,6 +59,6 @@ website:
 
 format:
   html:
-    theme: solar
+    theme: darkly 
     css: styles.css
     toc: true
