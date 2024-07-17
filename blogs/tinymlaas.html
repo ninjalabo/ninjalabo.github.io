@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Blog – NinjaLABO</title>
+<title>TinyML as-a-Service Overview – NinjaLABO</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +23,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./images/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,83 +67,24 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
-<meta name="twitter:title" content="Blog – NinjaLABO">
-<meta name="twitter:image" content="https://ninjalabo.github.io/images/logo.png">
-<meta name="twitter:image-height" content="120">
-<meta name="twitter:image-width" content="486">
+<link rel="stylesheet" href="../styles.css">
+<meta name="twitter:title" content="TinyML as-a-Service Overview – NinjaLABO">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://ninjalabo.github.io/blogs/images/logo.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/favicon.png" alt="NinjaLABO log." class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/favicon.png" alt="NinjaLABO log." class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -155,19 +94,19 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./features.html"> 
+    <a class="nav-link" href="../features.html"> 
 <span class="menu-text">Features</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./price.html"> 
+    <a class="nav-link" href="../price.html"> 
 <span class="menu-text">Price</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./blog.html" aria-current="page"> 
+    <a class="nav-link" href="../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -200,51 +139,31 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./blog.html">Blog</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./blog.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Blog</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-tinyml-ai-compression" id="toc-what-is-tinyml-ai-compression" class="nav-link active" data-scroll-target="#what-is-tinyml-ai-compression">What is TinyML / AI Compression</a>
+  <ul class="collapse">
+  <li><a href="#the-two-phases-of-deep-neural-networks-dnns" id="toc-the-two-phases-of-deep-neural-networks-dnns" class="nav-link" data-scroll-target="#the-two-phases-of-deep-neural-networks-dnns">The Two Phases of Deep Neural Networks (DNNs)</a></li>
+  <li><a href="#tinyml-as-a-service-ai-compression-as-a-service-workflow" id="toc-tinyml-as-a-service-ai-compression-as-a-service-workflow" class="nav-link" data-scroll-target="#tinyml-as-a-service-ai-compression-as-a-service-workflow">TinyML as-a-Service / AI Compression as-a-Service Workflow</a></li>
+  <li><a href="#key-points-to-understand" id="toc-key-points-to-understand" class="nav-link" data-scroll-target="#key-points-to-understand">Key Points to Understand</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blogs/tinymlaas.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blog</h1>
+<h1 class="title">TinyML as-a-Service Overview</h1>
 </div>
 
 
@@ -261,159 +180,78 @@ window.Quarto = {
 </header>
 
 
+<p>Hiroshi Doyu &lt;<a href="mailto:hiroshi.doyu@ninjalabo.ai" class="email">hiroshi.doyu@ninjalabo.ai</a>&gt;, 17th July, 2024</p>
+<section id="what-is-tinyml-ai-compression" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-tinyml-ai-compression">What is TinyML / AI Compression</h2>
+<p>TinyML involves deploying machine learning models on small, resource-constrained devices, such as microcontrollers or edge devices. The objective is to enable these devices to perform intelligent tasks without relying on powerful servers or the cloud. AI Compression involves techniques to reduce the size and computational requirements of AI models, making them suitable for deployment on smaller devices without significantly sacrificing performance. Techniques include Quantization (reducing precision), Fusing (combining layers), Factorization (breaking down complex operations), Pruning (removing unimportant neurons), and Knowledge Distillation (transferring knowledge from a large model to a smaller one).</p>
+<p>TinyML isn’t limited to microcontrollers with constrained resources. A core concept of TinyML is the Machine Learning Compiler (ML Compiler), which compiles pre-trained models into small, optimized executables. This approach can be applied to large deep neural network (DNN) models, such as large language models (LLMs), to reduce operational expenses (OPEX) in datacenters.</p>
+<section id="the-two-phases-of-deep-neural-networks-dnns" class="level3">
+<h3 class="anchored" data-anchor-id="the-two-phases-of-deep-neural-networks-dnns">The Two Phases of Deep Neural Networks (DNNs)</h3>
+<ol type="1">
+<li><strong>Training Phase</strong>: In this phase, the AI model learns from data. This involves feeding the model large datasets and iteratively adjusting its parameters to minimize prediction errors. The training phase requires significant computational power and is usually performed on powerful servers or cloud infrastructure.</li>
+<li><strong>Inference Phase</strong>: This is the phase where the trained model is used to make predictions or decisions based on new data. Unlike the training phase, inference can occur on much smaller devices, making it practical for real-world applications where quick responses are needed, and continuous connectivity to powerful servers is impractical.</li>
+</ol>
+<p>Currently, our focus is on Post-Training Quantization (PTQ) and other post-training compression techniques, which are crucial for making models efficient enough to run on limited hardware.</p>
+</section>
+<section id="tinyml-as-a-service-ai-compression-as-a-service-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="tinyml-as-a-service-ai-compression-as-a-service-workflow">TinyML as-a-Service / AI Compression as-a-Service Workflow</h3>
+<p>The provided diagram outlines a streamlined process to make AI models efficient and deployable on small devices.</p>
+<p><img src="images/tinymlaas_detail.png" class="img-fluid"></p>
+<p>Here’s a detailed explanation of each step:</p>
+<ol type="1">
+<li><strong>Upload</strong>:
 <ul>
-<li><a href="./tinymlaas.html">TinyML as-a-Service Overview</a></li>
-<li><a href="aicompressionsaas.qmd">AI Compression SaaS</a></li>
-<li><a href="tinymlusecases.qmd">TinyML Use Cases</a></li>
-<li><a href="edgeimplusestudio.qmd">Review: EdgeImpulse Studio</a></li>
-<li><a href="imagimobstudio.qmd">Review: Imagimob Studio</a></li>
-<li><a href="iree.qmd">Review: IREE</a></li>
+<li>Users upload their AI models, datasets, and information about their devices to the TinyMLaaS platform. The platform uses Huggingface storage for managing these uploads, ensuring secure and efficient handling of the data.</li>
+</ul></li>
+<li><strong>Register</strong>:
+<ul>
+<li>The platform registers the user’s device, model, and dataset. This step involves creating records of the hardware specifications, model details, and dataset characteristics, ensuring the platform understands the user’s specific requirements.</li>
+</ul></li>
+<li><strong>Register Compiler</strong>:
+<ul>
+<li>The platform registers a compiler tailored for the machine learning model. This compiler employs various optimization techniques such as:
+<ul>
+<li><strong>Quantization</strong>: Reducing the precision of the model’s calculations, which decreases the model size and computational load.</li>
+<li><strong>Fusing</strong>: Combining multiple layers of the model to streamline operations.</li>
+<li><strong>Sparsifying</strong>: Removing less important parts of the model to further reduce its size.</li>
+<li><strong>Pruning</strong>: Eliminating redundant or less significant neurons in the model, reducing complexity.</li>
+<li><strong>Knowledge Distillation</strong>: Training a smaller model to mimic the behavior of a larger model, transferring its knowledge efficiently.</li>
+</ul></li>
+<li>Additionally, the platform registers an installer that handles hardware optimization and can support software over-the-air updates (SOTA) for seamless deployment.</li>
+</ul></li>
+<li><strong>Execute</strong>:
+<ul>
+<li>The platform executes the compiler and optimizer, generating a custom runtime environment. This process transforms the original AI model into a more compact and efficient version, specifically tuned to run on the user’s hardware.</li>
+</ul></li>
+<li><strong>Compare</strong>:
+<ul>
+<li>Users can compare the original and optimized models based on metrics such as accuracy, memory size, and speed. This comparison helps ensure that the optimized model still meets the necessary performance criteria while being more efficient.</li>
+</ul></li>
+<li><strong>Download</strong>:
+<ul>
+<li>Users download the optimized model for installation on their devices. In some cases, if SOTA is supported, the TinyMLaaS platform can directly install the model onto the devices.</li>
+</ul></li>
+<li><strong>Install</strong>:
+<ul>
+<li>Users install the optimized AI model on their device, setting it up to run efficiently. This step is crucial for enabling the device to perform intelligent tasks, leveraging the compressed model for real-time inference.</li>
+</ul></li>
+</ol>
+</section>
+<section id="key-points-to-understand" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-to-understand">Key Points to Understand</h3>
+<ul>
+<li><strong>Streamlined Process</strong>: The process is designed to be straightforward and user-friendly, even for those who are not experts in AI or machine learning.</li>
+<li><strong>Flexibility</strong>: The platform supports registering any compiler and installer as Docker images, allowing for flexible and customizable pipelines.</li>
+<li><strong>Efficiency</strong>: The service focuses on making AI models smaller and faster without significantly sacrificing accuracy, enabling deployment on devices with limited resources.</li>
+<li><strong>Deployment</strong>: Optimized AI models can be deployed on various devices, from industrial robots to satellites, making the technology versatile and widely applicable.</li>
 </ul>
+<p>By using TinyMLaaS, users can leverage advanced AI capabilities on small devices. This is particularly useful for applications that require low latency, privacy, and reduced reliance on constant internet connectivity, without needing deep expertise in AI compression techniques. Additionally, the ML Compiler approach can be applied to large DNN models to reduce operational costs in datacenters, making it a versatile solution across different scales and use cases.</p>
 
 
+</section>
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1721184900255" data-listing-reading-time-sort="5" data-listing-word-count-sort="820">
-<div class="thumbnail">
-<p><a href="./blogs/tinymlaas.html" class="no-external"></a></p><a href="./blogs/tinymlaas.html" class="no-external">
-<p class="card-img-top"><img src="blogs/images/tinymlaas_detail.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/tinymlaas.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/tinymlaas.html" class="no-external">TinyML as-a-Service Overview</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/tinymlaas.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./blogs/tinymlaas.html" class="no-external">Hiroshi Doyu &lt;hiroshi.doyu@ninjalabo.ai&gt;, 17th July, 2024</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./blogs/tinymlaas.html" class="no-external"></a></p><a href="./blogs/tinymlaas.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1730937600000" data-listing-file-modified-sort="1721184900255" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<div class="thumbnail">
-<p><a href="./blogs/iree.html" class="no-external"></a></p><a href="./blogs/iree.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./blogs/iree.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/iree.html" class="no-external">IREE review</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/iree.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./blogs/iree.html" class="no-external">Some description</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/iree.html" class="no-external">
-<div class="listing-date">
-Nov 7, 2024
-</div>
-<div class="listing-author">
-Haruka Doyu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1722988800000" data-listing-file-modified-sort="1721184900255" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="511">
-<div class="thumbnail">
-<p><a href="./blogs/imagimobstudio.html" class="no-external"></a></p><a href="./blogs/imagimobstudio.html" class="no-external">
-<p class="card-img-top"><img src="images/imagimob_logo.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/imagimobstudio.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/imagimobstudio.html" class="no-external">Imagimob Studio Review</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/imagimobstudio.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./blogs/imagimobstudio.html" class="no-external">Brief overview of Imagimob Studio - A solution for Edge AI applications</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/imagimobstudio.html" class="no-external">
-<div class="listing-date">
-Aug 7, 2024
-</div>
-</a><div class="listing-author"><a href="./blogs/imagimobstudio.html" class="no-external">
-Nghi Vo &lt;</a><a href="mailto:nghi.vo@ninjalabo.ai" class="email">nghi.vo@ninjalabo.ai</a>&gt;
-</div>
-
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1719878400000" data-listing-file-modified-sort="1721184900255" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="527">
-<div class="thumbnail">
-<p><a href="./blogs/aicompressionsaas.html" class="no-external"></a></p><a href="./blogs/aicompressionsaas.html" class="no-external">
-<p class="card-img-top"><img src="images/tinymlaas.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/aicompressionsaas.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/aicompressionsaas.html" class="no-external">AI compression SaaS</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/aicompressionsaas.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./blogs/aicompressionsaas.html" class="no-external">Brief overview of AI Compression</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/aicompressionsaas.html" class="no-external">
-<div class="listing-date">
-Jul 2, 2024
-</div>
-<div class="listing-author">
-Hiroshi Doyu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1719878400000" data-listing-file-modified-sort="1721184900255" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="419">
-<div class="thumbnail">
-<p><a href="./blogs/tinymlusecases.html" class="no-external"></a></p><a href="./blogs/tinymlusecases.html" class="no-external">
-<p class="card-img-top"><img src="images/tinymlusecases.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/tinymlusecases.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/tinymlusecases.html" class="no-external">TinyML Use Cases</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/tinymlusecases.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./blogs/tinymlusecases.html" class="no-external">Use cases for TinyML offered by NinjaLABO</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/tinymlusecases.html" class="no-external">
-<div class="listing-date">
-Jul 2, 2024
-</div>
-<div class="listing-author">
-Hiroshi Doyu
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -842,7 +680,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Copyright 2023-2024, NinjaLABO</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blog.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blogs/tinymlaas.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
