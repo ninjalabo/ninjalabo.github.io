@@ -20,7 +20,7 @@ Currently, our focus is on Post-Training Quantization (PTQ) and other post-train
 
 The provided diagram outlines a streamlined process to make AI models efficient and deployable on small devices.
 
-![](images/tinymlaas_detail.png)
+![](../images/tinymlaas_detail.png)
 
 Here’s a detailed explanation of each step:
 
