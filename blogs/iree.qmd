@@ -1,9 +1,41 @@
 ---
-title: IREE review
-description: "Some description"
-author: "Haruka Doyu"
-date: "11/07/2024"
+title: "IREE review"
+description: "Brief overview of IREE"
+author: "Haruka Doyu  <<haruka.doyu@ninjalabo.ai>>"
+date: "12/07/2024"
 draft: false
 ---
-# IREE Review
-Important review...
+
+# IREE: End-to-End Compiler for ML Models
+
+![](../images/iree.png)
+
+Compiling and optimizing ML models for multiple hardware platforms can be complex and time-consuming. One promising solution on our radar is the Intermediate Representation Execution Environment (IREE), which can significantly simplify this process. Here's an in-depth look at what I’ve learned about IREE.
+
+## What is IREE?
+
+IREE, or Intermediate Representation Execution Environment, is an end-to-end compiler designed specifically for machine learning (ML) models. It takes models expressed in an intermediate representation using Multi-Level Intermediate Representation (MLIR) and performs hardware-agnostic optimizations and transformations. Unlike traditional compilers, IREE doesn't directly generate low-level machine code but uses various optimizers and accelerators to do this, making it a versatile framework that supports a variety of hardware platforms.
+
+## Workflow with IREE
+
+1. **Import Your Model**: Begin by importing your machine learning model into IREE. This can be a model developed using one of the supported frameworks such as TensorFlow, PyTorch, JAX, ONNX, or TensorFlow Lite.
+
+2. **Configure Deployment Settings**: Specify your deployment configuration, including the target platform (CPU, GPU, etc.), accelerators, and any other constraints relevant to your deployment environment.
+
+3. **Compile Your Model**: Utilize IREE to compile your model. During compilation, IREE optimizes the model's code for the specified deployment configuration using its end-to-end compiler capabilities.
+
+4. **Run Your Compiled Model**: Once compiled, use IREE's runtime components to execute your optimized model on the target hardware.
+
+## Key Features of IREE
+
+1. **Intermediate Representation (IR) and MLIR**: IREE uses MLIR (Multi-Level Intermediate Representation) as its IR, which acts like a programming language for expressing machine learning models. This allows for sophisticated optimizations and transformations that are independent of the underlying hardware. IREE supports conversion from a variety of popular ML frameworks including JAX, ONNX, TensorFlow, TensorFlow Lite, and PyTorch into MLIR.
+
+2. **Automatic Optimization**: Unlike traditional compilers, IREE integrates scheduling and execution logic during compilation, rather than deferring it to runtime. This approach reduces scheduling overhead and enhances efficiency by compiling optimized code tailored to the target hardware at compile time. Additionally, IREE excels in automatic code optimization through compilers it uses, for example parallelization and vectorization are performed automatically (in the case of CPU). This means it can automatically transform the input model code to leverage hardware capabilities effectively, ensuring efficient execution on different platforms.
+
+3. **Wide Hardware Support**: IREE supports a broad range of hardware configurations, including various CPUs and GPUs. For example, it offers support for bare-metal, enabling deployment on edge devices with minimal footprint. With the help of the Hardware Abstraction Layer (HAL), IREE can compile for various hardware platforms on any supported machine. This versatility allows developers to optimize and deploy ML models across different hardware environments without the need for extensive platform-specific modifications.
+
+4. **Bindings** IREE also provides bindings, which are interfaces that allow access to the IREE compiler and its components from different programming languages, such as Python. For example, you can compile and run models using IREE in the Python interface. This flexibility is crucial for integrating IREE into diverse workflows and leveraging its capabilities from various development environments.
+
+## Conclusion
+
+Here was an overview of IREE, emphasizing its capabilities in optimizing models across diverse hardware platforms. For practical examples, please visit IREE's official documentation at https://iree.dev, where you can find comprehensive guides and examples illustrating how to compile ML models for various hardware configurations.
