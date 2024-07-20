@@ -20,7 +20,7 @@
 }
 
 .accented-text {
-    color: #40E0D0;
+    color: rgb(189, 187, 76);
 }
 
 .hero-buttons p a {
@@ -28,6 +28,16 @@
     margin-right: 0.5rem;
     margin-top: 0.5rem;
     width: 12rem;
+}
+
+.btn-action-primary {
+    background-color: rgb(155, 154, 63);
+    border-color: rgb(155, 154, 63);
+}
+
+.btn-action-primary:hover{
+    background-color: rgb(101, 100, 39);
+    border-color: rgb(101, 100, 39);
 }
 
 .hero-content {
@@ -38,7 +48,7 @@
 .gray-banner {
     margin-top: 1rem;
     margin-bottom: 1rem;
-    background-color: #123b37;
+    background-color: rgb(73, 73, 45);
     text-align: center;
     padding-left: 2vw;
     padding-right: 2vw;
@@ -94,7 +104,7 @@
 
 .feature-card h2 {
     margin-top: 0;
-    color: #40E0D0;
+    color: rgb(241, 240, 150);
 }
 
 .image-container {

@@ -59,6 +59,6 @@ website:
 
 format:
   html:
-    theme: darkly 
+    theme: [darkly, custom.scss]
     css: styles.css
     toc: true
