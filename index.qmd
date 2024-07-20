@@ -22,8 +22,8 @@ hide-description: true
 :::
 
 :::
-<video id="myVideo" autoplay muted playsinline loop controls style="width: 60%; height: auto; display: block; margin: 0 auto;">
-  <source src="images/mvp2.mp4" type="video/mp4">
+<video id="myVideo" autoplay muted playsinline loop controls style="width: 80%; height: auto; display: block; margin: 0 auto;">
+  <source src="images/opening.mp4" type="video/mp4">
 </video>
 
 ::: {.hero-content}
