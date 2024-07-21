@@ -32,8 +32,31 @@ Run by [NinjaLABO](https://ninjalabo.ai).
 
 ::: {.gray-banner}
 # Partners
+::: {.partner-grid}
+::: {.partner-card}
+![](images/partners/aalto_center_logo.png)
+:::
 
-Logos
+::: {.partner-card}
+![](images/partners/helsinki_incubators_logo.png)
+:::
+
+::: {.partner-card}
+![](images/partners/esa_logo.png)
+:::
+
+::: {.partner-card}
+![](images/partners/dlr_logo.png)
+:::
+
+::: {.partner-card}
+![](images/partners/ohb_logo.png)
+:::
+
+::: {.partner-card}
+![](images/partners/enter_espoo_logo.jpg)
+:::
+:::
 :::
 
 ::: {.black-banner}

@@ -50,8 +50,8 @@
     margin-bottom: 1rem;
     background-color: rgb(73, 73, 45);
     text-align: center;
-    padding-left: 2vw;
-    padding-right: 2vw;
+    padding-left: 15%;
+    padding-right: 15%;
     padding-bottom: 2rem;
     font-size: 1rem;
 }
@@ -67,30 +67,45 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
     text-align: center;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 15%;
+    padding-right: 15%;
     padding-bottom: 2rem;
     font-size: 1rem;
 }
 
 .black-banner h1 {
-    max-width: 50%;
+    max-width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
 
 .black-banner h4 {
-    max-width: 60%;
+    max-width: 80%;
     margin-top: 3rem;
     margin-bottom: 3rem;    
     margin-left: auto;
     margin-right: auto;
 }
 
+.partner-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+    padding-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.partner-card {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1rem;
+}
+
 .feature-card {
     min-height: 20vw;
-    margin-left: 15%;
-    margin-right: 15%;
     text-align: start;
     padding: 3rem;
     background-color: rgb(66, 65, 65);
