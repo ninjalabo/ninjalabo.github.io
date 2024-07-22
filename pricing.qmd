@@ -1,0 +1,31 @@
+---
+pagetitle: "Pricing"
+page-layout: custom
+section-divs: false
+toc: false
+editor: source
+---
+::: {.black-banner}
+# Pricing
+
+::: {.pricing-grid}
+::: {.pricing-card}
+Free
+
+## 0€
+:::
+
+::: {.pricing-card}
+Basic
+
+## 199€
+:::
+
+::: {.pricing-card}
+Custom
+
+## Contact
+:::
+
+:::
+:::

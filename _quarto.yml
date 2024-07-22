@@ -20,10 +20,10 @@ website:
     left:
       - href: index.qmd
         text: "Overview"
-      - href: features.qmd
-        text: "Features"
-      - href: price.qmd
-        text: "Price"
+      - href: tutorial.qmd
+        text: "Tutorial"
+      - href: pricing.qmd
+        text: "Pricing"
       - href: blog.qmd
         text: "Blog"
     right:
@@ -37,18 +37,12 @@ website:
             href: https://github.com/ninjalabo/ninjalabo.github.io/issues
 
   sidebar:
-    - title: "Features"
+    - title: "Tutorial"
       style: "docked"
       search: true
       contents: 
         - about.qmd
-        - features.qmd
-        # navigation items
-    - title: "Price"
-      style: "docked"
-      search: true
-      contents: 
-        - price.qmd
+        - tutorial.qmd
         # navigation items
     - title: "Blog"
       style: "docked"
