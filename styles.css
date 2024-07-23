@@ -176,6 +176,11 @@
     object-fit: cover;
 }
 
+#btn-get-started {
+    margin-top: 2rem;
+    width: 12rem;
+}
+
 /*Pricing plans*/
 .pricing-grid {
     display: flex;

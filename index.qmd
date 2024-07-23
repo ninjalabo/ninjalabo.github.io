@@ -97,3 +97,5 @@ We are a new frontier in the fields of AI and ML which allows for ML models to b
 </div>
 
 :::
+[Get Started](http://51.15.135.247:8501/){#btn-get-started .btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
+:::
