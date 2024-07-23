@@ -20,6 +20,11 @@
     color: rgb(189, 187, 76);
 }
 
+/*Footer*/
+.nav-footer-center li {
+    text-align: left;
+}
+
 /* Hero Banner*/
 .hero-title {
     margin-top: 1rem;

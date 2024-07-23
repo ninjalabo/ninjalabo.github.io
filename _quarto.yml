@@ -9,7 +9,24 @@ website:
   title: "NinjaLABO"
   image: "images/logo.png"
   favicon: "images/favicon.png"
-  page-footer: "Copyright 2023-2024, NinjaLABO"
+  page-footer: 
+    left: |
+      Copyright 2023-2024, NinjaLABO
+    center: |
+      **Get support**  
+
+      - For pricing and sales inquiries <sales@ninjalabo.ai> 
+      - Ask tech questions <help@ninjalabo.ai> 
+
+    right: 
+      - text: "Helsinki, Finland" 
+      - icon: twitter
+        href: https://twitter.com/ninjalabo
+        aria-label: NinjaLABO Twitter
+      - icon: github
+        href: https://github.com/ninjalabo/ninjalabo.github.io
+        aria-label: NinjaLABO GitHub
+
   twitter-card: true
   navbar:
     background: dark
