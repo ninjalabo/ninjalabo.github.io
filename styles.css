@@ -1,35 +1,4 @@
 /* css styles */
-.hero-title {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.hero-title h1 {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: calc(2rem + 1vw);
-}
-
-.hero-title h4 {
-    max-width: 60%;
-    margin-top: 3rem;
-    margin-bottom: 3rem;    
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.accented-text {
-    color: rgb(189, 187, 76);
-}
-
-.hero-buttons p a {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    margin-top: 0.5rem;
-    width: 12rem;
-}
-
 .btn-success {
     --bs-btn-color: #fff;
     --bs-btn-bg: rgb(155, 154, 63);
@@ -47,11 +16,47 @@
     --bs-btn-disabled-border-color: rgb(155, 154, 63);
 }
 
+.accented-text {
+    color: rgb(189, 187, 76);
+}
+
+/* Hero Banner*/
+.hero-title {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.hero-title h1 {
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: calc(2rem + 1vw);
+}
+
+.hero-title h4 {
+    max-width: 60%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons p a {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    width: 12rem;
+}
+
 .hero-content {
     text-align: center;
     padding-bottom: 2rem;
 }
 
+/*Sub-banners*/
 .gray-banner {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -94,6 +99,7 @@
     margin-right: auto;
 }
 
+/*Partners*/
 .partner-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -117,7 +123,7 @@
     }
 }
 
-
+/*Features*/
 .feature-card {
     min-height: 20vw;
     text-align: start;
@@ -165,6 +171,7 @@
     object-fit: cover;
 }
 
+/*Pricing plans*/
 .pricing-grid {
     display: flex;
     flex-direction: row;
