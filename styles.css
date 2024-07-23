@@ -111,6 +111,13 @@
     border-radius: 1rem;
 }
 
+@media screen and (max-width: 800px) {
+    .partner-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
 .feature-card {
     min-height: 20vw;
     text-align: start;
@@ -127,6 +134,17 @@
 .feature-card h2 {
     margin-top: 0;
     color: rgb(241, 240, 150);
+}
+
+@media screen and (max-width: 800px) {
+    .feature-card {
+        display: block;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .feature-card .image-container {
+      display: none;
+    }
 }
 
 .image-container {
@@ -184,4 +202,15 @@
 
 .pricing-card.accented {
     background-color: rgb(235, 255, 160);;
+}
+
+@media screen and (max-width: 900px) {
+    .pricing-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .pricing-card {
+        width: 80%;
+        max-width: 400px;
+    }
 }
