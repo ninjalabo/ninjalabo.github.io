@@ -7,7 +7,7 @@ website:
   repo-actions: [edit, issue]
   page-navigation: true
   title: "NinjaLABO"
-  image: "images/logo.png"
+  image: "images/logo.jpg"
   favicon: "images/favicon.png"
   page-footer: 
     left: |
@@ -30,13 +30,11 @@ website:
   twitter-card: true
   navbar:
     background: dark
-    logo: "images/favicon.png"
+    logo: "images/logo.jpg"
     logo-alt: "NinjaLABO log."
     title: false
     search: true
     left:
-      - href: index.qmd
-        text: "Overview"
       - href: tutorial.qmd
         text: "Tutorial"
       - href: pricing.qmd
