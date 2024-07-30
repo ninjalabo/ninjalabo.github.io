@@ -41,6 +41,8 @@ website:
         text: "Pricing"
       - href: blog.qmd
         text: "Blog"
+      - href: performance.ipynb
+        text: "Performance"
     right:
       - icon: twitter
         href: https://twitter.com/ninjalabo
@@ -65,6 +67,11 @@ website:
       contents: 
         - blog.qmd
         # navigation items
+    - title: "Performance"
+      style: "docked"
+      search: true
+      contents:
+        - performance.ipynb
 
 format:
   html:
