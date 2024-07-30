@@ -1,8 +1,8 @@
 /* css styles */
 .btn-success {
     --bs-btn-color: #fff;
-    --bs-btn-bg: rgb(155, 154, 63);
-    --bs-btn-border-color: rgb(155, 154, 63);
+    --bs-btn-bg: rgb(185, 185, 1);
+    --bs-btn-border-color: rgb(185, 185, 1);
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: rgb(101, 100, 39);
     --bs-btn-hover-border-color: rgb(101, 100, 39);
@@ -12,12 +12,16 @@
     --bs-btn-active-border-color: rgb(101, 100, 39);
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: rgb(155, 154, 63);
-    --bs-btn-disabled-border-color: rgb(155, 154, 63);
+    --bs-btn-disabled-bg: rgb(185, 185, 1);
+    --bs-btn-disabled-border-color: rgb(185, 185, 1);
 }
 
 .accented-text {
-    color: rgb(189, 187, 76);
+    color: rgb(185, 185, 1);
+}
+
+.navbar-logo {
+    max-height: 36px;
 }
 
 /*Footer*/
@@ -218,7 +222,7 @@
 }
 
 .pricing-card.accented {
-    background-color: rgb(235, 255, 160);;
+    background-color: rgb(184, 184, 107);;
 }
 
 @media screen and (max-width: 900px) {
