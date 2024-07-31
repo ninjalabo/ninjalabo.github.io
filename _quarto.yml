@@ -23,6 +23,9 @@ website:
       - icon: twitter
         href: https://twitter.com/ninjalabo
         aria-label: NinjaLABO Twitter
+      - icon: linkedin
+        href: https://www.linkedin.com/company/ninjalabo/
+        aria-label: NinjaLABO LinkedIn
       - icon: github
         href: https://github.com/ninjalabo/ninjalabo.github.io
         aria-label: NinjaLABO GitHub
@@ -46,6 +49,8 @@ website:
     right:
       - icon: twitter
         href: https://twitter.com/ninjalabo
+      - icon: linkedin
+        href: https://www.linkedin.com/company/ninjalabo/
       - icon: github
         menu:
           - text: Source Code
