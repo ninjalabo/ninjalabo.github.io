@@ -17,7 +17,7 @@ hide-description: true
 #### Upload your AI model on device for efficient run to save your costs, time, and cloud space
 
 ::: {.hero-buttons}
-[Get Started](http://51.15.135.247:8501/){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
+[Get Started](getstarted.qmd){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
 [Request Demo](https://forms.gle/zKjaeEzqoVu7a9vQ8){#btn-guide .btn-action .btn .btn-light .btn-lg role="button"}
 :::
 

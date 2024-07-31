@@ -38,8 +38,8 @@ website:
     title: false
     search: true
     left:
-      - href: tutorial.qmd
-        text: "Tutorial"
+      - href: getstarted.qmd
+        text: "Get Started"
       - href: pricing.qmd
         text: "Pricing"
       - href: blog.qmd
@@ -59,12 +59,14 @@ website:
             href: https://github.com/ninjalabo/ninjalabo.github.io/issues
 
   sidebar:
-    - title: "Tutorial"
+    - title: "Get Started"
       style: "docked"
       search: true
       contents: 
         - about.qmd
-        - tutorial.qmd
+        - getstarted.qmd
+        - section: "Tutorials"
+        - section: "Documentation"
         # navigation items
     - title: "Blog"
       style: "docked"
