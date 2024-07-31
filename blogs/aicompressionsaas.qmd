@@ -1,7 +1,9 @@
 ---
 title: "AI compression SaaS"
 description: "Brief overview of AI Compression"
-author: "Hiroshi Doyu <<hiroshi.doyu@ninjalabo.ai>>"
+author: 
+ - name: "Hiroshi Doyu"
+   email: hiroshi.doyu@ninjalabo.ai
 date: "07/02/2024"
 draft: false
 ---

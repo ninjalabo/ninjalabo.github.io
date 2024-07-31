@@ -1,7 +1,9 @@
 ---
 title: "TinyML Use Cases"
 description: "Use cases for TinyML offered by NinjaLABO"
-author: "Hiroshi Doyu <<hiroshi.doyu@ninjalabo.ai>>"
+author: 
+ - name: "Hiroshi Doyu"
+   email: hiroshi.doyu@ninjalabo.ai
 date: "07/02/2024"
 draft: false
 ---

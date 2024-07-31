@@ -1,7 +1,9 @@
 ---
 title: "Imagimob Studio Review"
 description: "Brief overview of Imagimob Studio - A solution for Edge AI applications"
-author: "Nghi Vo <<nghi.vo@ninjalabo.ai>>"
+author: 
+ - name: "Nghi Vo"
+   email: nghi.vo@ninjalabo.ai
 date: "08/07/2024"
 draft: false
 ---

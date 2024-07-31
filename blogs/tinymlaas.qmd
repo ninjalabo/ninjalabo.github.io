@@ -1,7 +1,9 @@
 ---
 title: "TinyML as-a-Service Overview"
 description: "Brief overview of NinjaLABO's TinyML as-a-Service / AI compression as-a-Service "
-author: "Hiroshi Doyu <<hiroshi.doyu@ninjalabo.ai>>"
+author: 
+ - name: "Hiroshi Doyu"
+   email: hiroshi.doyu@ninjalabo.ai
 date: "17/07/2024"
 draft: false
 ---
