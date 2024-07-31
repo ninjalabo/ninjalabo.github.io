@@ -61,7 +61,6 @@ website:
             href: https://github.com/ninjalabo/ninjalabo.github.io/issues
 
   sidebar:
-    - title: "Get Started"
       style: "docked"
       search: true
       contents: 
@@ -73,11 +72,8 @@ website:
         - section: "Documentation"
           contents:
             - docs/architecture.qmd
-        # navigation items
-    - title: "Performance"
-      style: "docked"
-      search: true
-      contents:
+        - blog.qmd
+        - news.qmd
         - performance.ipynb
 
 format:

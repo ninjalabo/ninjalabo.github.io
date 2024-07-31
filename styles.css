@@ -24,6 +24,10 @@
     max-height: 36px;
 }
 
+.nav-link.active span {
+    color: white;
+}
+
 /*Footer*/
 .nav-footer-center li {
     text-align: left;
