@@ -44,6 +44,8 @@ website:
         text: "Pricing"
       - href: blog.qmd
         text: "Blog"
+      - href: news.qmd
+        text: "News"
       - href: performance.ipynb
         text: "Performance"
     right:
@@ -71,12 +73,6 @@ website:
         - section: "Documentation"
           contents:
             - docs/architecture.qmd
-        # navigation items
-    - title: "Blog"
-      style: "docked"
-      search: true
-      contents: 
-        - blog.qmd
         # navigation items
     - title: "Performance"
       style: "docked"
