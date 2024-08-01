@@ -1,7 +1,9 @@
 ---
 title: "AI compression SaaS"
 description: "Brief overview of AI Compression"
-author: "Hiroshi Doyu <<hiroshi.doyu@ninjalabo.ai>>"
+author: 
+ - name: "Hiroshi Doyu"
+   email: hiroshi.doyu@ninjalabo.ai
 date: "07/02/2024"
 draft: false
 ---
@@ -9,7 +11,7 @@ draft: false
 
 It has been nearly five years since I first wrote about [TinyML](https://www.ericsson.com/en/blog/2019/12/tinyml-as-a-service) and [TinyML as-a-Service](https://www.ericsson.com/en/blog/2020/2/how-can-we-democratize-machine-learning-iot-devices) (TinyMLaaS) on the [Ericsson](https://www.ericsson.com/en) blog.
 
-![](../images/tinymlaas.png)
+![](images/tinymlaas.png)
 
 In the rapidly evolving landscape of artificial intelligence (AI), efficiency and resource optimization are paramount. AI Compression as-a-Service (ACaaS) and **TinyML as-a-Service** (TinyMLaaS) emerge as transformative solutions that address the growing demand for deploying AI on resource-constrained devices. These services offer scalable, cost-effective, and high-performance AI capabilities, enabling a new wave of innovation in edge computing.
 

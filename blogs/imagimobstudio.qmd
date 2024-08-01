@@ -1,14 +1,16 @@
 ---
 title: "Imagimob Studio Review"
 description: "Brief overview of Imagimob Studio - A solution for Edge AI applications"
-author: "Nghi Vo <<nghi.vo@ninjalabo.ai>>"
+author: 
+ - name: "Nghi Vo"
+   email: nghi.vo@ninjalabo.ai
 date: "08/07/2024"
 draft: false
 ---
 
 # Imagimob Studio Review - End-to-End platform for Edge AI applications
 
-![](../images/imagimob_logo.jpg)
+![](images/imagimob_logo.jpg)
 
 Imagimob Studio is an end-to-end platform designed for developing Edge AI and Machine Learning applications. The platform covers the machine learning workflow from data collection to model deployment in embedded devices to support both experts and non-experts in building production grade models.
 
@@ -18,7 +20,7 @@ Imagimob Studio offers dynamic visualisations throughout the machine learning wo
 
 In a recent development, Graph UX is introduced which enables a different approach to visualise the machine learning workflow. This approach aligns with the representation of neural networks, in which the original data is processed layer-by-layer by passing through nodes of a connected network. Graph UX adopts such a concept and adapts it to the machine learning workflow. Each process in the overall flow, including data collection and annotation, preprocessing, and inference, becomes a node drawn in a canvas with defined inputs and outputs. This design provides a comprehensive view of these processes for better management and understanding of the workflow.
 
-![Main Canvas for a Model Evaluation Graph UX project](../images/main_imunit.jpg)
+![Main Canvas for a Model Evaluation Graph UX project](images/main_imunit.jpg)
 
 ### Data Management
 - **Integration with Sensors**: Easily connect and collect data from various sensors and hardware platforms, including those running Python.  
@@ -26,7 +28,7 @@ In a recent development, Graph UX is introduced which enables a different approa
 - **Dataset Management**: Create, shuffle, and manage training, validation, and test sets.  
 - **Error Detection**: Automatically detect and correct data inconsistencies to avoid costly mistakes.  
 
-![Data management & annotation for an audio file with Session view](../images/session.jpeg)
+![Data management & annotation for an audio file with Session view](images/session.jpeg)
 
 ### Model Building 
 - **AutoML**: Automatically generate high-performance models tailored to your data.  

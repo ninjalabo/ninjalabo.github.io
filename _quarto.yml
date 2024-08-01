@@ -7,7 +7,7 @@ website:
   repo-actions: [edit, issue]
   page-navigation: true
   title: "NinjaLABO"
-  image: "images/logo.png"
+  image: "images/logo.jpg"
   favicon: "images/favicon.png"
   page-footer: 
     left: |
@@ -23,6 +23,9 @@ website:
       - icon: twitter
         href: https://twitter.com/ninjalabo
         aria-label: NinjaLABO Twitter
+      - icon: linkedin
+        href: https://www.linkedin.com/company/ninjalabo/
+        aria-label: NinjaLABO LinkedIn
       - icon: github
         href: https://github.com/ninjalabo/ninjalabo.github.io
         aria-label: NinjaLABO GitHub
@@ -30,24 +33,26 @@ website:
   twitter-card: true
   navbar:
     background: dark
-    logo: "images/favicon.png"
+    logo: "images/logo.jpg"
     logo-alt: "NinjaLABO log."
     title: false
     search: true
     left:
-      - href: index.qmd
-        text: "Overview"
-      - href: tutorial.qmd
-        text: "Tutorial"
+      - href: getstarted.qmd
+        text: "Get Started"
       - href: pricing.qmd
         text: "Pricing"
       - href: blog.qmd
         text: "Blog"
+      - href: news.qmd
+        text: "News"
       - href: performance.ipynb
         text: "Performance"
     right:
       - icon: twitter
         href: https://twitter.com/ninjalabo
+      - icon: linkedin
+        href: https://www.linkedin.com/company/ninjalabo/
       - icon: github
         menu:
           - text: Source Code
@@ -56,23 +61,19 @@ website:
             href: https://github.com/ninjalabo/ninjalabo.github.io/issues
 
   sidebar:
-    - title: "Tutorial"
       style: "docked"
       search: true
       contents: 
         - about.qmd
-        - tutorial.qmd
-        # navigation items
-    - title: "Blog"
-      style: "docked"
-      search: true
-      contents: 
+        - getstarted.qmd
+        - section: "Tutorials"
+          contents: 
+           - tutorials/runwalkthrough.qmd
+        - section: "Documentation"
+          contents:
+            - docs/architecture.qmd
         - blog.qmd
-        # navigation items
-    - title: "Performance"
-      style: "docked"
-      search: true
-      contents:
+        - news.qmd
         - performance.ipynb
 
 format:

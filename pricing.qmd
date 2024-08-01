@@ -21,7 +21,7 @@ editor: source
 
 ::: {.pricing-card}
 ::: {.pricing-content}
-## 199€
+## 299€
 ✔ 2 models  
 ✔ 2 months access  
 :::

@@ -1,0 +1,7 @@
+---
+title: "News"
+listing:
+  sort: "date desc"
+  contents: "news/*.qmd"
+  type: default
+---

@@ -1,13 +1,15 @@
 ---
 title: "TinyML Use Cases"
 description: "Use cases for TinyML offered by NinjaLABO"
-author: "Hiroshi Doyu <<hiroshi.doyu@ninjalabo.ai>>"
+author: 
+ - name: "Hiroshi Doyu"
+   email: hiroshi.doyu@ninjalabo.ai
 date: "07/02/2024"
 draft: false
 ---
 # Harnessing the Power of AI with NinjaLABO's TinyML as-a-Service
 
-![](../images/tinymlusecases.png)
+![](images/tinymlusecases.png)
 
 In today's competitive landscape, every company is leveraging AI or exploring its integration into their business operations. As AI models become increasingly sophisticated, the operational expenditures (OPEX) associated with utilizing expensive GPUs in cloud datacenters also rise. Moreover, large AI models often cannot be executed on small devices without relying on cloud GPUs.
 
