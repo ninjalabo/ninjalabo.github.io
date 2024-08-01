@@ -2,46 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ninjalabo.github.io/blog.html</loc>
-    <lastmod>2024-08-01T02:57:25.204Z</lastmod>
+    <lastmod>2024-08-01T04:03:03.470Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/blogs/tinymlusecases.html</loc>
-    <lastmod>2024-08-01T02:57:25.204Z</lastmod>
+    <lastmod>2024-08-01T04:03:03.478Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/blogs/aicompressionsaas.html</loc>
-    <lastmod>2024-08-01T02:57:25.204Z</lastmod>
+    <lastmod>2024-08-01T04:03:03.470Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/blogs/tinymlaas.html</loc>
-    <lastmod>2024-08-01T02:57:25.204Z</lastmod>
+    <lastmod>2024-08-01T04:03:03.478Z</lastmod>
   </url>
   <url>
-    <loc>https://ninjalabo.github.io/tutorial.html</loc>
-    <lastmod>2024-08-01T02:57:25.408Z</lastmod>
+    <loc>https://ninjalabo.github.io/news.html</loc>
+    <lastmod>2024-08-01T04:03:03.658Z</lastmod>
   </url>
   <url>
-    <loc>https://ninjalabo.github.io/pricing.html</loc>
-    <lastmod>2024-08-01T02:57:25.408Z</lastmod>
+    <loc>https://ninjalabo.github.io/getstarted.html</loc>
+    <lastmod>2024-08-01T04:03:03.478Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/docs/architecture.html</loc>
+    <lastmod>2024-08-01T04:03:03.478Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/about.html</loc>
-    <lastmod>2024-08-01T02:57:25.204Z</lastmod>
+    <lastmod>2024-08-01T04:03:03.470Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/pricing.html</loc>
+    <lastmod>2024-08-01T04:03:03.658Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/tutorials/runwalkthrough.html</loc>
+    <lastmod>2024-08-01T04:03:03.658Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/performance.html</loc>
-    <lastmod>2024-08-01T02:58:07.012Z</lastmod>
+    <lastmod>2024-08-01T04:03:49.426Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/blogs/imagimobstudio.html</loc>
-    <lastmod>2024-08-01T02:57:25.204Z</lastmod>
+    <lastmod>2024-08-01T04:03:03.478Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/blogs/iree.html</loc>
-    <lastmod>2024-08-01T02:57:25.204Z</lastmod>
+    <lastmod>2024-08-01T04:03:03.478Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/index.html</loc>
-    <lastmod>2024-08-01T02:57:25.392Z</lastmod>
+    <lastmod>2024-08-01T04:03:03.658Z</lastmod>
   </url>
 </urlset>
