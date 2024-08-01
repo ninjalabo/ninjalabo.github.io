@@ -1,6 +1,6 @@
 ---
 pagetitle: "AI Compression as-a-Service"
-page-layout: full
+page-layout: custom
 section-divs: false
 toc: false
 editor: source
@@ -11,25 +11,91 @@ hide-description: true
 
 ::: {.hero-title}
 
-# [Compress your AI model]{#first-headline}
+# [Compress your AI model]{.accented-text}
 # with tinyMLaaS
 
-Upload your AI model on device for efficient run to save your costs, time, and cloud space
+#### Upload your AI model on device for efficient run to save your costs, time, and cloud space
 
 ::: {.hero-buttons}
-[Get Started](/docs/get-started/index.qmd){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
-[See Demo](/docs/guide/){#btn-guide .btn-action .btn .btn-light .btn-lg role="button"}
+[Get Started](http://51.15.135.247:8501/){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
 [Request Demo](https://forms.gle/zKjaeEzqoVu7a9vQ8){#btn-guide .btn-action .btn .btn-light .btn-lg role="button"}
 :::
 
 :::
-<video id="myVideo" autoplay muted playsinline loop controls style="width: 80%; height: auto; display: block; margin: 0 auto;">
-  <source src="images/mvp2.mp4" type="video/mp4">
+<video id="myVideo" autoplay muted playsinline loop controls style="width: 70%; height: auto; display: block; margin: 0 auto;">
+  <source src="images/opening.mp4" type="video/mp4">
 </video>
 
 ::: {.hero-content}
 Run by [NinjaLABO](https://ninjalabo.ai).
+:::
 
-# Next
-next
+::: {.gray-banner}
+# Partners
+::: {.partner-grid}
+::: {.partner-card}
+![](images/partners/aalto_center_logo.png)
+:::
+
+::: {.partner-card}
+![](images/partners/helsinki_incubators_logo.png)
+:::
+
+::: {.partner-card}
+![](images/partners/esa_logo.png)
+:::
+
+::: {.partner-card}
+![](images/partners/dlr_logo.png)
+:::
+
+::: {.partner-card}
+![](images/partners/ohb_logo.png)
+:::
+
+::: {.partner-card}
+![](images/partners/enter_espoo_logo.jpg)
+:::
+:::
+:::
+
+::: {.black-banner}
+# [NinjaLABO]{.accented-text} is a startup aiming to democratize AI accessibility.
+
+#### All AI is running on big cloud GPUs, which are not accessible in some harsh environments. We are bringing AI to the very edge without Cloud dependency, "Cloudless AI".
+
+::: {.feature-card}
+::: {.feature-text}
+## Minimalize AI
+We are a new frontier in the fields of AI and ML which allows for ML models to be run directly on small IoT devices such as microcontrollers, sensors, and other edge devices most notably without being dependent on a connection to the cloud – a noticeable advantage when compared to current AI & ML systems. 
+:::
+<div class="image-container">
+  <img src="images/edge_device.jpg" alt="Edge Device">
+</div>
+
+:::
+
+::: {.feature-card}
+<div class="image-container">
+  <img src="images/energy_cost.jpg" alt="Energy Cost">
+</div>
+
+::: {.feature-text}
+## Save Time, Cost, and Energy
+"Cloudless AI" doesn't move the data around so that it could save network round trip time, communication cost and battery consumption.  
+:::
+
+:::
+
+::: {.feature-card}
+::: {.feature-text}
+## Protect your security
+"Cloudless AI" doesn't upload the private data on Cloud but instead it processes in place, there is no risk of privacy leakage. 
+:::
+<div class="image-container">
+  <img src="images/data_security.jpg" alt="Edge Device">
+</div>
+
+:::
+[Get Started](http://51.15.135.247:8501/){#btn-get-started .btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
 :::

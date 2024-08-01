@@ -9,7 +9,24 @@ website:
   title: "NinjaLABO"
   image: "images/logo.png"
   favicon: "images/favicon.png"
-  page-footer: "Copyright 2023-2024, NinjaLABO"
+  page-footer: 
+    left: |
+      Copyright 2023-2024, NinjaLABO
+    center: |
+      **Get support**  
+
+      - For pricing and sales inquiries <sales@ninjalabo.ai> 
+      - Ask tech questions <help@ninjalabo.ai> 
+
+    right: 
+      - text: "Helsinki, Finland" 
+      - icon: twitter
+        href: https://twitter.com/ninjalabo
+        aria-label: NinjaLABO Twitter
+      - icon: github
+        href: https://github.com/ninjalabo/ninjalabo.github.io
+        aria-label: NinjaLABO GitHub
+
   twitter-card: true
   navbar:
     background: dark
@@ -20,12 +37,14 @@ website:
     left:
       - href: index.qmd
         text: "Overview"
-      - href: features.qmd
-        text: "Features"
-      - href: price.qmd
-        text: "Price"
+      - href: tutorial.qmd
+        text: "Tutorial"
+      - href: pricing.qmd
+        text: "Pricing"
       - href: blog.qmd
         text: "Blog"
+      - href: performance.ipynb
+        text: "Performance"
     right:
       - icon: twitter
         href: https://twitter.com/ninjalabo
@@ -37,18 +56,12 @@ website:
             href: https://github.com/ninjalabo/ninjalabo.github.io/issues
 
   sidebar:
-    - title: "Features"
+    - title: "Tutorial"
       style: "docked"
       search: true
       contents: 
         - about.qmd
-        - features.qmd
-        # navigation items
-    - title: "Price"
-      style: "docked"
-      search: true
-      contents: 
-        - price.qmd
+        - tutorial.qmd
         # navigation items
     - title: "Blog"
       style: "docked"
@@ -56,9 +69,14 @@ website:
       contents: 
         - blog.qmd
         # navigation items
+    - title: "Performance"
+      style: "docked"
+      search: true
+      contents:
+        - performance.ipynb
 
 format:
   html:
-    theme: solar
+    theme: [darkly, custom.scss]
     css: styles.css
     toc: true

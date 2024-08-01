@@ -1,4 +1,31 @@
 /* css styles */
+.btn-success {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: rgb(155, 154, 63);
+    --bs-btn-border-color: rgb(155, 154, 63);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: rgb(101, 100, 39);
+    --bs-btn-hover-border-color: rgb(101, 100, 39);
+    --bs-btn-focus-shadow-rgb: 38, 198, 157;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: rgb(101, 100, 39);
+    --bs-btn-active-border-color: rgb(101, 100, 39);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: rgb(155, 154, 63);
+    --bs-btn-disabled-border-color: rgb(155, 154, 63);
+}
+
+.accented-text {
+    color: rgb(189, 187, 76);
+}
+
+/*Footer*/
+.nav-footer-center li {
+    text-align: left;
+}
+
+/* Hero Banner*/
 .hero-title {
     margin-top: 1rem;
     margin-bottom: 2rem;
@@ -6,26 +33,201 @@
 }
 
 .hero-title h1 {
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 0;
     margin-bottom: 0;
     font-size: calc(2rem + 1vw);
 }
 
-.hero-title p {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-}
-
-#first-headline {
-    color: #40E0D0;
+.hero-title h4 {
+    max-width: 60%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;    
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-buttons p a {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
-    width: 10rem;
+    margin-top: 0.5rem;
+    width: 12rem;
 }
 
 .hero-content {
     text-align: center;
+    padding-bottom: 2rem;
+}
+
+/*Sub-banners*/
+.gray-banner {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: rgb(73, 73, 45);
+    text-align: center;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 2rem;
+    font-size: 1rem;
+}
+.gray-banner h4 {
+    max-width: 60%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.black-banner {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.black-banner h1 {
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.black-banner h4 {
+    max-width: 80%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Partners*/
+.partner-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+    padding-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.partner-card {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+    .partner-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/*Features*/
+.feature-card {
+    min-height: 20vw;
+    text-align: start;
+    padding: 3rem;
+    background-color: rgb(66, 65, 65);
+    border-radius: 2rem;
+    display: flex;
+    flex-flow: row;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.feature-card h2 {
+    margin-top: 0;
+    color: rgb(241, 240, 150);
+}
+
+@media screen and (max-width: 800px) {
+    .feature-card {
+        display: block;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .feature-card .image-container {
+      display: none;
+    }
+}
+
+.image-container {
+    position: relative;
+    width: 40%;
+    /* padding-top: 100%; This creates the 1:1 aspect ratio */
+    overflow: hidden;
+    border-radius: 1rem; /* This creates the rounded edges */
+    flex-shrink: 0;
+  }
+  
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#btn-get-started {
+    margin-top: 2rem;
+    width: 12rem;
+}
+
+/*Pricing plans*/
+.pricing-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    gap: 2rem;
+    padding-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 12px 12px 2px 1px rgba(155, 154, 69, 0.63);
+    color: black;
+    border-radius: 1rem;
+    width: 30%;
+    max-width: 250px;
+}
+
+.pricing-card h2 {
+    margin-top: 1rem;
+}
+
+.pricing-card [role="button"] {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.pricing-card.accented {
+    background-color: rgb(235, 255, 160);;
+}
+
+@media screen and (max-width: 900px) {
+    .pricing-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .pricing-card {
+        width: 80%;
+        max-width: 400px;
+    }
 }
