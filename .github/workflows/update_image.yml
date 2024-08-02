@@ -31,12 +31,15 @@ jobs:
       run: |
         jupyter nbconvert --to notebook --execute performance.ipynb
         
-    - name: Commit and push images
+    - name: Commit files
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
         git add images/
         git commit -m "Update generated images from notebook"
-        git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: main
