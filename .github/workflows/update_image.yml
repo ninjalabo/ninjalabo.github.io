@@ -13,6 +13,9 @@ jobs:
   run-notebook:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -31,16 +34,17 @@ jobs:
     - name: Run Jupyter notebook
       run: |
         jupyter nbconvert --to notebook --execute performance.ipynb
-        
-    - name: Commit files
+
+    - name: Commit and push images
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
-        git add images/
-        git commit -m "Update generated images from notebook"
-
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: main
+        if git status images/ --porcelain | grep images; then
+          git add images/
+          git commit -m "Update generated images from notebook"
+          git push origin main
+        else
+          echo "No changes to commit"
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
