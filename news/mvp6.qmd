@@ -1,4 +1,0 @@
----
-title: "MVP6"
-draft: true
----

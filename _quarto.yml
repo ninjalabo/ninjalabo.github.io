@@ -44,7 +44,7 @@ website:
         text: "Pricing"
       - href: blog.qmd
         text: "Blog"
-      - href: news.qmd
+      - href: blog.qmd#category=news
         text: "News"
       - href: performance.ipynb
         text: "Performance"
@@ -71,7 +71,6 @@ website:
         - section: "Documentation"
           contents: "docs/*.qmd"
         - blog.qmd
-        - news.qmd
         - performance.ipynb
 
 format:
