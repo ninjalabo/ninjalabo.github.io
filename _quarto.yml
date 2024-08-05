@@ -44,7 +44,7 @@ website:
         text: "Pricing"
       - href: blog.qmd
         text: "Blog"
-      - href: news.qmd
+      - href: blog.qmd#category=news
         text: "News"
       - href: performance.ipynb
         text: "Performance"
@@ -67,13 +67,10 @@ website:
         - about.qmd
         - getstarted.qmd
         - section: "Tutorials"
-          contents: 
-           - tutorials/runwalkthrough.qmd
+          contents: "tutorials/*.qmd"
         - section: "Documentation"
-          contents:
-            - docs/architecture.qmd
+          contents: "docs/*.qmd"
         - blog.qmd
-        - news.qmd
         - performance.ipynb
 
 format:

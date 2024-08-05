@@ -4,7 +4,7 @@ description: "Brief overview of Imagimob Studio - A solution for Edge AI applica
 author: 
  - name: "Nghi Vo"
    email: nghi.vo@ninjalabo.ai
-date: "08/07/2024"
+date: "07/08/2024"
 draft: false
 ---
 
