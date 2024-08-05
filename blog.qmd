@@ -4,4 +4,5 @@ listing:
   sort: "date desc"
   contents: "blogs/*.qmd"
   type: default
+  categories: true
 ---
