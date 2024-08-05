@@ -67,11 +67,9 @@ website:
         - about.qmd
         - getstarted.qmd
         - section: "Tutorials"
-          contents: 
-           - tutorials/runwalkthrough.qmd
+          contents: "tutorials/*.qmd"
         - section: "Documentation"
-          contents:
-            - docs/architecture.qmd
+          contents: "docs/*.qmd"
         - blog.qmd
         - news.qmd
         - performance.ipynb
