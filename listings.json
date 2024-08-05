@@ -1,16 +1,17 @@
 [
   {
+    "listing": "/news.html",
+    "items": []
+  },
+  {
     "listing": "/blog.html",
     "items": [
       "/blogs/tinymlaas.html",
       "/blogs/iree.html",
       "/blogs/imagimobstudio.html",
       "/blogs/aicompressionsaas.html",
-      "/blogs/tinymlusecases.html"
+      "/blogs/tinymlusecases.html",
+      "/blogs/mvp6.html"
     ]
-  },
-  {
-    "listing": "/news.html",
-    "items": []
   }
 ]

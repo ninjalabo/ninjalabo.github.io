@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Nghi Vo">
+<meta name="dcterms.date" content="2024-05-08">
+<meta name="description" content="Our internal review of MVP6 usage">
 
-<title>Get Started – NinjaLABO</title>
+<title>AI Compression as-a-Service MVP6 review – NinjaLABO</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./tutorials/runwalkthrough.html" rel="next">
-<link href="./about.html" rel="prev">
-<link href="./images/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,9 +72,10 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
-<meta name="twitter:title" content="Get Started – NinjaLABO">
-<meta name="twitter:image" content="https://ninjalabo.github.io/images/logo.jpg">
+<link rel="stylesheet" href="../styles.css">
+<meta name="twitter:title" content="AI Compression as-a-Service MVP6 review – NinjaLABO">
+<meta name="twitter:description" content="Our internal review of MVP6 usage">
+<meta name="twitter:image" content="https://ninjalabo.github.io/blogs/images/logo.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -84,8 +86,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/logo.jpg" alt="NinjaLABO log." class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -95,23 +97,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./getstarted.html" aria-current="page"> 
+    <a class="nav-link active" href="../getstarted.html" aria-current="page"> 
 <span class="menu-text">Get Started</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./pricing.html"> 
+    <a class="nav-link" href="../pricing.html"> 
 <span class="menu-text">Pricing</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./news.html"> 
+    <a class="nav-link" href="../news.html"> 
 <span class="menu-text">News</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./performance.html"> 
+    <a class="nav-link" href="../performance.html"> 
 <span class="menu-text">Performance</span></a>
   </li>  
 </ul>
@@ -154,7 +156,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./getstarted.html">Get Started</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AI Compression as-a-Service MVP6 review</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -176,13 +178,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link">
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./getstarted.html" class="sidebar-item-text sidebar-link active">
+  <a href="../getstarted.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Get Started</span></a>
   </div>
 </li>
@@ -197,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorials/runwalkthrough.html" class="sidebar-item-text sidebar-link">
+  <a href="../tutorials/runwalkthrough.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Run Walkthrough</span></a>
   </div>
 </li>
@@ -214,7 +216,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/architecture.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/architecture.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Architecture</span></a>
   </div>
 </li>
@@ -222,19 +224,19 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./blog.html" class="sidebar-item-text sidebar-link">
+  <a href="../blog.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Blog</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./news.html" class="sidebar-item-text sidebar-link">
+  <a href="../news.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">News</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./performance.html" class="sidebar-item-text sidebar-link">
+  <a href="../performance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Performance</span></a>
   </div>
 </li>
@@ -251,14 +253,34 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Get Started</h1>
-</div>
+<h1 class="title">AI Compression as-a-Service MVP6 review</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">news</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Our internal review of MVP6 usage
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Nghi Vo <a href="mailto:nghi.vo@ninjalabo.ai" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 8, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -698,18 +720,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./about.html" class="pagination-link" aria-label="About">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">About</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./tutorials/runwalkthrough.html" class="pagination-link" aria-label="Run Walkthrough">
-        <span class="nav-page-text">Run Walkthrough</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -722,7 +732,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <li>For pricing and sales inquiries <a href="mailto:sales@ninjalabo.ai" class="email">sales@ninjalabo.ai</a></li>
 <li>Ask tech questions <a href="mailto:help@ninjalabo.ai" class="email">help@ninjalabo.ai</a></li>
 </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/getstarted.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blogs/mvp6.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
