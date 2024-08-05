@@ -1,11 +1,8 @@
 [
   {
-    "listing": "/news.html",
-    "items": []
-  },
-  {
     "listing": "/blog.html",
     "items": [
+      "/blogs/edgeimplusestudio.html",
       "/blogs/tinymlaas.html",
       "/blogs/iree.html",
       "/blogs/imagimobstudio.html",

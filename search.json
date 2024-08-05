@@ -49,36 +49,13 @@
     "text": "AI Compression as-a-Service MVP6 review"
   },
   {
-    "objectID": "news.html",
-    "href": "news.html",
-    "title": "News",
+    "objectID": "getstarted.html",
+    "href": "getstarted.html",
+    "title": "Get Started",
     "section": "",
-    "text": "No matching items",
+    "text": "AI Compression as-a-Service MVP6 review",
     "crumbs": [
-      "Get Started",
-      "News"
-    ]
-  },
-  {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Blog",
-    "section": "",
-    "text": "TinyML as-a-Service Overview\n\n\n\n\n\nBrief overview of NinjaLABO’s TinyML as-a-Service / AI compression as-a-Service \n\n\n\n\n\nMay 7, 2025\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nIREE review\n\n\n\n\n\nBrief overview of IREE\n\n\n\n\n\nDec 7, 2024\n\n\nHaruka Doyu &lt;haruka.doyu@ninjalabo.ai&gt;\n\n\n\n\n\n\n\n\n\n\n\n\nImagimob Studio Review\n\n\n\n\n\nBrief overview of Imagimob Studio - A solution for Edge AI applications\n\n\n\n\n\nAug 7, 2024\n\n\nNghi Vo\n\n\n\n\n\n\n\n\n\n\n\n\nAI compression SaaS\n\n\n\n\n\nBrief overview of AI Compression\n\n\n\n\n\nJul 2, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nTinyML Use Cases\n\n\n\n\n\nUse cases for TinyML offered by NinjaLABO\n\n\n\n\n\nJul 2, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nAI Compression as-a-Service MVP6 review\n\n\n\n\n\n\nnews\n\n\n\nOur internal review of MVP6 usage\n\n\n\n\n\nMay 8, 2024\n\n\nNghi Vo\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Get Started",
-      "Blog"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "NinjaLABO is specialized at compressing AI models (DNN models) along with optimized tinyRuntime via our SaaS platform.",
-    "crumbs": [
-      "Get Started",
-      "About"
+      "Get Started"
     ]
   },
   {
@@ -115,14 +92,54 @@
     ]
   },
   {
-    "objectID": "getstarted.html",
-    "href": "getstarted.html",
-    "title": "Get Started",
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
     "section": "",
-    "text": "AI Compression as-a-Service MVP6 review",
+    "text": "Edge Impulse Review\n\n\n\n\n\nEdge Impulse - A Comprehensive Review of the Leading Edge AI Platform\n\n\n\n\n\nAug 5, 2024\n\n\nNghi Vo\n\n\n\n\n\n\n\n\n\n\n\n\nTinyML as-a-Service Overview\n\n\n\n\n\nBrief overview of NinjaLABO’s TinyML as-a-Service / AI compression as-a-Service \n\n\n\n\n\nJul 17, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nIREE review\n\n\n\n\n\nBrief overview of IREE\n\n\n\n\n\nJul 12, 2024\n\n\nHaruka Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nImagimob Studio Review\n\n\n\n\n\nBrief overview of Imagimob Studio - A solution for Edge AI applications\n\n\n\n\n\nJul 8, 2024\n\n\nNghi Vo\n\n\n\n\n\n\n\n\n\n\n\n\nAI compression SaaS\n\n\n\n\n\nBrief overview of AI Compression\n\n\n\n\n\nJul 2, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nTinyML Use Cases\n\n\n\n\n\nUse cases for TinyML offered by NinjaLABO\n\n\n\n\n\nJul 2, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nAI Compression as-a-Service MVP6 review\n\n\n\n\n\n\nnews\n\n\n\nOur internal review of MVP6 usage\n\n\n\n\n\nMay 8, 2024\n\n\nNghi Vo\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
-      "Get Started"
+      "Get Started",
+      "Blog"
     ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "NinjaLABO is specialized at compressing AI models (DNN models) along with optimized tinyRuntime via our SaaS platform.",
+    "crumbs": [
+      "Get Started",
+      "About"
+    ]
+  },
+  {
+    "objectID": "blogs/edgeimplusestudio.html",
+    "href": "blogs/edgeimplusestudio.html",
+    "title": "Edge Impulse Review",
+    "section": "",
+    "text": "Edge Impulse has rapidly become a prominent player in the field of machine learning for edge devices. Tailored to cater to a wide range of users, from hobbyists to professional embedded engineers, Edge Impulse Studio offers a comprehensive platform that supports the development, training, and deployment of machine learning models directly onto edge devices.\n\n\nEdge Impulse Studio is a cloud-based platform designed to simplify the modeling and deployment process of machine learning models on edge devices. It’s structured to accommodate a variety of user levels, from beginners exploring ML for the first time to seasoned professionals who require advanced features for enterprise applications. The platform supports multiple subscription tiers: Community, Professional, and Enterprise, each unlocking different levels of functionality and support.\nThe architecture of Edge Impulse is modular and flexible, allowing users to integrate different data sources, customize processing pipelines, and deploy models on various devices. The platform is organized into “impulse blocks” that guide users through the ML workflow, from data acquisition to model deployment. This block-based approach ensures that each step is transparent and manageable, especially for users with lower level of expertise.\n\n\n\nEdge Impulse general architecture & integrations with existing ML tools\n\n\n\n\n\n\n\nEdge Impulse offers a robust suite of tools for data collection and management, making it easy to gather the data necessary for training models.\n\nMultiple Data Collection Methods: Users can collect data directly from devices, upload existing datasets, or even pull data from cloud storage solutions like Amazon S3.\nReal-Time Data Collection: The platform supports real-time data collection through phones, computers, or connected development boards. This versatility allows users to capture images, audio, and motion data using a web-based interface.\nData Explorer: This tool provides powerful data visualization capabilities, helping users to explore and understand their datasets. Enterprise users can also monitor model performance with new data and automate data processing, enhancing the platform’s scalability and efficiency.\nSynthetic Data Generation: While not fully tested, Edge Impulse offers tools to generate synthetic data, which can be valuable in scenarios where real-world data is scarce.\n\n\n\n\nEdge Impulse simplifies the machine learning process with a clear, step-by-step approach:\n\nImpulse Block Design: The platform’s ML workflow is divided into four block types: data extraction, data processing, training, and output. This modular approach ensures that users can easily follow the process and make adjustments as needed.\nDefault and Custom Processing Blocks: Users can choose from default data processing and training blocks or create custom models using tools like Keras. This flexibility is key for users with specific needs or those looking to experiment with novel approaches.\nComprehensive Visualization and Reporting: The platform provides a range of visualization tools, including feature importance analysis, confusion matrices, and performance profiles, which help users evaluate model accuracy and optimize performance.\n\n\n\n\nImpulse Block Design & Workflow\n\n\n\n\n\nOne of the standout features of Edge Impulse is its strong focus on edge devices:\n\nPerformance Profiling: The platform provides performance profiles for selected devices, detailing key metrics like RAM usage, disk space, and processing speed.\nDSP and Transformation Compilation: Users can compile digital signal processing (DSP) transformations and inference code specifically for their target devices, ensuring that models run efficiently on hardware with limited resources.\nHyperparameter Tuning: The platform offers tools for tuning model parameters and selecting the best-performing configurations for a given device, which is crucial for optimizing model deployment on resource-constrained environments.\n\n\n\n\n\nEdge Impulse is a versatile, well-designed platform for developing and deploying machine learning models on edge devices. With its extensive feature set, modular workflow, and strong support for real-time data collection, it caters to both beginners and advanced users alike.\nFor more detailed information, visit the Edge Impulse homepage and Edge Impulse documentation."
+  },
+  {
+    "objectID": "blogs/edgeimplusestudio.html#platform-overview",
+    "href": "blogs/edgeimplusestudio.html#platform-overview",
+    "title": "Edge Impulse Review",
+    "section": "",
+    "text": "Edge Impulse Studio is a cloud-based platform designed to simplify the modeling and deployment process of machine learning models on edge devices. It’s structured to accommodate a variety of user levels, from beginners exploring ML for the first time to seasoned professionals who require advanced features for enterprise applications. The platform supports multiple subscription tiers: Community, Professional, and Enterprise, each unlocking different levels of functionality and support.\nThe architecture of Edge Impulse is modular and flexible, allowing users to integrate different data sources, customize processing pipelines, and deploy models on various devices. The platform is organized into “impulse blocks” that guide users through the ML workflow, from data acquisition to model deployment. This block-based approach ensures that each step is transparent and manageable, especially for users with lower level of expertise.\n\n\n\nEdge Impulse general architecture & integrations with existing ML tools"
+  },
+  {
+    "objectID": "blogs/edgeimplusestudio.html#key-features",
+    "href": "blogs/edgeimplusestudio.html#key-features",
+    "title": "Edge Impulse Review",
+    "section": "",
+    "text": "Edge Impulse offers a robust suite of tools for data collection and management, making it easy to gather the data necessary for training models.\n\nMultiple Data Collection Methods: Users can collect data directly from devices, upload existing datasets, or even pull data from cloud storage solutions like Amazon S3.\nReal-Time Data Collection: The platform supports real-time data collection through phones, computers, or connected development boards. This versatility allows users to capture images, audio, and motion data using a web-based interface.\nData Explorer: This tool provides powerful data visualization capabilities, helping users to explore and understand their datasets. Enterprise users can also monitor model performance with new data and automate data processing, enhancing the platform’s scalability and efficiency.\nSynthetic Data Generation: While not fully tested, Edge Impulse offers tools to generate synthetic data, which can be valuable in scenarios where real-world data is scarce.\n\n\n\n\nEdge Impulse simplifies the machine learning process with a clear, step-by-step approach:\n\nImpulse Block Design: The platform’s ML workflow is divided into four block types: data extraction, data processing, training, and output. This modular approach ensures that users can easily follow the process and make adjustments as needed.\nDefault and Custom Processing Blocks: Users can choose from default data processing and training blocks or create custom models using tools like Keras. This flexibility is key for users with specific needs or those looking to experiment with novel approaches.\nComprehensive Visualization and Reporting: The platform provides a range of visualization tools, including feature importance analysis, confusion matrices, and performance profiles, which help users evaluate model accuracy and optimize performance.\n\n\n\n\nImpulse Block Design & Workflow\n\n\n\n\n\nOne of the standout features of Edge Impulse is its strong focus on edge devices:\n\nPerformance Profiling: The platform provides performance profiles for selected devices, detailing key metrics like RAM usage, disk space, and processing speed.\nDSP and Transformation Compilation: Users can compile digital signal processing (DSP) transformations and inference code specifically for their target devices, ensuring that models run efficiently on hardware with limited resources.\nHyperparameter Tuning: The platform offers tools for tuning model parameters and selecting the best-performing configurations for a given device, which is crucial for optimizing model deployment on resource-constrained environments."
+  },
+  {
+    "objectID": "blogs/edgeimplusestudio.html#conclusion",
+    "href": "blogs/edgeimplusestudio.html#conclusion",
+    "title": "Edge Impulse Review",
+    "section": "",
+    "text": "Edge Impulse is a versatile, well-designed platform for developing and deploying machine learning models on edge devices. With its extensive feature set, modular workflow, and strong support for real-time data collection, it caters to both beginners and advanced users alike.\nFor more detailed information, visit the Edge Impulse homepage and Edge Impulse documentation."
   },
   {
     "objectID": "blogs/aicompressionsaas.html",
