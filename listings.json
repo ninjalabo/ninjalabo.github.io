@@ -2,13 +2,13 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blogs/mvp6.html",
       "/blogs/edgeimplusestudio.html",
       "/blogs/tinymlaas.html",
       "/blogs/iree.html",
       "/blogs/imagimobstudio.html",
       "/blogs/aicompressionsaas.html",
-      "/blogs/tinymlusecases.html",
-      "/blogs/mvp6.html"
+      "/blogs/tinymlusecases.html"
     ]
   }
 ]
