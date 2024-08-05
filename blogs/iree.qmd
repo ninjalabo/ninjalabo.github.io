@@ -10,7 +10,7 @@ draft: false
 
 # IREE: End-to-End Compiler for ML Models
 
-![](../images/iree.png)
+![](images/iree.png)
 
 Compiling and optimizing ML models for multiple hardware platforms can be complex and time-consuming. One promising solution on our radar is the Intermediate Representation Execution Environment (IREE), which can significantly simplify this process. Here's an in-depth look at what I’ve learned about IREE.
 
