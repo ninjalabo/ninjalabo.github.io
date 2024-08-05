@@ -1,7 +1,9 @@
 ---
 title: "IREE review"
 description: "Brief overview of IREE"
-author: "Haruka Doyu  <<haruka.doyu@ninjalabo.ai>>"
+author: 
+ - name: "Haruka Doyu"
+   email: haruka.doyu@ninjalabo.ai
 date: "07/12/2024"
 draft: false
 ---
