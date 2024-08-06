@@ -1,63 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ninjalabo.github.io/performance.html</loc>
-    <lastmod>2024-08-06T04:46:21.074Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/getstarted.html</loc>
-    <lastmod>2024-08-06T04:45:35.246Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/blog.html</loc>
-    <lastmod>2024-08-06T04:45:35.234Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/blogs/tinymlaas.html</loc>
-    <lastmod>2024-08-06T04:45:35.246Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/blogs/edgeimplusestudio.html</loc>
-    <lastmod>2024-08-06T04:45:35.234Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/blogs/aicompressionsaas.html</loc>
-    <lastmod>2024-08-06T04:45:35.234Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/blogs/imagimobstudio.html</loc>
-    <lastmod>2024-08-06T04:45:35.246Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/about.html</loc>
-    <lastmod>2024-08-06T04:45:35.234Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/pricing.html</loc>
-    <lastmod>2024-08-06T04:45:35.426Z</lastmod>
+    <loc>https://ninjalabo.github.io/docs/architecture.html</loc>
+    <lastmod>2024-08-06T06:00:36.508Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/blogs/iree.html</loc>
-    <lastmod>2024-08-06T04:45:35.246Z</lastmod>
+    <lastmod>2024-08-06T06:00:36.508Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/ericsson_blog1.html</loc>
+    <lastmod>2024-08-06T06:00:36.496Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/blogs/tinymlusecases.html</loc>
-    <lastmod>2024-08-06T04:45:35.246Z</lastmod>
+    <lastmod>2024-08-06T06:00:36.508Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/imagimobstudio.html</loc>
+    <lastmod>2024-08-06T06:00:36.508Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/blogs/mvp6.html</loc>
-    <lastmod>2024-08-06T04:45:35.246Z</lastmod>
+    <lastmod>2024-08-06T06:00:36.508Z</lastmod>
   </url>
   <url>
-    <loc>https://ninjalabo.github.io/docs/architecture.html</loc>
-    <lastmod>2024-08-06T04:45:35.246Z</lastmod>
+    <loc>https://ninjalabo.github.io/getstarted.html</loc>
+    <lastmod>2024-08-06T06:00:36.508Z</lastmod>
   </url>
   <url>
-    <loc>https://ninjalabo.github.io/index.html</loc>
-    <lastmod>2024-08-06T04:45:35.426Z</lastmod>
+    <loc>https://ninjalabo.github.io/performance.html</loc>
+    <lastmod>2024-08-06T06:01:19.828Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blog.html</loc>
+    <lastmod>2024-08-06T06:00:36.496Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/pricing.html</loc>
+    <lastmod>2024-08-06T06:00:36.688Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/tutorials/runwalkthrough.html</loc>
-    <lastmod>2024-08-06T04:45:35.426Z</lastmod>
+    <lastmod>2024-08-06T06:00:36.688Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/index.html</loc>
+    <lastmod>2024-08-06T06:00:36.688Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/edgeimplusestudio.html</loc>
+    <lastmod>2024-08-06T06:00:36.496Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/aicompressionsaas.html</loc>
+    <lastmod>2024-08-06T06:00:36.496Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/about.html</loc>
+    <lastmod>2024-08-06T06:00:36.496Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/ericsson_blog2.html</loc>
+    <lastmod>2024-08-06T06:00:36.496Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/tinymlaas.html</loc>
+    <lastmod>2024-08-06T06:00:36.508Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/HU_Summer_2023.html</loc>
+    <lastmod>2024-08-06T06:00:36.496Z</lastmod>
   </url>
 </urlset>

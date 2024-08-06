@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Hiroshi Doyu">
-<meta name="dcterms.date" content="2024-07-02">
-<meta name="description" content="Brief overview of AI Compression">
+<meta name="dcterms.date" content="2024-08-06">
+<meta name="description" content="The TinyML as-a-Service project at Ericsson Research sets out to address the challenges that today limit the potential of machine learning (ML) paradigms at the edge of the embedded IoT world. In this post, the second post in our TinyML series, we take a closer look at the technical and non-technical challenges on our journey to making that happen. Learn more below.">
 
-<title>AI compression SaaS – NinjaLABO</title>
+<title>TinyML as-a-Service and the challenges of machine learning at the edge – NinjaLABO</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,8 +73,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta name="twitter:title" content="AI compression SaaS – NinjaLABO">
-<meta name="twitter:description" content="Brief overview of AI Compression">
+<meta name="twitter:title" content="TinyML as-a-Service and the challenges of machine learning at the edge – NinjaLABO">
+<meta name="twitter:description" content="The TinyML as-a-Service project at Ericsson Research sets out to address the challenges that today limit the potential of machine learning (ML) paradigms at the edge of the embedded IoT world. In this post, the second post in our TinyML series, we take a closer look at the technical and non-technical challenges on our journey to making that happen. Learn more below.">
 <meta name="twitter:image" content="https://ninjalabo.github.io/blogs/images/logo.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -160,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AI compression SaaS</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">TinyML as-a-Service and the challenges of machine learning at the edge</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -243,40 +243,23 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#ai-compression-as-a-service-revolutionizing-edge-computing" id="toc-ai-compression-as-a-service-revolutionizing-edge-computing" class="nav-link active" data-scroll-target="#ai-compression-as-a-service-revolutionizing-edge-computing">AI Compression as-a-Service: Revolutionizing Edge Computing</a>
-  <ul class="collapse">
-  <li><a href="#the-need-for-ai-compression" id="toc-the-need-for-ai-compression" class="nav-link" data-scroll-target="#the-need-for-ai-compression">The Need for AI Compression</a></li>
-  <li><a href="#benefits-of-ai-compression-as-a-service" id="toc-benefits-of-ai-compression-as-a-service" class="nav-link" data-scroll-target="#benefits-of-ai-compression-as-a-service">Benefits of AI Compression as-a-Service</a></li>
-  <li><a href="#tinyml-as-a-service-empowering-the-internet-of-things" id="toc-tinyml-as-a-service-empowering-the-internet-of-things" class="nav-link" data-scroll-target="#tinyml-as-a-service-empowering-the-internet-of-things">TinyML as-a-Service: Empowering the Internet of Things</a>
-  <ul class="collapse">
-  <li><a href="#key-features-of-tinymlaas" id="toc-key-features-of-tinymlaas" class="nav-link" data-scroll-target="#key-features-of-tinymlaas">Key Features of TinyMLaaS</a></li>
-  </ul></li>
-  <li><a href="#applications-and-use-cases" id="toc-applications-and-use-cases" class="nav-link" data-scroll-target="#applications-and-use-cases">Applications and Use Cases</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blogs/aicompressionsaas.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">AI compression SaaS</h1>
+<h1 class="title">TinyML as-a-Service and the challenges of machine learning at the edge</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Tech</div>
-    <div class="quarto-category">SaaS</div>
+    <div class="quarto-category">Ericsson</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Brief overview of AI Compression
+    The TinyML as-a-Service project at Ericsson Research sets out to address the challenges that today limit the potential of machine learning (ML) paradigms at the edge of the embedded IoT world. In this post, the second post in our TinyML series, we take a closer look at the technical and non-technical challenges on our journey to making that happen. Learn more below.
   </div>
 </div>
 
@@ -293,7 +276,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 2, 2024</p>
+      <p class="date">August 6, 2024</p>
     </div>
   </div>
   
@@ -305,55 +288,15 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="ai-compression-as-a-service-revolutionizing-edge-computing" class="level1">
-<h1>AI Compression as-a-Service: Revolutionizing Edge Computing</h1>
-<p>It has been nearly five years since I first wrote about <a href="https://www.ericsson.com/en/blog/2019/12/tinyml-as-a-service">TinyML</a> and <a href="https://www.ericsson.com/en/blog/2020/2/how-can-we-democratize-machine-learning-iot-devices">TinyML as-a-Service</a> (TinyMLaaS) on the <a href="https://www.ericsson.com/en">Ericsson</a> blog.</p>
-<p><img src="images/tinymlaas.png" class="img-fluid"></p>
-<p>In the rapidly evolving landscape of artificial intelligence (AI), efficiency and resource optimization are paramount. AI Compression as-a-Service (ACaaS) and <strong>TinyML as-a-Service</strong> (TinyMLaaS) emerge as transformative solutions that address the growing demand for deploying AI on resource-constrained devices. These services offer scalable, cost-effective, and high-performance AI capabilities, enabling a new wave of innovation in edge computing.</p>
-<section id="the-need-for-ai-compression" class="level2">
-<h2 class="anchored" data-anchor-id="the-need-for-ai-compression">The Need for AI Compression</h2>
-<p>AI models, especially deep learning networks, have become increasingly complex and resource-intensive. Traditional deployment of these models on edge devices, such as smartphones, IoT sensors, and embedded systems, poses significant challenges due to limited computational power, memory, and energy resources. AI compression techniques, including model pruning, quantization, and knowledge distillation, aim to reduce the size and computational requirements of AI models without significantly compromising their performance.</p>
-</section>
-<section id="benefits-of-ai-compression-as-a-service" class="level2">
-<h2 class="anchored" data-anchor-id="benefits-of-ai-compression-as-a-service">Benefits of AI Compression as-a-Service</h2>
-<ol type="1">
-<li><strong>Resource Optimization</strong>: ACaaS allows businesses to deploy AI models on edge devices with constrained resources, ensuring efficient utilization of hardware capabilities.</li>
-<li><strong>Scalability</strong>: By leveraging cloud-based AI compression services, organizations can scale their AI deployments seamlessly, catering to diverse applications and devices.</li>
-<li><strong>Cost-Effectiveness</strong>: Reduced model sizes and lower computational demands translate to cost savings in terms of hardware investment and energy consumption.</li>
-<li><strong>Faster Inference</strong>: Compressed models enable faster inference times, critical for real-time applications such as autonomous vehicles, surveillance, and industrial automation.</li>
-<li><strong>Enhanced Security</strong>: Processing data locally on edge devices minimizes data transfer to the cloud, enhancing data privacy and security.</li>
-</ol>
-</section>
-<section id="tinyml-as-a-service-empowering-the-internet-of-things" class="level2">
-<h2 class="anchored" data-anchor-id="tinyml-as-a-service-empowering-the-internet-of-things">TinyML as-a-Service: Empowering the Internet of Things</h2>
-<p>TinyMLaaS extends the concept of AI compression to the domain of microcontrollers and other ultra-low-power devices. By providing pre-trained, compressed AI models and tools for deploying them on TinyML platforms, this service empowers developers to create intelligent applications for the Internet of Things (IoT).</p>
-<section id="key-features-of-tinymlaas" class="level3">
-<h3 class="anchored" data-anchor-id="key-features-of-tinymlaas">Key Features of TinyMLaaS</h3>
-<ol type="1">
-<li><strong>Pre-trained Models</strong>: Access to a library of pre-trained, optimized models for various applications, from anomaly detection to image recognition.</li>
-<li><strong>Deployment Tools</strong>: Comprehensive toolchains for converting, optimizing, and deploying models on TinyML hardware, simplifying the development process.</li>
-<li><strong>Custom Solutions</strong>: Tailored AI solutions for specific use cases, ensuring optimal performance and efficiency.</li>
-<li><strong>Seamless Integration</strong>: Easy integration with existing IoT ecosystems, enabling rapid deployment and scaling of intelligent applications.</li>
-</ol>
-</section>
-</section>
-<section id="applications-and-use-cases" class="level2">
-<h2 class="anchored" data-anchor-id="applications-and-use-cases">Applications and Use Cases</h2>
-<ol type="1">
-<li><strong>Smart Home Devices</strong>: Enhancing the capabilities of home automation systems with intelligent voice assistants, security cameras, and energy management solutions.</li>
-<li><strong>Industrial IoT</strong>: Enabling predictive maintenance, quality control, and automation in manufacturing and logistics.</li>
-<li><strong>Healthcare</strong>: Providing real-time monitoring and diagnostics through wearable devices and smart medical equipment.</li>
-<li><strong>Agriculture</strong>: Facilitating precision farming with AI-powered sensors for soil health, weather conditions, and crop monitoring.</li>
-</ol>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>AI Compression as-a-Service and TinyML as-a-Service represent the next frontier in AI deployment, bridging the gap between advanced AI capabilities and resource-constrained edge devices. By offering scalable, efficient, and cost-effective solutions, these services empower a wide range of industries to harness the power of AI, driving innovation and transforming the way we interact with technology.</p>
-<p>As the demand for edge computing continues to grow, ACaaS and TinyMLaaS will play a crucial role in shaping the future of AI, making intelligent applications more accessible and ubiquitous than ever before.</p>
+<p><a href="https://www.ericsson.com/en/blog/2019/12/tinyml-as-a-service">https://www.ericsson.com/en/blog/2019/12/tinyml-as-a-service</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.ericsson.com/en/blog/2019/12/tinyml-as-a-service"><img src="images/eb1.png" class="img-fluid figure-img" alt="TinyML as-a-Service and the challenges of machine learning at the edge"></a></p>
+<figcaption>TinyML as-a-Service and the challenges of machine learning at the edge</figcaption>
+</figure>
+</div>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -788,7 +731,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <li>For pricing and sales inquiries <a href="mailto:sales@ninjalabo.ai" class="email">sales@ninjalabo.ai</a></li>
 <li>Ask tech questions <a href="mailto:help@ninjalabo.ai" class="email">help@ninjalabo.ai</a></li>
 </ul>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blogs/aicompressionsaas.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blogs/ericsson_blog1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

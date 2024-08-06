@@ -2,6 +2,10 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blogs/HU_Summer_2023.html",
+      "/blogs/about.html",
+      "/blogs/ericsson_blog1.html",
+      "/blogs/ericsson_blog2.html",
       "/blogs/mvp6.html",
       "/blogs/edgeimplusestudio.html",
       "/blogs/tinymlaas.html",
