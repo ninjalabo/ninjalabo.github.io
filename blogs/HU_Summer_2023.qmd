@@ -1,0 +1,20 @@
+---
+title: "TinyML as-a-Service with Helsinki University summer course 2023"
+description: "This is the main repository of Tiny Machine Learning as a Service project for Software Engineering Project course at University of Helsinki, summer 2023."
+author:
+ - name: "Hiroshi Doyu"
+   email: hiroshi.doyu@ninjalabo.ai
+date: "08/06/2024"
+draft: false
+categories:
+  - HU
+  - TinyMLaaS
+---
+
+![](images/12f6e393-7-image.png)
+
+
+[![TinyMLaaS](images/12f6e393-5-image-6.png)](https://tinymlaas.github.io/TinyMLaaS/)
+
+
+[Read more...](https://tinymlaas.github.io/TinyMLaaS/)
