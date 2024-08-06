@@ -7,8 +7,8 @@ author:
 date: "08/06/2024"
 draft: false
 categories:
-  - about
-  - team
+  - About
+  - Team
 ---
 
 # [What's NinjaLABO is and how it was started!](https://www.helsinki.fi/en/networks/helsinki-incubators/news/incubator-blogs-nexus-team-origami-aims-democratize-ai-making-it-cloud-free)
