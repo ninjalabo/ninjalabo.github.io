@@ -6,6 +6,9 @@ author:
    email: haruka.doyu@ninjalabo.ai
 date: "07/12/2024"
 draft: false
+categories:
+  - Tech
+  - Compiler
 ---
 
 # IREE: End-to-End Compiler for ML Models

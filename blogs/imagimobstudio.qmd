@@ -6,6 +6,10 @@ author:
    email: nghi.vo@ninjalabo.ai
 date: "07/08/2024"
 draft: false
+categories:
+  - Tech
+  - SaaS
+  - Competitor
 ---
 
 # Imagimob Studio Review - End-to-End platform for Edge AI applications

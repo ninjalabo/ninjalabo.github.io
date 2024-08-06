@@ -7,7 +7,8 @@ author:
 date: "08/06/2024"
 draft: false
 categories:
-  - news
+  - News
+  - MVP
 ---
 [![AI Compression as-a-Service MVP6 review](../images/mvp6.png)](https://youtu.be/f4RZZzzRwTw?si=t-u9twrbG-yVsAzT)
 

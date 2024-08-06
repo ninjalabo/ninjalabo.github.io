@@ -6,6 +6,9 @@ author:
    email: hiroshi.doyu@ninjalabo.ai
 date: "07/17/2024"
 draft: false
+categories:
+  - Tech
+  - SaaS
 ---
 
 ## What is TinyML / AI Compression

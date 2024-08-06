@@ -44,10 +44,11 @@ website:
         text: "Pricing"
       - href: blog.qmd
         text: "Blog"
-      - href: blog.qmd#category=news
+      - href: blog.qmd#category=News
         text: "News"
       - href: performance.ipynb
         text: "Performance"
+      - blogs/about.qmd
     right:
       - icon: twitter
         href: https://twitter.com/ninjalabo
@@ -63,8 +64,8 @@ website:
   sidebar:
       style: "docked"
       search: true
-      contents: 
-        - about.qmd
+      contents:
+        - blogs/about.qmd
         - getstarted.qmd
         - section: "Tutorials"
           contents: "tutorials/*.qmd"

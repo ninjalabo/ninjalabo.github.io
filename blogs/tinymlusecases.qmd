@@ -6,6 +6,10 @@ author:
    email: hiroshi.doyu@ninjalabo.ai
 date: "07/02/2024"
 draft: false
+categories:
+  - Tech
+  - SaaS
+  - UseCase
 ---
 # Harnessing the Power of AI with NinjaLABO's TinyML as-a-Service
 
