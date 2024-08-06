@@ -1,6 +1,6 @@
 ---
 title: "About"
-description: "What's NinjaLABO is and how it was started"
+description: "The team of experts in software development, research, and design is working to enable businesses to integrate AI & Machine Learning applications on a wide range of devices without relying on expensive networking & cloud computing services thanks to their solution, TinyML as a Service."
 author: 
  - name: "Hiroshi Doyu"
    email: hiroshi.doyu@ninjalabo.ai
@@ -13,6 +13,6 @@ categories:
 
 # [What's NinjaLABO is and how it was started!](https://www.helsinki.fi/en/networks/helsinki-incubators/news/incubator-blogs-nexus-team-origami-aims-democratize-ai-making-it-cloud-free)
 
-[![NinjaLABO's origin](https://www.helsinki.fi/assets/drupal/styles/16_10_xl/s3/media-image/Origami-2.jpg.webp)](https://www.helsinki.fi/en/networks/helsinki-incubators/news/incubator-blogs-nexus-team-origami-aims-democratize-ai-making-it-cloud-free)
+[![NinjaLABO's origin](images/Origami-2.jpg.webp)](https://www.helsinki.fi/en/networks/helsinki-incubators/news/incubator-blogs-nexus-team-origami-aims-democratize-ai-making-it-cloud-free)
 
 
