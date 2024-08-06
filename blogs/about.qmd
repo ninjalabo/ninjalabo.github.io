@@ -1,0 +1,18 @@
+---
+title: "About"
+description: "What's NinjaLABO is and how it was started"
+author: 
+ - name: "Hiroshi Doyu"
+   email: hiroshi.doyu@ninjalabo.ai
+date: "08/06/2024"
+draft: false
+categories:
+  - about
+  - team
+---
+
+# [What's NinjaLABO is and how it was started!](https://www.helsinki.fi/en/networks/helsinki-incubators/news/incubator-blogs-nexus-team-origami-aims-democratize-ai-making-it-cloud-free)
+
+[![NinjaLABO's origin](https://www.helsinki.fi/assets/drupal/styles/16_10_xl/s3/media-image/Origami-2.jpg.webp)](https://www.helsinki.fi/en/networks/helsinki-incubators/news/incubator-blogs-nexus-team-origami-aims-democratize-ai-making-it-cloud-free)
+
+
