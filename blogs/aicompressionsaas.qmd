@@ -6,6 +6,9 @@ author:
    email: hiroshi.doyu@ninjalabo.ai
 date: "07/02/2024"
 draft: false
+categories:
+  - Tech
+  - SaaS
 ---
 # AI Compression as-a-Service: Revolutionizing Edge Computing
 

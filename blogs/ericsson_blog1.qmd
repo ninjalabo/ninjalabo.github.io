@@ -1,0 +1,18 @@
+---
+title: "TinyML as-a-Service and the challenges of machine learning at the edge"
+description: "The TinyML as-a-Service project at Ericsson Research sets out to address the challenges that today limit the potential of machine learning (ML) paradigms at the edge of the embedded IoT world. In this post, the second post in our TinyML series, we take a closer look at the technical and non-technical challenges on our journey to making that happen. Learn more below."
+author:
+ - name: "Hiroshi Doyu"
+   email: hiroshi.doyu@ninjalabo.ai
+date: "08/06/2024"
+draft: false
+categories:
+  - Ericsson
+---
+
+[https://www.ericsson.com/en/blog/2019/12/tinyml-as-a-service](https://www.ericsson.com/en/blog/2019/12/tinyml-as-a-service)
+
+[![TinyML as-a-Service and the challenges of machine learning at the edge](images/eb1.png)](https://www.ericsson.com/en/blog/2019/12/tinyml-as-a-service)
+
+
+

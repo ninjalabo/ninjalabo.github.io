@@ -6,6 +6,10 @@ author:
    email: nghi.vo@ninjalabo.ai
 date: "08/05/2024"
 draft: false
+categories:
+  - Tech
+  - SaaS
+  - Competitor
 ---
 
 # Edge Impulse Review - Web service for Edge AI applications

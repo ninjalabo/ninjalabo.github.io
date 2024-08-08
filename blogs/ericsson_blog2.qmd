@@ -1,0 +1,18 @@
+---
+title: "How can we democratize machine learning on IoT devices?"
+description: "Making tiny machine learning widely available on edge IoT devices could prove to be a major leap in smart sensing across industries. Below, we plot the technical milestones to making that happen as part of our ongoing research into TinyML as-a-service."
+author: 
+ - name: "Hiroshi Doyu"
+   email: hiroshi.doyu@ninjalabo.ai
+date: "08/06/2024"
+draft: false
+categories:
+  - Ericsson
+---
+
+g[https://www.ericsson.com/en/blog/2020/2/how-can-we-democratize-machine-learning-iot-devices](https://www.ericsson.com/en/blog/2020/2/how-can-we-democratize-machine-learning-iot-devices)
+
+[![How can we democratize machine learning on IoT devices?](images/eb2.png)](https://www.ericsson.com/en/blog/2020/2/how-can-we-democratize-machine-learning-iot-devices)
+
+
+
