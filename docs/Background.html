@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Blog – NinjaLABO</title>
+<title>Background information and some literature sources – NinjaLABO</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,27 +23,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./performance.html" rel="next">
-<link href="./docs/architecture.html" rel="prev">
-<link href="./images/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,69 +67,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
-<meta name="twitter:title" content="Blog – NinjaLABO">
-<meta name="twitter:image" content="https://ninjalabo.github.io/images/logo.jpg">
+<link rel="stylesheet" href="../styles.css">
+<meta name="twitter:title" content="Background information and some literature sources – NinjaLABO">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://ninjalabo.github.io/docs/images/logo.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -144,8 +83,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/logo.jpg" alt="NinjaLABO log." class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -155,27 +94,27 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./getstarted.html" aria-current="page"> 
+    <a class="nav-link active" href="../getstarted.html" aria-current="page"> 
 <span class="menu-text">Get Started</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./pricing.html"> 
+    <a class="nav-link" href="../pricing.html"> 
 <span class="menu-text">Pricing</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html#category=News"> 
+    <a class="nav-link" href="../blog.html#category=News"> 
 <span class="menu-text">News</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./performance.html"> 
+    <a class="nav-link" href="../performance.html"> 
 <span class="menu-text">Performance</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blogs/about.html"> 
+    <a class="nav-link" href="../blogs/about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -218,7 +157,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./blog.html">Blog</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Background information and some literature sources</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -240,13 +179,13 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./blogs/about.html" class="sidebar-item-text sidebar-link">
+  <a href="../blogs/about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./getstarted.html" class="sidebar-item-text sidebar-link">
+  <a href="../getstarted.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Get Started</span></a>
   </div>
 </li>
@@ -261,7 +200,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorials/runwalkthrough.html" class="sidebar-item-text sidebar-link">
+  <a href="../tutorials/runwalkthrough.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Run Walkthrough</span></a>
   </div>
 </li>
@@ -278,7 +217,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/architecture.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/architecture.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Architecture</span></a>
   </div>
 </li>
@@ -286,13 +225,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./blog.html" class="sidebar-item-text sidebar-link active">
+  <a href="../blog.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Blog</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./performance.html" class="sidebar-item-text sidebar-link">
+  <a href="../performance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Performance</span></a>
   </div>
 </li>
@@ -302,14 +241,26 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(11)</span></div><div class="category" data-category="About">About <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Competitor">Competitor <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Compiler">Compiler <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ericsson">Ericsson <span class="quarto-category-count">(2)</span></div><div class="category" data-category="HU">HU <span class="quarto-category-count">(1)</span></div><div class="category" data-category="MVP">MVP <span class="quarto-category-count">(1)</span></div><div class="category" data-category="News">News <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SaaS">SaaS <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Team">Team <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Tech">Tech <span class="quarto-category-count">(6)</span></div><div class="category" data-category="TinyMLaaS">TinyMLaaS <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UseCase">UseCase <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#federated-learning-in-tinyml" id="toc-federated-learning-in-tinyml" class="nav-link active" data-scroll-target="#federated-learning-in-tinyml">Federated learning in TinyML</a></li>
+  <li><a href="#edge-impulse" id="toc-edge-impulse" class="nav-link" data-scroll-target="#edge-impulse">Edge Impulse</a></li>
+  <li><a href="#arduino-and-wiring" id="toc-arduino-and-wiring" class="nav-link" data-scroll-target="#arduino-and-wiring">Arduino and Wiring</a></li>
+  <li><a href="#mbed" id="toc-mbed" class="nav-link" data-scroll-target="#mbed">Mbed</a></li>
+  <li><a href="#ifttt" id="toc-ifttt" class="nav-link" data-scroll-target="#ifttt">IFTTT</a></li>
+  <li><a href="#sony-mesh" id="toc-sony-mesh" class="nav-link" data-scroll-target="#sony-mesh">Sony MESH</a></li>
+  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources">Sources:</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.dev/ninjalabo/ninjalabo.github.io/blob/main/docs/Background.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blog</h1>
+<h1 class="title">Background information and some literature sources</h1>
 </div>
 
 
@@ -326,416 +277,61 @@ window.Quarto = {
 </header>
 
 
+<section id="federated-learning-in-tinyml" class="level2">
+<h2 class="anchored" data-anchor-id="federated-learning-in-tinyml">Federated learning in TinyML</h2>
+<p>TinyML combines ML, mathematical optimization and tiny IoT embedded systems. TinyML is an effective method to analyze real-world data continuously, without the resource overhead of traditional ML hardware. <a href="https://ieeexplore.ieee.org/abstract/document/9767250">TinyFedTL</a> is the first open-sources implementation of federated learning (FL) in IoT containing microcontroller unit (MCU) and small CPU based devices. TinyFedTL uses transfer learning (TL) to demonstrate effective privacy-centric FL on devices with a small memory footprint (less than 1 MB). Researchers and engineers may open up data in various fields to gain insights for improving life quality or user experience without sacrificing privacy.</p>
+<p>While recent progress in ML frameworks has made it possible to perform inference with models using cheap, tiny devices, the training of the models is typically done separately on powerful computers. This provides the training process abundant CPU and memory resources to process large stored datasets. However, it is possible to train the machine learning model directly on the microcontroller and extend the training process with federated learning. <a href="https://www.mdpi.com/2079-9292/11/4/573">On-device training</a> has been illustrated with keyword spotting task. Experiments were conducted with real devices to characterize the learning behaviour and resource consumption for various hyperparameters and federated learning configurations. The observation was, that when training locally with fewer data, more frequent federated learning rounds reduced the training loss faster, but with the cost of higher bandwidth usage and longer training time. The results indicated that depending of the application, the trade-off between the requirements and the resource usage of the system needs to be determined.</p>
+</section>
+<section id="edge-impulse" class="level2">
+<h2 class="anchored" data-anchor-id="edge-impulse">Edge Impulse</h2>
+<p><a href="https://www.edgeimpulse.com/">Edge Impulse</a> is the leading development platform for ML on edge devices. It is free for developers. With Edge Impulse one can: - build advanced embedded ML apps - build custom datasets rapidly - collect sensor, audio or camera data from devices, files or cloud integrations - use automatic labeling tools such as object detection and audio segmentation - use Edge Impulse cloud infrastructure to set up and run reusable scripted operations that transform the input data on large sets of data in parallel - integrate deployment pipelines, CI/CD tools and custom data sources with open APIs - develop models and algortihms - with prebuilt DSP <a href="https://www.analog.com/en/design-center/landing-pages/001/beginners-guide-to-dsp.html">(Digital Signal Processors)</a> and ML blocks - hardware decisions can be made on device performance and Flash/RAM on every step - DSP feature extraction algorithms can be customized - custom machine learning models with <a href="https://keras.io/">Keras APIs</a> - use visualized insights on datasets, model performance and memory to fine-tune the production model - optimize models and algorithms - <a href="https://www.edgeimpulse.com/blog/introducing-the-eon-tuner-edge-impulses-new-automl-tool-for-embedded-machine-learning">EON TUNER</a> for finding balance between DSP configurations and model architecture, budgeted against memory and latency constraints - <a href="https://www.edgeimpulse.com/blog/introducing-eon">EON Compiler</a> for lighter and faster neural networks with equal accuracy - have full visibility across the whole ML pipeline - complete access to data attributes, DSP algorithms, model hyperparameters throughout whole development lifecycle - test model performance accurately - virtual cloud hardware simulation framework to get performance and accuracy metrics before deploying on any physical device - model performance can be evaluated with live classification - devices, automated ML pipeline testing, integration with the testing framework - deploy easily on any edge target - optimize source code by generating optimized embedded libraries and applications for any edge device - build ready-to-go binaries with selected development boards supported by Edge Impulse with special firmware - without OS or hardware dependencies and compile to nearly anything - make digital twin by re-deploying cloud-hosted ML projects to any hardware target on the fly - benefit from access and integrations to the leading hardware partner ecosystem from MCUs to MPUs and GPUs including acceleration - Arduino - Himax - OpenMV - Nvidia - Nordic semiconductor - Raspberry Pi - Silicon Labs - Sony - ST - Syntiant - Texas Instruments</p>
+</section>
+<section id="arduino-and-wiring" class="level2">
+<h2 class="anchored" data-anchor-id="arduino-and-wiring">Arduino and Wiring</h2>
+<p><a href="https://www.arduino.cc/">Arduino</a> is an open-source electronics platform intended for anyone to make interactive projects. It is based on easy-to-use hardware and software. <a href="https://www.arduino.cc/en/Guide/Introduction">Arduino boards can</a> - read inputs: light on a sensor, finger on a button, twitter message - turn inputs into outputs: activate motor, turn on a LED, publish something online - be instructed what to do by sending a set of instructions to the microcontroller on the board - using Arduino programming language (based on <a href="https://en.wikipedia.org/wiki/Wiring_%28development_platform%29">Wiring</a>) and the Arduino Software (IDE) (based on <a href="https://www.arduino.cc/education/visualization-with-arduino-and-processing">Processing</a>, an open source integrated development environment (IDE) like the Arduino IDE)</p>
+<p>Because of simple and accessible user experience Arduino has been used in thousands of projects and applications by a worldwide community of makers, students, hobbyists, artists, programmers and professionals to produce a vast amount of accessible knowledge. The product range includes products for IoT applications, wearable, 3D printing and embedded environments.</p>
+<p>The Arduino software - is easy-to-use for beginners but flexible enough for advanced users - runs on Mac, Windows and Linux - is used by teachers and students to build low cost scientific instruments to prove chemistry and physics principles and to get started with programming and robotics - is used by designers and architects to build interactive prototypes - is used by musicians and artists to build installations ansd to experiment with new musical instruments - is used by makers to build projects - can be used by anyone by following detailed instructions of a kit or sharing ideas online</p>
+<p>Arduino offers some pros over other microcontrollers and microcontroller platforms available: - inexpensive compared to other microcontrolle platforms; the least expensive version of the Arduino module can be assembled by hand, pre-assembled Arduino modules are also affordable - cross-platform, the Arduino software (IDE) runs on Windows, Macintosh OSX, Linux (most microcontroller systems are limited to Windows) - simple, clear programming environment - easy-to-use for beginners but flexible enough for advanced users - because it’s based on Processing programming environment, students learning to program in that environment will be familiar with how the Arduino IDE works - open source and extensible software, published as open source tools - the language is based on AVR-C programming and can be expanded through C++ libraries - AVR-C code can be added directly into the Arduino programs - open source and extensible hardware, with the plans of the Arduino boards published under a Creative Commons licence, so own versions of the module with extensions and improvements can be built by anyone</p>
+<p>Code can be developed in the <a href="https://cloud.arduino.cc/">Arduino Cloud</a> to build smart IoT projects. - smart devices can be connected within minutes - wide range of compatible devices, the Arduino Cloud provides the necessary code - nice dashbords can be created with mix and match customizable widgets to visualize real time or historical data or to control the device - projects can be controlled from anywhere in the world from any device, for example Alexa. - projects and libraries are always synced and up to date - all projects are cloud based and accessible from any device - data is always ecrypted and always belongs to the user (you) - is open and customizable, has flexible APIs to integrate and customize Cloud - all connected Arduino boards have a built-in crypto chip that makes them incredibly secure - sketches and project data are stored in AES 256-bit encrypted datastores - account security is protected with single use authentication codes - open and transparent data privacy terms and your data always belongs to you - has a wide range of resources - <a href="https://docs.arduino.cc/cloud/iot-cloud">tutorials</a> - <a href="https://docs.arduino.cc/arduino-cloud/getting-started/api-overview">APIs</a> - <a href="https://docs.arduino.cc/cloud/iot-cloud/tutorials/technical-reference">documentation</a></p>
+<p>Arduino’s <a href="https://en.wikipedia.org/wiki/Arduino#History">history</a> is interesting. The Arduino project was based on the developing platform Wiring created by Hernando Barragán as a Master’s thesis project at the Interaction Design Institute Ivrea (IDII) in Ivrea, Italy in 2003.</p>
+<p>Hernando has been developing Wiring ever since and now Wiring is an open source electronics prototyping platform composed of programming language, an integrated development environment (IDE) , and a single-board microcontroller. More about Wiring can be found <a href="http://wiring.org.co/">here</a>.</p>
+<p>Wiring offers new boards to customers in their <a href="https://eu.robotshop.com/">webshop</a>, but Wiring supports other boards directly, so Wiring IDE can be used on other boards as well (and more will be added). Thus Arduino board can be used with the Wiring IDE. Wiring can be <a href="http://wiring.org.co/download/">downloaded</a> for Linux, MacOS X and Windows.</p>
+</section>
+<section id="mbed" class="level2">
+<h2 class="anchored" data-anchor-id="mbed">Mbed</h2>
+<p><a href="https://en.wikipedia.org/wiki/Mbed">Mbed</a> is an open-source platform and operating system for internet-connected devices that are based on 32-bit <a href="https://www.arm.com/products/silicon-ip-cpu?families=cortex-m&amp;showall=true">ARM Cortex-M microcontrollers</a>. These devices are known as IoT devices. Mbed is collaboratively developed by <a href="https://en.wikipedia.org/wiki/Arm_(company)">Arm</a> and its tech partners.</p>
+<p>Mbed is free and open source IoT operating system with connectivity, security, storage, device management and ML. Mbed offers free development tools, thousands of code examples and support for hundreds of microcontrollers development boards, as described <a href="https://os.mbed.com/">here</a>. - Mbed has its own Mbed OS with - well-defined API to develop C++ applications - free tools and thousands of code examples, libraries and drivers for common components - built-in security stack - core components such as storage and connectivity options - Mbed Enabled hardware has many options - Compiler and IDE - Keil Studio Cloud - modern, zero-installation Mbed development environment in the browser - code high-lighting, WebUSB flash and debug and version control - Mbed Studio - an IDE for application and library development - single environment with everything to create, compile and debug Mbed programs - Mbed CLI - command line interface allows to integrate Mbed functionality into preferred editor or enhance automation setup - Security - Arm Mbed TLS provides comprehensive SSL/TLS solution - easy to include cryptographic and SSL/TLS capabilities in the software and embedded products - as an SSL library Arm Mbed TLS provides an intuitive API, readable source code and a minimal and highly configurable code footprint</p>
+</section>
+<section id="ifttt" class="level2">
+<h2 class="anchored" data-anchor-id="ifttt">IFTTT</h2>
+<p><a href="https://ifttt.com/">IFTTT</a> is a private company that runs online digital automation platforms and offers them as a service. IFTTT is short for If This Then That. IFTTT integrates apps, devices and services quick and easy. IFTTT makes tech <a href="https://ifttt.com/explore/new_to_ifttt">incompatibility easy to tackle</a>. Automating process is simple, the user chooses - trigger - action(s) - name for the applet and finish</p>
+<p>IFTTT has over 700 services ready (more added weekly) to be automated. Price range of the services is from 0€/forever to 5€/month. IFTTT provides a simple way to create for example a smart home: - make a user account and log in (can be done with Google or Facebook) - trigger: give Google Assistant a voice command “Hey Google, I need coffee” - action(s): coffee machine is turned on and when the coffee is ready, the coffee machine turns off - name the applet: “make coffee” and finish the applet</p>
+</section>
+<section id="sony-mesh" class="level2">
+<h2 class="anchored" data-anchor-id="sony-mesh">Sony MESH</h2>
+<p><a href="https://meshprj.com/en/">Sony MESH</a> is a Sony corporate startup that sells a range of colored blocks with different sensors and wireless connection to the IoT. It’s digital DIY platform to connect everyday objects into IoT and <a href="https://www.bundl.com/articles/examples-sony-launch-and-crowdfund-iot-corporate-startup">create your own projects</a>. - MESH blocks are wireless - Visual Coding App called Canvas simplifies programming and wiring with drag-and-drop functions - project can be connected to web services and popular smart gadgets like WeMo and Google Assistant voice activation - hardware projects can be expanded without expertise - IoT block in the project allows additions of smart features such as motion-sensitivity, remote control, orientation monitoring, voice commands, notifications, text messaging and more - projects can be connected to the internet instantly - project can be transformed into an IoT device, such as - Twitter alarm system - a voice-activated, data-logging, remote-controlled car - allows customization of smart gadgets - MESH is compatible with over 350 smart gadgets, home automation devices and web services on IFTTT - each IoT block has built-in IFTTT integration, so that it’s simple to add custom features on a smart gadget - MESH Motion and MESH Temperature &amp; Humidity used together allow addition of motion-activated, multi-room temperature monitoring to a smart device like Nest thermostat - allows to build own smart gadget - MESH GPIO is a simple interface for development boards like Arduino and Raspberry Pi or actuators like a DC motor - MESH GPIO integrates any smart devices or web services on IFTTT, incl. - Amazon Alexa for Echo - Google Assistant - Google Sheets - LIFX - Nest - Phillips Hue - Twitter - WeMo - over 350 more - MESH blocks use Bluetooth - MESH blocks are rechargeable, durable and compact</p>
+</section>
+<section id="sources" class="level2">
+<h2 class="anchored" data-anchor-id="sources">Sources:</h2>
+<p><a href="https://www.mdpi.com/2079-9292/11/4/573">On-Device Training of Machine Learning Models on Microcontrollers with Federated Learning</a></p>
+<p><a href="https://ieeexplore.ieee.org/abstract/document/9767250">TinyFedTL: Federated Transfer Learning on Ubiquitous Tiny IoT Devices</a></p>
+<p><a href="https://www.edgeimpulse.com/">Edge Impulse</a></p>
+<p><a href="https://www.analog.com/en/design-center/landing-pages/001/beginners-guide-to-dsp.html">Beginner’s Guide to DSP</a></p>
+<p><a href="https://keras.io/">Keras APIs</a></p>
+<p><a href="https://www.arduino.cc/">Arduino</a></p>
+<p><a href="https://www.arduino.cc/en/Guide">Arduino Getting started guide</a></p>
+<p><a href="https://projecthub.arduino.cc/">Arduino Tutorials on Arduino Project Hub</a></p>
+<p><a href="https://www.arm.com/products/development-tools/embedded-and-software/mbed-os">Mbed</a></p>
+<p><a href="https://os.mbed.com/">Mbed (product)</a></p>
+<p><a href="https://ifttt.com/">IFTTT</a></p>
+<p><a href="https://meshprj.com/en/">MESH blocks</a></p>
+<p><a href="http://wiring.org.co/">Wiring</a></p>
+<p><a href="https://eu.robotshop.com/">Wiring webshop</a></p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="HU,TinyMLaaS" data-listing-date-sort="1722902400000" data-listing-file-modified-sort="1723233774622" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<div class="thumbnail">
-<p><a href="./blogs/HU_Summer_2023.html" class="no-external"></a></p><a href="./blogs/HU_Summer_2023.html" class="no-external">
-<p class="card-img-top"><img src="blogs/images/12f6e393-7-image.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/HU_Summer_2023.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/HU_Summer_2023.html" class="no-external">TinyML as-a-Service with Helsinki University summer course 2023</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/HU_Summer_2023.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('HU'); return false;">
-HU
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('TinyMLaaS'); return false;">
-TinyMLaaS
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/HU_Summer_2023.html" class="no-external">This is the main repository of Tiny Machine Learning as a Service project for Software Engineering Project course at University of Helsinki, summer 2023.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/HU_Summer_2023.html" class="no-external">
-<div class="listing-date">
-Aug 6, 2024
-</div>
-<div class="listing-author">
-Hiroshi Doyu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="About,Team" data-listing-date-sort="1722902400000" data-listing-file-modified-sort="1723233774622" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<div class="thumbnail">
-<p><a href="./blogs/about.html" class="no-external"></a></p><a href="./blogs/about.html" class="no-external">
-<p class="card-img-top"><img src="blogs/images/Origami-2.jpg.webp" alt="NinjaLABO’s origin"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/about.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/about.html" class="no-external">About</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/about.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('About'); return false;">
-About
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Team'); return false;">
-Team
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/about.html" class="no-external">The team of experts in software development, research, and design is working to enable businesses to integrate AI &amp; Machine Learning applications on a wide range of devices without relying on expensive networking &amp; cloud computing services thanks to their solution, TinyML as a Service.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/about.html" class="no-external">
-<div class="listing-date">
-Aug 6, 2024
-</div>
-<div class="listing-author">
-Hiroshi Doyu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="Ericsson" data-listing-date-sort="1722902400000" data-listing-file-modified-sort="1723233774622" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="11">
-<div class="thumbnail">
-<p><a href="./blogs/ericsson_blog1.html" class="no-external"></a></p><a href="./blogs/ericsson_blog1.html" class="no-external">
-<p class="card-img-top"><img src="blogs/images/eb1.png" alt="TinyML as-a-Service and the challenges of machine learning at the edge"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/ericsson_blog1.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/ericsson_blog1.html" class="no-external">TinyML as-a-Service and the challenges of machine learning at the edge</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/ericsson_blog1.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Ericsson'); return false;">
-Ericsson
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/ericsson_blog1.html" class="no-external">The TinyML as-a-Service project at Ericsson Research sets out to address the challenges that today limit the potential of machine learning (ML) paradigms at the edge of the embedded IoT world. In this post, the second post in our TinyML series, we take a closer look at the technical and non-technical challenges on our journey to making that happen. Learn more below.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/ericsson_blog1.html" class="no-external">
-<div class="listing-date">
-Aug 6, 2024
-</div>
-<div class="listing-author">
-Hiroshi Doyu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="Ericsson" data-listing-date-sort="1722902400000" data-listing-file-modified-sort="1723233774622" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9">
-<div class="thumbnail">
-<p><a href="./blogs/ericsson_blog2.html" class="no-external"></a></p><a href="./blogs/ericsson_blog2.html" class="no-external">
-<p class="card-img-top"><img src="blogs/images/eb2.png" alt="How can we democratize machine learning on IoT devices?"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/ericsson_blog2.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/ericsson_blog2.html" class="no-external">How can we democratize machine learning on IoT devices?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/ericsson_blog2.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Ericsson'); return false;">
-Ericsson
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/ericsson_blog2.html" class="no-external">Making tiny machine learning widely available on edge IoT devices could prove to be a major leap in smart sensing across industries. Below, we plot the technical milestones to making that happen as part of our ongoing research into TinyML as-a-service.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/ericsson_blog2.html" class="no-external">
-<div class="listing-date">
-Aug 6, 2024
-</div>
-<div class="listing-author">
-Hiroshi Doyu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="News,MVP" data-listing-date-sort="1722902400000" data-listing-file-modified-sort="1723233774634" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
-<div class="thumbnail">
-<p><a href="./blogs/mvp6.html" class="no-external"></a></p><a href="./blogs/mvp6.html" class="no-external">
-<p class="card-img-top"><img src="images/mvp6.png" alt="AI Compression as-a-Service MVP6 review"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/mvp6.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/mvp6.html" class="no-external">AI Compression as-a-Service MVP6 review</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/mvp6.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('News'); return false;">
-News
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('MVP'); return false;">
-MVP
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/mvp6.html" class="no-external">Our internal review of MVP6 usage</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/mvp6.html" class="no-external">
-<div class="listing-date">
-Aug 6, 2024
-</div>
-<div class="listing-author">
-Nghi Vo
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="Tech,SaaS,Competitor" data-listing-date-sort="1722816000000" data-listing-file-modified-sort="1723233774622" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="636">
-<div class="thumbnail">
-<p><a href="./blogs/edgeimplusestudio.html" class="no-external"></a></p><a href="./blogs/edgeimplusestudio.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./blogs/edgeimplusestudio.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/edgeimplusestudio.html" class="no-external">Edge Impulse Review</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/edgeimplusestudio.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
-Tech
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('SaaS'); return false;">
-SaaS
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Competitor'); return false;">
-Competitor
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/edgeimplusestudio.html" class="no-external">Edge Impulse - A Comprehensive Review of the Leading Edge AI Platform</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/edgeimplusestudio.html" class="no-external">
-<div class="listing-date">
-Aug 5, 2024
-</div>
-<div class="listing-author">
-Nghi Vo
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="Tech,SaaS" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723233774634" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="815">
-<div class="thumbnail">
-<p><a href="./blogs/tinymlaas.html" class="no-external"></a></p><a href="./blogs/tinymlaas.html" class="no-external">
-<p class="card-img-top"><img src="blogs/images/tinymlaas_detail.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/tinymlaas.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/tinymlaas.html" class="no-external">TinyML as-a-Service Overview</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/tinymlaas.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
-Tech
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('SaaS'); return false;">
-SaaS
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/tinymlaas.html" class="no-external">Brief overview of NinjaLABO’s TinyML as-a-Service / AI compression as-a-Service </a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/tinymlaas.html" class="no-external">
-<div class="listing-date">
-Jul 17, 2024
-</div>
-<div class="listing-author">
-Hiroshi Doyu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="Tech,Compiler" data-listing-date-sort="1720742400000" data-listing-file-modified-sort="1723233774634" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="537">
-<div class="thumbnail">
-<p><a href="./blogs/iree.html" class="no-external"></a></p><a href="./blogs/iree.html" class="no-external">
-<p class="card-img-top"><img src="blogs/images/iree.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/iree.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/iree.html" class="no-external">IREE review</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/iree.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
-Tech
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Compiler'); return false;">
-Compiler
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/iree.html" class="no-external">Brief overview of IREE</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/iree.html" class="no-external">
-<div class="listing-date">
-Jul 12, 2024
-</div>
-<div class="listing-author">
-Haruka Doyu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-categories="Tech,SaaS,Competitor" data-listing-date-sort="1720396800000" data-listing-file-modified-sort="1723233774634" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="511">
-<div class="thumbnail">
-<p><a href="./blogs/imagimobstudio.html" class="no-external"></a></p><a href="./blogs/imagimobstudio.html" class="no-external">
-<p class="card-img-top"><img src="blogs/images/imagimob_logo.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/imagimobstudio.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/imagimobstudio.html" class="no-external">Imagimob Studio Review</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/imagimobstudio.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
-Tech
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('SaaS'); return false;">
-SaaS
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Competitor'); return false;">
-Competitor
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/imagimobstudio.html" class="no-external">Brief overview of Imagimob Studio - A solution for Edge AI applications</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/imagimobstudio.html" class="no-external">
-<div class="listing-date">
-Jul 8, 2024
-</div>
-<div class="listing-author">
-Nghi Vo
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="9" data-categories="Tech,SaaS" data-listing-date-sort="1719878400000" data-listing-file-modified-sort="1723233774622" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="522">
-<div class="thumbnail">
-<p><a href="./blogs/aicompressionsaas.html" class="no-external"></a></p><a href="./blogs/aicompressionsaas.html" class="no-external">
-<p class="card-img-top"><img src="blogs/images/tinymlaas.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/aicompressionsaas.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/aicompressionsaas.html" class="no-external">AI compression SaaS</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/aicompressionsaas.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
-Tech
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('SaaS'); return false;">
-SaaS
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/aicompressionsaas.html" class="no-external">Brief overview of AI Compression</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/aicompressionsaas.html" class="no-external">
-<div class="listing-date">
-Jul 2, 2024
-</div>
-<div class="listing-author">
-Hiroshi Doyu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="10" data-categories="Tech,SaaS,UseCase" data-listing-date-sort="1719878400000" data-listing-file-modified-sort="1723233774634" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="419">
-<div class="thumbnail">
-<p><a href="./blogs/tinymlusecases.html" class="no-external"></a></p><a href="./blogs/tinymlusecases.html" class="no-external">
-<p class="card-img-top"><img src="blogs/images/tinymlusecases.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/tinymlusecases.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/tinymlusecases.html" class="no-external">TinyML Use Cases</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/tinymlusecases.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
-Tech
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('SaaS'); return false;">
-SaaS
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('UseCase'); return false;">
-UseCase
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/tinymlusecases.html" class="no-external">Use cases for TinyML offered by NinjaLABO</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/tinymlusecases.html" class="no-external">
-<div class="listing-date">
-Jul 2, 2024
-</div>
-<div class="listing-author">
-Hiroshi Doyu
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1156,18 +752,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./docs/architecture.html" class="pagination-link" aria-label="Architecture">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Architecture</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./performance.html" class="pagination-link" aria-label="Performance">
-        <span class="nav-page-text">Performance</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1180,7 +764,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <li>For pricing and sales inquiries <a href="mailto:sales@ninjalabo.ai" class="email">sales@ninjalabo.ai</a></li>
 <li>Ask tech questions <a href="mailto:help@ninjalabo.ai" class="email">help@ninjalabo.ai</a></li>
 </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blog.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/ninjalabo/ninjalabo.github.io/blob/main/docs/Background.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
