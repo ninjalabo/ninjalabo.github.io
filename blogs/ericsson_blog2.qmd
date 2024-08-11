@@ -4,7 +4,7 @@ description: "Making tiny machine learning widely available on edge IoT devices 
 author: 
  - name: "Hiroshi Doyu"
    email: hiroshi.doyu@ninjalabo.ai
-date: "08/06/2024"
+date: "08/06/2020"
 draft: false
 categories:
   - Ericsson
