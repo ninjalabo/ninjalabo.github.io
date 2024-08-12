@@ -16,6 +16,16 @@
     --bs-btn-disabled-border-color: rgb(185, 185, 1);
 }
 
+@media (max-width: 991.98px) {
+    #quarto-content>* {
+        padding-top: 14px;
+    }
+}
+
+.navbar-nav.navbar-nav-scroll.ms-auto li .nav-link {
+    display: none;
+}
+
 .accented-text {
     color: rgb(185, 185, 1);
 }
@@ -79,25 +89,7 @@
 }
 
 /*Sub-banners*/
-.gray-banner {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    background-color: rgb(73, 73, 45);
-    text-align: center;
-    padding-left: 15%;
-    padding-right: 15%;
-    padding-bottom: 2rem;
-    font-size: 1rem;
-}
-.gray-banner h4 {
-    max-width: 60%;
-    margin-top: 3rem;
-    margin-bottom: 3rem;    
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.black-banner {
+.banner {
     margin-top: 1rem;
     margin-bottom: 1rem;
     text-align: center;
@@ -107,18 +99,26 @@
     font-size: 1rem;
 }
 
-.black-banner h1 {
+.banner h1 {
     max-width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
 
-.black-banner h4 {
+.banner h4 {
     max-width: 80%;
     margin-top: 3rem;
     margin-bottom: 3rem;    
     margin-left: auto;
     margin-right: auto;
+}
+
+.bg-yellow {
+    background-color: rgb(73, 73, 45);
+}
+
+.perf-container {
+    padding: 0;
 }
 
 /*Partners*/
