@@ -1,10 +1,11 @@
 ---
-title: "Blog"
+title: "TinyMLaaS"
 listing:
   sort: "date desc"
   contents:
-    - "blogs/*.qmd"
-    - "blogs/*.ipynb"
+      - "docs/*.qmd"
+      - "docs/*.md"
+      - "docs/*.ipynb"
   type: default
   categories: true
 ---
