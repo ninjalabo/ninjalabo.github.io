@@ -28,6 +28,15 @@
     color: #dee2e6;
 }
 
+.navbar {
+    padding: 20px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
 /*Footer*/
 .nav-footer-center li {
     text-align: left;

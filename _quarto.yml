@@ -69,6 +69,8 @@ website:
             href: https://github.com/ninjalabo/ninjalabo.github.io
           - text: Report a Bug
             href: https://github.com/ninjalabo/ninjalabo.github.io/issues
+      - href: getstarted.qmd
+        text: "<a href='getstarted.qmd' style='background-color: rgb(185, 185, 1); padding: 10px 20px; color: white; border: none; border-radius: 5px; text-decoration: None; margin-right: 10px;'>Try Free</a>"
 
   sidebar:
       style: "docked"
