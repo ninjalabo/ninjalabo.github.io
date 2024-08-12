@@ -2,7 +2,9 @@
 title: "Blog"
 listing:
   sort: "date desc"
-  contents: "blogs/*.qmd"
+  contents:
+    - "blogs/*.qmd"
+    - "blogs/*.ipynb"
   type: default
   categories: true
 ---
