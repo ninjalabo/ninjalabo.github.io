@@ -1,5 +1,23 @@
 [
   {
+    "listing": "/doc.html",
+    "items": [
+      "/docs/architecture.html",
+      "/docs/TinyML-MCU_README.html",
+      "/docs/TinyML-MCU_arduino_README.html",
+      "/docs/TinyML-backend_README.html",
+      "/docs/TinyML-frontend_README.html",
+      "/docs/TinyMLaaS_README.html",
+      "/docs/Architecture.html",
+      "/docs/Background.html",
+      "/docs/Demonstration.html",
+      "/docs/Next_steps.html",
+      "/docs/Software-Project-Summer-Kick-off.html",
+      "/docs/Technologies.html",
+      "/docs/Use_cases.html"
+    ]
+  },
+  {
     "listing": "/blog.html",
     "items": [
       "/blogs/pytorch_staticq.html",

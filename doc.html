@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Hiroshi Doyu">
-<meta name="dcterms.date" content="2024-08-06">
-<meta name="description" content="Making tiny machine learning widely available on edge IoT devices could prove to be a major leap in smart sensing across industries. Below, we plot the technical milestones to making that happen as part of our ongoing research into TinyML as-a-service.">
 
-<title>How can we democratize machine learning on IoT devices? – NinjaLABO</title>
+<title>TinyMLaaS – NinjaLABO</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -26,23 +23,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../images/favicon.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./blog.html" rel="next">
+<link href="./tutorials/runwalkthrough.html" rel="prev">
+<link href="./images/favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,12 +71,69 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-<link rel="stylesheet" href="../styles.css">
-<meta name="twitter:title" content="How can we democratize machine learning on IoT devices? – NinjaLABO">
-<meta name="twitter:description" content="Making tiny machine learning widely available on edge IoT devices could prove to be a major leap in smart sensing across industries. Below, we plot the technical milestones to making that happen as part of our ongoing research into TinyML as-a-service.">
-<meta name="twitter:image" content="https://ninjalabo.github.io/blogs/images/logo.jpg">
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+<meta name="twitter:title" content="TinyMLaaS – NinjaLABO">
+<meta name="twitter:image" content="https://ninjalabo.github.io/images/logo.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -86,8 +144,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/logo.jpg" alt="NinjaLABO log." class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -97,27 +155,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../getstarted.html" aria-current="page"> 
+    <a class="nav-link active" href="./getstarted.html" aria-current="page"> 
 <span class="menu-text">Get Started</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../pricing.html"> 
+    <a class="nav-link" href="./pricing.html"> 
 <span class="menu-text">Pricing</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../blog.html"> 
+    <a class="nav-link" href="./blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../blog.html#category=News"> 
+    <a class="nav-link" href="./blog.html#category=News"> 
 <span class="menu-text">News</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../performance.html"> 
+    <a class="nav-link" href="./performance.html"> 
 <span class="menu-text">Performance</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../blogs/about.html"> 
+    <a class="nav-link" href="./blogs/about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -160,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">How can we democratize machine learning on IoT devices?</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./doc.html">TinyMLaaS</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -182,13 +240,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../blogs/about.html" class="sidebar-item-text sidebar-link">
+  <a href="./blogs/about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../getstarted.html" class="sidebar-item-text sidebar-link">
+  <a href="./getstarted.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Get Started</span></a>
   </div>
 </li>
@@ -203,7 +261,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/runwalkthrough.html" class="sidebar-item-text sidebar-link">
+  <a href="./tutorials/runwalkthrough.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Run Walkthrough</span></a>
   </div>
 </li>
@@ -211,19 +269,19 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../doc.html" class="sidebar-item-text sidebar-link">
+  <a href="./doc.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">TinyMLaaS</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../blog.html" class="sidebar-item-text sidebar-link">
+  <a href="./blog.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Blog</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../performance.html" class="sidebar-item-text sidebar-link">
+  <a href="./performance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Performance</span></a>
   </div>
 </li>
@@ -232,42 +290,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(13)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">How can we democratize machine learning on IoT devices?</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Ericsson</div>
-  </div>
-  </div>
-
-<div>
-  <div class="description">
-    Making tiny machine learning widely available on edge IoT devices could prove to be a major leap in smart sensing across industries. Below, we plot the technical milestones to making that happen as part of our ongoing research into TinyML as-a-service.
-  </div>
+<h1 class="title">TinyMLaaS</h1>
 </div>
+
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Hiroshi Doyu <a href="mailto:hiroshi.doyu@ninjalabo.ai" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 6, 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -277,17 +315,303 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>g<a href="https://www.ericsson.com/en/blog/2020/2/how-can-we-democratize-machine-learning-iot-devices">https://www.ericsson.com/en/blog/2020/2/how-can-we-democratize-machine-learning-iot-devices</a></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://www.ericsson.com/en/blog/2020/2/how-can-we-democratize-machine-learning-iot-devices"><img src="images/eb2.png" class="img-fluid figure-img" alt="How can we democratize machine learning on IoT devices?"></a></p>
-<figcaption>How can we democratize machine learning on IoT devices?</figcaption>
-</figure>
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1723459862660" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="thumbnail">
+<p><a href="./docs/architecture.html" class="no-external"></a></p><a href="./docs/architecture.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./docs/architecture.html" class="no-external"></a></p>
 </div>
-
-
-
-</main> <!-- /main -->
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./docs/architecture.html" class="no-external">Architecture</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./docs/architecture.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./docs/architecture.html" class="no-external"></a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./docs/architecture.html" class="no-external"></a></p><a href="./docs/architecture.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1723459862660" data-listing-reading-time-sort="2" data-listing-word-count-sort="377">
+<div class="thumbnail">
+<p><a href="./docs/TinyML-MCU_README.html" class="no-external"></a></p><a href="./docs/TinyML-MCU_README.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./docs/TinyML-MCU_README.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./docs/TinyML-MCU_README.html" class="no-external">TinyML-MCU</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./docs/TinyML-MCU_README.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./docs/TinyML-MCU_README.html" class="no-external">Code for TinyMLaaS MCU devices.</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./docs/TinyML-MCU_README.html" class="no-external"></a></p><a href="./docs/TinyML-MCU_README.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1723459862660" data-listing-reading-time-sort="2" data-listing-word-count-sort="383">
+<div class="thumbnail">
+<p><a href="./docs/TinyML-MCU_arduino_README.html" class="no-external"></a></p><a href="./docs/TinyML-MCU_arduino_README.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./docs/TinyML-MCU_arduino_README.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./docs/TinyML-MCU_arduino_README.html" class="no-external">Arduino sketch</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./docs/TinyML-MCU_arduino_README.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./docs/TinyML-MCU_arduino_README.html" class="no-external">This is a arduino sktech for image recognition with the help of machine learning. It has been designed to be used on the Arduino Nano 33 BLE with the OV7675 camera module.</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./docs/TinyML-MCU_arduino_README.html" class="no-external"></a></p><a href="./docs/TinyML-MCU_arduino_README.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1723459862660" data-listing-reading-time-sort="1" data-listing-word-count-sort="178">
+<div class="thumbnail">
+<p><a href="./docs/TinyML-backend_README.html" class="no-external"></a></p><a href="./docs/TinyML-backend_README.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./docs/TinyML-backend_README.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./docs/TinyML-backend_README.html" class="no-external">TinyML-backend</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./docs/TinyML-backend_README.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./docs/TinyML-backend_README.html" class="no-external">This is the backend for the TinyMLaaS project.</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./docs/TinyML-backend_README.html" class="no-external"></a></p><a href="./docs/TinyML-backend_README.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-listing-file-modified-sort="1723459862660" data-listing-reading-time-sort="1" data-listing-word-count-sort="198">
+<div class="thumbnail">
+<p><a href="./docs/TinyML-frontend_README.html" class="no-external"></a></p><a href="./docs/TinyML-frontend_README.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./docs/TinyML-frontend_README.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./docs/TinyML-frontend_README.html" class="no-external">TinyML-frontend</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./docs/TinyML-frontend_README.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./docs/TinyML-frontend_README.html" class="no-external">frontend for TinyMLaaS.</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./docs/TinyML-frontend_README.html" class="no-external"></a></p><a href="./docs/TinyML-frontend_README.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-listing-file-modified-sort="1723459862660" data-listing-reading-time-sort="1" data-listing-word-count-sort="184">
+<div class="thumbnail">
+<p><a href="./docs/TinyMLaaS_README.html" class="no-external"></a></p><a href="./docs/TinyMLaaS_README.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./docs/TinyMLaaS_README.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./docs/TinyMLaaS_README.html" class="no-external">TinyMLaaS-main</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./docs/TinyMLaaS_README.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./docs/TinyMLaaS_README.html" class="no-external">This is the main repository of Tiny Machine Learning as a Service project for Software Engineering Project course at University of Helsinki, summer 2023.</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./docs/TinyMLaaS_README.html" class="no-external"></a></p><a href="./docs/TinyMLaaS_README.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="6" data-listing-file-modified-sort="1723459862648" data-listing-reading-time-sort="2" data-listing-word-count-sort="232">
+<div class="thumbnail">
+<p><a href="./docs/Architecture.html" class="no-external"></a></p><a href="./docs/Architecture.html" class="no-external">
+<p class="card-img-top"><img src="docs/images/block_diagram.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./docs/Architecture.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./docs/Architecture.html" class="no-external">Architecture</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./docs/Architecture.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./docs/Architecture.html" class="no-external">This page contains general information about the architechture and how each component is related to each other.</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./docs/Architecture.html" class="no-external"></a></p><a href="./docs/Architecture.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="7" data-listing-file-modified-sort="1723459862648" data-listing-reading-time-sort="12" data-listing-word-count-sort="2279">
+<div class="thumbnail">
+<p><a href="./docs/Background.html" class="no-external"></a></p><a href="./docs/Background.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./docs/Background.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./docs/Background.html" class="no-external">Background information and some literature sources</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./docs/Background.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./docs/Background.html" class="no-external">TinyML combines ML, mathematical optimization and tiny IoT embedded systems. TinyML is an effective method to analyze real-world data continuously, without the resource…</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./docs/Background.html" class="no-external"></a></p><a href="./docs/Background.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="8" data-listing-file-modified-sort="1723459862648" data-listing-reading-time-sort="4" data-listing-word-count-sort="624">
+<div class="thumbnail">
+<p><a href="./docs/Demonstration.html" class="no-external"></a></p><a href="./docs/Demonstration.html" class="no-external">
+<p class="card-img-top"><img src="docs/images/add_new_bridge.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./docs/Demonstration.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./docs/Demonstration.html" class="no-external">Demonstratation of TinyMLaaS WebApp</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./docs/Demonstration.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./docs/Demonstration.html" class="no-external">This document will demonstrate the steps in TinyMLaaS app. Some pages have dependencies on other pages, so go through pages from top to bottom is recommended at the start.</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./docs/Demonstration.html" class="no-external"></a></p><a href="./docs/Demonstration.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="9" data-listing-file-modified-sort="1723459862648" data-listing-reading-time-sort="7" data-listing-word-count-sort="1395">
+<div class="thumbnail">
+<p><a href="./docs/Next_steps.html" class="no-external"></a></p><a href="./docs/Next_steps.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./docs/Next_steps.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./docs/Next_steps.html" class="no-external">Suggestions for further development</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./docs/Next_steps.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./docs/Next_steps.html" class="no-external">The TinyMLaaS and TinyML-backend repositories both contain a branch called <code>dockerize_tensorflow</code>. These branches contain unfinished development for a feature where the…</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./docs/Next_steps.html" class="no-external"></a></p><a href="./docs/Next_steps.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="10" data-listing-file-modified-sort="1723459862660" data-listing-reading-time-sort="2" data-listing-word-count-sort="249">
+<div class="thumbnail">
+<p><a href="./docs/Software-Project-Summer-Kick-off.html" class="no-external"></a></p><a href="./docs/Software-Project-Summer-Kick-off.html" class="no-external">
+<p class="card-img-top"><img src="docs/Software-Project-Summer-Kick-off_files/figure-html/12f6e393-7-image.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./docs/Software-Project-Summer-Kick-off.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./docs/Software-Project-Summer-Kick-off.html" class="no-external">Project starting point</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./docs/Software-Project-Summer-Kick-off.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./docs/Software-Project-Summer-Kick-off.html" class="no-external">This was a successor of the previous software project in Winter. Here are the info:</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./docs/Software-Project-Summer-Kick-off.html" class="no-external"></a></p><a href="./docs/Software-Project-Summer-Kick-off.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="11" data-listing-file-modified-sort="1723459862660" data-listing-reading-time-sort="5" data-listing-word-count-sort="895">
+<div class="thumbnail">
+<p><a href="./docs/Technologies.html" class="no-external"></a></p><a href="./docs/Technologies.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./docs/Technologies.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./docs/Technologies.html" class="no-external">Technological choices</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./docs/Technologies.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./docs/Technologies.html" class="no-external">This document is meant to answer why certain technological choices have been made and why certain frameworks have been chosen.</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./docs/Technologies.html" class="no-external"></a></p><a href="./docs/Technologies.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="12" data-listing-file-modified-sort="1723459862660" data-listing-reading-time-sort="2" data-listing-word-count-sort="263">
+<div class="thumbnail">
+<p><a href="./docs/Use_cases.html" class="no-external"></a></p><a href="./docs/Use_cases.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./docs/Use_cases.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./docs/Use_cases.html" class="no-external">Use case scenarios</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./docs/Use_cases.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./docs/Use_cases.html" class="no-external">As a security-conscious homeowner, I want to use TinyML(*) for human-detection to monitor my home and receive alerts when unexpected activity is detected, so that I can take…</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./docs/Use_cases.html" class="no-external"></a></p><a href="./docs/Use_cases.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -708,6 +1032,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./tutorials/runwalkthrough.html" class="pagination-link" aria-label="Run Walkthrough">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Run Walkthrough</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./blog.html" class="pagination-link" aria-label="Blog">
+        <span class="nav-page-text">Blog</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -720,7 +1056,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <li>For pricing and sales inquiries <a href="mailto:sales@ninjalabo.ai" class="email">sales@ninjalabo.ai</a></li>
 <li>Ask tech questions <a href="mailto:help@ninjalabo.ai" class="email">help@ninjalabo.ai</a></li>
 </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blogs/ericsson_blog2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/doc.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
