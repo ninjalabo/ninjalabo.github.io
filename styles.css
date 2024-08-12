@@ -124,6 +124,7 @@
 .partner-card {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    padding-top: 0.5rem;
     display: flex;
     align-items: center;
     background-color: rgb(255, 255, 255);
