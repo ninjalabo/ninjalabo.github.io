@@ -1,0 +1,11 @@
+---
+title: "TinyMLaaS"
+listing:
+  sort: "date desc"
+  contents:
+      - "docs/*.qmd"
+      - "docs/*.md"
+      - "docs/*.ipynb"
+  type: default
+  categories: true
+---
