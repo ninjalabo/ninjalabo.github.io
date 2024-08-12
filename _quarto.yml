@@ -40,15 +40,24 @@ website:
     left:
       - href: getstarted.qmd
         text: "Get Started"
+      - text: "Resources"
+        menu: 
+          - href: performance.ipynb
+            text: "Performance 🚀"
+          - href: tutorials/runwalkthrough.qmd
+            text: "Tutorials"
+          - href: doc.qmd
+            text: "Documentations"
+      - text: "Company"
+        menu: 
+          - href: blogs/about.qmd
+            text: "About"
+          - href: blog.qmd#category=News
+            text: "News 🌟"
+          - href: blog.qmd
+            text: "Blogs"
       - href: pricing.qmd
         text: "Pricing"
-      - href: blog.qmd
-        text: "Blog"
-      - href: blog.qmd#category=News
-        text: "News"
-      - href: performance.ipynb
-        text: "Performance"
-      - blogs/about.qmd
     right:
       - icon: twitter
         href: https://twitter.com/ninjalabo
