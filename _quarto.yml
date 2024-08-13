@@ -83,7 +83,9 @@ website:
         - section: "Tutorials"
           contents: "tutorials/*.qmd"
         - section: "Documentation"
-          contents: "docs/*"
+          contents: 
+          - section: "TinyMLaaS - summer 2023"
+            contents: "docs/tinymlaas/*"
         # - doc.qmd
         - blog.qmd
         - performance.ipynb
