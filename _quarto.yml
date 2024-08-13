@@ -46,7 +46,7 @@ website:
             text: "Performance 🚀"
           - href: tutorials/runwalkthrough.qmd
             text: "Tutorials"
-          - href: doc.qmd
+          - href: getstarted.qmd
             text: "Documentations"
       - text: "Company"
         menu: 
