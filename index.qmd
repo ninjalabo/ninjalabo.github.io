@@ -35,6 +35,13 @@ Run by [NinjaLABO](https://ninjalabo.ai).
 ::: {.panel-tabset}
 
 ## Performance
+::: {.perf-text}
+Our latest technology shows significant increase from baseline Pytorch runtime in terms of:
+
+🚀 Model size  
+🚀 Running time  
+🚀 without largely lowering accuracy
+:::
 <div class="perf-container">
   <img src="images/perf_bar.png" style="width: 100%;" alt="Performance Barchart">
 </div>

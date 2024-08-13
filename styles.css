@@ -119,8 +119,35 @@
     background-color: rgb(73, 73, 45);
 }
 
+/* Performance */
 .perf-container {
     padding: 0;
+}
+
+.panel-tabset {
+    background-color: #222;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.panel-tabset * {
+    border: 0;
+}
+.panel-tabset .nav-link.active {
+    color: rgb(185, 185, 1);
+    border: 0;
+    border-bottom: solid 2px rgb(185, 185, 1);
+}
+.panel-tabset .tab-content {
+    margin: 0;
+    background-color: #222;
+}
+.panel-tabset .tab-pane {
+    padding: 10px;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
 }
 
 /*Partners*/
@@ -238,7 +265,7 @@
 }
 
 .pricing-card.accented {
-    background-color: rgb(184, 184, 107);;
+    background-color: rgb(184, 184, 107);
 }
 
 @media screen and (max-width: 900px) {
