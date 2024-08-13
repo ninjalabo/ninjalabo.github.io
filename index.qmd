@@ -22,7 +22,7 @@ hide-description: true
 :::
 
 :::
-<video id="myVideo" autoplay muted playsinline loop controls style="width: 70%; height: auto; display: block; margin: 0 auto;">
+<video id="myVideo" autoplay muted playsinline loop controls style="width: 70%; height: auto; display: block; margin: 0 auto; border-radius: 1rem; padding: 0; margin-top: 50px;">
   <source src="images/opening.mp4" type="video/mp4">
 </video>
 
@@ -30,11 +30,23 @@ hide-description: true
 Run by [NinjaLABO](https://ninjalabo.ai).
 :::
 
-::: {.gray-banner}
-Performance
+::: {.banner .bg-yellow}
+# Latest Updates!
+::: {.panel-tabset}
+
+## Performance
+<div class="perf-container">
+  <img src="images/perf_bar.png" style="width: 100%;" alt="Performance Barchart">
+</div>
+
+## Progress
+
+## Blogs
+
+:::
 :::
 
-::: {.black-banner}
+::: {.banner}
 # [NinjaLABO]{.accented-text} is a startup aiming to democratize AI accessibility.
 
 #### All AI is running on big cloud GPUs, which are not accessible in some harsh environments. We are bringing AI to the very edge without Cloud dependency, "Cloudless AI".
@@ -75,7 +87,7 @@ We are a new frontier in the fields of AI and ML which allows for ML models to b
 :::
 
 
-::: {.gray-banner}
+::: {.banner .bg-yellow}
 # Partners
 ::: {.partner-grid}
 ::: {.partner-card}
@@ -104,6 +116,6 @@ We are a new frontier in the fields of AI and ML which allows for ML models to b
 :::
 :::
 
-::: {.black-banner}
+::: {.banner}
 [Get Started](http://51.15.135.247:8501/){#btn-get-started .btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
 :::

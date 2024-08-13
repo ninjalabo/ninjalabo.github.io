@@ -56,6 +56,8 @@
 .hero-title {
     margin-top: 1rem;
     margin-bottom: 2rem;
+    padding-left: 15%;
+    padding-right: 15%;
     text-align: center;
 }
 
@@ -69,7 +71,7 @@
 }
 
 .hero-title h4 {
-    max-width: 60%;
+    max-width: 80%;
     margin-top: 3rem;
     margin-bottom: 3rem;    
     margin-left: auto;
@@ -152,7 +154,7 @@
     text-align: start;
     padding: 3rem;
     background-color: rgb(66, 65, 65);
-    border-radius: 2rem;
+    border-radius: 1rem;
     display: flex;
     flex-flow: row;
     gap: 2rem;
