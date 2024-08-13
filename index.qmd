@@ -22,7 +22,7 @@ hide-description: true
 :::
 
 :::
-<video id="myVideo" autoplay muted playsinline loop controls style="width: 70%; height: auto; display: block; margin: 0 auto;">
+<video id="myVideo" autoplay muted playsinline loop controls style="width: 70%; height: auto; display: block; margin: 0 auto; border-radius: 1rem; padding: 0; margin-top: 50px;">
   <source src="images/opening.mp4" type="video/mp4">
 </video>
 
@@ -30,36 +30,40 @@ hide-description: true
 Run by [NinjaLABO](https://ninjalabo.ai).
 :::
 
-::: {.gray-banner}
-# Partners
-::: {.partner-grid}
-::: {.partner-card}
-![](images/partners/aalto_center_logo.png)
+::: {.banner .bg-yellow}
+# Latest Updates!
+::: {.panel-tabset}
+
+## Performance
+::: {.perf-text}
+Our latest technology shows significant increase from baseline Pytorch runtime in terms of:
+
+🚀 Model size  
+🚀 Running time  
+🚀 without largely lowering accuracy
+:::
+<div class="perf-container">
+  <img src="images/perf_bar.png" style="width: 100%;" alt="Performance Barchart">
+</div>
+
+## Progress
+::: {.perf-text}
+We are constantly working to improve our technology! See our latest progress in [Performance page](performance.ipynb).
+:::
+<div class="perf-container">
+  <img src="images/perf_progress.png" style="width: 100%;" alt="Performance Progress">
+</div>
+
+## Blogs
+Check out our [latest blogs](blog.qmd) for exciting updates or up-to-date information about edge AI technology!
+
+```{=html}
+<iframe width="100%" height="500" src="https://ninjalabo.ai/blog.html" scrolling="no" title="NinjaLABO Blogs" disabled></iframe>
+```
+:::
 :::
 
-::: {.partner-card}
-![](images/partners/helsinki_incubators_logo.png)
-:::
-
-::: {.partner-card}
-![](images/partners/esa_logo.png)
-:::
-
-::: {.partner-card}
-![](images/partners/dlr_logo.png)
-:::
-
-::: {.partner-card}
-![](images/partners/ohb_logo.png)
-:::
-
-::: {.partner-card}
-![](images/partners/enter_espoo_logo.jpg)
-:::
-:::
-:::
-
-::: {.black-banner}
+::: {.banner}
 # [NinjaLABO]{.accented-text} is a startup aiming to democratize AI accessibility.
 
 #### All AI is running on big cloud GPUs, which are not accessible in some harsh environments. We are bringing AI to the very edge without Cloud dependency, "Cloudless AI".
@@ -97,5 +101,38 @@ We are a new frontier in the fields of AI and ML which allows for ML models to b
 </div>
 
 :::
-[Get Started](http://51.15.135.247:8501/){#btn-get-started .btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
+:::
+
+
+::: {.banner .bg-yellow}
+# Partners
+::: {.partner-grid}
+::: {.partner-card}
+![](images/partners/aalto_center_logo.png)
+:::
+
+::: {.partner-card}
+![](images/partners/helsinki_incubators_logo.png)
+:::
+
+::: {.partner-card}
+![](images/partners/esa_logo.png)
+:::
+
+::: {.partner-card}
+![](images/partners/dlr_logo.png)
+:::
+
+::: {.partner-card}
+![](images/partners/ohb_logo.png)
+:::
+
+::: {.partner-card}
+![](images/partners/enter_espoo_logo.jpg)
+:::
+:::
+:::
+
+::: {.banner}
+[Get Started](getstarted.qmd){#btn-get-started .btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
 :::

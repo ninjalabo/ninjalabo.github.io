@@ -4,7 +4,7 @@ description: "The TinyML as-a-Service project at Ericsson Research sets out to a
 author:
  - name: "Hiroshi Doyu"
    email: hiroshi.doyu@ninjalabo.ai
-date: "08/06/2024"
+date: "08/06/2019"
 draft: false
 categories:
   - Ericsson

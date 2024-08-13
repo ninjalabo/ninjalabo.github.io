@@ -5,7 +5,7 @@ section-divs: false
 toc: false
 editor: source
 ---
-::: {.black-banner}
+::: {.banner}
 # Pricing
 
 ::: {.pricing-grid}
@@ -16,7 +16,7 @@ editor: source
 ✔ 1 model  
 ✔ 1 month access
 :::
-[Select]{.btn-action-primary .btn-action .btn .btn-outline-dark .btn-lg role="button"}
+[Select](https://forms.gle/zKjaeEzqoVu7a9vQ8){.btn-action-primary .btn-action .btn .btn-outline-dark .btn-lg role="button"}
 :::
 
 ::: {.pricing-card}
@@ -25,7 +25,7 @@ editor: source
 ✔ 2 models  
 ✔ 2 months access  
 :::
-[Select]{.btn-action-primary .btn-action .btn .btn-outline-dark .btn-lg role="button"}
+[Select](https://forms.gle/zKjaeEzqoVu7a9vQ8){.btn-action-primary .btn-action .btn .btn-outline-dark .btn-lg role="button"}
 :::
 
 ::: {.pricing-card .accented}
@@ -34,7 +34,7 @@ editor: source
 ✔ 3+ models  
 ✔ 3+ months access
 :::
-[Contact]{.btn-action-primary .btn-action .btn .btn-dark .btn-lg role="button"}
+[Contact](https://forms.gle/zKjaeEzqoVu7a9vQ8){.btn-action-primary .btn-action .btn .btn-dark .btn-lg role="button"}
 :::
 
 :::

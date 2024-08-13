@@ -40,16 +40,25 @@ website:
     left:
       - href: getstarted.qmd
         text: "Get Started"
+      - text: "Resources"
+        menu: 
+          - href: performance.ipynb
+            text: "Performance 🚀"
+          - href: tutorials/runwalkthrough.qmd
+            text: "Tutorials"
+          - href: getstarted.qmd
+            text: "Documentations"
+      - text: "Company"
+        menu: 
+          - href: blogs/about.qmd
+            text: "About"
+          - href: blog.qmd#category=News
+            text: "News 🌟"
+          - href: blog.qmd
+            text: "Blogs"
       - href: pricing.qmd
         text: "Pricing"
-      - href: blog.qmd
-        text: "Blog"
-      - href: blog.qmd#category=News
-        text: "News"
-      - href: performance.ipynb
-        text: "Performance"
-      - blogs/about.qmd
-    right:
+    tools:
       - icon: twitter
         href: https://twitter.com/ninjalabo
       - icon: linkedin
@@ -60,16 +69,24 @@ website:
             href: https://github.com/ninjalabo/ninjalabo.github.io
           - text: Report a Bug
             href: https://github.com/ninjalabo/ninjalabo.github.io/issues
-
+    right: 
+      - text: "<a href='getstarted.qmd' style='background-color: rgb(185, 185, 1); padding: 10px 20px; color: white; border: none; border-radius: 0.5rem; text-decoration: None; margin-right: 10px;'>Try Free</a>"
+        href: getstarted.qmd
+        
   sidebar:
       style: "docked"
       search: true
+      collapse-level: 1
       contents:
         - blogs/about.qmd
         - getstarted.qmd
         - section: "Tutorials"
           contents: "tutorials/*.qmd"
-        - doc.qmd
+        - section: "Documentation"
+          contents: 
+          - section: "TinyMLaaS - summer 2023"
+            contents: "docs/tinymlaas/*"
+        # - doc.qmd
         - blog.qmd
         - performance.ipynb
 
