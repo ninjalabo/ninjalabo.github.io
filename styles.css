@@ -130,6 +130,7 @@
     overflow: hidden;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
+    padding: 10px 20px;
 }
 
 .panel-tabset * {
