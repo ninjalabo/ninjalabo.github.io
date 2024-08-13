@@ -70,18 +70,21 @@ website:
           - text: Report a Bug
             href: https://github.com/ninjalabo/ninjalabo.github.io/issues
     right: 
-      - text: "<a href='getstarted.qmd' style='background-color: rgb(185, 185, 1); padding: 10px 20px; color: white; border: none; border-radius: 5px; text-decoration: None; margin-right: 10px;'>Try Free</a>"
+      - text: "<a href='getstarted.qmd' style='background-color: rgb(185, 185, 1); padding: 10px 20px; color: white; border: none; border-radius: 0.5rem; text-decoration: None; margin-right: 10px;'>Try Free</a>"
         href: getstarted.qmd
         
   sidebar:
       style: "docked"
       search: true
+      collapse-level: 1
       contents:
         - blogs/about.qmd
         - getstarted.qmd
         - section: "Tutorials"
           contents: "tutorials/*.qmd"
-        - doc.qmd
+        - section: "Documentation"
+          contents: "docs/*"
+        # - doc.qmd
         - blog.qmd
         - performance.ipynb
 
