@@ -5,7 +5,7 @@ section-divs: false
 toc: false
 editor: source
 ---
-::: {.black-banner}
+::: {.banner}
 # Pricing
 
 ::: {.pricing-grid}
