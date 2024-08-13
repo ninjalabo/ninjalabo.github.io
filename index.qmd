@@ -48,7 +48,7 @@ Our latest technology shows significant increase from baseline Pytorch runtime i
 
 ## Progress
 ::: {.perf-text}
-We are constantly working to improve our technology! See our latest progress:
+We are constantly working to improve our technology! See our latest progress in [Performance page](performance.ipynb).
 :::
 <div class="perf-container">
   <img src="images/perf_progress.png" style="width: 100%;" alt="Performance Progress">
@@ -58,7 +58,7 @@ We are constantly working to improve our technology! See our latest progress:
 Check out our [latest blogs](blog.qmd) for exciting updates or up-to-date information about edge AI technology!
 
 ```{=html}
-<iframe width="100%" height="400" src="https://ninjalabo.ai/blog.html" scrolling="no" title="NinjaLABO Blogs"></iframe>
+<iframe width="100%" height="500" src="https://ninjalabo.ai/blog.html" scrolling="no" title="NinjaLABO Blogs" disabled></iframe>
 ```
 :::
 :::

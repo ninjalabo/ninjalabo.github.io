@@ -128,6 +128,8 @@
     background-color: #222;
     border-radius: 1rem;
     overflow: hidden;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .panel-tabset * {
@@ -148,6 +150,12 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+    .panel-tabset .tab-pane {
+        display: block;
+    }
 }
 
 /*Partners*/
