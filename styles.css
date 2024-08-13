@@ -16,6 +16,16 @@
     --bs-btn-disabled-border-color: rgb(185, 185, 1);
 }
 
+@media (max-width: 991.98px) {
+    #quarto-content>* {
+        padding-top: 14px;
+    }
+}
+
+.navbar-nav.navbar-nav-scroll.ms-auto li .nav-link {
+    display: none;
+}
+
 .accented-text {
     color: rgb(185, 185, 1);
 }
@@ -28,6 +38,15 @@
     color: #dee2e6;
 }
 
+.navbar {
+    padding: 20px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
 /*Footer*/
 .nav-footer-center li {
     text-align: left;
@@ -37,6 +56,8 @@
 .hero-title {
     margin-top: 1rem;
     margin-bottom: 2rem;
+    padding-left: 15%;
+    padding-right: 15%;
     text-align: center;
 }
 
@@ -50,7 +71,7 @@
 }
 
 .hero-title h4 {
-    max-width: 60%;
+    max-width: 80%;
     margin-top: 3rem;
     margin-bottom: 3rem;    
     margin-left: auto;
@@ -70,25 +91,7 @@
 }
 
 /*Sub-banners*/
-.gray-banner {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    background-color: rgb(73, 73, 45);
-    text-align: center;
-    padding-left: 15%;
-    padding-right: 15%;
-    padding-bottom: 2rem;
-    font-size: 1rem;
-}
-.gray-banner h4 {
-    max-width: 60%;
-    margin-top: 3rem;
-    margin-bottom: 3rem;    
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.black-banner {
+.banner {
     margin-top: 1rem;
     margin-bottom: 1rem;
     text-align: center;
@@ -98,18 +101,62 @@
     font-size: 1rem;
 }
 
-.black-banner h1 {
+.banner h1 {
     max-width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
 
-.black-banner h4 {
+.banner h4 {
     max-width: 80%;
     margin-top: 3rem;
     margin-bottom: 3rem;    
     margin-left: auto;
     margin-right: auto;
+}
+
+.bg-yellow {
+    background-color: rgb(73, 73, 45);
+}
+
+/* Performance */
+.perf-container {
+    padding: 0;
+}
+
+.panel-tabset {
+    background-color: #222;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 10px 20px;
+}
+
+.panel-tabset * {
+    border: 0;
+}
+.panel-tabset .nav-link.active {
+    color: rgb(185, 185, 1);
+    border: 0;
+    border-bottom: solid 2px rgb(185, 185, 1);
+}
+.panel-tabset .tab-content {
+    margin: 0;
+    background-color: #222;
+}
+.panel-tabset .tab-pane {
+    padding: 10px;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+    .panel-tabset .tab-pane {
+        display: block;
+    }
 }
 
 /*Partners*/
@@ -124,6 +171,7 @@
 .partner-card {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    padding-top: 0.5rem;
     display: flex;
     align-items: center;
     background-color: rgb(255, 255, 255);
@@ -142,7 +190,7 @@
     text-align: start;
     padding: 3rem;
     background-color: rgb(66, 65, 65);
-    border-radius: 2rem;
+    border-radius: 1rem;
     display: flex;
     flex-flow: row;
     gap: 2rem;
@@ -226,7 +274,7 @@
 }
 
 .pricing-card.accented {
-    background-color: rgb(184, 184, 107);;
+    background-color: rgb(184, 184, 107);
 }
 
 @media screen and (max-width: 900px) {
