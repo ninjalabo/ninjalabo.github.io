@@ -483,6 +483,13 @@
     "text": "Here was an overview of IREE, emphasizing its capabilities in optimizing models across diverse hardware platforms. For practical examples, please visit IREE’s official documentation at https://iree.dev, where you can find comprehensive guides and examples illustrating how to compile ML models for various hardware configurations."
   },
   {
+    "objectID": "blogs/howto_enable_jupyter_remotely.html",
+    "href": "blogs/howto_enable_jupyter_remotely.html",
+    "title": "How to set up Jupyter notebook on a remote VM",
+    "section": "",
+    "text": "ssh root@gpu-instance-ip\njupyter notebook --no-browser --port=8888 --allow-root\nssh -N -L localhost:7777:localhost:8888 root@gpu-instance-ip\nhttps://www.scaleway.com/en/docs/tutorials/setup-jupyter-notebook/"
+  },
+  {
     "objectID": "blogs/about.html",
     "href": "blogs/about.html",
     "title": "About",

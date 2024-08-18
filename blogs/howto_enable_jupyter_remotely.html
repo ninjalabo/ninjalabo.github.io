@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Hiroshi Doyu">
+<meta name="dcterms.date" content="2024-08-17">
 
-<title>Blog – NinjaLABO</title>
+<title>How to set up Jupyter notebook on a remote VM – NinjaLABO</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,27 +25,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./performance.html" rel="next">
-<link href="./docs/tinymlaas/Use_cases.html" rel="prev">
-<link href="./images/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,69 +69,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
-<meta name="twitter:title" content="Blog – NinjaLABO">
-<meta name="twitter:image" content="https://ninjalabo.github.io/images/logo.jpg">
+<link rel="stylesheet" href="../styles.css">
+<meta name="twitter:title" content="How to set up Jupyter notebook on a remote VM – NinjaLABO">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://ninjalabo.github.io/blogs/images/logo.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -144,8 +85,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/logo.jpg" alt="NinjaLABO log." class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -155,7 +96,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./getstarted.html" aria-current="page"> 
+    <a class="nav-link active" href="../getstarted.html" aria-current="page"> 
 <span class="menu-text">Get Started</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -164,15 +105,15 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-resources">    
         <li>
-    <a class="dropdown-item" href="./performance.html">
+    <a class="dropdown-item" href="../performance.html">
  <span class="dropdown-text">Performance 🚀</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./tutorials/runwalkthrough.html">
+    <a class="dropdown-item" href="../tutorials/runwalkthrough.html">
  <span class="dropdown-text">Tutorials</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./getstarted.html">
+    <a class="dropdown-item" href="../getstarted.html">
  <span class="dropdown-text">Documentations</span></a>
   </li>  
     </ul>
@@ -183,27 +124,27 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-company">    
         <li>
-    <a class="dropdown-item" href="./blogs/about.html">
+    <a class="dropdown-item" href="../blogs/about.html">
  <span class="dropdown-text">About</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./blog.html#category=News">
+    <a class="dropdown-item" href="../blog.html#category=News">
  <span class="dropdown-text">News 🌟</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./blog.html">
+    <a class="dropdown-item" href="../blog.html">
  <span class="dropdown-text">Blogs</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./pricing.html"> 
+    <a class="nav-link" href="../pricing.html"> 
 <span class="menu-text">Pricing</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./getstarted.html"> 
+    <a class="nav-link" href="../getstarted.html"> 
 <span class="menu-text"><a href="https://studio.ninjalabo.ai/" style="background-color: rgb(185, 185, 1); padding: 10px 20px; color: white; border: none; border-radius: 0.5rem; text-decoration: None; margin-right: 10px;">Try Free</a></span></a>
   </li>  
 </ul>
@@ -234,7 +175,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./blog.html">Blog</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">How to set up Jupyter notebook on a remote VM</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -256,13 +197,13 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./blogs/about.html" class="sidebar-item-text sidebar-link">
+  <a href="../blogs/about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./getstarted.html" class="sidebar-item-text sidebar-link">
+  <a href="../getstarted.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Get Started</span></a>
   </div>
 </li>
@@ -277,7 +218,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorials/runwalkthrough.html" class="sidebar-item-text sidebar-link">
+  <a href="../tutorials/runwalkthrough.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Run Walkthrough</span></a>
   </div>
 </li>
@@ -303,73 +244,73 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/tinymlaas/Architecture.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/Architecture.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Architecture</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/tinymlaas/Background.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/Background.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Background information and some literature sources</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/tinymlaas/Demonstration.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/Demonstration.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Demonstratation of TinyMLaaS WebApp</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/tinymlaas/Next_steps.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/Next_steps.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Suggestions for further development</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/tinymlaas/Software-Project-Summer-Kick-off.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/Software-Project-Summer-Kick-off.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project starting point</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/tinymlaas/Technologies.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/Technologies.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Technological choices</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/tinymlaas/TinyML-backend_README.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/TinyML-backend_README.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TinyML-backend</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/tinymlaas/TinyML-frontend_README.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/TinyML-frontend_README.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TinyML-frontend</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/tinymlaas/TinyML-MCU_arduino_README.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/TinyML-MCU_arduino_README.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Arduino sketch</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/tinymlaas/TinyML-MCU_README.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/TinyML-MCU_README.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TinyML-MCU</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/tinymlaas/TinyMLaaS_README.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/TinyMLaaS_README.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TinyMLaaS-main</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/tinymlaas/Use_cases.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/Use_cases.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Use case scenarios</span></a>
   </div>
 </li>
@@ -379,13 +320,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./blog.html" class="sidebar-item-text sidebar-link active">
+  <a href="../blog.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Blog</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./performance.html" class="sidebar-item-text sidebar-link">
+  <a href="../performance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Performance</span></a>
   </div>
 </li>
@@ -394,22 +335,37 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(12)</span></div><div class="category" data-category="About">About <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Competitor">Competitor <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Compiler">Compiler <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ericsson">Ericsson <span class="quarto-category-count">(2)</span></div><div class="category" data-category="HU">HU <span class="quarto-category-count">(1)</span></div><div class="category" data-category="MVP">MVP <span class="quarto-category-count">(1)</span></div><div class="category" data-category="News">News <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SaaS">SaaS <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Team">Team <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Tech">Tech <span class="quarto-category-count">(7)</span></div><div class="category" data-category="TinyMLaaS">TinyMLaaS <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UseCase">UseCase <span class="quarto-category-count">(1)</span></div></div></div>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blog</h1>
-</div>
+<h1 class="title">How to set up Jupyter notebook on a remote VM</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Tech</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Hiroshi Doyu <a href="mailto:hiroshi.doyu@ninjalabo.ai" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 17, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -419,449 +375,14 @@ window.Quarto = {
 </header>
 
 
+<pre><code>ssh root@gpu-instance-ip
+jupyter notebook --no-browser --port=8888 --allow-root
+ssh -N -L localhost:7777:localhost:8888 root@gpu-instance-ip</code></pre>
+<p>https://www.scaleway.com/en/docs/tutorials/setup-jupyter-notebook/</p>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Tech" data-listing-date-sort="1723420800000" data-listing-file-modified-sort="1723969622066" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="674">
-<div class="thumbnail">
-<p><a href="./blogs/pytorch_staticq.html" class="no-external"></a></p><a href="./blogs/pytorch_staticq.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./blogs/pytorch_staticq.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/pytorch_staticq.html" class="no-external">Demystifying PyTorch Static Quantization</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/pytorch_staticq.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
-Tech
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/pytorch_staticq.html" class="no-external">A deep dive into how PyTorch performs inference with quantized models.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/pytorch_staticq.html" class="no-external">
-<div class="listing-date">
-Aug 12, 2024
-</div>
-<div class="listing-author">
-Haruka Doyu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="HU,TinyMLaaS" data-listing-date-sort="1722902400000" data-listing-file-modified-sort="1723969622054" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<div class="thumbnail">
-<p><a href="./blogs/HU_Summer_2023.html" class="no-external"></a></p><a href="./blogs/HU_Summer_2023.html" class="no-external">
-<p class="card-img-top"><img src="blogs/images/12f6e393-7-image.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/HU_Summer_2023.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/HU_Summer_2023.html" class="no-external">TinyML as-a-Service with Helsinki University summer course 2023</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/HU_Summer_2023.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('HU'); return false;">
-HU
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('TinyMLaaS'); return false;">
-TinyMLaaS
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/HU_Summer_2023.html" class="no-external">This is the main repository of Tiny Machine Learning as a Service project for Software Engineering Project course at University of Helsinki, summer 2023.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/HU_Summer_2023.html" class="no-external">
-<div class="listing-date">
-Aug 6, 2024
-</div>
-<div class="listing-author">
-Hiroshi Doyu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="About,Team" data-listing-date-sort="1722902400000" data-listing-file-modified-sort="1723969622054" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<div class="thumbnail">
-<p><a href="./blogs/about.html" class="no-external"></a></p><a href="./blogs/about.html" class="no-external">
-<p class="card-img-top"><img src="blogs/images/Origami-2.jpg.webp" alt="NinjaLABO’s origin"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/about.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/about.html" class="no-external">About</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/about.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('About'); return false;">
-About
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Team'); return false;">
-Team
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/about.html" class="no-external">The team of experts in software development, research, and design is working to enable businesses to integrate AI &amp; Machine Learning applications on a wide range of devices without relying on expensive networking &amp; cloud computing services thanks to their solution, TinyML as a Service.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/about.html" class="no-external">
-<div class="listing-date">
-Aug 6, 2024
-</div>
-<div class="listing-author">
-Hiroshi Doyu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="News,MVP" data-listing-date-sort="1722902400000" data-listing-file-modified-sort="1723969622066" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
-<div class="thumbnail">
-<p><a href="./blogs/mvp6.html" class="no-external"></a></p><a href="./blogs/mvp6.html" class="no-external">
-<p class="card-img-top"><img src="images/mvp6.png" alt="AI Compression as-a-Service MVP6 review"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/mvp6.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/mvp6.html" class="no-external">AI Compression as-a-Service MVP6 review</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/mvp6.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('News'); return false;">
-News
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('MVP'); return false;">
-MVP
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/mvp6.html" class="no-external">Our internal review of MVP6 usage</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/mvp6.html" class="no-external">
-<div class="listing-date">
-Aug 6, 2024
-</div>
-<div class="listing-author">
-Nghi Vo
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="Tech,SaaS,Competitor" data-listing-date-sort="1722816000000" data-listing-file-modified-sort="1723969622054" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="636">
-<div class="thumbnail">
-<p><a href="./blogs/edgeimplusestudio.html" class="no-external"></a></p><a href="./blogs/edgeimplusestudio.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./blogs/edgeimplusestudio.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/edgeimplusestudio.html" class="no-external">Edge Impulse Review</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/edgeimplusestudio.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
-Tech
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('SaaS'); return false;">
-SaaS
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Competitor'); return false;">
-Competitor
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/edgeimplusestudio.html" class="no-external">Edge Impulse - A Comprehensive Review of the Leading Edge AI Platform</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/edgeimplusestudio.html" class="no-external">
-<div class="listing-date">
-Aug 5, 2024
-</div>
-<div class="listing-author">
-Nghi Vo
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="Tech,SaaS" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723969622066" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="815">
-<div class="thumbnail">
-<p><a href="./blogs/tinymlaas.html" class="no-external"></a></p><a href="./blogs/tinymlaas.html" class="no-external">
-<p class="card-img-top"><img src="blogs/images/tinymlaas_detail.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/tinymlaas.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/tinymlaas.html" class="no-external">TinyML as-a-Service Overview</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/tinymlaas.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
-Tech
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('SaaS'); return false;">
-SaaS
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/tinymlaas.html" class="no-external">Brief overview of NinjaLABO’s TinyML as-a-Service / AI compression as-a-Service </a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/tinymlaas.html" class="no-external">
-<div class="listing-date">
-Jul 17, 2024
-</div>
-<div class="listing-author">
-Hiroshi Doyu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="Tech,Compiler" data-listing-date-sort="1720742400000" data-listing-file-modified-sort="1723969622066" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="537">
-<div class="thumbnail">
-<p><a href="./blogs/iree.html" class="no-external"></a></p><a href="./blogs/iree.html" class="no-external">
-<p class="card-img-top"><img src="blogs/images/iree.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/iree.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/iree.html" class="no-external">IREE review</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/iree.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
-Tech
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Compiler'); return false;">
-Compiler
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/iree.html" class="no-external">Brief overview of IREE</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/iree.html" class="no-external">
-<div class="listing-date">
-Jul 12, 2024
-</div>
-<div class="listing-author">
-Haruka Doyu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="Tech,SaaS,Competitor" data-listing-date-sort="1720396800000" data-listing-file-modified-sort="1723969622066" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="511">
-<div class="thumbnail">
-<p><a href="./blogs/imagimobstudio.html" class="no-external"></a></p><a href="./blogs/imagimobstudio.html" class="no-external">
-<p class="card-img-top"><img src="blogs/images/imagimob_logo.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/imagimobstudio.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/imagimobstudio.html" class="no-external">Imagimob Studio Review</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/imagimobstudio.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
-Tech
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('SaaS'); return false;">
-SaaS
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Competitor'); return false;">
-Competitor
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/imagimobstudio.html" class="no-external">Brief overview of Imagimob Studio - A solution for Edge AI applications</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/imagimobstudio.html" class="no-external">
-<div class="listing-date">
-Jul 8, 2024
-</div>
-<div class="listing-author">
-Nghi Vo
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-categories="Tech,SaaS" data-listing-date-sort="1719878400000" data-listing-file-modified-sort="1723969622054" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="522">
-<div class="thumbnail">
-<p><a href="./blogs/aicompressionsaas.html" class="no-external"></a></p><a href="./blogs/aicompressionsaas.html" class="no-external">
-<p class="card-img-top"><img src="blogs/images/tinymlaas.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/aicompressionsaas.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/aicompressionsaas.html" class="no-external">AI compression SaaS</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/aicompressionsaas.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
-Tech
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('SaaS'); return false;">
-SaaS
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/aicompressionsaas.html" class="no-external">Brief overview of AI Compression</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/aicompressionsaas.html" class="no-external">
-<div class="listing-date">
-Jul 2, 2024
-</div>
-<div class="listing-author">
-Hiroshi Doyu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="9" data-categories="Tech,SaaS,UseCase" data-listing-date-sort="1719878400000" data-listing-file-modified-sort="1723969622066" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="419">
-<div class="thumbnail">
-<p><a href="./blogs/tinymlusecases.html" class="no-external"></a></p><a href="./blogs/tinymlusecases.html" class="no-external">
-<p class="card-img-top"><img src="blogs/images/tinymlusecases.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/tinymlusecases.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/tinymlusecases.html" class="no-external">TinyML Use Cases</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/tinymlusecases.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
-Tech
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('SaaS'); return false;">
-SaaS
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('UseCase'); return false;">
-UseCase
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/tinymlusecases.html" class="no-external">Use cases for TinyML offered by NinjaLABO</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/tinymlusecases.html" class="no-external">
-<div class="listing-date">
-Jul 2, 2024
-</div>
-<div class="listing-author">
-Hiroshi Doyu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="10" data-categories="Ericsson" data-listing-date-sort="1596672000000" data-listing-file-modified-sort="1723969622054" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9">
-<div class="thumbnail">
-<p><a href="./blogs/ericsson_blog2.html" class="no-external"></a></p><a href="./blogs/ericsson_blog2.html" class="no-external">
-<p class="card-img-top"><img src="blogs/images/eb2.png" alt="How can we democratize machine learning on IoT devices?"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/ericsson_blog2.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/ericsson_blog2.html" class="no-external">How can we democratize machine learning on IoT devices?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/ericsson_blog2.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Ericsson'); return false;">
-Ericsson
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/ericsson_blog2.html" class="no-external">Making tiny machine learning widely available on edge IoT devices could prove to be a major leap in smart sensing across industries. Below, we plot the technical milestones to making that happen as part of our ongoing research into TinyML as-a-service.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/ericsson_blog2.html" class="no-external">
-<div class="listing-date">
-Aug 6, 2020
-</div>
-<div class="listing-author">
-Hiroshi Doyu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="11" data-categories="Ericsson" data-listing-date-sort="1565049600000" data-listing-file-modified-sort="1723969622054" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="11">
-<div class="thumbnail">
-<p><a href="./blogs/ericsson_blog1.html" class="no-external"></a></p><a href="./blogs/ericsson_blog1.html" class="no-external">
-<p class="card-img-top"><img src="blogs/images/eb1.png" alt="TinyML as-a-Service and the challenges of machine learning at the edge"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./blogs/ericsson_blog1.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/ericsson_blog1.html" class="no-external">TinyML as-a-Service and the challenges of machine learning at the edge</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blogs/ericsson_blog1.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Ericsson'); return false;">
-Ericsson
-</div>
-</div>
-<div class="listing-description">
-<a href="./blogs/ericsson_blog1.html" class="no-external">The TinyML as-a-Service project at Ericsson Research sets out to address the challenges that today limit the potential of machine learning (ML) paradigms at the edge of the embedded IoT world. In this post, the second post in our TinyML series, we take a closer look at the technical and non-technical challenges on our journey to making that happen. Learn more below.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./blogs/ericsson_blog1.html" class="no-external">
-<div class="listing-date">
-Aug 6, 2019
-</div>
-<div class="listing-author">
-Hiroshi Doyu
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1282,18 +803,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./docs/tinymlaas/Use_cases.html" class="pagination-link" aria-label="Use case scenarios">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Use case scenarios</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./performance.html" class="pagination-link" aria-label="Performance">
-        <span class="nav-page-text">Performance</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1306,7 +815,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <li>For pricing and sales inquiries <a href="mailto:sales@ninjalabo.ai" class="email">sales@ninjalabo.ai</a></li>
 <li>Ask tech questions <a href="mailto:help@ninjalabo.ai" class="email">help@ninjalabo.ai</a></li>
 </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blog.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blogs/howto_enable_jupyter_remotely.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
