@@ -659,7 +659,7 @@
     "href": "blogs/yolofaceid.html#setting-up-yolov8",
     "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
     "section": "Setting Up YOLOv8",
-    "text": "Setting Up YOLOv8\n\nInstall the Ultralytics Package: Begin by installing the necessary software using pip:\npip install ultralytics\nLoad the [YOLOv8]](https://github.com/ultralytics/ultralytics) Model: Load a pre-trained YOLOv8 model or start with a custom model:\nfrom ultralytics import YOLO\n\n# Load a YOLOv8 model\nmodel = YOLO('yolov8n.pt')\n\n# Perform inference on an image\nresults = model('path/to/your/image.jpg')\nresults.show()  # Display results"
+    "text": "Setting Up YOLOv8\n\nInstall the Ultralytics Package: Begin by installing the necessary software using pip:\npip install ultralytics\nLoad the YOLOv8 Model: Load a pre-trained YOLOv8 model or start with a custom model:\nfrom ultralytics import YOLO\n\n# Load a YOLOv8 model\nmodel = YOLO('yolov8n.pt')\n\n# Perform inference on an image\nresults = model('path/to/your/image.jpg')\nresults.show()  # Display results"
   },
   {
     "objectID": "blogs/yolofaceid.html#training-on-a-custom-dataset",

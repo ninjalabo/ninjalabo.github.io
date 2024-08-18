@@ -386,7 +386,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#step-4-integrating-face-recognition" id="toc-step-4-integrating-face-recognition" class="nav-link" data-scroll-target="#step-4-integrating-face-recognition"><strong>Step 4: Integrating Face Recognition</strong></a></li>
   <li><a href="#step-5-simple-streamlit-ui" id="toc-step-5-simple-streamlit-ui" class="nav-link" data-scroll-target="#step-5-simple-streamlit-ui"><strong>Step 5: Simple Streamlit UI</strong></a></li>
   <li><a href="#step-6-evaluating-alternatives" id="toc-step-6-evaluating-alternatives" class="nav-link" data-scroll-target="#step-6-evaluating-alternatives"><strong>Step 6: Evaluating Alternatives</strong></a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><strong>Conclusion</strong></a></li>
+  <li><a href="#step-7-computational-resources" id="toc-step-7-computational-resources" class="nav-link" data-scroll-target="#step-7-computational-resources"><strong>Step 7: Computational resources</strong></a>
+  <ul class="collapse">
+  <li><a href="#key-factors" id="toc-key-factors" class="nav-link" data-scroll-target="#key-factors">Key Factors:</a></li>
+  <li><a href="#calculating-total-fps-requirement" id="toc-calculating-total-fps-requirement" class="nav-link" data-scroll-target="#calculating-total-fps-requirement">Calculating Total FPS Requirement:</a></li>
+  <li><a href="#gpu-capacity" id="toc-gpu-capacity" class="nav-link" data-scroll-target="#gpu-capacity">GPU Capacity:</a></li>
+  <li><a href="#example-server-configurations" id="toc-example-server-configurations" class="nav-link" data-scroll-target="#example-server-configurations">Example Server Configurations:</a></li>
+  <li><a href="#number-of-servers-needed" id="toc-number-of-servers-needed" class="nav-link" data-scroll-target="#number-of-servers-needed">Number of Servers Needed:</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion:</a></li>
+  </ul></li>
+  <li><a href="#conclusion-1" id="toc-conclusion-1" class="nav-link" data-scroll-target="#conclusion-1"><strong>Conclusion</strong></a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blogs/yolofaceid.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -538,7 +547,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li><p><strong>Install the Ultralytics Package</strong>: Begin by installing the necessary software using pip:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install ultralytics</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Load the [YOLOv8]](https://github.com/ultralytics/ultralytics) Model</strong>: Load a pre-trained <a href="https://github.com/ultralytics/ultralytics">YOLOv8</a> model or start with a custom model:</p>
+<li><p><strong>Load the <a href="https://github.com/ultralytics/ultralytics">YOLOv8</a> Model</strong>: Load a pre-trained <a href="https://github.com/ultralytics/ultralytics">YOLOv8</a> model or start with a custom model:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ultralytics <span class="im">import</span> YOLO</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load a YOLOv8 model</span></span>
@@ -661,7 +670,83 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Face++</strong>: Offers high accuracy and additional features like beauty scoring, though with potential privacy concerns.</li>
 </ul>
 </section>
-<section id="conclusion" class="level1">
+<section id="step-7-computational-resources" class="level1">
+<h1><strong>Step 7: Computational resources</strong></h1>
+<p>To determine how many rack-mount servers you’d need for a face identification system involving 200 cameras using GPUs like the NVIDIA RTX 3080, 3090, or 4090, we need to consider several factors:</p>
+<section id="key-factors" class="level3">
+<h3 class="anchored" data-anchor-id="key-factors">Key Factors:</h3>
+<ol start="0" type="1">
+<li><strong>GPU</strong> is superiour to <strong>CPU</strong> at inference from cost vs perf comparison.</li>
+<li><strong>Processing Power</strong>: Each GPU’s ability to handle a specific number of frames per second (FPS).</li>
+<li><strong>Total FPS Requirement</strong>: The total computational load imposed by the 200 cameras.</li>
+<li><strong>Rack-Mount Server Specifications</strong>: The number of GPUs each server can support.</li>
+</ol>
+</section>
+<section id="calculating-total-fps-requirement" class="level3">
+<h3 class="anchored" data-anchor-id="calculating-total-fps-requirement">Calculating Total FPS Requirement:</h3>
+<ul>
+<li><strong>200 Cameras at 30 FPS each</strong>:
+<ul>
+<li>Total FPS required = 200 cameras * 30 FPS = <strong>6000 FPS</strong>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="gpu-capacity" class="level3">
+<h3 class="anchored" data-anchor-id="gpu-capacity">GPU Capacity:</h3>
+<ul>
+<li><strong>NVIDIA RTX 3080</strong>: Can handle approximately 400 FPS for YOLOv8-tiny and around 80-100 FPS for standard YOLOv8.</li>
+<li><strong>NVIDIA RTX 3090</strong>: Can handle approximately 600 FPS for YOLOv8-tiny and around 120-150 FPS for standard YOLOv8.</li>
+<li><strong>NVIDIA RTX 4090</strong>: Can handle approximately 1000 FPS for YOLOv8-tiny and around 200-250 FPS for standard YOLOv8.</li>
+</ul>
+</section>
+<section id="example-server-configurations" class="level3">
+<h3 class="anchored" data-anchor-id="example-server-configurations">Example Server Configurations:</h3>
+<ol type="1">
+<li><strong>Supermicro 4U GPU Server (SYS-4029GP-TRT)</strong>:
+<ul>
+<li>Supports up to 4 GPUs.</li>
+<li>If each server uses 4x RTX 4090 GPUs, the total processing capability per server would be:
+<ul>
+<li><strong>YOLOv8-tiny</strong>: 4000 FPS (4 GPUs * 1000 FPS).</li>
+<li><strong>Standard YOLOv8</strong>: 800-1000 FPS (4 GPUs * 200-250 FPS).</li>
+</ul></li>
+</ul></li>
+<li><strong>ASUS ESC8000A-E11</strong>:
+<ul>
+<li>Supports up to 8 GPUs.</li>
+<li>With 8x RTX 4090 GPUs:
+<ul>
+<li><strong>YOLOv8-tiny</strong>: 8000 FPS (8 GPUs * 1000 FPS).</li>
+<li><strong>Standard YOLOv8</strong>: 1600-2000 FPS (8 GPUs * 200-250 FPS).</li>
+</ul></li>
+</ul></li>
+</ol>
+</section>
+<section id="number-of-servers-needed" class="level3">
+<h3 class="anchored" data-anchor-id="number-of-servers-needed">Number of Servers Needed:</h3>
+<ul>
+<li><strong>For YOLOv8-tiny</strong>:
+<ul>
+<li>With <strong>Supermicro 4U Server</strong>: 1.5 servers (round up to 2 servers).</li>
+<li>With <strong>ASUS ESC8000A-E11</strong>: 1 server is sufficient.</li>
+</ul></li>
+<li><strong>For Standard YOLOv8</strong>:
+<ul>
+<li>With <strong>Supermicro 4U Server</strong>: 6-8 servers.</li>
+<li>With <strong>ASUS ESC8000A-E11</strong>: 3-4 servers.</li>
+</ul></li>
+</ul>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion:</h3>
+<ul>
+<li><strong>YOLOv8-tiny</strong>: You would need <strong>1-2 servers</strong> (depending on GPU configuration) to handle the 200 cameras.</li>
+<li><strong>Standard YOLOv8</strong>: You would need <strong>3-8 servers</strong> depending on the specific GPU and server model you choose.</li>
+</ul>
+<p>These estimates assume maximum utilization of each GPU’s capabilities, and the actual number might vary based on real-world conditions, such as CPU bottlenecks, memory limitations, and other factors.</p>
+</section>
+</section>
+<section id="conclusion-1" class="level1">
 <h1><strong>Conclusion</strong></h1>
 <p>Building a real-time <strong><em>face identification</em></strong> system requires careful selection of tools and technologies based on your specific requirements. <a href="https://github.com/ultralytics/ultralytics">Ultralytics YOLOv8</a> offers a powerful, customizable solution for developers who need control over the face detection process, while managed services like AWS Rekognition and Azure Face API provide easier, scalable alternatives for those looking to avoid the complexities of model training and deployment.</p>
 <p>Choosing the right stack involves balancing performance, flexibility, and ease of use. With the tools discussed in this guide, you’re well-equipped to build a robust, real-time <strong><em>face identification</em></strong> system tailored to your needs.</p>
