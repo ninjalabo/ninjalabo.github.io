@@ -676,6 +676,83 @@
     "text": "Deploying for Real-Time Face Detection\nOnce trained, you can deploy YOLOv8 for real-time face detection. This can be done by feeding live video streams into the model and processing each frame.\nimport cv2\nfrom ultralytics import YOLO\n\n# Load the trained model\nmodel = YOLO('runs/train/exp/weights/best.pt')\n\n# Capture video from webcam\ncap = cv2.VideoCapture(0)\n\nwhile cap.isOpened():\n    ret, frame = cap.read()\n    if not ret:\n        break\n\n    # Perform inference\n    results = model(frame)\n\n    # Display results\n    results.show()\n\n    if cv2.waitKey(1) & 0xFF == ord('q'):\n        break\n\ncap.release()\ncv2.destroyAllWindows()"
   },
   {
+    "objectID": "blogs/yolofaceid.html#key-factors",
+    "href": "blogs/yolofaceid.html#key-factors",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "Key Factors:",
+    "text": "Key Factors:\n\nGPU is superiour to CPU at inference from cost vs perf comparison.\nProcessing Power: Each GPU’s ability to handle a specific number of frames per second (FPS).\nTotal FPS Requirement: The total computational load imposed by the 200 cameras.\nRack-Mount Server Specifications: The number of GPUs each server can support."
+  },
+  {
+    "objectID": "blogs/yolofaceid.html#calculating-total-fps-requirement",
+    "href": "blogs/yolofaceid.html#calculating-total-fps-requirement",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "Calculating Total FPS Requirement:",
+    "text": "Calculating Total FPS Requirement:\n\n200 Cameras at 30 FPS each:\n\nTotal FPS required = 200 cameras * 30 FPS = 6000 FPS."
+  },
+  {
+    "objectID": "blogs/yolofaceid.html#gpu-capacity",
+    "href": "blogs/yolofaceid.html#gpu-capacity",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "GPU Capacity:",
+    "text": "GPU Capacity:\n\nNVIDIA RTX 3080: Can handle approximately 400 FPS for YOLOv8-tiny and around 80-100 FPS for standard YOLOv8.\nNVIDIA RTX 3090: Can handle approximately 600 FPS for YOLOv8-tiny and around 120-150 FPS for standard YOLOv8.\nNVIDIA RTX 4090: Can handle approximately 1000 FPS for YOLOv8-tiny and around 200-250 FPS for standard YOLOv8."
+  },
+  {
+    "objectID": "blogs/yolofaceid.html#example-server-configurations",
+    "href": "blogs/yolofaceid.html#example-server-configurations",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "Example Server Configurations:",
+    "text": "Example Server Configurations:\n\nSupermicro 4U GPU Server (SYS-4029GP-TRT):\n\nSupports up to 4 GPUs.\nIf each server uses 4x RTX 4090 GPUs, the total processing capability per server would be:\n\nYOLOv8-tiny: 4000 FPS (4 GPUs * 1000 FPS).\nStandard YOLOv8: 800-1000 FPS (4 GPUs * 200-250 FPS).\n\n\nASUS ESC8000A-E11:\n\nSupports up to 8 GPUs.\nWith 8x RTX 4090 GPUs:\n\nYOLOv8-tiny: 8000 FPS (8 GPUs * 1000 FPS).\nStandard YOLOv8: 1600-2000 FPS (8 GPUs * 200-250 FPS)."
+  },
+  {
+    "objectID": "blogs/yolofaceid.html#number-of-servers-needed",
+    "href": "blogs/yolofaceid.html#number-of-servers-needed",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "Number of Servers Needed:",
+    "text": "Number of Servers Needed:\n\nFor YOLOv8-tiny:\n\nWith Supermicro 4U Server: 1.5 servers (round up to 2 servers).\nWith ASUS ESC8000A-E11: 1 server is sufficient.\n\nFor Standard YOLOv8:\n\nWith Supermicro 4U Server: 6-8 servers.\nWith ASUS ESC8000A-E11: 3-4 servers."
+  },
+  {
+    "objectID": "blogs/yolofaceid.html#summary",
+    "href": "blogs/yolofaceid.html#summary",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "SUMMARY",
+    "text": "SUMMARY\n\nYOLOv8-tiny: You would need 1-2 servers (depending on GPU configuration) to handle the 200 cameras.\nStandard YOLOv8: You would need 3-8 servers depending on the specific GPU and server model you choose.\n\nThese estimates assume maximum utilization of each GPU’s capabilities, and the actual number might vary based on real-world conditions, such as CPU bottlenecks, memory limitations, and other factors."
+  },
+  {
+    "objectID": "blogs/yolofaceid.html#key-parameters",
+    "href": "blogs/yolofaceid.html#key-parameters",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "Key Parameters",
+    "text": "Key Parameters\n\nResolution:\n\n2MP (1080p): Approximately 3 Mbps\n4MP: Approximately 6 Mbps\n\nFrame Rate: 30 frames per second (FPS)\nRecording Time: 24 hours per day, 30 days per month\nNumber of Cameras: 200\nCompression: H.264 assumed (H.265 could reduce storage by up to 50%)"
+  },
+  {
+    "objectID": "blogs/yolofaceid.html#storage-calculation",
+    "href": "blogs/yolofaceid.html#storage-calculation",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "Storage Calculation",
+    "text": "Storage Calculation\nThe total storage required can be calculated using the following equation:\n\\[\n\\text{Total Storage (TB)} = \\left(\\frac{\\text{Bitrate (Mbps)} \\times 86,400 \\times 30 \\times \\text{Number of Cameras}}{8 \\times 1024^2}\\right)\n\\]\nWhere:\n\n86,400: Number of seconds in a day\n30: Number of days in a month\n8: Conversion factor from bits to bytes\n1024^2: Conversion from MB to TB"
+  },
+  {
+    "objectID": "blogs/yolofaceid.html#results",
+    "href": "blogs/yolofaceid.html#results",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "Results",
+    "text": "Results\n\nFor 2MP Cameras (3 Mbps):\n\nTotal Storage: Approximately 185.2 TB per month.\n\nFor 4MP Cameras (6 Mbps):\n\nTotal Storage: Approximately 370.5 TB per month."
+  },
+  {
+    "objectID": "blogs/yolofaceid.html#considerations",
+    "href": "blogs/yolofaceid.html#considerations",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "Considerations",
+    "text": "Considerations\n\nCompression: Using H.265 compression could potentially reduce the storage requirement by 50%.\nMotion Detection: If motion detection is used instead of continuous recording, the required storage could be significantly less."
+  },
+  {
+    "objectID": "blogs/yolofaceid.html#summary-1",
+    "href": "blogs/yolofaceid.html#summary-1",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "SUMMARY",
+    "text": "SUMMARY\nFor 200 cameras recording continuously at 2-4MP resolution, the storage requirement ranges from approximately 185.2 TB to 370.5 TB per month. Adjustments to compression methods, frame rates, or recording strategies could alter these estimates."
+  },
+  {
     "objectID": "docs/tinymlaas/Demonstration.html",
     "href": "docs/tinymlaas/Demonstration.html",
     "title": "Demonstratation of TinyMLaaS WebApp",

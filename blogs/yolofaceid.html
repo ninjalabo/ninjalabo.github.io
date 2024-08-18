@@ -105,6 +105,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 <meta name="twitter:title" content="Building a Real-Time Face Identification System: A Comprehensive Guide – NinjaLABO">
@@ -393,9 +422,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#gpu-capacity" id="toc-gpu-capacity" class="nav-link" data-scroll-target="#gpu-capacity">GPU Capacity:</a></li>
   <li><a href="#example-server-configurations" id="toc-example-server-configurations" class="nav-link" data-scroll-target="#example-server-configurations">Example Server Configurations:</a></li>
   <li><a href="#number-of-servers-needed" id="toc-number-of-servers-needed" class="nav-link" data-scroll-target="#number-of-servers-needed">Number of Servers Needed:</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion:</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">SUMMARY</a></li>
   </ul></li>
-  <li><a href="#conclusion-1" id="toc-conclusion-1" class="nav-link" data-scroll-target="#conclusion-1"><strong>Conclusion</strong></a></li>
+  <li><a href="#step-8-storage-requirement" id="toc-step-8-storage-requirement" class="nav-link" data-scroll-target="#step-8-storage-requirement"><strong>Step 8: Storage Requirement</strong></a>
+  <ul class="collapse">
+  <li><a href="#key-parameters" id="toc-key-parameters" class="nav-link" data-scroll-target="#key-parameters"><strong>Key Parameters</strong></a></li>
+  <li><a href="#storage-calculation" id="toc-storage-calculation" class="nav-link" data-scroll-target="#storage-calculation"><strong>Storage Calculation</strong></a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><strong>Results</strong></a></li>
+  <li><a href="#considerations" id="toc-considerations" class="nav-link" data-scroll-target="#considerations"><strong>Considerations</strong></a></li>
+  <li><a href="#summary-1" id="toc-summary-1" class="nav-link" data-scroll-target="#summary-1"><strong>SUMMARY</strong></a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><strong>Conclusion</strong></a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blogs/yolofaceid.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -673,8 +710,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="step-7-computational-resources" class="level1">
 <h1><strong>Step 7: Computational resources</strong></h1>
 <p>To determine how many rack-mount servers you’d need for a face identification system involving 200 cameras using GPUs like the NVIDIA RTX 3080, 3090, or 4090, we need to consider several factors:</p>
-<section id="key-factors" class="level3">
-<h3 class="anchored" data-anchor-id="key-factors">Key Factors:</h3>
+<section id="key-factors" class="level2">
+<h2 class="anchored" data-anchor-id="key-factors">Key Factors:</h2>
 <ol start="0" type="1">
 <li><strong>GPU</strong> is superiour to <strong>CPU</strong> at inference from cost vs perf comparison.</li>
 <li><strong>Processing Power</strong>: Each GPU’s ability to handle a specific number of frames per second (FPS).</li>
@@ -682,8 +719,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Rack-Mount Server Specifications</strong>: The number of GPUs each server can support.</li>
 </ol>
 </section>
-<section id="calculating-total-fps-requirement" class="level3">
-<h3 class="anchored" data-anchor-id="calculating-total-fps-requirement">Calculating Total FPS Requirement:</h3>
+<section id="calculating-total-fps-requirement" class="level2">
+<h2 class="anchored" data-anchor-id="calculating-total-fps-requirement">Calculating Total FPS Requirement:</h2>
 <ul>
 <li><strong>200 Cameras at 30 FPS each</strong>:
 <ul>
@@ -691,16 +728,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 </section>
-<section id="gpu-capacity" class="level3">
-<h3 class="anchored" data-anchor-id="gpu-capacity">GPU Capacity:</h3>
+<section id="gpu-capacity" class="level2">
+<h2 class="anchored" data-anchor-id="gpu-capacity">GPU Capacity:</h2>
 <ul>
 <li><strong>NVIDIA RTX 3080</strong>: Can handle approximately 400 FPS for YOLOv8-tiny and around 80-100 FPS for standard YOLOv8.</li>
 <li><strong>NVIDIA RTX 3090</strong>: Can handle approximately 600 FPS for YOLOv8-tiny and around 120-150 FPS for standard YOLOv8.</li>
 <li><strong>NVIDIA RTX 4090</strong>: Can handle approximately 1000 FPS for YOLOv8-tiny and around 200-250 FPS for standard YOLOv8.</li>
 </ul>
 </section>
-<section id="example-server-configurations" class="level3">
-<h3 class="anchored" data-anchor-id="example-server-configurations">Example Server Configurations:</h3>
+<section id="example-server-configurations" class="level2">
+<h2 class="anchored" data-anchor-id="example-server-configurations">Example Server Configurations:</h2>
 <ol type="1">
 <li><strong>Supermicro 4U GPU Server (SYS-4029GP-TRT)</strong>:
 <ul>
@@ -722,8 +759,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ol>
 </section>
-<section id="number-of-servers-needed" class="level3">
-<h3 class="anchored" data-anchor-id="number-of-servers-needed">Number of Servers Needed:</h3>
+<section id="number-of-servers-needed" class="level2">
+<h2 class="anchored" data-anchor-id="number-of-servers-needed">Number of Servers Needed:</h2>
 <ul>
 <li><strong>For YOLOv8-tiny</strong>:
 <ul>
@@ -737,8 +774,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 </section>
-<section id="conclusion" class="level3">
-<h3 class="anchored" data-anchor-id="conclusion">Conclusion:</h3>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">SUMMARY</h2>
 <ul>
 <li><strong>YOLOv8-tiny</strong>: You would need <strong>1-2 servers</strong> (depending on GPU configuration) to handle the 200 cameras.</li>
 <li><strong>Standard YOLOv8</strong>: You would need <strong>3-8 servers</strong> depending on the specific GPU and server model you choose.</li>
@@ -746,7 +783,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>These estimates assume maximum utilization of each GPU’s capabilities, and the actual number might vary based on real-world conditions, such as CPU bottlenecks, memory limitations, and other factors.</p>
 </section>
 </section>
-<section id="conclusion-1" class="level1">
+<section id="step-8-storage-requirement" class="level1">
+<h1><strong>Step 8: Storage Requirement</strong></h1>
+<p>This outlines the storage requirements for recording video from 200 cameras with resolutions of 2MP and 4MP, continuously over a 30-day period. The calculations take into account various factors such as bitrate, frame rate, and compression method.</p>
+<section id="key-parameters" class="level2">
+<h2 class="anchored" data-anchor-id="key-parameters"><strong>Key Parameters</strong></h2>
+<ul>
+<li><strong>Resolution</strong>:
+<ul>
+<li><strong>2MP (1080p)</strong>: Approximately 3 Mbps</li>
+<li><strong>4MP</strong>: Approximately 6 Mbps</li>
+</ul></li>
+<li><strong>Frame Rate</strong>: 30 frames per second (FPS)</li>
+<li><strong>Recording Time</strong>: 24 hours per day, 30 days per month</li>
+<li><strong>Number of Cameras</strong>: 200</li>
+<li><strong>Compression</strong>: H.264 assumed (H.265 could reduce storage by up to 50%)</li>
+</ul>
+</section>
+<section id="storage-calculation" class="level2">
+<h2 class="anchored" data-anchor-id="storage-calculation"><strong>Storage Calculation</strong></h2>
+<p>The total storage required can be calculated using the following equation:</p>
+<p><span class="math display">\[
+\text{Total Storage (TB)} = \left(\frac{\text{Bitrate (Mbps)} \times 86,400 \times 30 \times \text{Number of Cameras}}{8 \times 1024^2}\right)
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li><strong>86,400</strong>: Number of seconds in a day</li>
+<li><strong>30</strong>: Number of days in a month</li>
+<li><strong>8</strong>: Conversion factor from bits to bytes</li>
+<li><strong>1024^2</strong>: Conversion from MB to TB</li>
+</ul>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results"><strong>Results</strong></h2>
+<ol type="1">
+<li><strong>For 2MP Cameras (3 Mbps)</strong>:
+<ul>
+<li><strong>Total Storage</strong>: Approximately <strong>185.2 TB</strong> per month.</li>
+</ul></li>
+<li><strong>For 4MP Cameras (6 Mbps)</strong>:
+<ul>
+<li><strong>Total Storage</strong>: Approximately <strong>370.5 TB</strong> per month.</li>
+</ul></li>
+</ol>
+</section>
+<section id="considerations" class="level2">
+<h2 class="anchored" data-anchor-id="considerations"><strong>Considerations</strong></h2>
+<ul>
+<li><strong>Compression</strong>: Using H.265 compression could potentially reduce the storage requirement by 50%.</li>
+<li><strong>Motion Detection</strong>: If motion detection is used instead of continuous recording, the required storage could be significantly less.</li>
+</ul>
+</section>
+<section id="summary-1" class="level2">
+<h2 class="anchored" data-anchor-id="summary-1"><strong>SUMMARY</strong></h2>
+<p>For 200 cameras recording continuously at 2-4MP resolution, the storage requirement ranges from approximately <strong>185.2 TB to 370.5 TB per month</strong>. Adjustments to compression methods, frame rates, or recording strategies could alter these estimates.</p>
+</section>
+</section>
+<section id="conclusion" class="level1">
 <h1><strong>Conclusion</strong></h1>
 <p>Building a real-time <strong><em>face identification</em></strong> system requires careful selection of tools and technologies based on your specific requirements. <a href="https://github.com/ultralytics/ultralytics">Ultralytics YOLOv8</a> offers a powerful, customizable solution for developers who need control over the face detection process, while managed services like AWS Rekognition and Azure Face API provide easier, scalable alternatives for those looking to avoid the complexities of model training and deployment.</p>
 <p>Choosing the right stack involves balancing performance, flexibility, and ease of use. With the tools discussed in this guide, you’re well-equipped to build a robust, real-time <strong><em>face identification</em></strong> system tailored to your needs.</p>
