@@ -97,7 +97,7 @@ personalized services.
    pip install ultralytics
    ```
 
-2. **Load the [YOLOv8]](https://github.com/ultralytics/ultralytics) Model**:
+2. **Load the [YOLOv8](https://github.com/ultralytics/ultralytics) Model**:
    Load a pre-trained [YOLOv8](https://github.com/ultralytics/ultralytics) model or start with a custom model:
    ```python
    from ultralytics import YOLO
@@ -233,6 +233,56 @@ flexibility and higher operational expenses.
 - **Google Cloud Vision**: Suitable for broader computer vision needs beyond face detection.
 - **IBM Watson**: Provides strong privacy features, suitable for industries with strict data regulations.
 - **Face++**: Offers high accuracy and additional features like beauty scoring, though with potential privacy concerns.
+
+# **Step 7: Computational resources**
+
+To determine how many rack-mount servers you'd need for a face
+identification system involving 200 cameras using GPUs like the NVIDIA
+RTX 3080, 3090, or 4090, we need to consider several factors:
+
+### Key Factors:
+0. **GPU** is superiour to **CPU** at inference from cost vs perf comparison.
+1. **Processing Power**: Each GPU's ability to handle a specific number of frames per second (FPS).
+2. **Total FPS Requirement**: The total computational load imposed by the 200 cameras.
+3. **Rack-Mount Server Specifications**: The number of GPUs each server can support.
+
+### Calculating Total FPS Requirement:
+- **200 Cameras at 30 FPS each**:
+  - Total FPS required = 200 cameras * 30 FPS = **6000 FPS**.
+
+### GPU Capacity:
+- **NVIDIA RTX 3080**: Can handle approximately 400 FPS for YOLOv8-tiny and around 80-100 FPS for standard YOLOv8.
+- **NVIDIA RTX 3090**: Can handle approximately 600 FPS for YOLOv8-tiny and around 120-150 FPS for standard YOLOv8.
+- **NVIDIA RTX 4090**: Can handle approximately 1000 FPS for YOLOv8-tiny and around 200-250 FPS for standard YOLOv8.
+
+### Example Server Configurations:
+1. **Supermicro 4U GPU Server (SYS-4029GP-TRT)**:
+   - Supports up to 4 GPUs.
+   - If each server uses 4x RTX 4090 GPUs, the total processing capability per server would be:
+     - **YOLOv8-tiny**: 4000 FPS (4 GPUs * 1000 FPS).
+     - **Standard YOLOv8**: 800-1000 FPS (4 GPUs * 200-250 FPS).
+
+2. **ASUS ESC8000A-E11**:
+   - Supports up to 8 GPUs.
+   - With 8x RTX 4090 GPUs:
+     - **YOLOv8-tiny**: 8000 FPS (8 GPUs * 1000 FPS).
+     - **Standard YOLOv8**: 1600-2000 FPS (8 GPUs * 200-250 FPS).
+
+### Number of Servers Needed:
+- **For YOLOv8-tiny**:
+  - With **Supermicro 4U Server**: 1.5 servers (round up to 2 servers).
+  - With **ASUS ESC8000A-E11**: 1 server is sufficient.
+
+- **For Standard YOLOv8**:
+  - With **Supermicro 4U Server**: 6-8 servers.
+  - With **ASUS ESC8000A-E11**: 3-4 servers.
+
+### Conclusion:
+- **YOLOv8-tiny**: You would need **1-2 servers** (depending on GPU configuration) to handle the 200 cameras.
+- **Standard YOLOv8**: You would need **3-8 servers** depending on the specific GPU and server model you choose.
+
+These estimates assume maximum utilization of each GPU's capabilities, and the actual number might vary based on real-world conditions, such as CPU bottlenecks, memory limitations, and other factors.
+
 
 # **Conclusion**
 Building a real-time ***face identification*** system requires careful
