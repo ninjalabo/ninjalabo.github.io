@@ -345,17 +345,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#quantization" id="toc-quantization" class="nav-link" data-scroll-target="#quantization">1. Quantization</a></li>
   <li><a href="#pruning" id="toc-pruning" class="nav-link" data-scroll-target="#pruning">2. Pruning</a></li>
   <li><a href="#knowledge-distillation" id="toc-knowledge-distillation" class="nav-link" data-scroll-target="#knowledge-distillation">3. Knowledge Distillation</a></li>
-  <li><a href="#sparsification" id="toc-sparsification" class="nav-link" data-scroll-target="#sparsification">4. Sparsification</a></li>
-  <li><a href="#low-rank-factorization" id="toc-low-rank-factorization" class="nav-link" data-scroll-target="#low-rank-factorization">5. Low-Rank Factorization</a></li>
+  <li><a href="#low-rank-factorization" id="toc-low-rank-factorization" class="nav-link" data-scroll-target="#low-rank-factorization">4. Low-Rank Factorization</a></li>
+  <li><a href="#batchnorm-folding" id="toc-batchnorm-folding" class="nav-link" data-scroll-target="#batchnorm-folding">5. BatchNorm Folding</a></li>
   <li><a href="#weight-sharing" id="toc-weight-sharing" class="nav-link" data-scroll-target="#weight-sharing">6. Weight Sharing</a></li>
   <li><a href="#neural-architecture-search-nas" id="toc-neural-architecture-search-nas" class="nav-link" data-scroll-target="#neural-architecture-search-nas">7. Neural Architecture Search (NAS)</a></li>
-  <li><a href="#efficient-architectures" id="toc-efficient-architectures" class="nav-link" data-scroll-target="#efficient-architectures">8. Efficient Architectures</a></li>
-  <li><a href="#early-exit-techniques" id="toc-early-exit-techniques" class="nav-link" data-scroll-target="#early-exit-techniques">9. Early Exit Techniques</a></li>
-  <li><a href="#adaptive-inference" id="toc-adaptive-inference" class="nav-link" data-scroll-target="#adaptive-inference">10. Adaptive Inference</a></li>
-  <li><a href="#sparse-representations" id="toc-sparse-representations" class="nav-link" data-scroll-target="#sparse-representations">11. Sparse Representations</a></li>
-  <li><a href="#regularization-techniques" id="toc-regularization-techniques" class="nav-link" data-scroll-target="#regularization-techniques">12. Regularization Techniques</a></li>
-  <li><a href="#batchnorm-folding" id="toc-batchnorm-folding" class="nav-link" data-scroll-target="#batchnorm-folding">13. BatchNorm Folding</a></li>
-  <li><a href="#fully-connected-layer-decomposition" id="toc-fully-connected-layer-decomposition" class="nav-link" data-scroll-target="#fully-connected-layer-decomposition">14. Fully-Connected Layer Decomposition</a></li>
   </ul></li>
   <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
@@ -391,6 +384,12 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">August 20, 2024</p>
+    </div>
+  </div>
     
   </div>
   
@@ -405,19 +404,9 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/dnn_comp_all.png" class="img-fluid"></p>
 <section id="quantization" class="level2">
 <h2 class="anchored" data-anchor-id="quantization">1. Quantization</h2>
-<p><strong>Quantization</strong> reduces the precision of the numbers representing model parameters, thus decreasing the memory and computational requirements. The key methods include:</p>
-<ul>
-<li><p><strong>Post-Training Quantization (PTQ)</strong>: This technique converts the weights and activations of a pre-trained model to lower precision (e.g., from 32-bit floating point to 8-bit integers) without requiring further training. Variants include:</p>
-<ul>
-<li><strong>Static Quantization</strong>: Quantizes weights and activations based on a representative dataset.</li>
-<li><strong>Dynamic Quantization</strong>: Quantizes activations dynamically during inference.</li>
-<li><strong>Weight-Only Quantization</strong>: Applies quantization only to the model weights.</li>
-<li><strong>Per-Channel Quantization</strong>: Quantizes each channel separately, allowing for more precise control.</li>
-<li><strong>Non-Uniform Quantization</strong>: Uses non-uniform quantization scales, optimizing for ranges that are more sensitive to accuracy.</li>
-</ul></li>
-<li><p><strong>Quantization-Aware Training (QAT)</strong>: Unlike PTQ, QAT involves training the model with simulated quantization effects, allowing the network to learn to be robust to the lower precision. This typically results in better performance compared to PTQ.</p></li>
-<li><p><strong>Mixed Precision Quantization</strong>: Combines different precisions (e.g., 16-bit, 8-bit) within the same model, selecting the precision dynamically based on the importance of different layers or operations. This approach balances computational efficiency with model accuracy.</p></li>
-</ul>
+<p><strong>Quantization</strong> reduces the precision of the numbers representing model parameters, thus decreasing the memory and computational requirements. There are several quantization approaches and methods, each of which can be used independently or in combination to optimize model performance.</p>
+<p>Quantization Approaches: - <strong>Post-Training Quantization (PTQ)</strong>: This technique converts the weights and activations of a pre-trained model to lower precision (e.g., from 32-bit floating point to 8-bit integers) without requiring further training. - <strong>Quantization-Aware Training (QAT)</strong>: Unlike PTQ, QAT involves training the model with simulated quantization effects, allowing the network to learn to be robust to the lower precision. This typically results in better performance compared to PTQ. Quantization Methods: - <strong>Static Quantization</strong>: Quantizes weights and activations using a representative dataset. All required quantization parameters are calculated beforehand, making inference faster compared to dynamic quantization. - <strong>Dynamic Quantization</strong>: Applies quantization to activations dynamically during inference. This method adapts to varying data more effectively than static quantization, providing flexibility for data with a wide range of values. - <strong>Weight-Only Quantization</strong>: Focuses on quantizing only the model weights while keeping activations at a higher precision. This approach can help maintain model accuracy compared to quantizing both weights and activations, but it results in a larger memory footprint. - <strong>Group quantization</strong>: Quantizes weights in predefined groups separately, allowing more precise control and potentially better trade-offs between accuracy and memory size. - <strong>Symmetric vs.&nbsp;Asymmetric Quantization</strong>: Symmetric quantization uses a single scale for both positive and negative values, while asymmetric quantization allows addionally zero-points (shifting values), , fully utilizing the quantization range. Symmetric quantization is generally faster, whereas asymmetric quantization offers improved accuracy. - <strong>Mixed Precision Quantization</strong>: Utilizes different precision levels (e.g., 16-bit floating point, 8-bit integers) within the same model. This method selects precision dynamically based on the importance of different layers or operations and can be combined with various quantization techniques to optimize performance and efficiency.</p>
+<p>Each quantization method can be used in combination, depending on the specific needs of the model and deployment scenario. By effectively applying these techniques, you can achieve a balance between model accuracy, computational efficiency, and resource usage.</p>
 </section>
 <section id="pruning" class="level2">
 <h2 class="anchored" data-anchor-id="pruning">2. Pruning</h2>
@@ -450,22 +439,8 @@ ul.task-list li input[type="checkbox"] {
 <li><p><strong>Cross-Model Distillation</strong>: Distillation occurs between different types of models, such as distilling from an ensemble of models to a single student model.</p></li>
 </ul>
 </section>
-<section id="sparsification" class="level2">
-<h2 class="anchored" data-anchor-id="sparsification">4. Sparsification</h2>
-<p><strong>Sparsification</strong> aims to increase the sparsity of the network by zeroing out insignificant parameters, similar to pruning but typically performed during training:</p>
-<ul>
-<li><strong>Granularity Levels</strong>: Sparsification can be applied at various levels, such as individual weights, vectors, kernels, or entire filters.</li>
-<li><strong>Context</strong>:
-<ul>
-<li><strong>Local Sparsification</strong>: Applied independently to each layer.</li>
-<li><strong>Global Sparsification</strong>: Considers the entire network when determining which parameters to sparsify.</li>
-</ul></li>
-<li><strong>Criteria</strong>: Various criteria, such as L1 norm or Taylor expansion, are used to decide which parameters to zero out.</li>
-<li><strong>Schedule</strong>: The process can be one-shot (all at once), iterative (gradual), or based on automated gradual pruning schedules.</li>
-</ul>
-</section>
 <section id="low-rank-factorization" class="level2">
-<h2 class="anchored" data-anchor-id="low-rank-factorization">5. Low-Rank Factorization</h2>
+<h2 class="anchored" data-anchor-id="low-rank-factorization">4. Low-Rank Factorization</h2>
 <p><strong>Low-Rank Factorization</strong> reduces the dimensionality of the model parameters by decomposing matrices or tensors into products of lower-dimensional entities:</p>
 <ul>
 <li><strong>Matrix Factorization</strong>:
@@ -479,14 +454,13 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
+<section id="batchnorm-folding" class="level2">
+<h2 class="anchored" data-anchor-id="batchnorm-folding">5. BatchNorm Folding</h2>
+<p><strong>BatchNorm Folding</strong> combines Batch Normalization layers with preceding layers to reduce the computational load during inference. BatchNorm layers are merged with the preceding convolutional or fully connected layers during inference, reducing the number of operations. This is not an approximation; it means you can achieve model compression without sacrificing accuracy.</p>
+</section>
 <section id="weight-sharing" class="level2">
 <h2 class="anchored" data-anchor-id="weight-sharing">6. Weight Sharing</h2>
-<p><strong>Weight Sharing</strong> reduces the storage requirements by sharing weights across different parts of the network:</p>
-<ul>
-<li><strong>HashNet</strong>: Hashes weights into a smaller set of values to reduce memory usage.</li>
-<li><strong>Vector Quantization</strong>: Clusters similar weights together and shares the centroid of the clusters.</li>
-<li><strong>K-Means Clustering</strong>: A popular technique in which weights are clustered, and only the cluster centers are stored.</li>
-</ul>
+<p><strong>Weight Sharing</strong> is a technique used in neural networks to reduce the number of parameters, thus improving computational efficiency and potentially enhancing generalization. The core idea is to use the same weights across different parts of the network, which can lead to significant reductions in model size and complexity.</p>
 </section>
 <section id="neural-architecture-search-nas" class="level2">
 <h2 class="anchored" data-anchor-id="neural-architecture-search-nas">7. Neural Architecture Search (NAS)</h2>
@@ -496,64 +470,6 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Evolutionary Algorithm-Based NAS</strong>: Applies evolutionary strategies to evolve network architectures over successive generations.</li>
 <li><strong>Gradient-Based NAS</strong>: Utilizes gradients to guide the search for optimal architectures.</li>
 <li><strong>Hardware-Aware NAS</strong>: Tailors the search to optimize architectures specifically for target hardware, balancing performance with computational efficiency.</li>
-</ul>
-</section>
-<section id="efficient-architectures" class="level2">
-<h2 class="anchored" data-anchor-id="efficient-architectures">8. Efficient Architectures</h2>
-<p><strong>Efficient Architectures</strong> are specially designed to be lightweight and fast while maintaining high performance. These architectures are often used in mobile and embedded systems:</p>
-<ul>
-<li><strong>MobileNets (V1, V2, V3)</strong>: Use depthwise separable convolutions to reduce the number of parameters and computations.</li>
-<li><strong>ShuffleNet</strong>: Introduces channel shuffling to improve efficiency in grouped convolutions.</li>
-<li><strong>EfficientNet</strong>: Balances network depth, width, and resolution for optimal performance with minimal resources.</li>
-<li><strong>MCUNet</strong>: Tailored for microcontrollers, focusing on extreme efficiency.</li>
-<li><strong>SqueezeNet</strong>: Uses squeeze-and-excitation blocks to reduce the number of parameters.</li>
-<li><strong>TinyEngine</strong>: A neural network engine optimized for TinyML applications on microcontrollers.</li>
-</ul>
-</section>
-<section id="early-exit-techniques" class="level2">
-<h2 class="anchored" data-anchor-id="early-exit-techniques">9. Early Exit Techniques</h2>
-<p><strong>Early Exit Techniques</strong> allow a model to make predictions at intermediate layers if the confidence is high, reducing the need for processing through the entire network:</p>
-<ul>
-<li><strong>BranchyNet</strong>: Adds multiple exits at different depths of the network.</li>
-<li><strong>Multi-Exit Networks</strong>: Similar to BranchyNet, but with more sophisticated decision mechanisms to determine when to exit early.</li>
-</ul>
-</section>
-<section id="adaptive-inference" class="level2">
-<h2 class="anchored" data-anchor-id="adaptive-inference">10. Adaptive Inference</h2>
-<p><strong>Adaptive Inference</strong> dynamically adjusts the computational graph of a network during inference based on the input or runtime conditions:</p>
-<ul>
-<li><strong>Dynamic Computational Graphs</strong>: Modifies the structure of the network on-the-fly during inference.</li>
-<li><strong>Conditional Computation</strong>: Activates only a subset of the network’s layers or neurons based on the input data, reducing the overall computational load.</li>
-</ul>
-</section>
-<section id="sparse-representations" class="level2">
-<h2 class="anchored" data-anchor-id="sparse-representations">11. Sparse Representations</h2>
-<p><strong>Sparse Representations</strong> focus on reducing the number of active parameters in a network, leveraging the inherent redundancy in DNNs:</p>
-<ul>
-<li><strong>Compressed Sensing</strong>: Recovers a sparse signal from a small number of measurements, applicable in scenarios where data is sparse.</li>
-<li><strong>Sparse Neural Networks</strong>: Networks explicitly designed with sparsity in mind from the start.</li>
-<li><strong>Sparse Evolutionary Training</strong>: Evolves networks that start sparse and remain sparse throughout training.</li>
-</ul>
-</section>
-<section id="regularization-techniques" class="level2">
-<h2 class="anchored" data-anchor-id="regularization-techniques">12. Regularization Techniques</h2>
-<p><strong>Regularization Techniques</strong> encourage the network to develop sparse connections during training by applying penalties to the magnitude of weights:</p>
-<ul>
-<li><strong>L1/L2 Regularization</strong>: Adds a penalty to the loss function proportional to the sum of absolute or squared values of the weights, encouraging sparsity.</li>
-</ul>
-</section>
-<section id="batchnorm-folding" class="level2">
-<h2 class="anchored" data-anchor-id="batchnorm-folding">13. BatchNorm Folding</h2>
-<p><strong>BatchNorm Folding</strong> combines Batch Normalization layers with preceding layers to reduce the computational load during inference:</p>
-<ul>
-<li><strong>Merging BatchNorm Layers</strong>: BatchNorm layers are merged with the preceding convolutional or fully connected layers during inference, reducing the number of operations.</li>
-</ul>
-</section>
-<section id="fully-connected-layer-decomposition" class="level2">
-<h2 class="anchored" data-anchor-id="fully-connected-layer-decomposition">14. Fully-Connected Layer Decomposition</h2>
-<p><strong>Fully-Connected Layer Decomposition</strong> reduces the dimensionality of fully connected layers using matrix decomposition techniques:</p>
-<ul>
-<li><strong>Matrix Decomposition</strong>: Techniques like SVD are applied to decompose large weight matrices into smaller, more efficient representations.</li>
 </ul>
 </section>
 </section>
