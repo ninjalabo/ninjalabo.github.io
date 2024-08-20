@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blogs/dnn_hsi_opt.html",
       "/blogs/dnn_comp_techs.html",
       "/blogs/yolofaceid.html",
       "/blogs/pytorch_staticq.html",
