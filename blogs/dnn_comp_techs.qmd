@@ -4,6 +4,7 @@ author:
  - name: "Hiroshi Doyu"
    email: hiroshi.doyu@ninjalabo.ai
 date: "08/18/2024"
+date-modified: last-modified
 draft: false
 categories:
   - Tech
@@ -29,18 +30,20 @@ neural networks more efficient.
 
 ## 1. Quantization
 
-**Quantization** reduces the precision of the numbers representing model parameters, thus decreasing the memory and computational requirements. The key methods include:
+**Quantization** reduces the precision of the numbers representing model parameters, thus decreasing the memory and computational requirements. There are several quantization approaches and methods, each of which can be used independently or in combination to optimize model performance.
 
-- **Post-Training Quantization (PTQ)**: This technique converts the weights and activations of a pre-trained model to lower precision (e.g., from 32-bit floating point to 8-bit integers) without requiring further training. Variants include:
-  - **Static Quantization**: Quantizes weights and activations based on a representative dataset.
-  - **Dynamic Quantization**: Quantizes activations dynamically during inference.
-  - **Weight-Only Quantization**: Applies quantization only to the model weights.
-  - **Per-Channel Quantization**: Quantizes each channel separately, allowing for more precise control.
-  - **Non-Uniform Quantization**: Uses non-uniform quantization scales, optimizing for ranges that are more sensitive to accuracy.
-
+Quantization Approaches:
+- **Post-Training Quantization (PTQ)**: This technique converts the weights and activations of a pre-trained model to lower precision (e.g., from 32-bit floating point to 8-bit integers) without requiring further training.
 - **Quantization-Aware Training (QAT)**: Unlike PTQ, QAT involves training the model with simulated quantization effects, allowing the network to learn to be robust to the lower precision. This typically results in better performance compared to PTQ.
+Quantization Methods:
+- **Static Quantization**: Quantizes weights and activations using a representative dataset. All required quantization parameters are calculated beforehand, making inference faster compared to dynamic quantization.
+- **Dynamic Quantization**: Applies quantization to activations dynamically during inference. This method adapts to varying data more effectively than static quantization, providing flexibility for data with a wide range of values.
+- **Weight-Only Quantization**: Focuses on quantizing only the model weights while keeping activations at a higher precision. This approach can help maintain model accuracy compared to quantizing both weights and activations, but it results in a larger memory footprint.
+- **Group quantization**: Quantizes weights in predefined groups separately, allowing more precise control and potentially better trade-offs between accuracy and memory size.
+- **Symmetric vs. Asymmetric Quantization**: Symmetric quantization uses a single scale for both positive and negative values, while asymmetric quantization allows addionally zero-points (shifting values), , fully utilizing the quantization range. Symmetric quantization is generally faster, whereas asymmetric quantization offers improved accuracy.
+- **Mixed Precision Quantization**: Utilizes different precision levels (e.g., 16-bit floating point, 8-bit integers) within the same model. This method selects precision dynamically based on the importance of different layers or operations and can be combined with various quantization techniques to optimize performance and efficiency.
 
-- **Mixed Precision Quantization**: Combines different precisions (e.g., 16-bit, 8-bit) within the same model, selecting the precision dynamically based on the importance of different layers or operations. This approach balances computational efficiency with model accuracy.
+Each quantization method can be used in combination, depending on the specific needs of the model and deployment scenario. By effectively applying these techniques, you can achieve a balance between model accuracy, computational efficiency, and resource usage.
 
 ## 2. Pruning
 
@@ -69,18 +72,7 @@ neural networks more efficient.
 
 - **Cross-Model Distillation**: Distillation occurs between different types of models, such as distilling from an ensemble of models to a single student model.
 
-## 4. Sparsification
-
-**Sparsification** aims to increase the sparsity of the network by zeroing out insignificant parameters, similar to pruning but typically performed during training:
-
-- **Granularity Levels**: Sparsification can be applied at various levels, such as individual weights, vectors, kernels, or entire filters.
-- **Context**: 
-  - **Local Sparsification**: Applied independently to each layer.
-  - **Global Sparsification**: Considers the entire network when determining which parameters to sparsify.
-- **Criteria**: Various criteria, such as L1 norm or Taylor expansion, are used to decide which parameters to zero out.
-- **Schedule**: The process can be one-shot (all at once), iterative (gradual), or based on automated gradual pruning schedules.
-
-## 5. Low-Rank Factorization
+## 4. Low-Rank Factorization
 
 **Low-Rank Factorization** reduces the dimensionality of the model parameters by decomposing matrices or tensors into products of lower-dimensional entities:
 
@@ -91,13 +83,14 @@ neural networks more efficient.
   - **CP Decomposition**: Decomposes tensors (multi-dimensional arrays) into sums of outer products of vectors.
   - **Tucker Decomposition**: Generalizes matrix decomposition to higher dimensions by decomposing a tensor into a core tensor multiplied by matrices along each mode.
 
+## 5. BatchNorm Folding
+
+**BatchNorm Folding** combines Batch Normalization layers with preceding layers to reduce the computational load during inference. BatchNorm layers are merged with the preceding convolutional or fully connected layers during inference, reducing the number of operations. This is not an approximation; it means you can achieve model compression without sacrificing accuracy.
+
 ## 6. Weight Sharing
 
-**Weight Sharing** reduces the storage requirements by sharing weights across different parts of the network:
+**Weight Sharing** is a technique used in neural networks to reduce the number of parameters, thus improving computational efficiency and potentially enhancing generalization. The core idea is to use the same weights across different parts of the network, which can lead to significant reductions in model size and complexity.
 
-- **HashNet**: Hashes weights into a smaller set of values to reduce memory usage.
-- **Vector Quantization**: Clusters similar weights together and shares the centroid of the clusters.
-- **K-Means Clustering**: A popular technique in which weights are clustered, and only the cluster centers are stored.
 
 ## 7. Neural Architecture Search (NAS)
 
@@ -107,57 +100,6 @@ neural networks more efficient.
 - **Evolutionary Algorithm-Based NAS**: Applies evolutionary strategies to evolve network architectures over successive generations.
 - **Gradient-Based NAS**: Utilizes gradients to guide the search for optimal architectures.
 - **Hardware-Aware NAS**: Tailors the search to optimize architectures specifically for target hardware, balancing performance with computational efficiency.
-
-## 8. Efficient Architectures
-
-**Efficient Architectures** are specially designed to be lightweight and fast while maintaining high performance. These architectures are often used in mobile and embedded systems:
-
-- **MobileNets (V1, V2, V3)**: Use depthwise separable convolutions to reduce the number of parameters and computations.
-- **ShuffleNet**: Introduces channel shuffling to improve efficiency in grouped convolutions.
-- **EfficientNet**: Balances network depth, width, and resolution for optimal performance with minimal resources.
-- **MCUNet**: Tailored for microcontrollers, focusing on extreme efficiency.
-- **SqueezeNet**: Uses squeeze-and-excitation blocks to reduce the number of parameters.
-- **TinyEngine**: A neural network engine optimized for TinyML applications on microcontrollers.
-
-## 9. Early Exit Techniques
-
-**Early Exit Techniques** allow a model to make predictions at intermediate layers if the confidence is high, reducing the need for processing through the entire network:
-
-- **BranchyNet**: Adds multiple exits at different depths of the network.
-- **Multi-Exit Networks**: Similar to BranchyNet, but with more sophisticated decision mechanisms to determine when to exit early.
-
-## 10. Adaptive Inference
-
-**Adaptive Inference** dynamically adjusts the computational graph of a network during inference based on the input or runtime conditions:
-
-- **Dynamic Computational Graphs**: Modifies the structure of the network on-the-fly during inference.
-- **Conditional Computation**: Activates only a subset of the network's layers or neurons based on the input data, reducing the overall computational load.
-
-## 11. Sparse Representations
-
-**Sparse Representations** focus on reducing the number of active parameters in a network, leveraging the inherent redundancy in DNNs:
-
-- **Compressed Sensing**: Recovers a sparse signal from a small number of measurements, applicable in scenarios where data is sparse.
-- **Sparse Neural Networks**: Networks explicitly designed with sparsity in mind from the start.
-- **Sparse Evolutionary Training**: Evolves networks that start sparse and remain sparse throughout training.
-
-## 12. Regularization Techniques
-
-**Regularization Techniques** encourage the network to develop sparse connections during training by applying penalties to the magnitude of weights:
-
-- **L1/L2 Regularization**: Adds a penalty to the loss function proportional to the sum of absolute or squared values of the weights, encouraging sparsity.
-
-## 13. BatchNorm Folding
-
-**BatchNorm Folding** combines Batch Normalization layers with preceding layers to reduce the computational load during inference:
-
-- **Merging BatchNorm Layers**: BatchNorm layers are merged with the preceding convolutional or fully connected layers during inference, reducing the number of operations.
-
-## 14. Fully-Connected Layer Decomposition
-
-**Fully-Connected Layer Decomposition** reduces the dimensionality of fully connected layers using matrix decomposition techniques:
-
-- **Matrix Decomposition**: Techniques like SVD are applied to decompose large weight matrices into smaller, more efficient representations.
 
 
 # Resources
