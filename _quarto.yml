@@ -9,6 +9,8 @@ website:
   title: "NinjaLABO"
   image: "images/logo.jpg"
   favicon: "images/favicon.png"
+  analytics:
+    google: "G-1KVB48YND6"
   page-footer: 
     left: |
       Copyright 2023-2024, NinjaLABO
