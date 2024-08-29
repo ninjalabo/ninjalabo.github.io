@@ -1,0 +1,81 @@
+---
+title: "Looking for Software Engineer - AI Model Compression & DNN Runtime"
+author: 
+ - name: "Hiroshi Doyu"
+   email: hiroshi.doyu@ninjalabo.ai
+date: "08/29/2024"
+date-modified: last-modified
+draft: false
+categories:
+  - Hiring
+---
+# Software Engineer - AI Model Compression & DNN Runtime Development
+
+- **Location:** Remote (Occasional meetings at [A-Grid, Otaniemi](https://agrid.fi))
+- **Company:** [NinjaLABO](https://ninjalabo.ai)
+- **Duration:** Full-time or Part-time for 3 months (ASAP to the end of December).
+
+
+## About Us:
+[NinjaLABO](https://ninjalabo.ai) is a fresh, finnish startup at the
+forefront of AI innovation, focusing on [AI model
+compression](https://ninjalabo.ai/blogs/dnn_comp_techs.html) and deep
+neural network (DNN) runtime optimization for IoT, particularly for
+enabling onboard Edge AI in satellite systems.
+
+
+
+## Key Responsibilities:
+
+- Implement [DNN model compression techniques](https://ninjalabo.ai/blogs/dnn_comp_techs.html).
+  
+- Integrate the above into our SaaS platform, [TinyML as-a-Service](https://ninjalabo.ai/blogs/tinymlaas.html).
+  
+- Port and optimize DNN runtimes for Edge devices such as [Nvidia
+  Jetson](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/)
+  and [Orange Pi
+  5+](http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-5-plus-32GB.html).
+  
+
+
+## Requirements:
+
+- Strong proficiency in [Python](https://www.python.org) and C/C++.
+- Familiarity with [PyTorch](https://pytorch.org) or [TensorFlow](https://www.tensorflow.org).
+
+
+## Preferred Qualifications:
+
+- Hands-on experience with [Nvidia Jetson](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/) & [Orange Pi 5+](http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-5-plus-32GB.html).
+- Experience in AI model compression and [DNN runtime](https://github.com/karpathy/llm.c) development.
+- Knowledge of [TensorFlow Lite for Microcontrollers](https://www.tensorflow.org/lite/microcontrollers), [MLIR](https://mlir.llvm.org/), and [IREE](https://iree.dev/).
+- Knowledge of HyperSpectral Imaging (HSI).
+
+
+
+## Preferred Education:
+
+- Successful completion of [CS-E4890 - Deep Learning D](https://www.aalto.fi/en/study-options/cs-e4890-deep-learning-d) with good grades.
+- Successful completion of [CS-E4580 - Programming Parallel Computers D](https://www.aalto.fi/en/study-options/cs-e4580-programming-parallel-computers-d) with good grades.
+
+
+## WoW:
+- Full-time preferred, part-time candidates must be available for more than 3 days per week.
+- Discord for communication
+- Daily 5min meeting at **8:00am** every weekday via Discord
+- GitHuB project as Kanban board
+- GitHub workflow as CI/CD
+- 2 weeks Sprint planning / review / retro
+
+
+## Monthly Pay:
+
+- 3,000+€ for PhD students
+- 2,600-2,800€ for Master’s students
+- 2,100-2,400€ for Bachelor’s students
+
+Contracts facilitated through [UKKO.fi](https://www.ukko.fi/).
+
+
+## How to Apply:
+Interested? Apply to [Hiroshi Doyu](https://www.linkedin.com/in/hidoyu/) <[hiroshi.doyu@ninjalabo.ai](mailto:hiroshi.doyu@ninjalabo.ai)>
