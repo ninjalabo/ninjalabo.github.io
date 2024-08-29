@@ -24,6 +24,7 @@ neural network (DNN) runtime optimization for IoT, particularly for
 enabling onboard Edge AI in satellite systems.
 
 
+![](images/saas1.gif)
 
 ## Key Responsibilities:
 
@@ -49,7 +50,7 @@ enabling onboard Edge AI in satellite systems.
 - Hands-on experience with [Nvidia Jetson](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/) & [Orange Pi 5+](http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-5-plus-32GB.html).
 - Experience in AI model compression and [DNN runtime](https://github.com/karpathy/llm.c) development.
 - Knowledge of [TensorFlow Lite for Microcontrollers](https://www.tensorflow.org/lite/microcontrollers), [MLIR](https://mlir.llvm.org/), and [IREE](https://iree.dev/).
-- Knowledge of HyperSpectral Imaging (HSI).
+- Knowledge of [HyperSpectral Imaging](https://en.wikipedia.org/wiki/Hyperspectral_imaging) (HSI).
 
 
 
@@ -60,12 +61,12 @@ enabling onboard Edge AI in satellite systems.
 
 
 ## WoW:
-- Full-time preferred, part-time candidates must be available for more than 3 days per week.
-- Discord for communication
-- Daily 5min meeting at **8:00am** every weekday via Discord
-- GitHuB project as Kanban board
-- GitHub workflow as CI/CD
-- 2 weeks Sprint planning / review / retro
+- Full-time preferred, part-time candidates must be available for more than **3 days** per week.
+- [Discord](https://discord.com/) for daily communication
+- [Daily Scrum](https://www.scrum.org/resources/what-is-a-daily-scrum) at ***8:00am*** every weekday via Discord
+- [GitHuB Project](https://docs.github.com/en/issues/planning-and-tracking-with-projects) as Kanban board
+- [GitHub Workflow/Actions](https://docs.github.com/en/actions/about-github-actions/understanding-github-actions) as CI/CD
+- 2 weeks [Sprint](https://www.scrum.org/resources/what-is-a-sprint-in-scrum) planning / review / retro under SCRUM
 
 
 ## Monthly Pay:
