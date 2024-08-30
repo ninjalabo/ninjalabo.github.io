@@ -451,6 +451,12 @@ window.Quarto = {
     </div>
   </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">August 30, 2024</p>
+    </div>
+  </div>
     
   </div>
   
@@ -610,7 +616,7 @@ In integer representation: tensor([-1,  0,  0,  6,  4,  1, -1], dtype=torch.int8
 </div>
 </div>
 <p>As shown above, the quantized layer contains two scaling factors and zero points: one for the weights and another for the output activation. You may have noticed that the output scaling factor and zero point are the same as those displayed in the second cell above, as they represent the same activation.</p>
-<p>What about biases, which I haven’t discussed yet? In PyTorch, biases are not quantized during the initial quantization stage. Instead, they are quantized at inference. Although bias quantization could technically be performed at the same stage as weight quantization, PyTorch does not display the quantized biases at this point. The formula for bias quantization in PyTorch is <span class="math display">\[
+<p>What about biases, which I haven’t discussed yet? In PyTorch, bias quantization depends on the backend you use. For example, if you specify the x86 backend, biases are not quantized and are instead used as floating-point values. On the other hand, the QNNPACK backend quantizes biases. However, biases are not quantized during the initial quantization stage; they are quantized at inference time. Thus, even the inference uses quantized biases, PyTorch does not display the quantized biases at before inference. The formula for bias quantization in PyTorch is: <span class="math display">\[
 b_q = round(b / (si * sw))
 \]</span> , where <span class="math inline">\(b_q\)</span> is quantized bias, <span class="math inline">\(b\)</span> is bias before quantization, <span class="math inline">\(si\)</span> is input activation scale and <span class="math inline">\(sw\)</span> is weight scale. For more details, you can refer to this <a href="https://discuss.pytorch.org/t/is-bias-quantized-while-doing-pytorch-static-quantization/146416/6">discussion</a>.</p>
 <p>In addition, the model may include other non-quantized parameters, such as parameters in batch normalization layers that are not fused. This is likely because quantizing the activations in these layers would not provide significant benefits.</p>
