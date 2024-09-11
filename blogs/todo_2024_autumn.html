@@ -371,16 +371,16 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
   <li><a href="#tinymlaas" id="toc-tinymlaas" class="nav-link" data-scroll-target="#tinymlaas">tinyMLaaS</a>
   <ul class="collapse">
   <li><a href="#flexible-pipeline" id="toc-flexible-pipeline" class="nav-link" data-scroll-target="#flexible-pipeline">Flexible Pipeline</a></li>
-  <li><a href="#distributed-execution" id="toc-distributed-execution" class="nav-link" data-scroll-target="#distributed-execution">Distributed execution</a></li>
+  <li><a href="#distributed-execution" id="toc-distributed-execution" class="nav-link" data-scroll-target="#distributed-execution">Distributed Execution</a></li>
   </ul></li>
-  <li><a href="#tinyrunime" id="toc-tinyrunime" class="nav-link" data-scroll-target="#tinyrunime">tinyRunime</a>
+  <li><a href="#tinyruntime" id="toc-tinyruntime" class="nav-link" data-scroll-target="#tinyruntime">tinyRuntime</a>
   <ul class="collapse">
   <li><a href="#cuda-1" id="toc-cuda-1" class="nav-link" data-scroll-target="#cuda-1">CUDA</a></li>
   <li><a href="#cpu" id="toc-cpu" class="nav-link" data-scroll-target="#cpu">CPU</a></li>
   </ul></li>
   <li><a href="#model" id="toc-model" class="nav-link" data-scroll-target="#model">Model</a>
   <ul class="collapse">
-  <li><a href="#hsi" id="toc-hsi" class="nav-link" data-scroll-target="#hsi">HSI</a></li>
+  <li><a href="#hyperspectral-imaging-hsi" id="toc-hyperspectral-imaging-hsi" class="nav-link" data-scroll-target="#hyperspectral-imaging-hsi">HyperSpectral Imaging (HSI)</a></li>
   <li><a href="#esa-tender" id="toc-esa-tender" class="nav-link" data-scroll-target="#esa-tender">ESA Tender</a></li>
   </ul></li>
   </ul></li>
@@ -432,60 +432,76 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 
 <section id="todo" class="level1">
 <h1>ToDo</h1>
-<p>This is overview of NinjaLABO’s ToDo at Autumn of 2024.</p>
-<p><img src="images/todo_2024_autumn.png" class="img-fluid"></p>
+<p>This document provides an overview of <a href="https://ninjalabo.ai">NinjaLABO</a>’s tasks and objectives for the autumn of 2024. The following sections outline key areas of focus, ranging from way of working (WoW) to model development and hardware deployment strategies.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/todo_2024_autumn.png" class="img-fluid figure-img"></p>
+<figcaption>ToDo 2024 Autumn Overview</figcaption>
+</figure>
+</div>
 <section id="wow" class="level2">
 <h2 class="anchored" data-anchor-id="wow">WoW</h2>
-<p>Way of working to be efficient collaborately.</p>
+<p>Our <a href="https://www.scrum.org/resources/what-is-scrum">Way of Working (WoW)</a> aims to ensure efficient and collaborative work among team members. This includes SCRUM practices, GitHub workflows, and workshops for knowledge sharing.</p>
 <section id="scrum" class="level3">
 <h3 class="anchored" data-anchor-id="scrum">SCRUM</h3>
+<p>SCRUM is our core <a href="https://www.atlassian.com/agile/scrum">agile framework</a>, promoting daily check-ins, iterative sprint cycles, and continuous improvement.</p>
 <section id="daily-scrum" class="level4">
 <h4 class="anchored" data-anchor-id="daily-scrum">Daily Scrum</h4>
 <section id="am" class="level5">
 <h5 class="anchored" data-anchor-id="am">8:15am</h5>
 <ul>
-<li>Discord</li>
-<li>Voice Channel</li>
+<li>Held on <a href="https://discord.com/">Discord</a> in the Voice Channel.</li>
+<li>A strict 15-minute standup where everyone declares the following:
+<ol type="1">
+<li>What they completed (Done).</li>
+<li>What they will work on next (ToDo).</li>
+<li>Any blockers or issues (Issue).</li>
+</ol></li>
 </ul>
 </section>
-<section id="min" class="level5">
-<h5 class="anchored" data-anchor-id="min">15min</h5>
-<p>Declare shortly the following. Please continue in the backlog item comments or schedule another meeting if it takes time more than 5min.</p>
-<ol type="1">
-<li>Done</li>
-<li>ToDo</li>
-<li>Issue</li>
-</ol>
+<section id="rule" class="level5">
+<h5 class="anchored" data-anchor-id="rule">Rule:</h5>
+<p>If a topic takes longer than 5 minutes, continue the discussion in backlog item comments or schedule another meeting.</p>
 </section>
 </section>
 <section id="sprint" class="level4">
 <h4 class="anchored" data-anchor-id="sprint">Sprint</h4>
-<section id="weeks" class="level5">
-<h5 class="anchored" data-anchor-id="weeks">2 weeks</h5>
+<section id="week-cycle" class="level5">
+<h5 class="anchored" data-anchor-id="week-cycle">2-week cycle</h5>
+<p>Each sprint follows a clear structure, from planning to review, ensuring that we meet our project goals while continuously improving.</p>
 <section id="planning" class="level6">
 <h6 class="anchored" data-anchor-id="planning">1. Planning</h6>
-<p>Pick up backlog items to execute in the next sprint. Usually on Monday morning of the Sprint.</p>
+<ul>
+<li>Backlog grooming and sprint planning usually take place on Monday morning at the beginning of the sprint.</li>
+<li>The team selects high-priority tasks from the <a href="https://www.atlassian.com/software/jira/backlogs">backlog</a>.</li>
+</ul>
 </section>
 <section id="review" class="level6">
 <h6 class="anchored" data-anchor-id="review">2. Review</h6>
-<p>Sort out planned backlog items. Usually on Friday afternoon at the end of Sprint.</p>
+<ul>
+<li>The review occurs on Friday afternoon at the end of the sprint.</li>
+<li>We assess completed backlog items and discuss progress with stakeholders.</li>
+</ul>
 </section>
-<section id="retro" class="level6">
-<h6 class="anchored" data-anchor-id="retro">3. Retro</h6>
-<p>How to improve WoW in next Sprint. Usually on Friday afternoon at the end of Sprint.</p>
+<section id="retrospective-retro" class="level6">
+<h6 class="anchored" data-anchor-id="retrospective-retro">3. Retrospective (Retro)</h6>
+<ul>
+<li>After the review, we hold a <a href="https://www.atlassian.com/team-playbook/plays/retrospective">retrospective</a> to discuss what worked well and what could be improved in our WoW.</li>
+<li>The retro typically happens right after the review on Friday afternoon.</li>
+</ul>
 </section>
 </section>
 </section>
 </section>
 <section id="github" class="level3">
 <h3 class="anchored" data-anchor-id="github">GitHub</h3>
+<p><a href="https://github.com/">GitHub</a> is our primary tool for project management, code reviews, and CI/CD.</p>
 <section id="projects" class="level4">
 <h4 class="anchored" data-anchor-id="projects">Projects</h4>
 <section id="kanban" class="level5">
 <h5 class="anchored" data-anchor-id="kanban">KANBAN</h5>
-<p>Visualize and follow backlogs on KANBAN board.</p>
 <ul>
-<li>backlog</li>
+<li>We use the <a href="https://www.atlassian.com/agile/kanban">KANBAN</a> board to visualize and track our backlog items, ensuring we stay on top of tasks and priorities.</li>
 </ul>
 </section>
 </section>
@@ -494,133 +510,183 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <section id="cicd" class="level5">
 <h5 class="anchored" data-anchor-id="cicd">CI/CD</h5>
 <ul>
-<li><a href="https://www.agilealliance.org/glossary/atdd/#:~:text=Analogous%20to%20test%2Ddriven%20development,of%20implementing%20the%20corresponding%20functionality.">ATDD</a> <img src="images/atdd-flow.jpg" class="img-fluid"></li>
+<li>We follow the <a href="https://www.agilealliance.org/glossary/atdd/#:~:text=Analogous%20to%20test%2Ddriven%20development,of%20implementing%20the%20corresponding%20functionality.">Acceptance Test-Driven Development (ATDD)</a> approach, which ensures that tests are written based on the system’s behavior before the implementation. <img src="images/atdd-flow.jpg" class="img-fluid" alt="ATDD Flow"></li>
 </ul>
 </section>
 </section>
 <section id="pages" class="level4">
 <h4 class="anchored" data-anchor-id="pages">Pages</h4>
 <ul>
-<li><a href="https://nbdev.fast.ai/">Nbdev</a> Write, test, document, and distribute software packages and technical articles — all in one place, your notebook.</li>
+<li>Using <a href="https://nbdev.fast.ai/">Nbdev</a>, we streamline writing, testing, documenting, and distributing software packages directly from Jupyter Notebooks.</li>
 </ul>
 </section>
 </section>
 <section id="workshops" class="level3">
 <h3 class="anchored" data-anchor-id="workshops">Workshops</h3>
-<p>Let developers to follow jupyter notebook. - Knowledge sharing</p>
+<p>To facilitate knowledge sharing, we conduct <a href="https://workshops.github.com/">workshops</a>, encouraging developers to present and follow along using <a href="https://jupyter.org/">Jupyter notebooks</a>.</p>
 </section>
 </section>
 <section id="compression" class="level2">
 <h2 class="anchored" data-anchor-id="compression">Compression</h2>
+<p>The following techniques will be our focus for optimizing model performance:</p>
 <section id="profiling" class="level3">
 <h3 class="anchored" data-anchor-id="profiling">Profiling</h3>
+<p>In-depth <a href="https://pytorch.org/tutorials/recipes/recipes/profiler_recipe.html">profiling</a> is necessary to guide our compression strategies.</p>
 <section id="quantization" class="level4">
 <h4 class="anchored" data-anchor-id="quantization">Quantization</h4>
+<ul>
+<li>Reducing the number of bits needed to represent weights and activations with <a href="https://www.tensorflow.org/lite/performance/post_training_quantization">Post-training Quantization</a>.</li>
+</ul>
 </section>
 <section id="pruning" class="level4">
 <h4 class="anchored" data-anchor-id="pruning">Pruning</h4>
+<ul>
+<li><a href="https://pytorch.org/tutorials/intermediate/pruning_tutorial.html">Pruning</a> involves removing less critical parameters from the model.</li>
+</ul>
 </section>
-<section id="kd" class="level4">
-<h4 class="anchored" data-anchor-id="kd">KD</h4>
+<section id="knowledge-distillation-kd" class="level4">
+<h4 class="anchored" data-anchor-id="knowledge-distillation-kd">Knowledge Distillation (KD)</h4>
+<ul>
+<li>Training a smaller model (student) to mimic a larger model (teacher) through <a href="https://towardsdatascience.com/understanding-knowledge-distillation-6dc3e7b5a3e6">Knowledge Distillation</a>.</li>
+</ul>
 </section>
-<section id="low-rank-approx" class="level4">
-<h4 class="anchored" data-anchor-id="low-rank-approx">Low Rank Approx</h4>
+<section id="low-rank-approximation" class="level4">
+<h4 class="anchored" data-anchor-id="low-rank-approximation">Low-Rank Approximation</h4>
+<ul>
+<li>Reducing model complexity by approximating weight matrices with <a href="https://arxiv.org/abs/1511.06737">Low-Rank Factorization</a>.</li>
+</ul>
 </section>
 </section>
 </section>
 <section id="hw" class="level2">
 <h2 class="anchored" data-anchor-id="hw">HW</h2>
+<p>Exploring hardware platforms and their capabilities.</p>
 <section id="iree" class="level3">
 <h3 class="anchored" data-anchor-id="iree"><a href="https://iree.dev/">IREE</a></h3>
+<ul>
+<li>Investigate the potential of using <a href="https://iree.dev/">IREE</a> for machine learning workloads.</li>
+</ul>
 </section>
 <section id="cuda" class="level3">
 <h3 class="anchored" data-anchor-id="cuda">CUDA</h3>
+<ul>
+<li>Continue optimizing and leveraging <a href="https://developer.nvidia.com/cuda-toolkit">CUDA</a> for GPU-accelerated tasks.</li>
+</ul>
 </section>
 <section id="jetson" class="level3">
 <h3 class="anchored" data-anchor-id="jetson">JETSON</h3>
 <section id="tensorrt" class="level4">
-<h4 class="anchored" data-anchor-id="tensorrt">TensorRT</h4>
-<p>Compre with <code>TensorRT</code> from NVIDIA</p>
+<h4 class="anchored" data-anchor-id="tensorrt"><a href="https://developer.nvidia.com/tensorrt">TensorRT</a></h4>
+<ul>
+<li>Benchmark and compare model performance with NVIDIA’s <a href="https://developer.nvidia.com/tensorrt">TensorRT</a> on Jetson devices.</li>
+</ul>
 </section>
 </section>
 <section id="orange-pi-5-plus" class="level3">
 <h3 class="anchored" data-anchor-id="orange-pi-5-plus">Orange Pi 5 Plus</h3>
 <section id="llm-on-opi5" class="level4">
 <h4 class="anchored" data-anchor-id="llm-on-opi5"><a href="https://blog.mlc.ai/2024/04/20/GPU-Accelerated-LLM-on-Orange-Pi">LLM on OPi5+</a></h4>
+<ul>
+<li>Running <a href="https://en.wikipedia.org/wiki/Large_language_model">Large Language Models</a> (LLM) on the Orange Pi 5 Plus, evaluating its performance and scalability.</li>
+</ul>
 </section>
 </section>
 </section>
 <section id="tinymlaas" class="level2">
 <h2 class="anchored" data-anchor-id="tinymlaas">tinyMLaaS</h2>
+<p>Our tinyMLaaS focuses on providing scalable machine learning services, particularly for resource-constrained devices.</p>
 <section id="flexible-pipeline" class="level3">
 <h3 class="anchored" data-anchor-id="flexible-pipeline"><a href="https://ninjalabo.ai/blogs/summer_insights_2024.html#flexible-pipelining-for-dnn-model-transformations">Flexible Pipeline</a></h3>
-<p>Basically we do transform a DNN model anyway (e.g.&nbsp;compression, dockerization, wrapping to install)</p>
+<ul>
+<li>A pipeline for flexible model transformations, such as compression, dockerization, and packaging models for various environments.</li>
+</ul>
 <section id="fasthtml" class="level4">
 <h4 class="anchored" data-anchor-id="fasthtml">FastHTML</h4>
-</section>
-</section>
-<section id="distributed-execution" class="level3">
-<h3 class="anchored" data-anchor-id="distributed-execution"><a href="https://ninjalabo.ai/blogs/summer_insights_2024.html#distributed-execution-of-model-transformations">Distributed execution</a></h3>
 <ul>
-<li>FaaS</li>
-<li>Docker Swarm</li>
+<li>Leveraging <a href="https://fast.ai/posts/2021-05-19-why-fastai.html">FastHTML</a> for quicker model transformations and deployment.</li>
 </ul>
 </section>
 </section>
-<section id="tinyrunime" class="level2">
-<h2 class="anchored" data-anchor-id="tinyrunime">tinyRunime</h2>
+<section id="distributed-execution" class="level3">
+<h3 class="anchored" data-anchor-id="distributed-execution"><a href="https://ninjalabo.ai/blogs/summer_insights_2024.html#distributed-execution-of-model-transformations">Distributed Execution</a></h3>
+<ul>
+<li>Distributed model execution across nodes, utilizing technologies like <a href="https://en.wikipedia.org/wiki/Function_as_a_service">FaaS</a> (Function as a Service) and <a href="https://docs.docker.com/engine/swarm/">Docker Swarm</a>.</li>
+</ul>
+</section>
+</section>
+<section id="tinyruntime" class="level2">
+<h2 class="anchored" data-anchor-id="tinyruntime">tinyRuntime</h2>
+<p>Our custom runtime for executing deep learning models on various hardware platforms.</p>
 <section id="cuda-1" class="level3">
 <h3 class="anchored" data-anchor-id="cuda-1">CUDA</h3>
+<ul>
+<li>Focus on improving <a href="https://developer.nvidia.com/how-to-cuda-coding-gpu">GPU acceleration</a> within our runtime.</li>
+</ul>
 </section>
 <section id="cpu" class="level3">
 <h3 class="anchored" data-anchor-id="cpu">CPU</h3>
+<ul>
+<li>CPU-based <a href="https://www.analyticsvidhya.com/blog/2020/10/tflite-model-inference-in-python-on-cpu/">inference</a> and training optimizations.</li>
+</ul>
 <section id="inference" class="level4">
 <h4 class="anchored" data-anchor-id="inference">Inference</h4>
 <section id="resnet50" class="level5">
-<h5 class="anchored" data-anchor-id="resnet50">ResNet50</h5>
+<h5 class="anchored" data-anchor-id="resnet50"><a href="https://arxiv.org/abs/1512.03385">ResNet50</a></h5>
+<ul>
+<li>Evaluating inference performance with the <a href="https://keras.io/api/applications/resnet/">ResNet50</a> model.</li>
+</ul>
 <section id="cnn" class="level6">
 <h6 class="anchored" data-anchor-id="cnn">CNN</h6>
+<ul>
+<li>Using <a href="https://en.wikipedia.org/wiki/Convolutional_neural_network">Convolutional Neural Networks (CNN)</a> to process image data.</li>
+</ul>
 </section>
 </section>
 <section id="imagenette" class="level5">
-<h5 class="anchored" data-anchor-id="imagenette">Imagenette</h5>
+<h5 class="anchored" data-anchor-id="imagenette"><a href="https://github.com/fastai/imagenette">Imagenette</a></h5>
+<ul>
+<li>Benchmarking with the <a href="https://github.com/fastai/imagenette">Imagenette dataset</a>.</li>
+</ul>
 </section>
 <section id="transformers" class="level5">
-<h5 class="anchored" data-anchor-id="transformers">Transformers</h5>
+<h5 class="anchored" data-anchor-id="transformers"><a href="https://huggingface.co/docs/transformers/index">Transformers</a></h5>
 <ul>
-<li>LLM</li>
-<li>Vision</li>
+<li>Supporting inference of <a href="https://huggingface.co/transformers/">Transformers</a>, including Large Language Models (LLMs) and Vision Transformers.</li>
 </ul>
 </section>
 </section>
 <section id="training" class="level4">
 <h4 class="anchored" data-anchor-id="training">Training</h4>
+<ul>
+<li>Optimizing training pipelines on both <a href="https://towardsdatascience.com/cpu-vs-gpu-for-deep-learning-b0ad56f60155">CPU</a> and <a href="https://developer.nvidia.com/deep-learning-training">CUDA-based platforms</a>.</li>
+</ul>
 </section>
 </section>
 </section>
 <section id="model" class="level2">
 <h2 class="anchored" data-anchor-id="model">Model</h2>
-<section id="hsi" class="level3">
-<h3 class="anchored" data-anchor-id="hsi">HSI</h3>
+<p>Model development and collaboration projects for 2024.</p>
+<section id="hyperspectral-imaging-hsi" class="level3">
+<h3 class="anchored" data-anchor-id="hyperspectral-imaging-hsi"><a href="https://en.wikipedia.org/wiki/Hyperspectral_imaging">HyperSpectral Imaging</a> (HSI)</h3>
 <section id="d-cnn" class="level4">
-<h4 class="anchored" data-anchor-id="d-cnn">3D-CNN</h4>
+<h4 class="anchored" data-anchor-id="d-cnn"><a href="https://paperswithcode.com/method/3d-convolutional-network">3D-CNN</a></h4>
 <ul>
-<li>CubSat</li>
+<li>Developing models for <a href="https://www.sciencedirect.com/topics/engineering/hyperspectral-imaging">hyperspectral imaging</a> using <a href="https://paperswithcode.com/method/3d-convolutional-network">3D Convolutional Neural Networks</a>, particularly for CubeSat applications.</li>
 </ul>
 </section>
 </section>
 <section id="esa-tender" class="level3">
 <h3 class="anchored" data-anchor-id="esa-tender">ESA Tender</h3>
-<section id="llm" class="level4">
-<h4 class="anchored" data-anchor-id="llm">LLM</h4>
+<section id="large-language-model-llm" class="level4">
+<h4 class="anchored" data-anchor-id="large-language-model-llm">Large Language Model (LLM)</h4>
 <ul>
-<li>Compression</li>
+<li>Focusing on compression techniques for <a href="https://towardsdatascience.com/compressing-large-language-models-c505f2d5a56d">LLMs</a>, making them more efficient for deployment.</li>
 </ul>
 </section>
-<section id="dt" class="level4">
-<h4 class="anchored" data-anchor-id="dt">DT</h4>
+<section id="digital-twin-dt" class="level4">
+<h4 class="anchored" data-anchor-id="digital-twin-dt">Digital Twin (DT)</h4>
 <ul>
-<li>Physics SIM</li>
+<li>Exploring <a href="https://en.wikipedia.org/wiki/Physics_simulation">physics simulation</a> models as part of the ESA tender.</li>
 </ul>
 
 
