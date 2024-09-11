@@ -352,169 +352,193 @@
     "text": "TinyML involves deploying machine learning models on small, resource-constrained devices, such as microcontrollers or edge devices. The objective is to enable these devices to perform intelligent tasks without relying on powerful servers or the cloud. AI Compression involves techniques to reduce the size and computational requirements of AI models, making them suitable for deployment on smaller devices without significantly sacrificing performance. Techniques include Quantization (reducing precision), Fusing (combining layers), Factorization (breaking down complex operations), Pruning (removing unimportant neurons), and Knowledge Distillation (transferring knowledge from a large model to a smaller one).\nTinyML isn’t limited to microcontrollers with constrained resources. A core concept of TinyML is the Machine Learning Compiler (ML Compiler), which compiles pre-trained models into small, optimized executables. This approach can be applied to large deep neural network (DNN) models, such as large language models (LLMs), to reduce operational expenses (OPEX) in datacenters.\n\n\n\nTraining Phase: In this phase, the AI model learns from data. This involves feeding the model large datasets and iteratively adjusting its parameters to minimize prediction errors. The training phase requires significant computational power and is usually performed on powerful servers or cloud infrastructure.\nInference Phase: This is the phase where the trained model is used to make predictions or decisions based on new data. Unlike the training phase, inference can occur on much smaller devices, making it practical for real-world applications where quick responses are needed, and continuous connectivity to powerful servers is impractical.\n\nCurrently, our focus is on Post-Training Quantization (PTQ) and other post-training compression techniques, which are crucial for making models efficient enough to run on limited hardware.\n\n\n\nThe provided diagram outlines a streamlined process to make AI models efficient and deployable on small devices.\n\nHere’s a detailed explanation of each step:\n\nUpload:\n\nUsers upload their AI models, datasets, and information about their devices to the TinyMLaaS platform. The platform uses Huggingface storage for managing these uploads, ensuring secure and efficient handling of the data.\n\nRegister:\n\nThe platform registers the user’s device, model, and dataset. This step involves creating records of the hardware specifications, model details, and dataset characteristics, ensuring the platform understands the user’s specific requirements.\n\nRegister Compiler:\n\nThe platform registers a compiler tailored for the machine learning model. This compiler employs various optimization techniques such as:\n\nQuantization: Reducing the precision of the model’s calculations, which decreases the model size and computational load.\nFusing: Combining multiple layers of the model to streamline operations.\nSparsifying: Removing less important parts of the model to further reduce its size.\nPruning: Eliminating redundant or less significant neurons in the model, reducing complexity.\nKnowledge Distillation: Training a smaller model to mimic the behavior of a larger model, transferring its knowledge efficiently.\n\nAdditionally, the platform registers an installer that handles hardware optimization and can support software over-the-air updates (SOTA) for seamless deployment.\n\nExecute:\n\nThe platform executes the compiler and optimizer, generating a custom runtime environment. This process transforms the original AI model into a more compact and efficient version, specifically tuned to run on the user’s hardware.\n\nCompare:\n\nUsers can compare the original and optimized models based on metrics such as accuracy, memory size, and speed. This comparison helps ensure that the optimized model still meets the necessary performance criteria while being more efficient.\n\nDownload:\n\nUsers download the optimized model for installation on their devices. In some cases, if SOTA is supported, the TinyMLaaS platform can directly install the model onto the devices.\n\nInstall:\n\nUsers install the optimized AI model on their device, setting it up to run efficiently. This step is crucial for enabling the device to perform intelligent tasks, leveraging the compressed model for real-time inference.\n\n\n\n\n\n\nStreamlined Process: The process is designed to be straightforward and user-friendly, even for those who are not experts in AI or machine learning.\nFlexibility: The platform supports registering any compiler and installer as Docker images, allowing for flexible and customizable pipelines.\nEfficiency: The service focuses on making AI models smaller and faster without significantly sacrificing accuracy, enabling deployment on devices with limited resources.\nDeployment: Optimized AI models can be deployed on various devices, from industrial robots to satellites, making the technology versatile and widely applicable.\n\nBy using TinyMLaaS, users can leverage advanced AI capabilities on small devices. This is particularly useful for applications that require low latency, privacy, and reduced reliance on constant internet connectivity, without needing deep expertise in AI compression techniques. Additionally, the ML Compiler approach can be applied to large DNN models to reduce operational costs in datacenters, making it a versatile solution across different scales and use cases."
   },
   {
-    "objectID": "blogs/about.html",
-    "href": "blogs/about.html",
-    "title": "About",
+    "objectID": "blogs/tinymlusecases.html",
+    "href": "blogs/tinymlusecases.html",
+    "title": "TinyML Use Cases",
     "section": "",
-    "text": "What’s NinjaLABO is and how it was started!\n\n\n\nNinjaLABO’s origin",
-    "crumbs": [
-      "Get Started",
-      "About"
-    ]
+    "text": "In today’s competitive landscape, every company is leveraging AI or exploring its integration into their business operations. As AI models become increasingly sophisticated, the operational expenditures (OPEX) associated with utilizing expensive GPUs in cloud datacenters also rise. Moreover, large AI models often cannot be executed on small devices without relying on cloud GPUs.\nNinjaLABO’s AI model compression (TinyML as-a-Service) addresses these challenges by offering versatile solutions applicable across various industries. Below, we explore specific focus areas and use cases where these solutions are particularly relevant:\n\n\n\nData Types: Sensor data (temperature, humidity, air quality, noise levels), traffic data, utility usage data.\nUse Cases: Predictive maintenance, energy management, traffic optimization, environmental monitoring.\n\nAdvantage: Typically, 99% of data transmission is redundant, wasting network bandwidth and storage. Local AI execution with TinyML eliminates this inefficiency by transmitting data only when anomalies occur, thus optimizing communication and storage.\n\n\n\n\n\n\nData Types: Biometric data (heart rate, activity levels, sleep patterns), medical imaging data.\nUse Cases: Health monitoring, early disease detection, personalized healthcare, fitness tracking.\n\nAdvantage: Regulatory constraints often prohibit uploading private data to public clouds. Local AI execution with TinyML ensures that only processed, non-sensitive data is uploaded, preserving privacy.\n\n\n\n\n\n\nData Types: Machine performance data, operational data, maintenance logs.\nUse Cases: Predictive maintenance, process optimization, quality control.\n\nAdvantage: Similar to IoT use cases, local AI execution minimizes unnecessary data transmission, enhancing efficiency and security.\n\n\n\n\n\n\nData Types: Soil moisture levels, weather data, crop health data.\nUse Cases: Precision farming, crop monitoring, irrigation management.\n\nAdvantage: Agricultural fields often extend beyond network coverage. With TinyML, AI can be executed locally, enabling smart farming even in off-the-grid areas. This benefit extends to other off-the-grid network and battery-powered applications.\n\n\n\n\n\n\nData Types: Vehicle performance data, driver behavior data, traffic data.\nUse Cases: Autonomous driving, fleet management, driver safety systems.\n\nAdvantage: Real-time response is critical. Local AI execution with TinyML ensures immediate processing, which is crucial for safety and efficiency in automotive applications.\n\n\n\n\n\n\nData Types: Video feeds, audio recordings, motion sensor data.\nUse Cases: Intrusion detection, anomaly detection, crowd monitoring.\n\nAdvantage: Local data execution enhances security by reducing the need to transmit sensitive data, mitigating potential breaches.\n\n\nThese examples highlight the broad applicability of NinjaLABO’s solutions. By focusing on specific use cases within these industries, NinjaLABO can tailor its services to meet the unique needs and challenges of each sector, providing efficient, scalable, and impactful TinyML solutions."
   },
   {
-    "objectID": "blogs/hiring_2024_fall.html",
-    "href": "blogs/hiring_2024_fall.html",
-    "title": "Looking for Software Engineer - AI Model Compression & DNN Runtime",
+    "objectID": "blogs/tinymlusecases.html#iot-and-smart-cities",
+    "href": "blogs/tinymlusecases.html#iot-and-smart-cities",
+    "title": "TinyML Use Cases",
     "section": "",
-    "text": "Location: Remote (Occasional meetings at A-Grid, Otaniemi)\nCompany: NinjaLABO\nDuration: Full-time or Part-time for 3 months (ASAP to the end of December).\n\n\n\nNinjaLABO is a fresh, finnish startup at the forefront of AI innovation, focusing on AI model compression and deep neural network (DNN) runtime optimization for IoT, particularly for enabling onboard Edge AI in satellite systems.\n\n\n\n\n\nImplement DNN model compression techniques.\nIntegrate the above into our SaaS platform, TinyML as-a-Service.\nPort and optimize DNN runtimes for Edge devices such as Nvidia Jetson and Orange Pi 5+.\n\n\n\n\n\nStrong proficiency in Python and C/C++.\nFamiliarity with PyTorch or TensorFlow.\n\n\n\n\n\nHands-on experience with Nvidia Jetson & Orange Pi 5+.\nExperience in AI model compression and DNN runtime development.\nKnowledge of TensorFlow Lite for Microcontrollers, MLIR, and IREE.\nKnowledge of HyperSpectral Imaging (HSI).\n\n\n\n\n\nSuccessful completion of CS-E4890 - Deep Learning D with good grades.\nSuccessful completion of CS-E4580 - Programming Parallel Computers D with good grades.\n\n\n\n\n\nFull-time preferred, part-time candidates must be available for more than 3 days per week.\nDiscord for daily communication\nDaily Scrum at 8:00am every weekday via Discord\nGitHuB Project as Kanban board\nGitHub Workflow/Actions as CI/CD\n2 weeks Sprint planning / review / retro under SCRUM\n\n\n\n\n\n3,000+€ for PhD students\n2,600-2,800€ for Master’s students\n2,100-2,400€ for Bachelor’s students\n\nContracts facilitated through UKKO.fi.\n\n\n\nInterested? Apply to Hiroshi Doyu &lt;hiroshi.doyu@ninjalabo.ai&gt;"
+    "text": "Data Types: Sensor data (temperature, humidity, air quality, noise levels), traffic data, utility usage data.\nUse Cases: Predictive maintenance, energy management, traffic optimization, environmental monitoring.\n\nAdvantage: Typically, 99% of data transmission is redundant, wasting network bandwidth and storage. Local AI execution with TinyML eliminates this inefficiency by transmitting data only when anomalies occur, thus optimizing communication and storage."
   },
   {
-    "objectID": "blogs/hiring_2024_fall.html#about-us",
-    "href": "blogs/hiring_2024_fall.html#about-us",
-    "title": "Looking for Software Engineer - AI Model Compression & DNN Runtime",
+    "objectID": "blogs/tinymlusecases.html#healthcare-and-wearables",
+    "href": "blogs/tinymlusecases.html#healthcare-and-wearables",
+    "title": "TinyML Use Cases",
     "section": "",
-    "text": "NinjaLABO is a fresh, finnish startup at the forefront of AI innovation, focusing on AI model compression and deep neural network (DNN) runtime optimization for IoT, particularly for enabling onboard Edge AI in satellite systems."
+    "text": "Data Types: Biometric data (heart rate, activity levels, sleep patterns), medical imaging data.\nUse Cases: Health monitoring, early disease detection, personalized healthcare, fitness tracking.\n\nAdvantage: Regulatory constraints often prohibit uploading private data to public clouds. Local AI execution with TinyML ensures that only processed, non-sensitive data is uploaded, preserving privacy."
   },
   {
-    "objectID": "blogs/hiring_2024_fall.html#key-responsibilities",
-    "href": "blogs/hiring_2024_fall.html#key-responsibilities",
-    "title": "Looking for Software Engineer - AI Model Compression & DNN Runtime",
+    "objectID": "blogs/tinymlusecases.html#industrial-automation",
+    "href": "blogs/tinymlusecases.html#industrial-automation",
+    "title": "TinyML Use Cases",
     "section": "",
-    "text": "Implement DNN model compression techniques.\nIntegrate the above into our SaaS platform, TinyML as-a-Service.\nPort and optimize DNN runtimes for Edge devices such as Nvidia Jetson and Orange Pi 5+."
+    "text": "Data Types: Machine performance data, operational data, maintenance logs.\nUse Cases: Predictive maintenance, process optimization, quality control.\n\nAdvantage: Similar to IoT use cases, local AI execution minimizes unnecessary data transmission, enhancing efficiency and security."
   },
   {
-    "objectID": "blogs/hiring_2024_fall.html#requirements",
-    "href": "blogs/hiring_2024_fall.html#requirements",
-    "title": "Looking for Software Engineer - AI Model Compression & DNN Runtime",
+    "objectID": "blogs/tinymlusecases.html#agriculture",
+    "href": "blogs/tinymlusecases.html#agriculture",
+    "title": "TinyML Use Cases",
     "section": "",
-    "text": "Strong proficiency in Python and C/C++.\nFamiliarity with PyTorch or TensorFlow."
+    "text": "Data Types: Soil moisture levels, weather data, crop health data.\nUse Cases: Precision farming, crop monitoring, irrigation management.\n\nAdvantage: Agricultural fields often extend beyond network coverage. With TinyML, AI can be executed locally, enabling smart farming even in off-the-grid areas. This benefit extends to other off-the-grid network and battery-powered applications."
   },
   {
-    "objectID": "blogs/hiring_2024_fall.html#preferred-qualifications",
-    "href": "blogs/hiring_2024_fall.html#preferred-qualifications",
-    "title": "Looking for Software Engineer - AI Model Compression & DNN Runtime",
+    "objectID": "blogs/tinymlusecases.html#automotive-and-mobility",
+    "href": "blogs/tinymlusecases.html#automotive-and-mobility",
+    "title": "TinyML Use Cases",
     "section": "",
-    "text": "Hands-on experience with Nvidia Jetson & Orange Pi 5+.\nExperience in AI model compression and DNN runtime development.\nKnowledge of TensorFlow Lite for Microcontrollers, MLIR, and IREE.\nKnowledge of HyperSpectral Imaging (HSI)."
+    "text": "Data Types: Vehicle performance data, driver behavior data, traffic data.\nUse Cases: Autonomous driving, fleet management, driver safety systems.\n\nAdvantage: Real-time response is critical. Local AI execution with TinyML ensures immediate processing, which is crucial for safety and efficiency in automotive applications."
   },
   {
-    "objectID": "blogs/hiring_2024_fall.html#preferred-education",
-    "href": "blogs/hiring_2024_fall.html#preferred-education",
-    "title": "Looking for Software Engineer - AI Model Compression & DNN Runtime",
+    "objectID": "blogs/tinymlusecases.html#security-and-surveillance",
+    "href": "blogs/tinymlusecases.html#security-and-surveillance",
+    "title": "TinyML Use Cases",
     "section": "",
-    "text": "Successful completion of CS-E4890 - Deep Learning D with good grades.\nSuccessful completion of CS-E4580 - Programming Parallel Computers D with good grades."
+    "text": "Data Types: Video feeds, audio recordings, motion sensor data.\nUse Cases: Intrusion detection, anomaly detection, crowd monitoring.\n\nAdvantage: Local data execution enhances security by reducing the need to transmit sensitive data, mitigating potential breaches.\n\n\nThese examples highlight the broad applicability of NinjaLABO’s solutions. By focusing on specific use cases within these industries, NinjaLABO can tailor its services to meet the unique needs and challenges of each sector, providing efficient, scalable, and impactful TinyML solutions."
   },
   {
-    "objectID": "blogs/hiring_2024_fall.html#wow",
-    "href": "blogs/hiring_2024_fall.html#wow",
-    "title": "Looking for Software Engineer - AI Model Compression & DNN Runtime",
+    "objectID": "blogs/mvp6.html",
+    "href": "blogs/mvp6.html",
+    "title": "AI Compression as-a-Service MVP6 review",
     "section": "",
-    "text": "Full-time preferred, part-time candidates must be available for more than 3 days per week.\nDiscord for daily communication\nDaily Scrum at 8:00am every weekday via Discord\nGitHuB Project as Kanban board\nGitHub Workflow/Actions as CI/CD\n2 weeks Sprint planning / review / retro under SCRUM"
+    "text": "AI Compression as-a-Service MVP6 review"
   },
   {
-    "objectID": "blogs/hiring_2024_fall.html#monthly-pay",
-    "href": "blogs/hiring_2024_fall.html#monthly-pay",
-    "title": "Looking for Software Engineer - AI Model Compression & DNN Runtime",
+    "objectID": "blogs/yolofaceid.html",
+    "href": "blogs/yolofaceid.html",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
     "section": "",
-    "text": "3,000+€ for PhD students\n2,600-2,800€ for Master’s students\n2,100-2,400€ for Bachelor’s students\n\nContracts facilitated through UKKO.fi."
+    "text": "In today’s world, face identification systems are becoming increasingly crucial in various applications, from security and surveillance to personalized customer experiences. Building a real-time face identification system can seem daunting, but with the right tools and approaches, it becomes manageable. In this article, we will walk you through a project to develop such a system, using some of the best tools available, including Ultralytics YOLOv8, managed cloud services (e.g. AWS Rekognition and Azure Face API), and more. We’ll also compare different technologies to help you choose the best one for your needs."
   },
   {
-    "objectID": "blogs/hiring_2024_fall.html#how-to-apply",
-    "href": "blogs/hiring_2024_fall.html#how-to-apply",
-    "title": "Looking for Software Engineer - AI Model Compression & DNN Runtime",
-    "section": "",
-    "text": "Interested? Apply to Hiroshi Doyu &lt;hiroshi.doyu@ninjalabo.ai&gt;"
+    "objectID": "blogs/yolofaceid.html#setting-up-yolov8",
+    "href": "blogs/yolofaceid.html#setting-up-yolov8",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "Setting Up YOLOv8",
+    "text": "Setting Up YOLOv8\n\nInstall the Ultralytics Package: Begin by installing the necessary software using pip:\npip install ultralytics\nLoad the YOLOv8 Model: Load a pre-trained YOLOv8 model or start with a custom model:\nfrom ultralytics import YOLO\n\n# Load a YOLOv8 model\nmodel = YOLO('yolov8n.pt')\n\n# Perform inference on an image\nresults = model('path/to/your/image.jpg')\nresults.show()  # Display results"
   },
   {
-    "objectID": "blogs/aicompressionsaas.html",
-    "href": "blogs/aicompressionsaas.html",
-    "title": "AI compression SaaS",
-    "section": "",
-    "text": "It has been nearly five years since I first wrote about TinyML and TinyML as-a-Service (TinyMLaaS) on the Ericsson blog.\n\nIn the rapidly evolving landscape of artificial intelligence (AI), efficiency and resource optimization are paramount. AI Compression as-a-Service (ACaaS) and TinyML as-a-Service (TinyMLaaS) emerge as transformative solutions that address the growing demand for deploying AI on resource-constrained devices. These services offer scalable, cost-effective, and high-performance AI capabilities, enabling a new wave of innovation in edge computing.\n\n\nAI models, especially deep learning networks, have become increasingly complex and resource-intensive. Traditional deployment of these models on edge devices, such as smartphones, IoT sensors, and embedded systems, poses significant challenges due to limited computational power, memory, and energy resources. AI compression techniques, including model pruning, quantization, and knowledge distillation, aim to reduce the size and computational requirements of AI models without significantly compromising their performance.\n\n\n\n\nResource Optimization: ACaaS allows businesses to deploy AI models on edge devices with constrained resources, ensuring efficient utilization of hardware capabilities.\nScalability: By leveraging cloud-based AI compression services, organizations can scale their AI deployments seamlessly, catering to diverse applications and devices.\nCost-Effectiveness: Reduced model sizes and lower computational demands translate to cost savings in terms of hardware investment and energy consumption.\nFaster Inference: Compressed models enable faster inference times, critical for real-time applications such as autonomous vehicles, surveillance, and industrial automation.\nEnhanced Security: Processing data locally on edge devices minimizes data transfer to the cloud, enhancing data privacy and security.\n\n\n\n\nTinyMLaaS extends the concept of AI compression to the domain of microcontrollers and other ultra-low-power devices. By providing pre-trained, compressed AI models and tools for deploying them on TinyML platforms, this service empowers developers to create intelligent applications for the Internet of Things (IoT).\n\n\n\nPre-trained Models: Access to a library of pre-trained, optimized models for various applications, from anomaly detection to image recognition.\nDeployment Tools: Comprehensive toolchains for converting, optimizing, and deploying models on TinyML hardware, simplifying the development process.\nCustom Solutions: Tailored AI solutions for specific use cases, ensuring optimal performance and efficiency.\nSeamless Integration: Easy integration with existing IoT ecosystems, enabling rapid deployment and scaling of intelligent applications.\n\n\n\n\n\n\nSmart Home Devices: Enhancing the capabilities of home automation systems with intelligent voice assistants, security cameras, and energy management solutions.\nIndustrial IoT: Enabling predictive maintenance, quality control, and automation in manufacturing and logistics.\nHealthcare: Providing real-time monitoring and diagnostics through wearable devices and smart medical equipment.\nAgriculture: Facilitating precision farming with AI-powered sensors for soil health, weather conditions, and crop monitoring.\n\n\n\n\nAI Compression as-a-Service and TinyML as-a-Service represent the next frontier in AI deployment, bridging the gap between advanced AI capabilities and resource-constrained edge devices. By offering scalable, efficient, and cost-effective solutions, these services empower a wide range of industries to harness the power of AI, driving innovation and transforming the way we interact with technology.\nAs the demand for edge computing continues to grow, ACaaS and TinyMLaaS will play a crucial role in shaping the future of AI, making intelligent applications more accessible and ubiquitous than ever before."
+    "objectID": "blogs/yolofaceid.html#training-on-a-custom-dataset",
+    "href": "blogs/yolofaceid.html#training-on-a-custom-dataset",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "Training on a Custom Dataset",
+    "text": "Training on a Custom Dataset\nTo fine-tune YOLOv8 for face detection, you need a dataset of face images with annotations in YOLO format. You can use public datasets like WIDER FACE or CelebA.\n\nPrepare Your Dataset: Ensure your dataset is properly annotated and structured.\nConfigure and Train the Model: Train YOLOv8 using your dataset:\nmodel = YOLO('yolov8n.pt')\nmodel.train(data='path/to/data.yaml', epochs=100, imgsz=640, batch=16)"
   },
   {
-    "objectID": "blogs/aicompressionsaas.html#the-need-for-ai-compression",
-    "href": "blogs/aicompressionsaas.html#the-need-for-ai-compression",
-    "title": "AI compression SaaS",
-    "section": "",
-    "text": "AI models, especially deep learning networks, have become increasingly complex and resource-intensive. Traditional deployment of these models on edge devices, such as smartphones, IoT sensors, and embedded systems, poses significant challenges due to limited computational power, memory, and energy resources. AI compression techniques, including model pruning, quantization, and knowledge distillation, aim to reduce the size and computational requirements of AI models without significantly compromising their performance."
+    "objectID": "blogs/yolofaceid.html#deploying-for-real-time-face-detection",
+    "href": "blogs/yolofaceid.html#deploying-for-real-time-face-detection",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "Deploying for Real-Time Face Detection",
+    "text": "Deploying for Real-Time Face Detection\nOnce trained, you can deploy YOLOv8 for real-time face detection. This can be done by feeding live video streams into the model and processing each frame.\nimport cv2\nfrom ultralytics import YOLO\n\n# Load the trained model\nmodel = YOLO('runs/train/exp/weights/best.pt')\n\n# Capture video from webcam\ncap = cv2.VideoCapture(0)\n\nwhile cap.isOpened():\n    ret, frame = cap.read()\n    if not ret:\n        break\n\n    # Perform inference\n    results = model(frame)\n\n    # Display results\n    results.show()\n\n    if cv2.waitKey(1) & 0xFF == ord('q'):\n        break\n\ncap.release()\ncv2.destroyAllWindows()"
   },
   {
-    "objectID": "blogs/aicompressionsaas.html#benefits-of-ai-compression-as-a-service",
-    "href": "blogs/aicompressionsaas.html#benefits-of-ai-compression-as-a-service",
-    "title": "AI compression SaaS",
-    "section": "",
-    "text": "Resource Optimization: ACaaS allows businesses to deploy AI models on edge devices with constrained resources, ensuring efficient utilization of hardware capabilities.\nScalability: By leveraging cloud-based AI compression services, organizations can scale their AI deployments seamlessly, catering to diverse applications and devices.\nCost-Effectiveness: Reduced model sizes and lower computational demands translate to cost savings in terms of hardware investment and energy consumption.\nFaster Inference: Compressed models enable faster inference times, critical for real-time applications such as autonomous vehicles, surveillance, and industrial automation.\nEnhanced Security: Processing data locally on edge devices minimizes data transfer to the cloud, enhancing data privacy and security."
+    "objectID": "blogs/yolofaceid.html#key-factors",
+    "href": "blogs/yolofaceid.html#key-factors",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "Key Factors:",
+    "text": "Key Factors:\n\nGPU is superiour to CPU at inference from cost vs perf comparison.\nProcessing Power: Each GPU’s ability to handle a specific number of frames per second (FPS).\nTotal FPS Requirement: The total computational load imposed by the 200 cameras.\nRack-Mount Server Specifications: The number of GPUs each server can support."
   },
   {
-    "objectID": "blogs/aicompressionsaas.html#tinyml-as-a-service-empowering-the-internet-of-things",
-    "href": "blogs/aicompressionsaas.html#tinyml-as-a-service-empowering-the-internet-of-things",
-    "title": "AI compression SaaS",
-    "section": "",
-    "text": "TinyMLaaS extends the concept of AI compression to the domain of microcontrollers and other ultra-low-power devices. By providing pre-trained, compressed AI models and tools for deploying them on TinyML platforms, this service empowers developers to create intelligent applications for the Internet of Things (IoT).\n\n\n\nPre-trained Models: Access to a library of pre-trained, optimized models for various applications, from anomaly detection to image recognition.\nDeployment Tools: Comprehensive toolchains for converting, optimizing, and deploying models on TinyML hardware, simplifying the development process.\nCustom Solutions: Tailored AI solutions for specific use cases, ensuring optimal performance and efficiency.\nSeamless Integration: Easy integration with existing IoT ecosystems, enabling rapid deployment and scaling of intelligent applications."
+    "objectID": "blogs/yolofaceid.html#calculating-total-fps-requirement",
+    "href": "blogs/yolofaceid.html#calculating-total-fps-requirement",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "Calculating Total FPS Requirement:",
+    "text": "Calculating Total FPS Requirement:\n\n200 Cameras at 30 FPS each:\n\nTotal FPS required = 200 cameras * 30 FPS = 6000 FPS."
   },
   {
-    "objectID": "blogs/aicompressionsaas.html#applications-and-use-cases",
-    "href": "blogs/aicompressionsaas.html#applications-and-use-cases",
-    "title": "AI compression SaaS",
-    "section": "",
-    "text": "Smart Home Devices: Enhancing the capabilities of home automation systems with intelligent voice assistants, security cameras, and energy management solutions.\nIndustrial IoT: Enabling predictive maintenance, quality control, and automation in manufacturing and logistics.\nHealthcare: Providing real-time monitoring and diagnostics through wearable devices and smart medical equipment.\nAgriculture: Facilitating precision farming with AI-powered sensors for soil health, weather conditions, and crop monitoring."
+    "objectID": "blogs/yolofaceid.html#gpu-capacity",
+    "href": "blogs/yolofaceid.html#gpu-capacity",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "GPU Capacity:",
+    "text": "GPU Capacity:\n\nNVIDIA RTX 3080: Can handle approximately 400 FPS for YOLOv8-tiny and around 80-100 FPS for standard YOLOv8.\nNVIDIA RTX 3090: Can handle approximately 600 FPS for YOLOv8-tiny and around 120-150 FPS for standard YOLOv8.\nNVIDIA RTX 4090: Can handle approximately 1000 FPS for YOLOv8-tiny and around 200-250 FPS for standard YOLOv8."
   },
   {
-    "objectID": "blogs/aicompressionsaas.html#conclusion",
-    "href": "blogs/aicompressionsaas.html#conclusion",
-    "title": "AI compression SaaS",
-    "section": "",
-    "text": "AI Compression as-a-Service and TinyML as-a-Service represent the next frontier in AI deployment, bridging the gap between advanced AI capabilities and resource-constrained edge devices. By offering scalable, efficient, and cost-effective solutions, these services empower a wide range of industries to harness the power of AI, driving innovation and transforming the way we interact with technology.\nAs the demand for edge computing continues to grow, ACaaS and TinyMLaaS will play a crucial role in shaping the future of AI, making intelligent applications more accessible and ubiquitous than ever before."
+    "objectID": "blogs/yolofaceid.html#example-server-configurations",
+    "href": "blogs/yolofaceid.html#example-server-configurations",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "Example Server Configurations:",
+    "text": "Example Server Configurations:\n\nSupermicro 4U GPU Server (SYS-4029GP-TRT):\n\nSupports up to 4 GPUs.\nIf each server uses 4x RTX 4090 GPUs, the total processing capability per server would be:\n\nYOLOv8-tiny: 4000 FPS (4 GPUs * 1000 FPS).\nStandard YOLOv8: 800-1000 FPS (4 GPUs * 200-250 FPS).\n\n\nASUS ESC8000A-E11:\n\nSupports up to 8 GPUs.\nWith 8x RTX 4090 GPUs:\n\nYOLOv8-tiny: 8000 FPS (8 GPUs * 1000 FPS).\nStandard YOLOv8: 1600-2000 FPS (8 GPUs * 200-250 FPS)."
   },
   {
-    "objectID": "blogs/todo_2024_autumn.html",
-    "href": "blogs/todo_2024_autumn.html",
-    "title": "ToDo list in Autumn 2024",
-    "section": "",
-    "text": "This document provides an overview of NinjaLABO’s tasks and objectives for the autumn of 2024. The following sections outline key areas of focus, ranging from way of working (WoW) to model development and hardware deployment strategies.\n\n\n\nToDo 2024 Autumn Overview\n\n\n\n\nOur Way of Working (WoW) aims to ensure efficient and collaborative work among team members. This includes SCRUM practices, GitHub workflows, and workshops for knowledge sharing.\n\n\nSCRUM is our core agile framework, promoting daily check-ins, iterative sprint cycles, and continuous improvement.\n\n\n\n\n\nHeld on Discord in the Voice Channel.\nA strict 15-minute standup where everyone declares the following:\n\nWhat they completed (Done).\nWhat they will work on next (ToDo).\nAny blockers or issues (Issue).\n\n\n\n\n\nIf a topic takes longer than 5 minutes, continue the discussion in backlog item comments or schedule another meeting.\n\n\n\n\n\n\nEach sprint follows a clear structure, from planning to review, ensuring that we meet our project goals while continuously improving.\n\n\n\nBacklog grooming and sprint planning usually take place on Monday morning at the beginning of the sprint.\nThe team selects high-priority tasks from the backlog.\n\n\n\n\n\nThe review occurs on Friday afternoon at the end of the sprint.\nWe assess completed backlog items and discuss progress with stakeholders.\n\n\n\n\n\nAfter the review, we hold a retrospective to discuss what worked well and what could be improved in our WoW.\nThe retro typically happens right after the review on Friday afternoon.\n\n\n\n\n\n\n\nGitHub is our primary tool for project management, code reviews, and CI/CD.\n\n\n\n\n\nWe use the KANBAN board to visualize and track our backlog items, ensuring we stay on top of tasks and priorities.\n\n\n\n\n\n\n\n\nWe follow the Acceptance Test-Driven Development (ATDD) approach, which ensures that tests are written based on the system’s behavior before the implementation. \n\n\n\n\n\n\nUsing Nbdev, we streamline writing, testing, documenting, and distributing software packages directly from Jupyter Notebooks.\n\n\n\n\n\nTo facilitate knowledge sharing, we conduct workshops, encouraging developers to present and follow along using Jupyter notebooks.\n\n\n\n\nThe following techniques will be our focus for optimizing model performance:\n\n\nIn-depth profiling is necessary to guide our compression strategies.\n\n\n\nReducing the number of bits needed to represent weights and activations with Post-training Quantization.\n\n\n\n\n\nPruning involves removing less critical parameters from the model.\n\n\n\n\n\nTraining a smaller model (student) to mimic a larger model (teacher) through Knowledge Distillation.\n\n\n\n\n\nReducing model complexity by approximating weight matrices with Low-Rank Factorization.\n\n\n\n\n\n\nExploring hardware platforms and their capabilities.\n\n\n\nInvestigate the potential of using IREE for machine learning workloads.\n\n\n\n\n\nContinue optimizing and leveraging CUDA for GPU-accelerated tasks.\n\n\n\n\n\n\n\nBenchmark and compare model performance with NVIDIA’s TensorRT on Jetson devices.\n\n\n\n\n\n\n\n\nRunning Large Language Models (LLM) on the Orange Pi 5 Plus, evaluating its performance and scalability.\n\n\n\n\n\n\nOur tinyMLaaS focuses on providing scalable machine learning services, particularly for resource-constrained devices.\n\n\n\nA pipeline for flexible model transformations, such as compression, dockerization, and packaging models for various environments.\n\n\n\n\nLeveraging FastHTML for quicker model transformations and deployment.\n\n\n\n\n\n\nDistributed model execution across nodes, utilizing technologies like FaaS (Function as a Service) and Docker Swarm.\n\n\n\n\n\nOur custom runtime for executing deep learning models on various hardware platforms.\n\n\n\nFocus on improving GPU acceleration within our runtime.\n\n\n\n\n\nCPU-based inference and training optimizations.\n\n\n\n\n\n\nEvaluating inference performance with the ResNet50 model.\n\n\n\n\nUsing Convolutional Neural Networks (CNN) to process image data.\n\n\n\n\n\n\nBenchmarking with the Imagenette dataset.\n\n\n\n\n\nSupporting inference of Transformers, including Large Language Models (LLMs) and Vision Transformers.\n\n\n\n\n\n\nOptimizing training pipelines on both CPU and CUDA-based platforms.\n\n\n\n\n\n\nModel development and collaboration projects for 2024.\n\n\n\n\n\nDeveloping models for hyperspectral imaging using 3D Convolutional Neural Networks, particularly for CubeSat applications.\n\n\n\n\n\n\n\n\nFocusing on compression techniques for LLMs, making them more efficient for deployment.\n\n\n\n\n\nExploring physics simulation models as part of the ESA tender."
+    "objectID": "blogs/yolofaceid.html#number-of-servers-needed",
+    "href": "blogs/yolofaceid.html#number-of-servers-needed",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "Number of Servers Needed:",
+    "text": "Number of Servers Needed:\n\nFor YOLOv8-tiny:\n\nWith Supermicro 4U Server: 1.5 servers (round up to 2 servers).\nWith ASUS ESC8000A-E11: 1 server is sufficient.\n\nFor Standard YOLOv8:\n\nWith Supermicro 4U Server: 6-8 servers.\nWith ASUS ESC8000A-E11: 3-4 servers."
   },
   {
-    "objectID": "blogs/todo_2024_autumn.html#wow",
-    "href": "blogs/todo_2024_autumn.html#wow",
-    "title": "ToDo list in Autumn 2024",
-    "section": "",
-    "text": "Our Way of Working (WoW) aims to ensure efficient and collaborative work among team members. This includes SCRUM practices, GitHub workflows, and workshops for knowledge sharing.\n\n\nSCRUM is our core agile framework, promoting daily check-ins, iterative sprint cycles, and continuous improvement.\n\n\n\n\n\nHeld on Discord in the Voice Channel.\nA strict 15-minute standup where everyone declares the following:\n\nWhat they completed (Done).\nWhat they will work on next (ToDo).\nAny blockers or issues (Issue).\n\n\n\n\n\nIf a topic takes longer than 5 minutes, continue the discussion in backlog item comments or schedule another meeting.\n\n\n\n\n\n\nEach sprint follows a clear structure, from planning to review, ensuring that we meet our project goals while continuously improving.\n\n\n\nBacklog grooming and sprint planning usually take place on Monday morning at the beginning of the sprint.\nThe team selects high-priority tasks from the backlog.\n\n\n\n\n\nThe review occurs on Friday afternoon at the end of the sprint.\nWe assess completed backlog items and discuss progress with stakeholders.\n\n\n\n\n\nAfter the review, we hold a retrospective to discuss what worked well and what could be improved in our WoW.\nThe retro typically happens right after the review on Friday afternoon.\n\n\n\n\n\n\n\nGitHub is our primary tool for project management, code reviews, and CI/CD.\n\n\n\n\n\nWe use the KANBAN board to visualize and track our backlog items, ensuring we stay on top of tasks and priorities.\n\n\n\n\n\n\n\n\nWe follow the Acceptance Test-Driven Development (ATDD) approach, which ensures that tests are written based on the system’s behavior before the implementation. \n\n\n\n\n\n\nUsing Nbdev, we streamline writing, testing, documenting, and distributing software packages directly from Jupyter Notebooks.\n\n\n\n\n\nTo facilitate knowledge sharing, we conduct workshops, encouraging developers to present and follow along using Jupyter notebooks."
+    "objectID": "blogs/yolofaceid.html#summary",
+    "href": "blogs/yolofaceid.html#summary",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "SUMMARY",
+    "text": "SUMMARY\n\nYOLOv8-tiny: You would need 1-2 servers (depending on GPU configuration) to handle the 200 cameras.\nStandard YOLOv8: You would need 3-8 servers depending on the specific GPU and server model you choose.\n\nThese estimates assume maximum utilization of each GPU’s capabilities, and the actual number might vary based on real-world conditions, such as CPU bottlenecks, memory limitations, and other factors."
   },
   {
-    "objectID": "blogs/todo_2024_autumn.html#compression",
-    "href": "blogs/todo_2024_autumn.html#compression",
-    "title": "ToDo list in Autumn 2024",
-    "section": "",
-    "text": "The following techniques will be our focus for optimizing model performance:\n\n\nIn-depth profiling is necessary to guide our compression strategies.\n\n\n\nReducing the number of bits needed to represent weights and activations with Post-training Quantization.\n\n\n\n\n\nPruning involves removing less critical parameters from the model.\n\n\n\n\n\nTraining a smaller model (student) to mimic a larger model (teacher) through Knowledge Distillation.\n\n\n\n\n\nReducing model complexity by approximating weight matrices with Low-Rank Factorization."
+    "objectID": "blogs/yolofaceid.html#key-parameters",
+    "href": "blogs/yolofaceid.html#key-parameters",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "Key Parameters",
+    "text": "Key Parameters\n\nResolution:\n\n2MP (1080p): Approximately 3 Mbps\n4MP: Approximately 6 Mbps\n\nFrame Rate: 30 frames per second (FPS)\nRecording Time: 24 hours per day, 30 days per month\nNumber of Cameras: 200\nCompression: H.264 assumed (H.265 could reduce storage by up to 50%)"
   },
   {
-    "objectID": "blogs/todo_2024_autumn.html#hw",
-    "href": "blogs/todo_2024_autumn.html#hw",
-    "title": "ToDo list in Autumn 2024",
-    "section": "",
-    "text": "Exploring hardware platforms and their capabilities.\n\n\n\nInvestigate the potential of using IREE for machine learning workloads.\n\n\n\n\n\nContinue optimizing and leveraging CUDA for GPU-accelerated tasks.\n\n\n\n\n\n\n\nBenchmark and compare model performance with NVIDIA’s TensorRT on Jetson devices.\n\n\n\n\n\n\n\n\nRunning Large Language Models (LLM) on the Orange Pi 5 Plus, evaluating its performance and scalability."
+    "objectID": "blogs/yolofaceid.html#storage-calculation",
+    "href": "blogs/yolofaceid.html#storage-calculation",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "Storage Calculation",
+    "text": "Storage Calculation\nThe total storage required can be calculated using the following equation:\n\\[\n\\text{Total Storage (TB)} = \\left(\\frac{\\text{Bitrate (Mbps)} \\times 86,400 \\times 30 \\times \\text{Number of Cameras}}{8 \\times 1024^2}\\right)\n\\]\nWhere:\n\n86,400: Number of seconds in a day\n30: Number of days in a month\n8: Conversion factor from bits to bytes\n1024^2: Conversion from MB to TB"
   },
   {
-    "objectID": "blogs/todo_2024_autumn.html#tinymlaas",
-    "href": "blogs/todo_2024_autumn.html#tinymlaas",
-    "title": "ToDo list in Autumn 2024",
-    "section": "",
-    "text": "Our tinyMLaaS focuses on providing scalable machine learning services, particularly for resource-constrained devices.\n\n\n\nA pipeline for flexible model transformations, such as compression, dockerization, and packaging models for various environments.\n\n\n\n\nLeveraging FastHTML for quicker model transformations and deployment.\n\n\n\n\n\n\nDistributed model execution across nodes, utilizing technologies like FaaS (Function as a Service) and Docker Swarm."
+    "objectID": "blogs/yolofaceid.html#results",
+    "href": "blogs/yolofaceid.html#results",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "Results",
+    "text": "Results\n\nFor 2MP Cameras (3 Mbps):\n\nTotal Storage: Approximately 185.2 TB per month.\n\nFor 4MP Cameras (6 Mbps):\n\nTotal Storage: Approximately 370.5 TB per month."
   },
   {
-    "objectID": "blogs/todo_2024_autumn.html#tinyruntime",
-    "href": "blogs/todo_2024_autumn.html#tinyruntime",
-    "title": "ToDo list in Autumn 2024",
-    "section": "",
-    "text": "Our custom runtime for executing deep learning models on various hardware platforms.\n\n\n\nFocus on improving GPU acceleration within our runtime.\n\n\n\n\n\nCPU-based inference and training optimizations.\n\n\n\n\n\n\nEvaluating inference performance with the ResNet50 model.\n\n\n\n\nUsing Convolutional Neural Networks (CNN) to process image data.\n\n\n\n\n\n\nBenchmarking with the Imagenette dataset.\n\n\n\n\n\nSupporting inference of Transformers, including Large Language Models (LLMs) and Vision Transformers.\n\n\n\n\n\n\nOptimizing training pipelines on both CPU and CUDA-based platforms."
+    "objectID": "blogs/yolofaceid.html#considerations",
+    "href": "blogs/yolofaceid.html#considerations",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "Considerations",
+    "text": "Considerations\n\nCompression: Using H.265 compression could potentially reduce the storage requirement by 50%.\nMotion Detection: If motion detection is used instead of continuous recording, the required storage could be significantly less."
   },
   {
-    "objectID": "blogs/todo_2024_autumn.html#model",
-    "href": "blogs/todo_2024_autumn.html#model",
-    "title": "ToDo list in Autumn 2024",
+    "objectID": "blogs/yolofaceid.html#summary-1",
+    "href": "blogs/yolofaceid.html#summary-1",
+    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "section": "SUMMARY",
+    "text": "SUMMARY\nFor 200 cameras recording continuously at 2-4MP resolution, the storage requirement ranges from approximately 185.2 TB to 370.5 TB per month. Adjustments to compression methods, frame rates, or recording strategies could alter these estimates."
+  },
+  {
+    "objectID": "blogs/edgeimplusestudio.html",
+    "href": "blogs/edgeimplusestudio.html",
+    "title": "Edge Impulse Review",
     "section": "",
-    "text": "Model development and collaboration projects for 2024.\n\n\n\n\n\nDeveloping models for hyperspectral imaging using 3D Convolutional Neural Networks, particularly for CubeSat applications.\n\n\n\n\n\n\n\n\nFocusing on compression techniques for LLMs, making them more efficient for deployment.\n\n\n\n\n\nExploring physics simulation models as part of the ESA tender."
+    "text": "Edge Impulse has rapidly become a prominent player in the field of machine learning for edge devices. Tailored to cater to a wide range of users, from hobbyists to professional embedded engineers, Edge Impulse Studio offers a comprehensive platform that supports the development, training, and deployment of machine learning models directly onto edge devices.\n\n\nEdge Impulse Studio is a cloud-based platform designed to simplify the modeling and deployment process of machine learning models on edge devices. It’s structured to accommodate a variety of user levels, from beginners exploring ML for the first time to seasoned professionals who require advanced features for enterprise applications. The platform supports multiple subscription tiers: Community, Professional, and Enterprise, each unlocking different levels of functionality and support.\nThe architecture of Edge Impulse is modular and flexible, allowing users to integrate different data sources, customize processing pipelines, and deploy models on various devices. The platform is organized into “impulse blocks” that guide users through the ML workflow, from data acquisition to model deployment. This block-based approach ensures that each step is transparent and manageable, especially for users with lower level of expertise.\n\n\n\nEdge Impulse general architecture & integrations with existing ML tools\n\n\n\n\n\n\n\nEdge Impulse offers a robust suite of tools for data collection and management, making it easy to gather the data necessary for training models.\n\nMultiple Data Collection Methods: Users can collect data directly from devices, upload existing datasets, or even pull data from cloud storage solutions like Amazon S3.\nReal-Time Data Collection: The platform supports real-time data collection through phones, computers, or connected development boards. This versatility allows users to capture images, audio, and motion data using a web-based interface.\nData Explorer: This tool provides powerful data visualization capabilities, helping users to explore and understand their datasets. Enterprise users can also monitor model performance with new data and automate data processing, enhancing the platform’s scalability and efficiency.\nSynthetic Data Generation: While not fully tested, Edge Impulse offers tools to generate synthetic data, which can be valuable in scenarios where real-world data is scarce.\n\n\n\n\nEdge Impulse simplifies the machine learning process with a clear, step-by-step approach:\n\nImpulse Block Design: The platform’s ML workflow is divided into four block types: data extraction, data processing, training, and output. This modular approach ensures that users can easily follow the process and make adjustments as needed.\nDefault and Custom Processing Blocks: Users can choose from default data processing and training blocks or create custom models using tools like Keras. This flexibility is key for users with specific needs or those looking to experiment with novel approaches.\nComprehensive Visualization and Reporting: The platform provides a range of visualization tools, including feature importance analysis, confusion matrices, and performance profiles, which help users evaluate model accuracy and optimize performance.\n\n\n\n\nImpulse Block Design & Workflow\n\n\n\n\n\nOne of the standout features of Edge Impulse is its strong focus on edge devices:\n\nPerformance Profiling: The platform provides performance profiles for selected devices, detailing key metrics like RAM usage, disk space, and processing speed.\nDSP and Transformation Compilation: Users can compile digital signal processing (DSP) transformations and inference code specifically for their target devices, ensuring that models run efficiently on hardware with limited resources.\nHyperparameter Tuning: The platform offers tools for tuning model parameters and selecting the best-performing configurations for a given device, which is crucial for optimizing model deployment on resource-constrained environments.\n\n\n\n\n\nEdge Impulse is a versatile, well-designed platform for developing and deploying machine learning models on edge devices. With its extensive feature set, modular workflow, and strong support for real-time data collection, it caters to both beginners and advanced users alike.\nFor more detailed information, visit the Edge Impulse homepage and Edge Impulse documentation."
+  },
+  {
+    "objectID": "blogs/edgeimplusestudio.html#platform-overview",
+    "href": "blogs/edgeimplusestudio.html#platform-overview",
+    "title": "Edge Impulse Review",
+    "section": "",
+    "text": "Edge Impulse Studio is a cloud-based platform designed to simplify the modeling and deployment process of machine learning models on edge devices. It’s structured to accommodate a variety of user levels, from beginners exploring ML for the first time to seasoned professionals who require advanced features for enterprise applications. The platform supports multiple subscription tiers: Community, Professional, and Enterprise, each unlocking different levels of functionality and support.\nThe architecture of Edge Impulse is modular and flexible, allowing users to integrate different data sources, customize processing pipelines, and deploy models on various devices. The platform is organized into “impulse blocks” that guide users through the ML workflow, from data acquisition to model deployment. This block-based approach ensures that each step is transparent and manageable, especially for users with lower level of expertise.\n\n\n\nEdge Impulse general architecture & integrations with existing ML tools"
+  },
+  {
+    "objectID": "blogs/edgeimplusestudio.html#key-features",
+    "href": "blogs/edgeimplusestudio.html#key-features",
+    "title": "Edge Impulse Review",
+    "section": "",
+    "text": "Edge Impulse offers a robust suite of tools for data collection and management, making it easy to gather the data necessary for training models.\n\nMultiple Data Collection Methods: Users can collect data directly from devices, upload existing datasets, or even pull data from cloud storage solutions like Amazon S3.\nReal-Time Data Collection: The platform supports real-time data collection through phones, computers, or connected development boards. This versatility allows users to capture images, audio, and motion data using a web-based interface.\nData Explorer: This tool provides powerful data visualization capabilities, helping users to explore and understand their datasets. Enterprise users can also monitor model performance with new data and automate data processing, enhancing the platform’s scalability and efficiency.\nSynthetic Data Generation: While not fully tested, Edge Impulse offers tools to generate synthetic data, which can be valuable in scenarios where real-world data is scarce.\n\n\n\n\nEdge Impulse simplifies the machine learning process with a clear, step-by-step approach:\n\nImpulse Block Design: The platform’s ML workflow is divided into four block types: data extraction, data processing, training, and output. This modular approach ensures that users can easily follow the process and make adjustments as needed.\nDefault and Custom Processing Blocks: Users can choose from default data processing and training blocks or create custom models using tools like Keras. This flexibility is key for users with specific needs or those looking to experiment with novel approaches.\nComprehensive Visualization and Reporting: The platform provides a range of visualization tools, including feature importance analysis, confusion matrices, and performance profiles, which help users evaluate model accuracy and optimize performance.\n\n\n\n\nImpulse Block Design & Workflow\n\n\n\n\n\nOne of the standout features of Edge Impulse is its strong focus on edge devices:\n\nPerformance Profiling: The platform provides performance profiles for selected devices, detailing key metrics like RAM usage, disk space, and processing speed.\nDSP and Transformation Compilation: Users can compile digital signal processing (DSP) transformations and inference code specifically for their target devices, ensuring that models run efficiently on hardware with limited resources.\nHyperparameter Tuning: The platform offers tools for tuning model parameters and selecting the best-performing configurations for a given device, which is crucial for optimizing model deployment on resource-constrained environments."
+  },
+  {
+    "objectID": "blogs/edgeimplusestudio.html#conclusion",
+    "href": "blogs/edgeimplusestudio.html#conclusion",
+    "title": "Edge Impulse Review",
+    "section": "",
+    "text": "Edge Impulse is a versatile, well-designed platform for developing and deploying machine learning models on edge devices. With its extensive feature set, modular workflow, and strong support for real-time data collection, it caters to both beginners and advanced users alike.\nFor more detailed information, visit the Edge Impulse homepage and Edge Impulse documentation."
   },
   {
     "objectID": "blogs/summer_insights_2024.html",
@@ -642,7 +666,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Summer Insights: Evolving tinyMLaaS with Flexible Pipelines and Distributed Execution\n\n\n\n\n\n\nTech\n\n\nDNN\n\n\n\n\n\n\n\n\n\nSep 4, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nLooking for Software Engineer - AI Model Compression & DNN Runtime\n\n\n\n\n\n\nHiring\n\n\n\n\n\n\n\n\n\nAug 29, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nOptimizing a DNN Model for Processing Hyperspectral Imaging (HSI) Data\n\n\n\n\n\n\nTech\n\n\nDNN\n\n\n\n\n\n\n\n\n\nAug 20, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nComprehensive Overview of DNN Model Compression Techniques\n\n\n\n\n\n\nTech\n\n\nDNN\n\n\n\n\n\n\n\n\n\nAug 18, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nBuilding a Real-Time Face Identification System: A Comprehensive Guide\n\n\n\n\n\n\nTech\n\n\nUseCase\n\n\n\nExplore how to build a real-time face identification system using Ultralytics YOLOv8, a state-of-the-art object detection model known for its speed and accuracy. We’ll compare various tools, including managed services like AWS Rekognition and Azure Face API, to help you choose the best solution for your needs. Whether you’re a developer seeking full control over your models or looking for an easy-to-integrate, scalable solution, this guide will provide you with the knowledge and tools to create a powerful face identification system.\n\n\n\n\n\nAug 18, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nDemystifying PyTorch Static Quantization\n\n\n\n\n\n\nTech\n\n\n\nA deep dive into how PyTorch performs inference with quantized models.\n\n\n\n\n\nAug 12, 2024\n\n\nHaruka Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nTinyML as-a-Service with Helsinki University summer course 2023\n\n\n\n\n\n\nHU\n\n\nTinyMLaaS\n\n\n\nThis is the main repository of Tiny Machine Learning as a Service project for Software Engineering Project course at University of Helsinki, summer 2023.\n\n\n\n\n\nAug 6, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nAbout\n\n\n\n\n\n\nAbout\n\n\nTeam\n\n\n\nThe team of experts in software development, research, and design is working to enable businesses to integrate AI & Machine Learning applications on a wide range of devices without relying on expensive networking & cloud computing services thanks to their solution, TinyML as a Service.\n\n\n\n\n\nAug 6, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nAI Compression as-a-Service MVP6 review\n\n\n\n\n\n\nNews\n\n\nMVP\n\n\n\nOur internal review of MVP6 usage\n\n\n\n\n\nAug 6, 2024\n\n\nNghi Vo\n\n\n\n\n\n\n\n\n\n\n\n\nEdge Impulse Review\n\n\n\n\n\n\nTech\n\n\nSaaS\n\n\nCompetitor\n\n\n\nEdge Impulse - A Comprehensive Review of the Leading Edge AI Platform\n\n\n\n\n\nAug 5, 2024\n\n\nNghi Vo\n\n\n\n\n\n\n\n\n\n\n\n\nTinyML as-a-Service Overview\n\n\n\n\n\n\nTech\n\n\nSaaS\n\n\n\nBrief overview of NinjaLABO’s TinyML as-a-Service / AI compression as-a-Service \n\n\n\n\n\nJul 17, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nIREE review\n\n\n\n\n\n\nTech\n\n\nCompiler\n\n\n\nBrief overview of IREE\n\n\n\n\n\nJul 12, 2024\n\n\nHaruka Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nImagimob Studio Review\n\n\n\n\n\n\nTech\n\n\nSaaS\n\n\nCompetitor\n\n\n\nBrief overview of Imagimob Studio - A solution for Edge AI applications\n\n\n\n\n\nJul 8, 2024\n\n\nNghi Vo\n\n\n\n\n\n\n\n\n\n\n\n\nAI compression SaaS\n\n\n\n\n\n\nTech\n\n\nSaaS\n\n\n\nBrief overview of AI Compression\n\n\n\n\n\nJul 2, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nTinyML Use Cases\n\n\n\n\n\n\nTech\n\n\nSaaS\n\n\nUseCase\n\n\n\nUse cases for TinyML offered by NinjaLABO\n\n\n\n\n\nJul 2, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nHow can we democratize machine learning on IoT devices?\n\n\n\n\n\n\nEricsson\n\n\n\nMaking tiny machine learning widely available on edge IoT devices could prove to be a major leap in smart sensing across industries. Below, we plot the technical milestones to making that happen as part of our ongoing research into TinyML as-a-service.\n\n\n\n\n\nAug 6, 2020\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nTinyML as-a-Service and the challenges of machine learning at the edge\n\n\n\n\n\n\nEricsson\n\n\n\nThe TinyML as-a-Service project at Ericsson Research sets out to address the challenges that today limit the potential of machine learning (ML) paradigms at the edge of the embedded IoT world. In this post, the second post in our TinyML series, we take a closer look at the technical and non-technical challenges on our journey to making that happen. Learn more below.\n\n\n\n\n\nAug 6, 2019\n\n\nHiroshi Doyu\n\n\n\n\n\n\nNo matching items",
+    "text": "ToDo list in Autumn 2024\n\n\n\n\n\n\nWoW\n\n\n\n\n\n\n\n\n\nSep 11, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nSummer Insights: Evolving tinyMLaaS with Flexible Pipelines and Distributed Execution\n\n\n\n\n\n\nTech\n\n\nDNN\n\n\n\n\n\n\n\n\n\nSep 4, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nLooking for Software Engineer - AI Model Compression & DNN Runtime\n\n\n\n\n\n\nHiring\n\n\n\n\n\n\n\n\n\nAug 29, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nOptimizing a DNN Model for Processing Hyperspectral Imaging (HSI) Data\n\n\n\n\n\n\nTech\n\n\nDNN\n\n\n\n\n\n\n\n\n\nAug 20, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nComprehensive Overview of DNN Model Compression Techniques\n\n\n\n\n\n\nTech\n\n\nDNN\n\n\n\n\n\n\n\n\n\nAug 18, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nBuilding a Real-Time Face Identification System: A Comprehensive Guide\n\n\n\n\n\n\nTech\n\n\nUseCase\n\n\n\nExplore how to build a real-time face identification system using Ultralytics YOLOv8, a state-of-the-art object detection model known for its speed and accuracy. We’ll compare various tools, including managed services like AWS Rekognition and Azure Face API, to help you choose the best solution for your needs. Whether you’re a developer seeking full control over your models or looking for an easy-to-integrate, scalable solution, this guide will provide you with the knowledge and tools to create a powerful face identification system.\n\n\n\n\n\nAug 18, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nDemystifying PyTorch Static Quantization\n\n\n\n\n\n\nTech\n\n\n\nA deep dive into how PyTorch performs inference with quantized models.\n\n\n\n\n\nAug 12, 2024\n\n\nHaruka Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nTinyML as-a-Service with Helsinki University summer course 2023\n\n\n\n\n\n\nHU\n\n\nTinyMLaaS\n\n\n\nThis is the main repository of Tiny Machine Learning as a Service project for Software Engineering Project course at University of Helsinki, summer 2023.\n\n\n\n\n\nAug 6, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nAbout\n\n\n\n\n\n\nAbout\n\n\nTeam\n\n\n\nThe team of experts in software development, research, and design is working to enable businesses to integrate AI & Machine Learning applications on a wide range of devices without relying on expensive networking & cloud computing services thanks to their solution, TinyML as a Service.\n\n\n\n\n\nAug 6, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nAI Compression as-a-Service MVP6 review\n\n\n\n\n\n\nNews\n\n\nMVP\n\n\n\nOur internal review of MVP6 usage\n\n\n\n\n\nAug 6, 2024\n\n\nNghi Vo\n\n\n\n\n\n\n\n\n\n\n\n\nEdge Impulse Review\n\n\n\n\n\n\nTech\n\n\nSaaS\n\n\nCompetitor\n\n\n\nEdge Impulse - A Comprehensive Review of the Leading Edge AI Platform\n\n\n\n\n\nAug 5, 2024\n\n\nNghi Vo\n\n\n\n\n\n\n\n\n\n\n\n\nTinyML as-a-Service Overview\n\n\n\n\n\n\nTech\n\n\nSaaS\n\n\n\nBrief overview of NinjaLABO’s TinyML as-a-Service / AI compression as-a-Service \n\n\n\n\n\nJul 17, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nIREE review\n\n\n\n\n\n\nTech\n\n\nCompiler\n\n\n\nBrief overview of IREE\n\n\n\n\n\nJul 12, 2024\n\n\nHaruka Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nImagimob Studio Review\n\n\n\n\n\n\nTech\n\n\nSaaS\n\n\nCompetitor\n\n\n\nBrief overview of Imagimob Studio - A solution for Edge AI applications\n\n\n\n\n\nJul 8, 2024\n\n\nNghi Vo\n\n\n\n\n\n\n\n\n\n\n\n\nAI compression SaaS\n\n\n\n\n\n\nTech\n\n\nSaaS\n\n\n\nBrief overview of AI Compression\n\n\n\n\n\nJul 2, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nTinyML Use Cases\n\n\n\n\n\n\nTech\n\n\nSaaS\n\n\nUseCase\n\n\n\nUse cases for TinyML offered by NinjaLABO\n\n\n\n\n\nJul 2, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nHow can we democratize machine learning on IoT devices?\n\n\n\n\n\n\nEricsson\n\n\n\nMaking tiny machine learning widely available on edge IoT devices could prove to be a major leap in smart sensing across industries. Below, we plot the technical milestones to making that happen as part of our ongoing research into TinyML as-a-service.\n\n\n\n\n\nAug 6, 2020\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nTinyML as-a-Service and the challenges of machine learning at the edge\n\n\n\n\n\n\nEricsson\n\n\n\nThe TinyML as-a-Service project at Ericsson Research sets out to address the challenges that today limit the potential of machine learning (ML) paradigms at the edge of the embedded IoT world. In this post, the second post in our TinyML series, we take a closer look at the technical and non-technical challenges on our journey to making that happen. Learn more below.\n\n\n\n\n\nAug 6, 2019\n\n\nHiroshi Doyu\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Get Started",
       "Blog"
@@ -782,193 +806,169 @@
     "text": "Here was an overview of IREE, emphasizing its capabilities in optimizing models across diverse hardware platforms. For practical examples, please visit IREE’s official documentation at https://iree.dev, where you can find comprehensive guides and examples illustrating how to compile ML models for various hardware configurations."
   },
   {
-    "objectID": "blogs/edgeimplusestudio.html",
-    "href": "blogs/edgeimplusestudio.html",
-    "title": "Edge Impulse Review",
+    "objectID": "blogs/aicompressionsaas.html",
+    "href": "blogs/aicompressionsaas.html",
+    "title": "AI compression SaaS",
     "section": "",
-    "text": "Edge Impulse has rapidly become a prominent player in the field of machine learning for edge devices. Tailored to cater to a wide range of users, from hobbyists to professional embedded engineers, Edge Impulse Studio offers a comprehensive platform that supports the development, training, and deployment of machine learning models directly onto edge devices.\n\n\nEdge Impulse Studio is a cloud-based platform designed to simplify the modeling and deployment process of machine learning models on edge devices. It’s structured to accommodate a variety of user levels, from beginners exploring ML for the first time to seasoned professionals who require advanced features for enterprise applications. The platform supports multiple subscription tiers: Community, Professional, and Enterprise, each unlocking different levels of functionality and support.\nThe architecture of Edge Impulse is modular and flexible, allowing users to integrate different data sources, customize processing pipelines, and deploy models on various devices. The platform is organized into “impulse blocks” that guide users through the ML workflow, from data acquisition to model deployment. This block-based approach ensures that each step is transparent and manageable, especially for users with lower level of expertise.\n\n\n\nEdge Impulse general architecture & integrations with existing ML tools\n\n\n\n\n\n\n\nEdge Impulse offers a robust suite of tools for data collection and management, making it easy to gather the data necessary for training models.\n\nMultiple Data Collection Methods: Users can collect data directly from devices, upload existing datasets, or even pull data from cloud storage solutions like Amazon S3.\nReal-Time Data Collection: The platform supports real-time data collection through phones, computers, or connected development boards. This versatility allows users to capture images, audio, and motion data using a web-based interface.\nData Explorer: This tool provides powerful data visualization capabilities, helping users to explore and understand their datasets. Enterprise users can also monitor model performance with new data and automate data processing, enhancing the platform’s scalability and efficiency.\nSynthetic Data Generation: While not fully tested, Edge Impulse offers tools to generate synthetic data, which can be valuable in scenarios where real-world data is scarce.\n\n\n\n\nEdge Impulse simplifies the machine learning process with a clear, step-by-step approach:\n\nImpulse Block Design: The platform’s ML workflow is divided into four block types: data extraction, data processing, training, and output. This modular approach ensures that users can easily follow the process and make adjustments as needed.\nDefault and Custom Processing Blocks: Users can choose from default data processing and training blocks or create custom models using tools like Keras. This flexibility is key for users with specific needs or those looking to experiment with novel approaches.\nComprehensive Visualization and Reporting: The platform provides a range of visualization tools, including feature importance analysis, confusion matrices, and performance profiles, which help users evaluate model accuracy and optimize performance.\n\n\n\n\nImpulse Block Design & Workflow\n\n\n\n\n\nOne of the standout features of Edge Impulse is its strong focus on edge devices:\n\nPerformance Profiling: The platform provides performance profiles for selected devices, detailing key metrics like RAM usage, disk space, and processing speed.\nDSP and Transformation Compilation: Users can compile digital signal processing (DSP) transformations and inference code specifically for their target devices, ensuring that models run efficiently on hardware with limited resources.\nHyperparameter Tuning: The platform offers tools for tuning model parameters and selecting the best-performing configurations for a given device, which is crucial for optimizing model deployment on resource-constrained environments.\n\n\n\n\n\nEdge Impulse is a versatile, well-designed platform for developing and deploying machine learning models on edge devices. With its extensive feature set, modular workflow, and strong support for real-time data collection, it caters to both beginners and advanced users alike.\nFor more detailed information, visit the Edge Impulse homepage and Edge Impulse documentation."
+    "text": "It has been nearly five years since I first wrote about TinyML and TinyML as-a-Service (TinyMLaaS) on the Ericsson blog.\n\nIn the rapidly evolving landscape of artificial intelligence (AI), efficiency and resource optimization are paramount. AI Compression as-a-Service (ACaaS) and TinyML as-a-Service (TinyMLaaS) emerge as transformative solutions that address the growing demand for deploying AI on resource-constrained devices. These services offer scalable, cost-effective, and high-performance AI capabilities, enabling a new wave of innovation in edge computing.\n\n\nAI models, especially deep learning networks, have become increasingly complex and resource-intensive. Traditional deployment of these models on edge devices, such as smartphones, IoT sensors, and embedded systems, poses significant challenges due to limited computational power, memory, and energy resources. AI compression techniques, including model pruning, quantization, and knowledge distillation, aim to reduce the size and computational requirements of AI models without significantly compromising their performance.\n\n\n\n\nResource Optimization: ACaaS allows businesses to deploy AI models on edge devices with constrained resources, ensuring efficient utilization of hardware capabilities.\nScalability: By leveraging cloud-based AI compression services, organizations can scale their AI deployments seamlessly, catering to diverse applications and devices.\nCost-Effectiveness: Reduced model sizes and lower computational demands translate to cost savings in terms of hardware investment and energy consumption.\nFaster Inference: Compressed models enable faster inference times, critical for real-time applications such as autonomous vehicles, surveillance, and industrial automation.\nEnhanced Security: Processing data locally on edge devices minimizes data transfer to the cloud, enhancing data privacy and security.\n\n\n\n\nTinyMLaaS extends the concept of AI compression to the domain of microcontrollers and other ultra-low-power devices. By providing pre-trained, compressed AI models and tools for deploying them on TinyML platforms, this service empowers developers to create intelligent applications for the Internet of Things (IoT).\n\n\n\nPre-trained Models: Access to a library of pre-trained, optimized models for various applications, from anomaly detection to image recognition.\nDeployment Tools: Comprehensive toolchains for converting, optimizing, and deploying models on TinyML hardware, simplifying the development process.\nCustom Solutions: Tailored AI solutions for specific use cases, ensuring optimal performance and efficiency.\nSeamless Integration: Easy integration with existing IoT ecosystems, enabling rapid deployment and scaling of intelligent applications.\n\n\n\n\n\n\nSmart Home Devices: Enhancing the capabilities of home automation systems with intelligent voice assistants, security cameras, and energy management solutions.\nIndustrial IoT: Enabling predictive maintenance, quality control, and automation in manufacturing and logistics.\nHealthcare: Providing real-time monitoring and diagnostics through wearable devices and smart medical equipment.\nAgriculture: Facilitating precision farming with AI-powered sensors for soil health, weather conditions, and crop monitoring.\n\n\n\n\nAI Compression as-a-Service and TinyML as-a-Service represent the next frontier in AI deployment, bridging the gap between advanced AI capabilities and resource-constrained edge devices. By offering scalable, efficient, and cost-effective solutions, these services empower a wide range of industries to harness the power of AI, driving innovation and transforming the way we interact with technology.\nAs the demand for edge computing continues to grow, ACaaS and TinyMLaaS will play a crucial role in shaping the future of AI, making intelligent applications more accessible and ubiquitous than ever before."
   },
   {
-    "objectID": "blogs/edgeimplusestudio.html#platform-overview",
-    "href": "blogs/edgeimplusestudio.html#platform-overview",
-    "title": "Edge Impulse Review",
+    "objectID": "blogs/aicompressionsaas.html#the-need-for-ai-compression",
+    "href": "blogs/aicompressionsaas.html#the-need-for-ai-compression",
+    "title": "AI compression SaaS",
     "section": "",
-    "text": "Edge Impulse Studio is a cloud-based platform designed to simplify the modeling and deployment process of machine learning models on edge devices. It’s structured to accommodate a variety of user levels, from beginners exploring ML for the first time to seasoned professionals who require advanced features for enterprise applications. The platform supports multiple subscription tiers: Community, Professional, and Enterprise, each unlocking different levels of functionality and support.\nThe architecture of Edge Impulse is modular and flexible, allowing users to integrate different data sources, customize processing pipelines, and deploy models on various devices. The platform is organized into “impulse blocks” that guide users through the ML workflow, from data acquisition to model deployment. This block-based approach ensures that each step is transparent and manageable, especially for users with lower level of expertise.\n\n\n\nEdge Impulse general architecture & integrations with existing ML tools"
+    "text": "AI models, especially deep learning networks, have become increasingly complex and resource-intensive. Traditional deployment of these models on edge devices, such as smartphones, IoT sensors, and embedded systems, poses significant challenges due to limited computational power, memory, and energy resources. AI compression techniques, including model pruning, quantization, and knowledge distillation, aim to reduce the size and computational requirements of AI models without significantly compromising their performance."
   },
   {
-    "objectID": "blogs/edgeimplusestudio.html#key-features",
-    "href": "blogs/edgeimplusestudio.html#key-features",
-    "title": "Edge Impulse Review",
+    "objectID": "blogs/aicompressionsaas.html#benefits-of-ai-compression-as-a-service",
+    "href": "blogs/aicompressionsaas.html#benefits-of-ai-compression-as-a-service",
+    "title": "AI compression SaaS",
     "section": "",
-    "text": "Edge Impulse offers a robust suite of tools for data collection and management, making it easy to gather the data necessary for training models.\n\nMultiple Data Collection Methods: Users can collect data directly from devices, upload existing datasets, or even pull data from cloud storage solutions like Amazon S3.\nReal-Time Data Collection: The platform supports real-time data collection through phones, computers, or connected development boards. This versatility allows users to capture images, audio, and motion data using a web-based interface.\nData Explorer: This tool provides powerful data visualization capabilities, helping users to explore and understand their datasets. Enterprise users can also monitor model performance with new data and automate data processing, enhancing the platform’s scalability and efficiency.\nSynthetic Data Generation: While not fully tested, Edge Impulse offers tools to generate synthetic data, which can be valuable in scenarios where real-world data is scarce.\n\n\n\n\nEdge Impulse simplifies the machine learning process with a clear, step-by-step approach:\n\nImpulse Block Design: The platform’s ML workflow is divided into four block types: data extraction, data processing, training, and output. This modular approach ensures that users can easily follow the process and make adjustments as needed.\nDefault and Custom Processing Blocks: Users can choose from default data processing and training blocks or create custom models using tools like Keras. This flexibility is key for users with specific needs or those looking to experiment with novel approaches.\nComprehensive Visualization and Reporting: The platform provides a range of visualization tools, including feature importance analysis, confusion matrices, and performance profiles, which help users evaluate model accuracy and optimize performance.\n\n\n\n\nImpulse Block Design & Workflow\n\n\n\n\n\nOne of the standout features of Edge Impulse is its strong focus on edge devices:\n\nPerformance Profiling: The platform provides performance profiles for selected devices, detailing key metrics like RAM usage, disk space, and processing speed.\nDSP and Transformation Compilation: Users can compile digital signal processing (DSP) transformations and inference code specifically for their target devices, ensuring that models run efficiently on hardware with limited resources.\nHyperparameter Tuning: The platform offers tools for tuning model parameters and selecting the best-performing configurations for a given device, which is crucial for optimizing model deployment on resource-constrained environments."
+    "text": "Resource Optimization: ACaaS allows businesses to deploy AI models on edge devices with constrained resources, ensuring efficient utilization of hardware capabilities.\nScalability: By leveraging cloud-based AI compression services, organizations can scale their AI deployments seamlessly, catering to diverse applications and devices.\nCost-Effectiveness: Reduced model sizes and lower computational demands translate to cost savings in terms of hardware investment and energy consumption.\nFaster Inference: Compressed models enable faster inference times, critical for real-time applications such as autonomous vehicles, surveillance, and industrial automation.\nEnhanced Security: Processing data locally on edge devices minimizes data transfer to the cloud, enhancing data privacy and security."
   },
   {
-    "objectID": "blogs/edgeimplusestudio.html#conclusion",
-    "href": "blogs/edgeimplusestudio.html#conclusion",
-    "title": "Edge Impulse Review",
+    "objectID": "blogs/aicompressionsaas.html#tinyml-as-a-service-empowering-the-internet-of-things",
+    "href": "blogs/aicompressionsaas.html#tinyml-as-a-service-empowering-the-internet-of-things",
+    "title": "AI compression SaaS",
     "section": "",
-    "text": "Edge Impulse is a versatile, well-designed platform for developing and deploying machine learning models on edge devices. With its extensive feature set, modular workflow, and strong support for real-time data collection, it caters to both beginners and advanced users alike.\nFor more detailed information, visit the Edge Impulse homepage and Edge Impulse documentation."
+    "text": "TinyMLaaS extends the concept of AI compression to the domain of microcontrollers and other ultra-low-power devices. By providing pre-trained, compressed AI models and tools for deploying them on TinyML platforms, this service empowers developers to create intelligent applications for the Internet of Things (IoT).\n\n\n\nPre-trained Models: Access to a library of pre-trained, optimized models for various applications, from anomaly detection to image recognition.\nDeployment Tools: Comprehensive toolchains for converting, optimizing, and deploying models on TinyML hardware, simplifying the development process.\nCustom Solutions: Tailored AI solutions for specific use cases, ensuring optimal performance and efficiency.\nSeamless Integration: Easy integration with existing IoT ecosystems, enabling rapid deployment and scaling of intelligent applications."
   },
   {
-    "objectID": "blogs/yolofaceid.html",
-    "href": "blogs/yolofaceid.html",
-    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
+    "objectID": "blogs/aicompressionsaas.html#applications-and-use-cases",
+    "href": "blogs/aicompressionsaas.html#applications-and-use-cases",
+    "title": "AI compression SaaS",
     "section": "",
-    "text": "In today’s world, face identification systems are becoming increasingly crucial in various applications, from security and surveillance to personalized customer experiences. Building a real-time face identification system can seem daunting, but with the right tools and approaches, it becomes manageable. In this article, we will walk you through a project to develop such a system, using some of the best tools available, including Ultralytics YOLOv8, managed cloud services (e.g. AWS Rekognition and Azure Face API), and more. We’ll also compare different technologies to help you choose the best one for your needs."
+    "text": "Smart Home Devices: Enhancing the capabilities of home automation systems with intelligent voice assistants, security cameras, and energy management solutions.\nIndustrial IoT: Enabling predictive maintenance, quality control, and automation in manufacturing and logistics.\nHealthcare: Providing real-time monitoring and diagnostics through wearable devices and smart medical equipment.\nAgriculture: Facilitating precision farming with AI-powered sensors for soil health, weather conditions, and crop monitoring."
   },
   {
-    "objectID": "blogs/yolofaceid.html#setting-up-yolov8",
-    "href": "blogs/yolofaceid.html#setting-up-yolov8",
-    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
-    "section": "Setting Up YOLOv8",
-    "text": "Setting Up YOLOv8\n\nInstall the Ultralytics Package: Begin by installing the necessary software using pip:\npip install ultralytics\nLoad the YOLOv8 Model: Load a pre-trained YOLOv8 model or start with a custom model:\nfrom ultralytics import YOLO\n\n# Load a YOLOv8 model\nmodel = YOLO('yolov8n.pt')\n\n# Perform inference on an image\nresults = model('path/to/your/image.jpg')\nresults.show()  # Display results"
-  },
-  {
-    "objectID": "blogs/yolofaceid.html#training-on-a-custom-dataset",
-    "href": "blogs/yolofaceid.html#training-on-a-custom-dataset",
-    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
-    "section": "Training on a Custom Dataset",
-    "text": "Training on a Custom Dataset\nTo fine-tune YOLOv8 for face detection, you need a dataset of face images with annotations in YOLO format. You can use public datasets like WIDER FACE or CelebA.\n\nPrepare Your Dataset: Ensure your dataset is properly annotated and structured.\nConfigure and Train the Model: Train YOLOv8 using your dataset:\nmodel = YOLO('yolov8n.pt')\nmodel.train(data='path/to/data.yaml', epochs=100, imgsz=640, batch=16)"
-  },
-  {
-    "objectID": "blogs/yolofaceid.html#deploying-for-real-time-face-detection",
-    "href": "blogs/yolofaceid.html#deploying-for-real-time-face-detection",
-    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
-    "section": "Deploying for Real-Time Face Detection",
-    "text": "Deploying for Real-Time Face Detection\nOnce trained, you can deploy YOLOv8 for real-time face detection. This can be done by feeding live video streams into the model and processing each frame.\nimport cv2\nfrom ultralytics import YOLO\n\n# Load the trained model\nmodel = YOLO('runs/train/exp/weights/best.pt')\n\n# Capture video from webcam\ncap = cv2.VideoCapture(0)\n\nwhile cap.isOpened():\n    ret, frame = cap.read()\n    if not ret:\n        break\n\n    # Perform inference\n    results = model(frame)\n\n    # Display results\n    results.show()\n\n    if cv2.waitKey(1) & 0xFF == ord('q'):\n        break\n\ncap.release()\ncv2.destroyAllWindows()"
-  },
-  {
-    "objectID": "blogs/yolofaceid.html#key-factors",
-    "href": "blogs/yolofaceid.html#key-factors",
-    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
-    "section": "Key Factors:",
-    "text": "Key Factors:\n\nGPU is superiour to CPU at inference from cost vs perf comparison.\nProcessing Power: Each GPU’s ability to handle a specific number of frames per second (FPS).\nTotal FPS Requirement: The total computational load imposed by the 200 cameras.\nRack-Mount Server Specifications: The number of GPUs each server can support."
-  },
-  {
-    "objectID": "blogs/yolofaceid.html#calculating-total-fps-requirement",
-    "href": "blogs/yolofaceid.html#calculating-total-fps-requirement",
-    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
-    "section": "Calculating Total FPS Requirement:",
-    "text": "Calculating Total FPS Requirement:\n\n200 Cameras at 30 FPS each:\n\nTotal FPS required = 200 cameras * 30 FPS = 6000 FPS."
-  },
-  {
-    "objectID": "blogs/yolofaceid.html#gpu-capacity",
-    "href": "blogs/yolofaceid.html#gpu-capacity",
-    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
-    "section": "GPU Capacity:",
-    "text": "GPU Capacity:\n\nNVIDIA RTX 3080: Can handle approximately 400 FPS for YOLOv8-tiny and around 80-100 FPS for standard YOLOv8.\nNVIDIA RTX 3090: Can handle approximately 600 FPS for YOLOv8-tiny and around 120-150 FPS for standard YOLOv8.\nNVIDIA RTX 4090: Can handle approximately 1000 FPS for YOLOv8-tiny and around 200-250 FPS for standard YOLOv8."
-  },
-  {
-    "objectID": "blogs/yolofaceid.html#example-server-configurations",
-    "href": "blogs/yolofaceid.html#example-server-configurations",
-    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
-    "section": "Example Server Configurations:",
-    "text": "Example Server Configurations:\n\nSupermicro 4U GPU Server (SYS-4029GP-TRT):\n\nSupports up to 4 GPUs.\nIf each server uses 4x RTX 4090 GPUs, the total processing capability per server would be:\n\nYOLOv8-tiny: 4000 FPS (4 GPUs * 1000 FPS).\nStandard YOLOv8: 800-1000 FPS (4 GPUs * 200-250 FPS).\n\n\nASUS ESC8000A-E11:\n\nSupports up to 8 GPUs.\nWith 8x RTX 4090 GPUs:\n\nYOLOv8-tiny: 8000 FPS (8 GPUs * 1000 FPS).\nStandard YOLOv8: 1600-2000 FPS (8 GPUs * 200-250 FPS)."
-  },
-  {
-    "objectID": "blogs/yolofaceid.html#number-of-servers-needed",
-    "href": "blogs/yolofaceid.html#number-of-servers-needed",
-    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
-    "section": "Number of Servers Needed:",
-    "text": "Number of Servers Needed:\n\nFor YOLOv8-tiny:\n\nWith Supermicro 4U Server: 1.5 servers (round up to 2 servers).\nWith ASUS ESC8000A-E11: 1 server is sufficient.\n\nFor Standard YOLOv8:\n\nWith Supermicro 4U Server: 6-8 servers.\nWith ASUS ESC8000A-E11: 3-4 servers."
-  },
-  {
-    "objectID": "blogs/yolofaceid.html#summary",
-    "href": "blogs/yolofaceid.html#summary",
-    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
-    "section": "SUMMARY",
-    "text": "SUMMARY\n\nYOLOv8-tiny: You would need 1-2 servers (depending on GPU configuration) to handle the 200 cameras.\nStandard YOLOv8: You would need 3-8 servers depending on the specific GPU and server model you choose.\n\nThese estimates assume maximum utilization of each GPU’s capabilities, and the actual number might vary based on real-world conditions, such as CPU bottlenecks, memory limitations, and other factors."
-  },
-  {
-    "objectID": "blogs/yolofaceid.html#key-parameters",
-    "href": "blogs/yolofaceid.html#key-parameters",
-    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
-    "section": "Key Parameters",
-    "text": "Key Parameters\n\nResolution:\n\n2MP (1080p): Approximately 3 Mbps\n4MP: Approximately 6 Mbps\n\nFrame Rate: 30 frames per second (FPS)\nRecording Time: 24 hours per day, 30 days per month\nNumber of Cameras: 200\nCompression: H.264 assumed (H.265 could reduce storage by up to 50%)"
-  },
-  {
-    "objectID": "blogs/yolofaceid.html#storage-calculation",
-    "href": "blogs/yolofaceid.html#storage-calculation",
-    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
-    "section": "Storage Calculation",
-    "text": "Storage Calculation\nThe total storage required can be calculated using the following equation:\n\\[\n\\text{Total Storage (TB)} = \\left(\\frac{\\text{Bitrate (Mbps)} \\times 86,400 \\times 30 \\times \\text{Number of Cameras}}{8 \\times 1024^2}\\right)\n\\]\nWhere:\n\n86,400: Number of seconds in a day\n30: Number of days in a month\n8: Conversion factor from bits to bytes\n1024^2: Conversion from MB to TB"
-  },
-  {
-    "objectID": "blogs/yolofaceid.html#results",
-    "href": "blogs/yolofaceid.html#results",
-    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
-    "section": "Results",
-    "text": "Results\n\nFor 2MP Cameras (3 Mbps):\n\nTotal Storage: Approximately 185.2 TB per month.\n\nFor 4MP Cameras (6 Mbps):\n\nTotal Storage: Approximately 370.5 TB per month."
-  },
-  {
-    "objectID": "blogs/yolofaceid.html#considerations",
-    "href": "blogs/yolofaceid.html#considerations",
-    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
-    "section": "Considerations",
-    "text": "Considerations\n\nCompression: Using H.265 compression could potentially reduce the storage requirement by 50%.\nMotion Detection: If motion detection is used instead of continuous recording, the required storage could be significantly less."
-  },
-  {
-    "objectID": "blogs/yolofaceid.html#summary-1",
-    "href": "blogs/yolofaceid.html#summary-1",
-    "title": "Building a Real-Time Face Identification System: A Comprehensive Guide",
-    "section": "SUMMARY",
-    "text": "SUMMARY\nFor 200 cameras recording continuously at 2-4MP resolution, the storage requirement ranges from approximately 185.2 TB to 370.5 TB per month. Adjustments to compression methods, frame rates, or recording strategies could alter these estimates."
-  },
-  {
-    "objectID": "blogs/mvp6.html",
-    "href": "blogs/mvp6.html",
-    "title": "AI Compression as-a-Service MVP6 review",
+    "objectID": "blogs/aicompressionsaas.html#conclusion",
+    "href": "blogs/aicompressionsaas.html#conclusion",
+    "title": "AI compression SaaS",
     "section": "",
-    "text": "AI Compression as-a-Service MVP6 review"
+    "text": "AI Compression as-a-Service and TinyML as-a-Service represent the next frontier in AI deployment, bridging the gap between advanced AI capabilities and resource-constrained edge devices. By offering scalable, efficient, and cost-effective solutions, these services empower a wide range of industries to harness the power of AI, driving innovation and transforming the way we interact with technology.\nAs the demand for edge computing continues to grow, ACaaS and TinyMLaaS will play a crucial role in shaping the future of AI, making intelligent applications more accessible and ubiquitous than ever before."
   },
   {
-    "objectID": "blogs/tinymlusecases.html",
-    "href": "blogs/tinymlusecases.html",
-    "title": "TinyML Use Cases",
+    "objectID": "blogs/hiring_2024_fall.html",
+    "href": "blogs/hiring_2024_fall.html",
+    "title": "Looking for Software Engineer - AI Model Compression & DNN Runtime",
     "section": "",
-    "text": "In today’s competitive landscape, every company is leveraging AI or exploring its integration into their business operations. As AI models become increasingly sophisticated, the operational expenditures (OPEX) associated with utilizing expensive GPUs in cloud datacenters also rise. Moreover, large AI models often cannot be executed on small devices without relying on cloud GPUs.\nNinjaLABO’s AI model compression (TinyML as-a-Service) addresses these challenges by offering versatile solutions applicable across various industries. Below, we explore specific focus areas and use cases where these solutions are particularly relevant:\n\n\n\nData Types: Sensor data (temperature, humidity, air quality, noise levels), traffic data, utility usage data.\nUse Cases: Predictive maintenance, energy management, traffic optimization, environmental monitoring.\n\nAdvantage: Typically, 99% of data transmission is redundant, wasting network bandwidth and storage. Local AI execution with TinyML eliminates this inefficiency by transmitting data only when anomalies occur, thus optimizing communication and storage.\n\n\n\n\n\n\nData Types: Biometric data (heart rate, activity levels, sleep patterns), medical imaging data.\nUse Cases: Health monitoring, early disease detection, personalized healthcare, fitness tracking.\n\nAdvantage: Regulatory constraints often prohibit uploading private data to public clouds. Local AI execution with TinyML ensures that only processed, non-sensitive data is uploaded, preserving privacy.\n\n\n\n\n\n\nData Types: Machine performance data, operational data, maintenance logs.\nUse Cases: Predictive maintenance, process optimization, quality control.\n\nAdvantage: Similar to IoT use cases, local AI execution minimizes unnecessary data transmission, enhancing efficiency and security.\n\n\n\n\n\n\nData Types: Soil moisture levels, weather data, crop health data.\nUse Cases: Precision farming, crop monitoring, irrigation management.\n\nAdvantage: Agricultural fields often extend beyond network coverage. With TinyML, AI can be executed locally, enabling smart farming even in off-the-grid areas. This benefit extends to other off-the-grid network and battery-powered applications.\n\n\n\n\n\n\nData Types: Vehicle performance data, driver behavior data, traffic data.\nUse Cases: Autonomous driving, fleet management, driver safety systems.\n\nAdvantage: Real-time response is critical. Local AI execution with TinyML ensures immediate processing, which is crucial for safety and efficiency in automotive applications.\n\n\n\n\n\n\nData Types: Video feeds, audio recordings, motion sensor data.\nUse Cases: Intrusion detection, anomaly detection, crowd monitoring.\n\nAdvantage: Local data execution enhances security by reducing the need to transmit sensitive data, mitigating potential breaches.\n\n\nThese examples highlight the broad applicability of NinjaLABO’s solutions. By focusing on specific use cases within these industries, NinjaLABO can tailor its services to meet the unique needs and challenges of each sector, providing efficient, scalable, and impactful TinyML solutions."
+    "text": "Location: Remote (Occasional meetings at A-Grid, Otaniemi)\nCompany: NinjaLABO\nDuration: Full-time or Part-time for 3 months (ASAP to the end of December).\n\n\n\nNinjaLABO is a fresh, finnish startup at the forefront of AI innovation, focusing on AI model compression and deep neural network (DNN) runtime optimization for IoT, particularly for enabling onboard Edge AI in satellite systems.\n\n\n\n\n\nImplement DNN model compression techniques.\nIntegrate the above into our SaaS platform, TinyML as-a-Service.\nPort and optimize DNN runtimes for Edge devices such as Nvidia Jetson and Orange Pi 5+.\n\n\n\n\n\nStrong proficiency in Python and C/C++.\nFamiliarity with PyTorch or TensorFlow.\n\n\n\n\n\nHands-on experience with Nvidia Jetson & Orange Pi 5+.\nExperience in AI model compression and DNN runtime development.\nKnowledge of TensorFlow Lite for Microcontrollers, MLIR, and IREE.\nKnowledge of HyperSpectral Imaging (HSI).\n\n\n\n\n\nSuccessful completion of CS-E4890 - Deep Learning D with good grades.\nSuccessful completion of CS-E4580 - Programming Parallel Computers D with good grades.\n\n\n\n\n\nFull-time preferred, part-time candidates must be available for more than 3 days per week.\nDiscord for daily communication\nDaily Scrum at 8:00am every weekday via Discord\nGitHuB Project as Kanban board\nGitHub Workflow/Actions as CI/CD\n2 weeks Sprint planning / review / retro under SCRUM\n\n\n\n\n\n3,000+€ for PhD students\n2,600-2,800€ for Master’s students\n2,100-2,400€ for Bachelor’s students\n\nContracts facilitated through UKKO.fi.\n\n\n\nInterested? Apply to Hiroshi Doyu &lt;hiroshi.doyu@ninjalabo.ai&gt;"
   },
   {
-    "objectID": "blogs/tinymlusecases.html#iot-and-smart-cities",
-    "href": "blogs/tinymlusecases.html#iot-and-smart-cities",
-    "title": "TinyML Use Cases",
+    "objectID": "blogs/hiring_2024_fall.html#about-us",
+    "href": "blogs/hiring_2024_fall.html#about-us",
+    "title": "Looking for Software Engineer - AI Model Compression & DNN Runtime",
     "section": "",
-    "text": "Data Types: Sensor data (temperature, humidity, air quality, noise levels), traffic data, utility usage data.\nUse Cases: Predictive maintenance, energy management, traffic optimization, environmental monitoring.\n\nAdvantage: Typically, 99% of data transmission is redundant, wasting network bandwidth and storage. Local AI execution with TinyML eliminates this inefficiency by transmitting data only when anomalies occur, thus optimizing communication and storage."
+    "text": "NinjaLABO is a fresh, finnish startup at the forefront of AI innovation, focusing on AI model compression and deep neural network (DNN) runtime optimization for IoT, particularly for enabling onboard Edge AI in satellite systems."
   },
   {
-    "objectID": "blogs/tinymlusecases.html#healthcare-and-wearables",
-    "href": "blogs/tinymlusecases.html#healthcare-and-wearables",
-    "title": "TinyML Use Cases",
+    "objectID": "blogs/hiring_2024_fall.html#key-responsibilities",
+    "href": "blogs/hiring_2024_fall.html#key-responsibilities",
+    "title": "Looking for Software Engineer - AI Model Compression & DNN Runtime",
     "section": "",
-    "text": "Data Types: Biometric data (heart rate, activity levels, sleep patterns), medical imaging data.\nUse Cases: Health monitoring, early disease detection, personalized healthcare, fitness tracking.\n\nAdvantage: Regulatory constraints often prohibit uploading private data to public clouds. Local AI execution with TinyML ensures that only processed, non-sensitive data is uploaded, preserving privacy."
+    "text": "Implement DNN model compression techniques.\nIntegrate the above into our SaaS platform, TinyML as-a-Service.\nPort and optimize DNN runtimes for Edge devices such as Nvidia Jetson and Orange Pi 5+."
   },
   {
-    "objectID": "blogs/tinymlusecases.html#industrial-automation",
-    "href": "blogs/tinymlusecases.html#industrial-automation",
-    "title": "TinyML Use Cases",
+    "objectID": "blogs/hiring_2024_fall.html#requirements",
+    "href": "blogs/hiring_2024_fall.html#requirements",
+    "title": "Looking for Software Engineer - AI Model Compression & DNN Runtime",
     "section": "",
-    "text": "Data Types: Machine performance data, operational data, maintenance logs.\nUse Cases: Predictive maintenance, process optimization, quality control.\n\nAdvantage: Similar to IoT use cases, local AI execution minimizes unnecessary data transmission, enhancing efficiency and security."
+    "text": "Strong proficiency in Python and C/C++.\nFamiliarity with PyTorch or TensorFlow."
   },
   {
-    "objectID": "blogs/tinymlusecases.html#agriculture",
-    "href": "blogs/tinymlusecases.html#agriculture",
-    "title": "TinyML Use Cases",
+    "objectID": "blogs/hiring_2024_fall.html#preferred-qualifications",
+    "href": "blogs/hiring_2024_fall.html#preferred-qualifications",
+    "title": "Looking for Software Engineer - AI Model Compression & DNN Runtime",
     "section": "",
-    "text": "Data Types: Soil moisture levels, weather data, crop health data.\nUse Cases: Precision farming, crop monitoring, irrigation management.\n\nAdvantage: Agricultural fields often extend beyond network coverage. With TinyML, AI can be executed locally, enabling smart farming even in off-the-grid areas. This benefit extends to other off-the-grid network and battery-powered applications."
+    "text": "Hands-on experience with Nvidia Jetson & Orange Pi 5+.\nExperience in AI model compression and DNN runtime development.\nKnowledge of TensorFlow Lite for Microcontrollers, MLIR, and IREE.\nKnowledge of HyperSpectral Imaging (HSI)."
   },
   {
-    "objectID": "blogs/tinymlusecases.html#automotive-and-mobility",
-    "href": "blogs/tinymlusecases.html#automotive-and-mobility",
-    "title": "TinyML Use Cases",
+    "objectID": "blogs/hiring_2024_fall.html#preferred-education",
+    "href": "blogs/hiring_2024_fall.html#preferred-education",
+    "title": "Looking for Software Engineer - AI Model Compression & DNN Runtime",
     "section": "",
-    "text": "Data Types: Vehicle performance data, driver behavior data, traffic data.\nUse Cases: Autonomous driving, fleet management, driver safety systems.\n\nAdvantage: Real-time response is critical. Local AI execution with TinyML ensures immediate processing, which is crucial for safety and efficiency in automotive applications."
+    "text": "Successful completion of CS-E4890 - Deep Learning D with good grades.\nSuccessful completion of CS-E4580 - Programming Parallel Computers D with good grades."
   },
   {
-    "objectID": "blogs/tinymlusecases.html#security-and-surveillance",
-    "href": "blogs/tinymlusecases.html#security-and-surveillance",
-    "title": "TinyML Use Cases",
+    "objectID": "blogs/hiring_2024_fall.html#wow",
+    "href": "blogs/hiring_2024_fall.html#wow",
+    "title": "Looking for Software Engineer - AI Model Compression & DNN Runtime",
     "section": "",
-    "text": "Data Types: Video feeds, audio recordings, motion sensor data.\nUse Cases: Intrusion detection, anomaly detection, crowd monitoring.\n\nAdvantage: Local data execution enhances security by reducing the need to transmit sensitive data, mitigating potential breaches.\n\n\nThese examples highlight the broad applicability of NinjaLABO’s solutions. By focusing on specific use cases within these industries, NinjaLABO can tailor its services to meet the unique needs and challenges of each sector, providing efficient, scalable, and impactful TinyML solutions."
+    "text": "Full-time preferred, part-time candidates must be available for more than 3 days per week.\nDiscord for daily communication\nDaily Scrum at 8:00am every weekday via Discord\nGitHuB Project as Kanban board\nGitHub Workflow/Actions as CI/CD\n2 weeks Sprint planning / review / retro under SCRUM"
+  },
+  {
+    "objectID": "blogs/hiring_2024_fall.html#monthly-pay",
+    "href": "blogs/hiring_2024_fall.html#monthly-pay",
+    "title": "Looking for Software Engineer - AI Model Compression & DNN Runtime",
+    "section": "",
+    "text": "3,000+€ for PhD students\n2,600-2,800€ for Master’s students\n2,100-2,400€ for Bachelor’s students\n\nContracts facilitated through UKKO.fi."
+  },
+  {
+    "objectID": "blogs/hiring_2024_fall.html#how-to-apply",
+    "href": "blogs/hiring_2024_fall.html#how-to-apply",
+    "title": "Looking for Software Engineer - AI Model Compression & DNN Runtime",
+    "section": "",
+    "text": "Interested? Apply to Hiroshi Doyu &lt;hiroshi.doyu@ninjalabo.ai&gt;"
+  },
+  {
+    "objectID": "blogs/about.html",
+    "href": "blogs/about.html",
+    "title": "About",
+    "section": "",
+    "text": "What’s NinjaLABO is and how it was started!\n\n\n\nNinjaLABO’s origin",
+    "crumbs": [
+      "Get Started",
+      "About"
+    ]
+  },
+  {
+    "objectID": "blogs/todo_2024_autumn.html",
+    "href": "blogs/todo_2024_autumn.html",
+    "title": "ToDo list in Autumn 2024",
+    "section": "",
+    "text": "This document provides an overview of NinjaLABO’s tasks and objectives for the autumn of 2024. The following sections outline key areas of focus, ranging from way of working (WoW) to model development and hardware deployment strategies.\n\n\n\nToDo 2024 Autumn Overview\n\n\n\n\nOur Way of Working (WoW) aims to ensure efficient and collaborative work among team members. This includes SCRUM practices, GitHub workflows, and workshops for knowledge sharing.\n\n\nSCRUM is our core agile framework, promoting daily check-ins, iterative sprint cycles, and continuous improvement.\n\n\n\n\n\nHeld on Discord in the Voice Channel.\nA strict 15-minute standup where everyone declares the following:\n\nWhat they completed (Done).\nWhat they will work on next (ToDo).\nAny blockers or issues (Issue).\n\n\n\n\n\nIf a topic takes longer than 5 minutes, continue the discussion in backlog item comments or schedule another meeting.\n\n\n\n\n\n\nEach sprint follows a clear structure, from planning to review, ensuring that we meet our project goals while continuously improving.\n\n\n\nBacklog grooming and sprint planning usually take place on Monday morning at the beginning of the sprint.\nThe team selects high-priority tasks from the backlog.\n\n\n\n\n\nThe review occurs on Friday afternoon at the end of the sprint.\nWe assess completed backlog items and discuss progress with stakeholders.\n\n\n\n\n\nAfter the review, we hold a retrospective to discuss what worked well and what could be improved in our WoW.\nThe retro typically happens right after the review on Friday afternoon.\n\n\n\n\n\n\n\nGitHub is our primary tool for project management, code reviews, and CI/CD.\n\n\n\n\n\nWe use the KANBAN board to visualize and track our backlog items, ensuring we stay on top of tasks and priorities.\n\n\n\n\n\n\n\n\nWe follow the Acceptance Test-Driven Development (ATDD) approach, which ensures that tests are written based on the system’s behavior before the implementation. \n\n\n\n\n\n\nUsing Nbdev, we streamline writing, testing, documenting, and distributing software packages directly from Jupyter Notebooks.\n\n\n\n\n\nTo facilitate knowledge sharing, we conduct workshops, encouraging developers to present and follow along using Jupyter notebooks.\n\n\n\n\nThe following techniques will be our focus for optimizing model performance:\n\n\nIn-depth profiling is necessary to guide our compression strategies.\n\n\n\nReducing the number of bits needed to represent weights and activations with Post-training Quantization.\n\n\n\n\n\nPruning involves removing less critical parameters from the model.\n\n\n\n\n\nTraining a smaller model (student) to mimic a larger model (teacher) through Knowledge Distillation.\n\n\n\n\n\nReducing model complexity by approximating weight matrices with Low-Rank Factorization.\n\n\n\n\n\n\nExploring hardware platforms and their capabilities.\n\n\n\nInvestigate the potential of using IREE for machine learning workloads.\n\n\n\n\n\nContinue optimizing and leveraging CUDA for GPU-accelerated tasks.\n\n\n\n\n\n\n\nBenchmark and compare model performance with NVIDIA’s TensorRT on Jetson devices.\n\n\n\n\n\n\n\n\nRunning Large Language Models (LLM) on the Orange Pi 5 Plus, evaluating its performance and scalability.\n\n\n\n\n\n\nOur tinyMLaaS focuses on providing scalable machine learning services, particularly for resource-constrained devices.\n\n\n\nA pipeline for flexible model transformations, such as compression, dockerization, and packaging models for various environments.\n\n\n\n\nLeveraging FastHTML for quicker model transformations and deployment.\n\n\n\n\n\n\nDistributed model execution across nodes, utilizing technologies like FaaS (Function as a Service) and Docker Swarm.\n\n\n\n\n\nOur custom runtime for executing deep learning models on various hardware platforms.\n\n\n\nFocus on improving GPU acceleration within our runtime.\n\n\n\n\n\nCPU-based inference and training optimizations.\n\n\n\n\n\n\nEvaluating inference performance with the ResNet50 model.\n\n\n\n\nUsing Convolutional Neural Networks (CNN) to process image data.\n\n\n\n\n\n\nBenchmarking with the Imagenette dataset.\n\n\n\n\n\nSupporting inference of Transformers, including Large Language Models (LLMs) and Vision Transformers.\n\n\n\n\n\n\nOptimizing training pipelines on both CPU and CUDA-based platforms.\n\n\n\n\n\n\nModel development and collaboration projects for 2024.\n\n\n\n\n\nDeveloping models for hyperspectral imaging using 3D Convolutional Neural Networks, particularly for CubeSat applications.\n\n\n\n\n\n\n\n\nFocusing on compression techniques for LLMs, making them more efficient for deployment.\n\n\n\n\n\nExploring physics simulation models as part of the ESA tender."
+  },
+  {
+    "objectID": "blogs/todo_2024_autumn.html#wow",
+    "href": "blogs/todo_2024_autumn.html#wow",
+    "title": "ToDo list in Autumn 2024",
+    "section": "",
+    "text": "Our Way of Working (WoW) aims to ensure efficient and collaborative work among team members. This includes SCRUM practices, GitHub workflows, and workshops for knowledge sharing.\n\n\nSCRUM is our core agile framework, promoting daily check-ins, iterative sprint cycles, and continuous improvement.\n\n\n\n\n\nHeld on Discord in the Voice Channel.\nA strict 15-minute standup where everyone declares the following:\n\nWhat they completed (Done).\nWhat they will work on next (ToDo).\nAny blockers or issues (Issue).\n\n\n\n\n\nIf a topic takes longer than 5 minutes, continue the discussion in backlog item comments or schedule another meeting.\n\n\n\n\n\n\nEach sprint follows a clear structure, from planning to review, ensuring that we meet our project goals while continuously improving.\n\n\n\nBacklog grooming and sprint planning usually take place on Monday morning at the beginning of the sprint.\nThe team selects high-priority tasks from the backlog.\n\n\n\n\n\nThe review occurs on Friday afternoon at the end of the sprint.\nWe assess completed backlog items and discuss progress with stakeholders.\n\n\n\n\n\nAfter the review, we hold a retrospective to discuss what worked well and what could be improved in our WoW.\nThe retro typically happens right after the review on Friday afternoon.\n\n\n\n\n\n\n\nGitHub is our primary tool for project management, code reviews, and CI/CD.\n\n\n\n\n\nWe use the KANBAN board to visualize and track our backlog items, ensuring we stay on top of tasks and priorities.\n\n\n\n\n\n\n\n\nWe follow the Acceptance Test-Driven Development (ATDD) approach, which ensures that tests are written based on the system’s behavior before the implementation. \n\n\n\n\n\n\nUsing Nbdev, we streamline writing, testing, documenting, and distributing software packages directly from Jupyter Notebooks.\n\n\n\n\n\nTo facilitate knowledge sharing, we conduct workshops, encouraging developers to present and follow along using Jupyter notebooks."
+  },
+  {
+    "objectID": "blogs/todo_2024_autumn.html#compression",
+    "href": "blogs/todo_2024_autumn.html#compression",
+    "title": "ToDo list in Autumn 2024",
+    "section": "",
+    "text": "The following techniques will be our focus for optimizing model performance:\n\n\nIn-depth profiling is necessary to guide our compression strategies.\n\n\n\nReducing the number of bits needed to represent weights and activations with Post-training Quantization.\n\n\n\n\n\nPruning involves removing less critical parameters from the model.\n\n\n\n\n\nTraining a smaller model (student) to mimic a larger model (teacher) through Knowledge Distillation.\n\n\n\n\n\nReducing model complexity by approximating weight matrices with Low-Rank Factorization."
+  },
+  {
+    "objectID": "blogs/todo_2024_autumn.html#hw",
+    "href": "blogs/todo_2024_autumn.html#hw",
+    "title": "ToDo list in Autumn 2024",
+    "section": "",
+    "text": "Exploring hardware platforms and their capabilities.\n\n\n\nInvestigate the potential of using IREE for machine learning workloads.\n\n\n\n\n\nContinue optimizing and leveraging CUDA for GPU-accelerated tasks.\n\n\n\n\n\n\n\nBenchmark and compare model performance with NVIDIA’s TensorRT on Jetson devices.\n\n\n\n\n\n\n\n\nRunning Large Language Models (LLM) on the Orange Pi 5 Plus, evaluating its performance and scalability."
+  },
+  {
+    "objectID": "blogs/todo_2024_autumn.html#tinymlaas",
+    "href": "blogs/todo_2024_autumn.html#tinymlaas",
+    "title": "ToDo list in Autumn 2024",
+    "section": "",
+    "text": "Our tinyMLaaS focuses on providing scalable machine learning services, particularly for resource-constrained devices.\n\n\n\nA pipeline for flexible model transformations, such as compression, dockerization, and packaging models for various environments.\n\n\n\n\nLeveraging FastHTML for quicker model transformations and deployment.\n\n\n\n\n\n\nDistributed model execution across nodes, utilizing technologies like FaaS (Function as a Service) and Docker Swarm."
+  },
+  {
+    "objectID": "blogs/todo_2024_autumn.html#tinyruntime",
+    "href": "blogs/todo_2024_autumn.html#tinyruntime",
+    "title": "ToDo list in Autumn 2024",
+    "section": "",
+    "text": "Our custom runtime for executing deep learning models on various hardware platforms.\n\n\n\nFocus on improving GPU acceleration within our runtime.\n\n\n\n\n\nCPU-based inference and training optimizations.\n\n\n\n\n\n\nEvaluating inference performance with the ResNet50 model.\n\n\n\n\nUsing Convolutional Neural Networks (CNN) to process image data.\n\n\n\n\n\n\nBenchmarking with the Imagenette dataset.\n\n\n\n\n\nSupporting inference of Transformers, including Large Language Models (LLMs) and Vision Transformers.\n\n\n\n\n\n\nOptimizing training pipelines on both CPU and CUDA-based platforms."
+  },
+  {
+    "objectID": "blogs/todo_2024_autumn.html#model",
+    "href": "blogs/todo_2024_autumn.html#model",
+    "title": "ToDo list in Autumn 2024",
+    "section": "",
+    "text": "Model development and collaboration projects for 2024.\n\n\n\n\n\nDeveloping models for hyperspectral imaging using 3D Convolutional Neural Networks, particularly for CubeSat applications.\n\n\n\n\n\n\n\n\nFocusing on compression techniques for LLMs, making them more efficient for deployment.\n\n\n\n\n\nExploring physics simulation models as part of the ESA tender."
   },
   {
     "objectID": "docs/tinymlaas/Background.html",
