@@ -1,0 +1,198 @@
+---
+title: "LLM on Camera as an Universal Sensor for Smart Mobility - Privacy-Preserving Edge AI PoC"
+author:
+ - name: "Hiroshi Doyu"
+   email: hiroshi.doyu@ninjalabo.ai
+date: "09/26/2024"
+date-modified: last-modified
+draft: false
+categories:
+  - UseCase
+---
+# Proposal: **LLM on Camera as a Universal Sensor for Smart Mobility - Privacy-Preserving Edge AI PoC**
+
+## Executive Summary:
+NinjaLABO proposes a 1.5-month **[Proof of Concept
+(PoC)](https://en.wikipedia.org/wiki/Proof_of_concept)** to
+demonstrate the transformative potential of **Local Large Language
+Models ([LLMs](https://en.wikipedia.org/wiki/Language_model)) on edge
+cameras** as a **Universal Sensor** for smart mobility. Utilizing
+**[NVIDIA JETSON Orin
+AGX](https://developer.nvidia.com/embedded/jetson-orin)** for
+high-performance, real-time image and data processing, our solution
+will empower both public authorities and citizens with localized
+insights.
+
+
+
+By ensuring full **[GDPR](https://gdpr-info.eu/)** compliance through
+on-device processing, this solution opens new possibilities for smart
+city services. Citizens, via a public **app interface**, will be able
+to ask real-time questions about their immediate environment—from
+parking availability to public safety insights—unlocking a wide range
+of unseen use cases.
+
+
+## Challenge Context:
+In modern cities, there is a growing demand for **context-aware**,
+real-time insights for mobility, safety, and general urban
+well-being. Current solutions may rely heavily on inflexible fixed
+purpose sensors or security camera with cloud infrastructure,
+which raises privacy concerns and introduces
+**[latency](https://en.wikipedia.org/wiki/Latency_(engineering))**. Our
+camera as an **Universal Sensor** approach, leveraging **[NVIDIA JETSON Orin
+AGX](https://developer.nvidia.com/jetson-agx-orin)**, processes
+information locally, providing flexible, actionable insights without
+compromising privacy.
+
+
+This PoC will not only demonstrate how this system improves mobility
+management and public safety, but it will also introduce new
+unseen **citizen-driven use cases** by allowing anyone to communite
+with LLM on CAM at real-time via an WebApp, effectively democratizing
+urban data.
+
+
+## Solution Overview:
+Our **LLM on Camera as a Universal Sensor** solution utilizes
+**multimodal LLMs** to interpret visual data (i.e. camera /video
+capture images) and answer questions in real-time. With the **NVIDIA
+JETSON Orin AGX**, which provides industry-leading computational
+power, the solution will demonstrate several impactful use cases:
+
+
+### Use Cases:
+1. **Vacant Parking Slot Detection**: Edge cameras detect available
+parking spaces and provide real-time updates to users by asking
+LLM, even with number of vacancy, size of such slot, and anything as
+long as LLM can understand or interpret.
+
+
+2. **Public Safety Monitoring**: Detect disturbances or suspicious
+activity in public spaces. The system can instantly alert authorities
+to potential security threats, improving urban safety without exposing
+personal data by asking LLM with "any fights heppening?".
+
+
+3. **Environmental Monitoring**: Citizens or local governments can
+query the system about feeling of air quality, noise levels, or local
+weather conditions (e.g., slippery sidewalks during winter) by asking
+LLM what kind of cloths people wear, ensuring timely responses to
+environmental changes.
+
+
+4. **Traffic Flow and Congestion Analysis**: The system tracks traffic
+patterns and provides real-time feedback on road congestion, alerting
+users to alternate routes or times to travel if needed via LLM.
+
+
+5. **Public Event Reporting**: The app can report real-time crowd
+density and event status during festivals, concerts, or protests,
+helping citizens avoid overcrowded areas or plan their attendance.
+
+
+6. **Emergency Support**: In the case of a disaster (e.g., a fire or
+flood), the system can help first responders by providing **any** type
+of localized data on obstacles, congestion, or affected areas.
+
+
+7. **Localized Queries from Citizens**: Any
+citizen can ask the LLM on Camera specific questions about the local
+environment—e.g., “Are there available seats in the park?” or “Is
+there a bike rack near this building?”—unlocking real-time insights
+and enhancing city navigation.
+
+
+The flexibility of the **Universal Sensor** allows it to be expanded
+into sectors like tourism, disaster response, and public
+infrastructure management, enabling both **real-time insights** and
+enhanced **citizen engagement** as a part of City infrastructure.
+
+### Example
+
+Normally the image itself won't be seen by users but only
+conversation.
+
+![](images/llm_on_camera_example.png)
+
+
+## Technical Approach:
+The **NVIDIA JETSON Orin AGX** provides significant computational
+capacity for real-time AI applications, making it the ideal platform
+for running **[multimodal
+LLMs](https://arxiv.org/abs/2306.02060)**. The PoC will utilize the
+following:
+
+
+- **NVIDIA JETSON Orin AGX**: A powerful edge AI platform capable of
+    handling advanced computations with up to 200 TOPS of performance.
+
+- **Multimodal LLM**: Pre-trained LLMs that can interpret visual,
+    textual, and contextual data in real-time, optimized for efficient
+    on-device processing.
+
+- **Advanced Model Compression**: Techniques like
+    **[quantization](https://en.wikipedia.org/wiki/Quantization_(machine_learning))**
+    and
+    **[pruning](https://en.wikipedia.org/wiki/Pruning_(decision_trees))**
+    ensure that LLMs are optimized for running efficiently on the Orin
+    AGX.
+
+
+By keeping data processing local, we eliminate the need for external
+data transmission, reducing latency while preserving privacy.
+
+
+## Expected Outcomes and Impact:
+By the end of this 1.5-month PoC, we expect to demonstrate:
+
+1. **Parking Slot Detection**: Detecting vacant parking spaces and providing real-time updates.
+2. **Public Safety Monitoring**: Detecting and responding to public safety incidents.
+3. **Citizen Engagement via WebApp**: Offering citizens real-time access
+to the system’s insights by allowing them to query localized
+information through the app. This democratization of data will unlock
+**unforeseen use cases** that expand beyond mobility and safety.
+4. **Environmental and Traffic Monitoring**: Demonstrating how the
+**Universal Sensor** can track and respond to environmental and
+traffic conditions in real time, supporting various urban planning
+initiatives.
+
+
+## Project Timeline (1.5 Months):
+1. **Week 1 - Initial Setup**:
+   - Install and configure **NVIDIA JETSON Orin AGX** and integrate multimodal LLMs for the core and extended use cases.
+   - Begin small-scale testing in a controlled environment.
+
+2. **Week 2-3 - Use Case Development**:
+   - Fine-tune parking slot detection, public safety monitoring, and citizen query capabilities.
+   - Develop app functionality for citizen interaction with the **Universal Sensor**.
+
+3. **Week 4-6 - Deployment and Validation**:
+   - Deploy the system in a small urban environment (e.g., a parking lot, public square).
+   - Test accuracy, latency, and app engagement, collecting feedback from stakeholders and citizens.
+   - Analyze results for further scalability.
+
+## Collaboration and Ecosystem:
+We will collaborate with local municipalities and
+**[NVIDIA](https://www.nvidia.com/)** to optimize the **NVIDIA JETSON
+Orin AGX** platform for smart mobility applications. Citizen
+engagement will be supported through partnerships with local app
+developers and parking management services.
+
+
+## Conclusion:
+NinjaLABO’s **LLM on Camera as a Universal Sensor** is a powerful,
+privacy-preserving tool designed to transform smart city services. By
+leveraging the advanced capabilities of **[NVIDIA JETSON Orin
+AGX](https://developer.nvidia.com/embedded/jetson-orin)** and
+introducing an open **citizen engagement app**, this PoC will
+demonstrate the potential for real-time mobility management, public
+safety enhancement, and localized insights for citizens. The
+possibilities of new use cases emerging from public queries are vast,
+making this technology a cornerstone of **smart city innovation**.
+
+
+We look forward to showcasing how **Universal Sensors** can transform
+the way citizens interact with and benefit from their urban
+environments, fully aligning with Helsinki’s goals of **[AI-powered
+mobility](https://mobilitylab.hel.fi/ai-in-mobility-innovation-challenge/)**.
