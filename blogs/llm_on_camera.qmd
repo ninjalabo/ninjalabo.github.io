@@ -117,6 +117,10 @@ conversation.
 
 ![](images/llm_on_camera_example.png)
 
+And you can withdraw any insights via LLM.
+
+![](images/llm_on_camera_example2.png)
+
 
 ## Technical Approach:
 The **NVIDIA JETSON Orin AGX** provides significant computational
