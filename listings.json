@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blogs/tinyruntime.html",
       "/blogs/llm_on_camera.html",
       "/blogs/todo_2024_autumn.html",
       "/blogs/summer_insights_2024.html",
