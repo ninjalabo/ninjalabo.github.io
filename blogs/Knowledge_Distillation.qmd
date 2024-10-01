@@ -4,7 +4,7 @@ description: "Overview of Knowledge Distillation: Simplifying Deep Learning Mode
 author: 
  - name: "Leila Mozaffari"
    email: leila.mozaffari@ninjalabo.ai
-date: "28/09/2024"
+date: "09/28/2024"
 draft: false
 categories:
   - Tech
