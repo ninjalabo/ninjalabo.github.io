@@ -2,162 +2,166 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ninjalabo.github.io/docs/tinymlaas/Software-Project-Summer-Kick-off.html</loc>
-    <lastmod>2024-09-30T13:01:30.771Z</lastmod>
+    <lastmod>2024-10-01T06:59:39.523Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/docs/tinymlaas/Use_cases.html</loc>
-    <lastmod>2024-09-30T13:01:30.771Z</lastmod>
+    <lastmod>2024-10-01T06:59:39.523Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/docs/tinymlaas/TinyML-frontend_README.html</loc>
-    <lastmod>2024-09-30T13:01:30.771Z</lastmod>
+    <lastmod>2024-10-01T06:59:39.523Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/docs/tinymlaas/Technologies.html</loc>
-    <lastmod>2024-09-30T13:01:30.771Z</lastmod>
+    <lastmod>2024-10-01T06:59:39.523Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/docs/tinymlaas/TinyML-backend_README.html</loc>
-    <lastmod>2024-09-30T13:01:30.771Z</lastmod>
+    <lastmod>2024-10-01T06:59:39.523Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/docs/tinymlaas/TinyML-MCU_arduino_README.html</loc>
-    <lastmod>2024-09-30T13:01:30.771Z</lastmod>
+    <lastmod>2024-10-01T06:59:39.523Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/performance.html</loc>
-    <lastmod>2024-09-30T13:02:18.363Z</lastmod>
+    <lastmod>2024-10-01T07:00:28.009Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/blogs/tinymlusecases.html</loc>
-    <lastmod>2024-09-30T13:01:30.762Z</lastmod>
+    <lastmod>2024-10-01T06:59:39.514Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/blogs/yolofaceid.html</loc>
-    <lastmod>2024-09-30T13:01:30.762Z</lastmod>
+    <lastmod>2024-10-01T06:59:39.514Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/blogs/mvp6.html</loc>
-    <lastmod>2024-09-30T13:01:30.762Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/blogs/aicompressionsaas.html</loc>
-    <lastmod>2024-09-30T13:01:30.738Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/blogs/tinyruntime.html</loc>
-    <lastmod>2024-09-30T13:01:30.762Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/blogs/howto_enable_jupyter_remotely.html</loc>
-    <lastmod>2024-09-30T13:01:30.738Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/blogs/imagimobstudio.html</loc>
-    <lastmod>2024-09-30T13:01:30.762Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/blogs/pytorch_staticq.html</loc>
-    <lastmod>2024-09-30T13:01:30.762Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/blogs/hiring_2024_fall.html</loc>
-    <lastmod>2024-09-30T13:01:30.738Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/blogs/HU_Summer_2023.html</loc>
-    <lastmod>2024-09-30T13:01:30.738Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/blogs/demistify_tinymlaas.html</loc>
-    <lastmod>2024-09-30T13:01:30.738Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/blog.html</loc>
-    <lastmod>2024-09-30T13:01:30.738Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/tutorials/runwalkthrough.html</loc>
-    <lastmod>2024-09-30T13:01:31.046Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/index.html</loc>
-    <lastmod>2024-09-30T13:01:30.939Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/pricing.html</loc>
-    <lastmod>2024-09-30T13:01:31.046Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/blogs/edgeimplusestudio.html</loc>
-    <lastmod>2024-09-30T13:01:30.738Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/blogs/dnn_hsi_opt.html</loc>
-    <lastmod>2024-09-30T13:01:30.738Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/blogs/tinymlaas.html</loc>
-    <lastmod>2024-09-30T13:01:30.762Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/blogs/llm_on_camera.html</loc>
-    <lastmod>2024-09-30T13:01:30.762Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/blogs/summer_insights_2024.html</loc>
-    <lastmod>2024-09-30T13:01:30.762Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/blogs/dnn_comp_techs.html</loc>
-    <lastmod>2024-09-30T13:01:30.738Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/blogs/ericsson_blog2.html</loc>
-    <lastmod>2024-09-30T13:01:30.738Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ninjalabo.github.io/blogs/iree.html</loc>
-    <lastmod>2024-09-30T13:01:30.762Z</lastmod>
+    <lastmod>2024-10-01T06:59:39.514Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/blogs/ericsson_blog1.html</loc>
-    <lastmod>2024-09-30T13:01:30.738Z</lastmod>
+    <lastmod>2024-10-01T06:59:39.490Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/iree.html</loc>
+    <lastmod>2024-10-01T06:59:39.514Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/ericsson_blog2.html</loc>
+    <lastmod>2024-10-01T06:59:39.490Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/dnn_comp_techs.html</loc>
+    <lastmod>2024-10-01T06:59:39.490Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/summer_insights_2024.html</loc>
+    <lastmod>2024-10-01T06:59:39.514Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/llm_on_camera.html</loc>
+    <lastmod>2024-10-01T06:59:39.514Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/tinymlaas.html</loc>
+    <lastmod>2024-10-01T06:59:39.514Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/dnn_hsi_opt.html</loc>
+    <lastmod>2024-10-01T06:59:39.490Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/edgeimplusestudio.html</loc>
+    <lastmod>2024-10-01T06:59:39.490Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/pricing.html</loc>
+    <lastmod>2024-10-01T06:59:39.799Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/index.html</loc>
+    <lastmod>2024-10-01T06:59:39.691Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/tutorials/runwalkthrough.html</loc>
+    <lastmod>2024-10-01T06:59:39.799Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blog.html</loc>
+    <lastmod>2024-10-01T06:59:39.489Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/demistify_tinymlaas.html</loc>
+    <lastmod>2024-10-01T06:59:39.490Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/HU_Summer_2023.html</loc>
+    <lastmod>2024-10-01T06:59:39.490Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/hiring_2024_fall.html</loc>
+    <lastmod>2024-10-01T06:59:39.490Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/pytorch_staticq.html</loc>
+    <lastmod>2024-10-01T06:59:39.514Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/imagimobstudio.html</loc>
+    <lastmod>2024-10-01T06:59:39.514Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/howto_enable_jupyter_remotely.html</loc>
+    <lastmod>2024-10-01T06:59:39.490Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/tinyruntime.html</loc>
+    <lastmod>2024-10-01T06:59:39.514Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/aicompressionsaas.html</loc>
+    <lastmod>2024-10-01T06:59:39.490Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ninjalabo.github.io/blogs/Knowledge_Distillation.html</loc>
+    <lastmod>2024-10-01T06:59:39.490Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/blogs/about.html</loc>
-    <lastmod>2024-09-30T13:01:30.738Z</lastmod>
+    <lastmod>2024-10-01T06:59:39.490Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/blogs/todo_2024_autumn.html</loc>
-    <lastmod>2024-09-30T13:01:30.762Z</lastmod>
+    <lastmod>2024-10-01T06:59:39.514Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/getstarted.html</loc>
-    <lastmod>2024-09-30T13:01:30.781Z</lastmod>
+    <lastmod>2024-10-01T06:59:39.533Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/docs/tinymlaas/TinyML-MCU_README.html</loc>
-    <lastmod>2024-09-30T13:01:30.771Z</lastmod>
+    <lastmod>2024-10-01T06:59:39.523Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/docs/tinymlaas/Architecture.html</loc>
-    <lastmod>2024-09-30T13:01:30.763Z</lastmod>
+    <lastmod>2024-10-01T06:59:39.515Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/docs/tinymlaas/Background.html</loc>
-    <lastmod>2024-09-30T13:01:30.763Z</lastmod>
+    <lastmod>2024-10-01T06:59:39.515Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/docs/tinymlaas/Next_steps.html</loc>
-    <lastmod>2024-09-30T13:01:30.763Z</lastmod>
+    <lastmod>2024-10-01T06:59:39.515Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/docs/tinymlaas/Demonstration.html</loc>
-    <lastmod>2024-09-30T13:01:30.763Z</lastmod>
+    <lastmod>2024-10-01T06:59:39.515Z</lastmod>
   </url>
   <url>
     <loc>https://ninjalabo.github.io/docs/tinymlaas/TinyMLaaS_README.html</loc>
-    <lastmod>2024-09-30T13:01:30.771Z</lastmod>
+    <lastmod>2024-10-01T06:59:39.523Z</lastmod>
   </url>
 </urlset>
