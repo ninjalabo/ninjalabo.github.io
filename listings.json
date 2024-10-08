@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blogs/Low_Rank_Approximation-Part1.html",
       "/blogs/tinyruntime.html",
       "/blogs/Knowledge_Distillation.html",
       "/blogs/demistify_tinymlaas.html",
