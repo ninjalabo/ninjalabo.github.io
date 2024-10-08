@@ -1,5 +1,5 @@
 ---
-title: " Low-rank approximation"
+title: " Low-rank approximation 1/4"
 description: "Overview of Low-rank approximation - Part1"
 author: 
  - name: "Leila Mozaffari"
@@ -25,7 +25,7 @@ Low-rank approximation is a technique used to simplify complex data by approxima
 
 we have dsd
 
-- **Faster Computation**: Instead of directly multiplying large matrices, low-rank approximation allows us to work with smaller matrices, which speeds up computation. The time complexity can reduce from O(nm) to O((n+m)r), where r is the rank of the approximation.
+- **Faster Computation**: Instead of directly multiplying large matrices, low-rank approximation allows us to work with smaller matrices, which speeds up computation. The time complexity can reduce from $O(nm)$ to $O((n+m)r)$, where r is the rank of the approximation.
 
 - **Efficiency**: Large datasets or images require a lot of memory and computational power. By using low-rank approximation, you can reduce the amount of data you need to work with while still keeping the important information.
   
@@ -40,15 +40,17 @@ Low-rank approximation techniques are methods used to approximate a large, compl
 
 ### 1. **Singular Value Decomposition (SVD)**
 
-Singular Value Decomposition is one of the most commonly used techniques for low-rank approximation. It decomposes a matrix \( A \) into three components:
+Singular Value Decomposition is one of the most commonly used techniques for low-rank approximation. It decomposes a matrix $A$ into three components:
 
-\[ A = U \Sigma V^T \]
+$$ A = U \Sigma V^T $$
 
 Where:
-- \( U \) and \( V \) are orthogonal matrices,
-- \( \Sigma \) is a diagonal matrix containing the singular values (which represent the importance of different components).
 
-You can then select the top \( k \) singular values and their corresponding vectors to create a low-rank approximation.
+- $U$ and $V$ are orthogonal matrices,
+
+- $\Sigma$ is a diagonal matrix containing the singular values (which represent the importance of different components).
+
+You can then select the top $k$ singular values and their corresponding vectors to create a low-rank approximation.
 
 #### Advantages:
 - **Optimal Approximation**: SVD provides the best low-rank approximation in terms of minimizing the error (Frobenius norm or 2-norm).
@@ -79,15 +81,15 @@ PCA is essentially a variation of SVD applied to the covariance matrix. It ident
 
 ### 3. **Non-negative Matrix Factorization (NMF)**
 
-NMF is a technique used for matrices where all values are non-negative. It decomposes the matrix into two smaller non-negative matrices \( W \) and \( H \):
+NMF is a technique used for matrices where all values are non-negative. It decomposes the matrix into two smaller non-negative matrices $W$ and $H$:
 
-\[ A \approx WH \]
+$$ A \approx WH $$
 
-The idea is to represent the original matrix as a combination of "basis vectors" in \( W \) and "coefficients" in \( H \), both constrained to be non-negative, which can be helpful when dealing with data that naturally contains non-negative values (like images or word counts).
+The idea is to represent the original matrix as a combination of "basis vectors" in $W$ and "coefficients" in $H$, both constrained to be non-negative, which can be helpful when dealing with data that naturally contains non-negative values (like images or word counts).
 
 #### Advantages:
 - **Interpretability**: Since both the basis vectors and coefficients are non-negative, the results are often easier to interpret. For example, in image processing, NMF will break down an image into parts that represent things like edges, textures, etc.
-- **Sparsity**: NMF often produces sparse solutions, meaning that many of the elements in \( W \) and \( H \) are zero, which can make the results more efficient and interpretable.
+- **Sparsity**: NMF often produces sparse solutions, meaning that many of the elements in $W$ and $H$ are zero, which can make the results more efficient and interpretable.
   
 #### Disadvantages:
 - **Not Globally Optimal**: Unlike SVD, NMF does not guarantee an optimal approximation. It may get stuck in local minima during the optimization process.
@@ -97,7 +99,7 @@ The idea is to represent the original matrix as a combination of "basis vectors"
 
 ### 4. **QR Decomposition**
 
-QR decomposition breaks down a matrix \( A \) into two matrices \( Q \) (orthogonal matrix) and \( R \) (upper triangular matrix). For low-rank approximation, the matrix can be reduced to its top \( k \) components by selecting a subset of columns from \( Q \) and rows from \( R \).
+QR decomposition breaks down a matrix $A$ into two matrices $Q$ (orthogonal matrix) and $R$ (upper triangular matrix). For low-rank approximation, the matrix can be reduced to its top $k$ components by selecting a subset of columns from $Q$ and rows from $R$.
 
 #### Advantages:
 - **Efficient for Solving Systems**: QR decomposition is particularly efficient for solving linear systems and least-squares problems, especially when combined with column-pivoting.
@@ -125,7 +127,7 @@ Randomized algorithms approximate low-rank decompositions by using random projec
 
 ### 6. **CUR Decomposition**
 
-CUR decomposition is a matrix approximation technique that selects actual rows and columns from the original matrix to form two low-rank matrices \( C \) (columns) and \( R \) (rows). The matrix \( U \) is constructed by relating the selected rows and columns.
+CUR decomposition is a matrix approximation technique that selects actual rows and columns from the original matrix to form two low-rank matrices $C$ (columns) and $R$ (rows). The matrix $U$ is constructed by relating the selected rows and columns.
 
 #### Advantages:
 - **Interpretability**: Since CUR selects actual rows and columns from the original matrix, the results are more interpretable than SVD, which gives linear combinations.
@@ -162,7 +164,7 @@ Among the low-rank approximation techniques discussed, **Randomized Low-Rank App
 3. **Scalability**: It scales efficiently with large datasets, making it suitable for scenarios where traditional methods like SVD would take too long (for example, in big data applications).
 
 ### Speed Comparison with Other Methods:
-- **SVD/PCA**: These are slower because they require calculating the full decomposition of the matrix. SVD, in particular, is computationally expensive, with a time complexity of \( O(mn^2) \) for an \( m \times n \) matrix.
+- **SVD/PCA**: These are slower because they require calculating the full decomposition of the matrix. SVD, in particular, is computationally expensive, with a time complexity of $O(mn^2)$ for an $m \times n$ matrix.
   
 - **NMF**: NMF is slower than randomized algorithms because it involves iterative optimization that can take time to converge.
 
