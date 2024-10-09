@@ -2,7 +2,6 @@
   {
     "listing": "/blog.html",
     "items": [
-      "/blogs/tinyruntime.html",
       "/blogs/Low_Rank_Approximation-Part1.html",
       "/blogs/Low_Rank_Approximation-Part2.html",
       "/blogs/Low_Rank_Approximation-Part3.html",
@@ -10,6 +9,7 @@
       "/blogs/Knowledge_Distillation.html",
       "/blogs/demistify_tinymlaas.html",
       "/blogs/llm_on_camera.html",
+      "/blogs/tinyruntime.html",
       "/blogs/todo_2024_autumn.html",
       "/blogs/summer_insights_2024.html",
       "/blogs/hiring_2024_fall.html",
