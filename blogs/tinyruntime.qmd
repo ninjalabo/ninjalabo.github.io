@@ -4,7 +4,7 @@ description: "Reviewing the current status of our lightweight runtime"
 author: 
  - name: "Haruka Doyu"
    email: haruka.doyu@ninjalabo.ai
-date: "10/26/2024"
+date: "09/26/2024"
 draft: false
 categories:
   - Tech
