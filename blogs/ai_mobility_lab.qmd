@@ -1,0 +1,14 @@
+---
+title: "Hack Your City: Empowering Smart Solutions with No Code Vision LLM"
+subtitle: "Enabling citizens and businesses to create smart city solutions effortlessly"
+author:
+ - name: "Hiroshi Doyu"
+   email: hiroshi.doyu@ninjalabo.ai
+date: "10/11/2024"
+date-modified: last-modified
+draft: false
+categories:
+  - UseCase
+---
+![](images/ai_mobility_lab.png)
+
