@@ -15,5 +15,8 @@ categories:
 
 ## Enabling citizens and businesses to create smart city solutions effortlessly
 
+
+![](images/ai_mobility_lab1.png)
+
 ![](images/ai_mobility_lab.png)
 
