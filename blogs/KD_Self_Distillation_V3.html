@@ -443,7 +443,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <h1>3. Self-Distillation</h1>
 <p><strong>Self-distillation</strong> is a technique in which a model distills knowledge into itself. In this case, the same model is used both as a teacher and a student, a process where intermediate layers’ outputs help guide earlier layers in the same model. The idea is that the student network learns from itself by taking advantage of various self-regularization strategies, and intermediate outputs can be utilized for knowledge transfer.</p>
 <p>In this case, instead of the classical teacher-student approach, we’ll consider ResNet18, with the student learning from its own intermediate outputs. Self-distillation usually results in a student model that generalizes better without needing an external teacher.</p>
-<p><img src="img/Self_Distillation.png" class="img-fluid"></p>
+<p><img src="images/Self_Distillation.png" class="img-fluid"></p>
 <section id="references" class="level3">
 <h3 class="anchored" data-anchor-id="references">References</h3>
 <ul>
