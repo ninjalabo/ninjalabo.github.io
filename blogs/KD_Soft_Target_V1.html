@@ -488,16 +488,16 @@ window.Quarto = {
 <p>Soft Targets (Logits Distillation): The student model is trained not only on the hard labels (i.e., the ground truth labels), but also on the soft targets provided by the teacher model. The soft targets are the probabilities output by the teacher model after applying a temperature scaling to the logits (pre-softmax outputs).</p>
 <p>An intuitive example of hard and soft targets for knowledge distillation:</p>
 <p>The output of the network with no activation function is Logit.</p>
-<p><img src="img/Logit.png" class="img-fluid"></p>
+<p><img src="images/Logit.png" class="img-fluid"></p>
 <p><br></p>
 <section id="soft-label" class="level3">
 <h3 class="anchored" data-anchor-id="soft-label">Soft Label</h3>
-<p><img src="img/Soft_Labels.png" class="img-fluid"></p>
+<p><img src="images/Soft_Labels.png" class="img-fluid"></p>
 </section>
 <section id="temperature-t" class="level3">
 <h3 class="anchored" data-anchor-id="temperature-t">Temperature (T):</h3>
 <p>Think of the temperature as a dial that controls how “sharp” or “smooth” the teacher model’s predictions are. Normally, when a model makes predictions, it assigns high confidence to one class (the correct one) and very low confidence to others. This results in a “spiky” output, where one class has a high probability, and all others are close to zero.</p>
-<p><img src="img/Temperature.png" class="img-fluid"></p>
+<p><img src="images/Temperature.png" class="img-fluid"></p>
 </section>
 <section id="softening" class="level3">
 <h3 class="anchored" data-anchor-id="softening">Softening:</h3>
