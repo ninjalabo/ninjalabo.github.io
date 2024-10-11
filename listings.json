@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blogs/ai_mobility_lab.html",
       "/blogs/KD_Hint_Base_V2.html",
       "/blogs/KD_Self_Distillation_V3.html",
       "/blogs/KD_Soft_Target_V1.html",
