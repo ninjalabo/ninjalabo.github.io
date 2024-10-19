@@ -1,0 +1,179 @@
+---
+title: "The Impact of GPTs + Function-Call on Web Development"
+author: 
+ - name: "Hiroshi Doyu"
+   email: hiroshi.doyu@ninjalabo.ai
+date: "10/20/2024"
+draft: false
+categories:
+  - Tech
+  - Web
+---
+It's the weekend, and I spent some time researching how to develop
+our LLM-based services. What I discovered is how **[GPTs](https://openai.com/index/introducing-gpts/) + [function-call](https://platform.openai.com/docs/guides/function-calling)**
+are transforming traditional web development. I realize now that **I
+was a bit late** to fully grasp this shift, but the impact is
+undeniable.
+
+![](https://cdn.openai.com/API/docs/images/function-calling-diagram.png)
+
+
+### How GPT’s Function-Calling is Revolutionizing Web Development
+
+In recent years, web development has undergone a rapid transformation,
+primarily driven by the rise of APIs, microservices, and cloud
+architectures. Traditionally, developers were required to integrate
+services manually, converting data formats and handling various
+API-specific conventions. With the advent of Large Language Models
+(LLMs) and more specifically, the `function-call` capability
+introduced in GPT-based models, this landscape is evolving rapidly.
+
+
+Let’s take a look at how these advancements are reshaping web
+development, turning it into a more intuitive and automated process.
+
+
+---
+
+#### The Old Paradigm: Web Development as API Mashups
+
+Web development in the era of microservices can be viewed as a series
+of mashups. Developers stitched together APIs from various services to
+create cohesive systems. This required extensive work to ensure that
+data was formatted correctly, sent over the wire, and processed by
+another system.
+
+
+Take a typical example of integrating a payment service with an
+e-commerce platform. The developer would need to handle
+authentication, format requests in JSON or XML, handle errors, and
+ensure that the responses were compatible with the rest of the
+system. These kinds of repetitive tasks consumed a large portion of a
+developer’s time.
+
+
+However, this approach came with friction. Web developers were often
+bogged down in making sure APIs spoke the same "language," especially
+when trying to translate between services with slightly different data
+formats.
+
+
+---
+
+#### The Game Changer: GPT's Function-Calling Capability
+
+With the recent advancements in LLMs, especially the introduction of
+GPT models' `function-call` capability, this tedious workflow is being
+simplified. The new generation of tools doesn't just act as a
+text-based conversational system; they can now handle function calls,
+process structured data, and automate much of the repetitive work that
+developers previously had to do by hand.
+
+
+For example, instead of writing boilerplate code to connect services,
+you can now instruct GPT to perform a `function-call` and execute API
+integrations seamlessly. The LLM can handle the format conversion
+behind the scenes, so you don’t need to think about JSON vs XML, or
+other low-level concerns. This ability to perform more sophisticated
+operations from natural language queries opens up new possibilities in
+how web services are built and connected.
+
+
+What does this mean for web developers? You can essentially focus more
+on higher-level logic and spend less time on implementation
+details. Simply describe what you want the system to do in natural
+language, and let the underlying LLM figure out how to achieve that
+with function-calling. A task that once required handling API
+documentation, writing custom glue code, and managing data flow can
+now be handled much more efficiently by the AI itself.
+
+
+---
+
+#### API + GPT: A New Development Paradigm
+
+In the past, developers published API specifications (like OpenAPI) to
+describe how different services could interact. This required that
+developers on both ends understood the spec, wrote code to communicate
+using it, and handled any necessary modifications.
+
+
+Now, with GPT and function-calling, this interaction can be
+encapsulated in a natural language interface. You no longer need an
+OpenAPI spec or a deep understanding of each service’s API. Instead,
+you ask GPT to interact with a service, and it figures out the rest.
+
+
+For instance, you might want your e-commerce platform to call a
+payment service. Instead of integrating it manually, you would prompt
+GPT to handle the interaction. The LLM will handle the API call for
+you and return the result, as if you were interacting with a unified
+system rather than disparate services.
+
+
+As GPTs evolve, web development is shifting towards a user-friendly
+paradigm where the barrier to entry for creating complex systems is
+drastically lowered. It's no longer just about writing code; it’s
+about understanding how to describe what you want in terms that the
+model understands, and letting it take care of the details.
+
+
+---
+
+#### What This Means for Web Developers
+
+The implications are enormous. Web development becomes more about
+problem-solving and user experience design, rather than focusing on
+the minutiae of how services talk to each other. LLMs with
+function-calling capabilities can serve as a bridge between services,
+ensuring that data formats, API integrations, and other technical
+issues are automatically handled.
+
+
+This could lead to a more democratized approach to web development
+where developers and non-developers alike can create sophisticated
+systems using natural language, allowing anyone with a vision to bring
+their ideas to life.
+
+
+Imagine a world where you could simply say:
+
+- “When a user makes a purchase, notify our warehouse and trigger a shipping order.”
+- “Check inventory levels every night and reorder when stock falls below a certain threshold.”
+- “If a user abandons their cart, send them a follow-up email after 24 hours.”
+
+Previously, each of these actions would require detailed logic and
+service integration work. Now, with GPT and function-call
+capabilities, they can be executed seamlessly without a deep dive into
+API documentation and error-handling code.
+
+
+---
+
+#### Looking Ahead: The Future of Web Development
+
+It’s clear that web development is on the brink of a major shift. With
+the function-call feature and LLM-powered automation, we're moving
+towards a future where the focus will be more on designing user
+stories and user experiences rather than on painstakingly connecting
+various services. As a result, development cycles will be faster,
+integrations more seamless, and the technology will be more accessible
+to a wider range of users.
+
+
+What we are witnessing is the next step in the evolution of web
+development—an era where the line between code and natural language
+blurs, allowing for more intuitive and powerful ways to build the web
+services of the future.
+
+
+At NinjaLABO, we are already exploring how to leverage these new
+capabilities to further enhance our TinyMLaaS and AI compression
+platform. We believe this paradigm shift is not just limited to
+frontend services but can also revolutionize backend processes,
+helping companies innovate faster and reduce development overhead.
+
+
+The web development world is evolving—are you ready for the future?
+
+
