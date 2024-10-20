@@ -350,6 +350,12 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#how-gpts-function-calling-is-revolutionizing-web-development" id="toc-how-gpts-function-calling-is-revolutionizing-web-development" class="nav-link active" data-scroll-target="#how-gpts-function-calling-is-revolutionizing-web-development">How GPT’s Function Calling is Revolutionizing Web Development</a></li>
+  <li><a href="#the-old-paradigm-web-development-as-api-mashups" id="toc-the-old-paradigm-web-development-as-api-mashups" class="nav-link" data-scroll-target="#the-old-paradigm-web-development-as-api-mashups">The Old Paradigm: Web Development as API Mashups</a></li>
+  <li><a href="#the-game-changer-gpts-function-calling-capability" id="toc-the-game-changer-gpts-function-calling-capability" class="nav-link" data-scroll-target="#the-game-changer-gpts-function-calling-capability">The Game Changer: GPT’s Function Calling Capability</a></li>
+  <li><a href="#api-gpt-a-new-development-paradigm" id="toc-api-gpt-a-new-development-paradigm" class="nav-link" data-scroll-target="#api-gpt-a-new-development-paradigm">API + GPT: A New Development Paradigm</a></li>
+  <li><a href="#what-this-means-for-ninjalabo-developers" id="toc-what-this-means-for-ninjalabo-developers" class="nav-link" data-scroll-target="#what-this-means-for-ninjalabo-developers">What This Means for NinjaLABO Developers</a></li>
+  <li><a href="#whats-left-the-front-end-and-a-new-way-of-thinking" id="toc-whats-left-the-front-end-and-a-new-way-of-thinking" class="nav-link" data-scroll-target="#whats-left-the-front-end-and-a-new-way-of-thinking">What’s Left? The Front-End, and a New Way of Thinking</a></li>
+  <li><a href="#looking-ahead-embracing-the-future-of-web-development" id="toc-looking-ahead-embracing-the-future-of-web-development" class="nav-link" data-scroll-target="#looking-ahead-embracing-the-future-of-web-development">Looking Ahead: Embracing the Future of Web Development</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blogs/gpts_function_call_web.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -391,6 +397,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 </header>
 
 
+<p><img src="images/gpts_function_call_web.png" class="img-fluid"></p>
 <p>It’s the weekend, and I spent some time researching how to develop our LLM-based services. What I discovered is how <strong><a href="https://openai.com/index/introducing-gpts/">GPTs</a></strong> + <strong><a href="https://platform.openai.com/docs/guides/function-calling">function calling</a></strong> are transforming traditional web development. I realize now that <strong>I was a bit late</strong> to fully grasp this shift, but the impact is undeniable.</p>
 <p><img src="https://cdn.openai.com/API/docs/images/function-calling-diagram.png" class="img-fluid"></p>
 <section id="how-gpts-function-calling-is-revolutionizing-web-development" class="level3">
@@ -398,30 +405,31 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <p>In recent years, web development has undergone rapid transformation, primarily driven by the rise of APIs, microservices, and cloud architectures. Traditionally, developers had to manually integrate services, convert data formats, and handle various API-specific nuances. With the advent of Large Language Models (LLMs) and, more specifically, the <code>function calling</code> capability in GPT-based models, this landscape is evolving rapidly.</p>
 <p>Let’s explore how these advancements are reshaping web development into a more intuitive and automated process, and why we should be eager to embrace this change at NinjaLABO.</p>
 <hr>
-<section id="the-old-paradigm-web-development-as-api-mashups" class="level4">
-<h4 class="anchored" data-anchor-id="the-old-paradigm-web-development-as-api-mashups">The Old Paradigm: Web Development as API Mashups</h4>
+</section>
+<section id="the-old-paradigm-web-development-as-api-mashups" class="level1">
+<h1>The Old Paradigm: Web Development as API Mashups</h1>
 <p>Web development during the era of microservices could often be seen as a series of API mashups. Developers spent significant time stitching together APIs from various services to create cohesive systems. This required extensive effort to ensure data was correctly formatted, sent over the wire, and processed by another system.</p>
 <p>For example, integrating a payment service with an e-commerce platform meant developers had to handle authentication, format requests in JSON or XML, manage error handling, and ensure that the responses aligned with the rest of the system. These repetitive tasks consumed a large portion of a developer’s time.</p>
 <p>This approach introduced friction. Developers were often bogged down in ensuring that APIs “spoke the same language,” especially when translating between services with slightly different data formats.</p>
 <hr>
 </section>
-<section id="the-game-changer-gpts-function-calling-capability" class="level4">
-<h4 class="anchored" data-anchor-id="the-game-changer-gpts-function-calling-capability">The Game Changer: GPT’s Function Calling Capability</h4>
+<section id="the-game-changer-gpts-function-calling-capability" class="level1">
+<h1>The Game Changer: GPT’s Function Calling Capability</h1>
 <p>With the recent advancements in LLMs, particularly the introduction of GPT models’ <code>function calling</code> capability, this tedious workflow is becoming a thing of the past. These new-generation tools don’t just act as text-based conversational systems; they can now handle function calls, process structured data, and automate much of the repetitive work developers used to do manually.</p>
 <p>For instance, instead of writing boilerplate code to connect services, you can now instruct GPT to perform a <code>function call</code> and execute API integrations seamlessly. The LLM can handle the format conversion behind the scenes—whether it’s JSON or XML—allowing you to focus on higher-level tasks. This ability to perform complex operations from natural language queries opens up new possibilities for how web services are built and integrated.</p>
 <p>For developers, this means a shift from worrying about low-level implementation details to focusing on higher-level logic. You simply describe what you want the system to do in natural language, and the underlying LLM takes care of the rest. A task that once required understanding API documentation, writing glue code, and managing data flows can now be handled efficiently by AI.</p>
 <hr>
 </section>
-<section id="api-gpt-a-new-development-paradigm" class="level4">
-<h4 class="anchored" data-anchor-id="api-gpt-a-new-development-paradigm">API + GPT: A New Development Paradigm</h4>
+<section id="api-gpt-a-new-development-paradigm" class="level1">
+<h1>API + GPT: A New Development Paradigm</h1>
 <p>In the past, developers had to publish API specifications (such as OpenAPI) to describe how different services could interact. This required both developers and consumers to understand the specification, write code to communicate with it, and handle any necessary modifications.</p>
 <p>With GPT and function-calling, this interaction is simplified into a natural language interface. You no longer need an OpenAPI spec or an in-depth understanding of each service’s API. Instead, you simply ask GPT to interact with a service, and it takes care of the rest.</p>
 <p>For example, let’s say you want to add sophisticated features to our <strong><a href="https://ninjalabo.ai/blogs/ai_mobility_lab.html">LLM camera project</a></strong>—where the camera can detect events, generate insights, and send notifications in real-time. Instead of manually integrating external APIs for each feature, you can prompt GPT to handle those interactions. The LLM will take care of the API calls, processing the data, and returning the necessary results—all without the need for deep API expertise.</p>
 <p>This paradigm opens up a new world where developing complex systems doesn’t have to be constrained by detailed API knowledge. Instead, the focus shifts to how we articulate the behavior and logic of these systems in natural language, letting the model handle the underlying mechanics.</p>
 <hr>
 </section>
-<section id="what-this-means-for-ninjalabo-developers" class="level4">
-<h4 class="anchored" data-anchor-id="what-this-means-for-ninjalabo-developers">What This Means for NinjaLABO Developers</h4>
+<section id="what-this-means-for-ninjalabo-developers" class="level1">
+<h1>What This Means for NinjaLABO Developers</h1>
 <p>The implications are clear: as web development becomes more about problem-solving and user experience design, we can focus less on the technical minutiae of how services communicate with each other. At <strong>NinjaLABO</strong>, this opens up incredible potential for our ongoing projects, especially the <strong><a href="https://ninjalabo.ai/blogs/ai_mobility_lab.html">LLM camera project</a></strong> we’ve been developing for AI mobility applications.</p>
 <p>With LLMs and function-calling, we can bridge the gap between various external data sources (e.g., parking availability, traffic patterns, or public safety events) and integrate them into the camera’s insights seamlessly. You could easily imagine scenarios where:</p>
 <ul>
@@ -433,23 +441,22 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <p>This shift means that <strong>our developers have a powerful new toolset</strong> at their disposal to streamline backend logic and empower the camera’s capabilities. We’re moving into a phase where we can achieve more by focusing on describing what we want the system to do, rather than how to do it.</p>
 <hr>
 </section>
-<section id="whats-left-the-front-end-and-a-new-way-of-thinking" class="level4">
-<h4 class="anchored" data-anchor-id="whats-left-the-front-end-and-a-new-way-of-thinking">What’s Left? The Front-End, and a New Way of Thinking</h4>
+<section id="whats-left-the-front-end-and-a-new-way-of-thinking" class="level1">
+<h1>What’s Left? The Front-End, and a New Way of Thinking</h1>
 <p>With backend integration becoming increasingly automated through GPTs and function-calling, one might wonder—<strong>what about the front-end?</strong> Are we approaching a point where even front-end development could be handled just as easily?</p>
 <p>Tools like <strong><a href="https://support.anthropic.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them">Anthropic Artifacts</a></strong> suggest that even UI generation may eventually be abstracted, allowing developers to describe front-end behavior and design in natural language, with the system generating code and interfaces automatically.</p>
 <p>While this may seem overly optimistic, the rapid advancements in AI make it worth considering. The gap between high-level design thinking and low-level implementation is closing. As LLMs evolve, the line between coding and simply “describing” what you want is becoming increasingly blurred. This new way of thinking can empower our team to explore even more innovative solutions in the near future.</p>
 <p><img src="https://cdn.prod.website-files.com/654df3dbb248d1b4c123757d/6697b48865a627786e210c3b_1*Jgyrpf3aBFtrkfodAB8h0w.png" class="img-fluid"></p>
 <hr>
 </section>
-<section id="looking-ahead-embracing-the-future-of-web-development" class="level4">
-<h4 class="anchored" data-anchor-id="looking-ahead-embracing-the-future-of-web-development">Looking Ahead: Embracing the Future of Web Development</h4>
+<section id="looking-ahead-embracing-the-future-of-web-development" class="level1">
+<h1>Looking Ahead: Embracing the Future of Web Development</h1>
 <p>Web development is on the brink of a major transformation. With the function-calling feature and LLM-powered automation, the focus will shift toward designing user stories and experiences, rather than connecting disparate services manually. This shift will lead to faster development cycles, smoother integrations, and make technology more accessible to a broader range of users.</p>
 <p>At <strong>NinjaLABO</strong>, we’re already exploring how to leverage these capabilities to drive the <strong><a href="https://ninjalabo.ai/blogs/ai_mobility_lab.html">LLM camera project</a></strong> forward. This isn’t just a front-end or backend improvement—it’s an entirely new approach to how we build, iterate, and innovate.</p>
 <p>By embracing this shift, our developers have an opportunity to experiment with these cutting-edge tools and push the boundaries of what’s possible, creating smarter, faster, and more intuitive services.</p>
 <p>The web development world is evolving—are you ready to explore what’s next?</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
