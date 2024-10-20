@@ -14,28 +14,7 @@ As AI continues to evolve, organizations are seeking the best platforms to build
 
 In this post, we'll explore the differences between Anthropic’s **Projects** and OpenAI’s **GPTs**, and how each platform can support the development of advanced AI-powered web services. We’ll also compare features like customization, external data integration, and scalability.
 
-```{mermaid}
-mindmap
-  root((LLM Web Service Development))
-    Anthropic
-      Claude
-        Artifacts
-        Projects
-          Group Resources
-          Manage Workflows
-      Focus on Safety
-    OpenAI
-      ChatGPT
-        GPT-4
-        ADA (Advanced Data Analysis)
-      GPTs
-        Customization
-        GPT Store
-      Function Calling
-      Plugins
-      Swarm
-```
-
+![](images/claude_vs_chatgpt.png)
 ---
 
 ### **What Are Anthropic Projects?**
