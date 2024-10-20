@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blogs/claude_vs_chatgpt.html",
       "/blogs/gpts_function_call_web.html",
       "/blogs/ai_mobility_lab.html",
       "/blogs/KD_Hint_Base_V2.html",
