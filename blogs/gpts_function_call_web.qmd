@@ -9,6 +9,8 @@ categories:
   - Tech
   - Web
 ---
+![](images/gpts_function_call_web.png)
+
 It's the weekend, and I spent some time researching how to develop our LLM-based services. What I discovered is how **[GPTs](https://openai.com/index/introducing-gpts/)** + **[function calling](https://platform.openai.com/docs/guides/function-calling)** are transforming traditional web development. I realize now that **I was a bit late** to fully grasp this shift, but the impact is undeniable.
 
 ![](https://cdn.openai.com/API/docs/images/function-calling-diagram.png)
@@ -21,7 +23,7 @@ Let’s explore how these advancements are reshaping web development into a more
 
 ---
 
-#### The Old Paradigm: Web Development as API Mashups
+# The Old Paradigm: Web Development as API Mashups
 
 Web development during the era of microservices could often be seen as a series of API mashups. Developers spent significant time stitching together APIs from various services to create cohesive systems. This required extensive effort to ensure data was correctly formatted, sent over the wire, and processed by another system.
 
@@ -31,7 +33,7 @@ This approach introduced friction. Developers were often bogged down in ensuring
 
 ---
 
-#### The Game Changer: GPT’s Function Calling Capability
+# The Game Changer: GPT’s Function Calling Capability
 
 With the recent advancements in LLMs, particularly the introduction of GPT models' `function calling` capability, this tedious workflow is becoming a thing of the past. These new-generation tools don’t just act as text-based conversational systems; they can now handle function calls, process structured data, and automate much of the repetitive work developers used to do manually.
 
@@ -41,7 +43,7 @@ For developers, this means a shift from worrying about low-level implementation 
 
 ---
 
-#### API + GPT: A New Development Paradigm
+# API + GPT: A New Development Paradigm
 
 In the past, developers had to publish API specifications (such as OpenAPI) to describe how different services could interact. This required both developers and consumers to understand the specification, write code to communicate with it, and handle any necessary modifications.
 
@@ -53,7 +55,7 @@ This paradigm opens up a new world where developing complex systems doesn’t ha
 
 ---
 
-#### What This Means for NinjaLABO Developers
+# What This Means for NinjaLABO Developers
 
 The implications are clear: as web development becomes more about problem-solving and user experience design, we can focus less on the technical minutiae of how services communicate with each other. At **NinjaLABO**, this opens up incredible potential for our ongoing projects, especially the **[LLM camera project](https://ninjalabo.ai/blogs/ai_mobility_lab.html)** we’ve been developing for AI mobility applications. 
 
@@ -69,7 +71,7 @@ This shift means that **our developers have a powerful new toolset** at their di
 
 ---
 
-#### What’s Left? The Front-End, and a New Way of Thinking
+# What’s Left? The Front-End, and a New Way of Thinking
 
 With backend integration becoming increasingly automated through GPTs and function-calling, one might wonder—**what about the front-end?** Are we approaching a point where even front-end development could be handled just as easily?
 
@@ -82,7 +84,7 @@ While this may seem overly optimistic, the rapid advancements in AI make it wort
 
 ---
 
-#### Looking Ahead: Embracing the Future of Web Development
+# Looking Ahead: Embracing the Future of Web Development
 
 Web development is on the brink of a major transformation. With the function-calling feature and LLM-powered automation, the focus will shift toward designing user stories and experiences, rather than connecting disparate services manually. This shift will lead to faster development cycles, smoother integrations, and make technology more accessible to a broader range of users.
 
