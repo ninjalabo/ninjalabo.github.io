@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blogs/programmable_gpt.html",
       "/blogs/claude_vs_chatgpt.html",
       "/blogs/gpts_function_call_web.html",
       "/blogs/lang_vs_swarm.html",
