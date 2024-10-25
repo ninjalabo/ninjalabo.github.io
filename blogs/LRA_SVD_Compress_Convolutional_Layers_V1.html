@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Leila Mozaffari">
+<meta name="dcterms.date" content="2024-10-24">
+<meta name="description" content="Singular Value Decomposition (SVD) - Model Compression : Resnet18">
 
-<title>Model Compression – NinjaLABO</title>
+<title>Low Rank Approximation Implementation 1/4 – NinjaLABO</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -142,8 +145,8 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../styles.css">
-<meta name="twitter:title" content="Model Compression – NinjaLABO">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="Low Rank Approximation Implementation 1/4 – NinjaLABO">
+<meta name="twitter:description" content="Singular Value Decomposition (SVD) - Model Compression : Resnet18">
 <meta name="twitter:image" content="https://ninjalabo.github.io/blogs/images/logo.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -245,7 +248,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Model Compression</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Low Rank Approximation Implementation 1/4</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -410,7 +413,10 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#singular-value-decomposition-svd---resnet18" id="toc-singular-value-decomposition-svd---resnet18" class="nav-link active" data-scroll-target="#singular-value-decomposition-svd---resnet18">Singular Value Decomposition (SVD) - Resnet18</a></li>
+  <li><a href="#model-compression" id="toc-model-compression" class="nav-link active" data-scroll-target="#model-compression">Model Compression</a>
+  <ul class="collapse">
+  <li><a href="#singular-value-decomposition-svd---resnet18" id="toc-singular-value-decomposition-svd---resnet18" class="nav-link" data-scroll-target="#singular-value-decomposition-svd---resnet18">Singular Value Decomposition (SVD) - Resnet18</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/ninjalabo/ninjalabo.github.io/blob/main/blogs/LRA_SVD_Compress_Convolutional_Layers_V1.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -419,14 +425,34 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Model Compression</h1>
-</div>
+<h1 class="title">Low Rank Approximation Implementation 1/4</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Tech</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Singular Value Decomposition (SVD) - Model Compression : Resnet18
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Leila Mozaffari <a href="mailto:leila.mozaffari@ninjalabo.ai" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 24, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -436,18 +462,23 @@ window.Quarto = {
 </header>
 
 
+<section id="model-compression" class="level1">
+<h1>Model Compression</h1>
 <section id="singular-value-decomposition-svd---resnet18" class="level2">
 <h2 class="anchored" data-anchor-id="singular-value-decomposition-svd---resnet18">Singular Value Decomposition (SVD) - Resnet18</h2>
-<p><strong>Singular Value Decomposition (SVD)</strong> is a mathematical technique used to decompose a matrix into three other matrices, which makes it extremely useful for low-rank approximation. Specifically, given an <span class="math inline">\(m \times n\)</span> matrix <span class="math inline">\(A\)</span>, SVD decomposes it as:</p>
-<p><span class="math display">\[ A = U \Sigma V^T \]</span></p>
+<p><strong>Singular Value Decomposition (SVD)</strong> is a mathematical technique used to decompose a matrix into three other matrices. In other words, SVD is a classic low-rank approximation technique, where the weight matrices of CNN layers (particularly fully connected or convolutional layers) are factorized into three matrices: <span class="math inline">\(W = U \Sigma V^T\)</span>. Here, <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span> are orthogonal matrices, and <span class="math inline">\(\Sigma\)</span> is a diagonal matrix with singular values. By truncating the smaller singular values, a low-rank approximation of the weight matrix can be obtained, reducing the number of parameters.</p>
+<p>SVD , which makes it extremely useful for low-rank approximation. Specifically, given an <span class="math inline">\(m \times n\)</span> matrix <span class="math inline">\(A\)</span>, SVD decomposes it as: <span class="math display">\[A = U \Sigma V^T\]</span></p>
+<p><img src="./images/SVD_Formula.png" class="img-fluid"></p>
+<p><img src="./images/SVD_formula_2.png" class="img-fluid"></p>
 <p>Where:</p>
 <ul>
-<li><strong><span class="math inline">\(U\)</span></strong>: An <span class="math inline">\(m \times m\)</span> orthogonal matrix, whose columns are called left singular vectors.</li>
-<li><strong><span class="math inline">\(\Sigma\)</span></strong>: An <span class="math inline">\(m \times n\)</span> diagonal matrix with non-negative real numbers on the diagonal (these are called singular values).</li>
+<li><strong><span class="math inline">\(U\)</span></strong>: An <span class="math inline">\(m \times m\)</span> orthogonal matrix, whose columns are called left singular vectors. The matrix is considered an orthogonal matrix if the product of a matrix and its transpose gives an identity value.</li>
+<li><strong><span class="math inline">\(\Sigma\)</span></strong>: An <span class="math inline">\(m \times n\)</span> diagonal matrix with non-negative real numbers on the diagonal (these are called singular values). A matrix is diagonal if it has non-zero elements only in the diagonal, running from the upper left to the lower right corner of the matrix.</li>
 <li><strong><span class="math inline">\(V^T\)</span></strong>: The transpose of an <span class="math inline">\(n \times n\)</span> orthogonal matrix, whose columns are called right singular vectors.</li>
 </ul>
+<p>Rank :The rank of a matrix is a fundamental concept in linear algebra that indicates the number of linearly independent rows or columns in a matrix.</p>
 <p>The goal of <strong>Low Rank Factorization</strong> is to approximate <span class="math inline">\(A\)</span> with a matrix of lower rank <span class="math inline">\(k\)</span>, where <span class="math inline">\(k &lt; min(m, n)\)</span>, to reduce the amount of data and computation while retaining the most important information.</p>
-<p><img src="images/SVD.png" class="img-fluid"></p>
+<p>Transformation express by one rotation, horizontal or vertical stretching, and another rotation. <img src="./images/SVD_transformation.png" class="img-fluid"></p>
 <p><strong>References</strong> * https://www.youtube.com/watch?v=DG7YTlGnCEo</p>
 <div id="e535ff29" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
@@ -564,6 +595,7 @@ Epoch 5, Batch 200, Loss: 0.988</code></pre>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Leila Mozaffari">
+<meta name="dcterms.date" content="2024-10-24">
+<meta name="description" content="Singular Value Decomposition (SVD) - Dimensionality Reduction">
 
-<title>Visualization of Image Compression – NinjaLABO</title>
+<title>Low Rank Approximation Implementation 4/4 – NinjaLABO</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -142,8 +145,8 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../styles.css">
-<meta name="twitter:title" content="Visualization of Image Compression – NinjaLABO">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="Low Rank Approximation Implementation 4/4 – NinjaLABO">
+<meta name="twitter:description" content="Singular Value Decomposition (SVD) - Dimensionality Reduction">
 <meta name="twitter:image" content="https://ninjalabo.github.io/blogs/images/logo.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -245,7 +248,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Visualization of Image Compression</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Low Rank Approximation Implementation 4/4</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -410,11 +413,14 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#singular-value-decomposition-svd---dimensionality-reduction-single-image-numpy" id="toc-singular-value-decomposition-svd---dimensionality-reduction-single-image-numpy" class="nav-link active" data-scroll-target="#singular-value-decomposition-svd---dimensionality-reduction-single-image-numpy">Singular Value Decomposition (SVD) - Dimensionality Reduction Single Image (Numpy)</a></li>
+  <li><a href="#visualization-of-image-compression" id="toc-visualization-of-image-compression" class="nav-link active" data-scroll-target="#visualization-of-image-compression">Visualization of Image Compression</a>
+  <ul class="collapse">
+  <li><a href="#singular-value-decomposition-svd---dimensionality-reduction-single-image-numpy" id="toc-singular-value-decomposition-svd---dimensionality-reduction-single-image-numpy" class="nav-link" data-scroll-target="#singular-value-decomposition-svd---dimensionality-reduction-single-image-numpy">Singular Value Decomposition (SVD) - Dimensionality Reduction Single Image (Numpy)</a></li>
   <li><a href="#read-the-original-image" id="toc-read-the-original-image" class="nav-link" data-scroll-target="#read-the-original-image">Read the Original Image</a></li>
   <li><a href="#read-the-image-and-convert-it-to-a-matrix" id="toc-read-the-image-and-convert-it-to-a-matrix" class="nav-link" data-scroll-target="#read-the-image-and-convert-it-to-a-matrix">Read the Image and Convert it to a Matrix</a></li>
   <li><a href="#apply-singular-value-decomposition-svd" id="toc-apply-singular-value-decomposition-svd" class="nav-link" data-scroll-target="#apply-singular-value-decomposition-svd">Apply Singular Value Decomposition (SVD)</a></li>
   <li><a href="#reduce-dimensionality-by-truncating-singular-values" id="toc-reduce-dimensionality-by-truncating-singular-values" class="nav-link" data-scroll-target="#reduce-dimensionality-by-truncating-singular-values">Reduce Dimensionality by Truncating Singular Values</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/ninjalabo/ninjalabo.github.io/blob/main/blogs/SVD_Dimensionality_Reduction_Single_Image_V4.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -423,14 +429,34 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Visualization of Image Compression</h1>
-</div>
+<h1 class="title">Low Rank Approximation Implementation 4/4</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Tech</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Singular Value Decomposition (SVD) - Dimensionality Reduction
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Leila Mozaffari <a href="mailto:leila.mozaffari@ninjalabo.ai" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 24, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -440,6 +466,8 @@ window.Quarto = {
 </header>
 
 
+<section id="visualization-of-image-compression" class="level1">
+<h1>Visualization of Image Compression</h1>
 <section id="singular-value-decomposition-svd---dimensionality-reduction-single-image-numpy" class="level2">
 <h2 class="anchored" data-anchor-id="singular-value-decomposition-svd---dimensionality-reduction-single-image-numpy">Singular Value Decomposition (SVD) - Dimensionality Reduction Single Image (Numpy)</h2>
 <p>SVD is a powerful mathematical tool often used in image processing to reduce the amount of data while still maintaining an acceptable image quality. This technique effectively reduces the dimensionality of an image, making it possible to store it using fewer values.</p>
@@ -527,7 +555,16 @@ window.Quarto = {
 <p>The goal of compression is to reduce the amount of data. To do this, we can keep only the top k singular values in <span class="math inline">\(Σ\)</span>, and truncate the corresponding columns in U and rows in <span class="math inline">\(V^T\)</span>. Choosing a smaller <span class="math inline">\(k\)</span> reduces the image size while retaining the most significant features.</p>
 <p><span class="math inline">\(k\)</span> is the number of singular values you want to keep. A larger k gives higher quality but less compression, whereas a smaller <span class="math inline">\(k\)</span> gives more compression but lower quality.</p>
 <p>Reconstruct the image by multiplying the truncated <span class="math inline">\(U\)</span>, <span class="math inline">\(Σ\)</span>, and <span class="math inline">\(V^T\)</span>. This results in an approximation of the original image but using fewer components.</p>
-<p>Storage Calculation: * The original image matrix A is of size <span class="math inline">\(m \times n\)</span>. * After SVD, the storage required is: * <span class="math inline">\(U_k\)</span>: <span class="math inline">\(m \times k\)</span> * <span class="math inline">\(Σ_k\)</span>: <span class="math inline">\(k \times k\)</span> * <span class="math inline">\(V^T_k\)</span>: <span class="math inline">\(k \times n\)</span> * The total number of values needed to store the compressed image is <span class="math inline">\(mk+k2+kn\)</span>, which is much smaller compared to mnmnmn when k is small.</p>
+<p>Storage Calculation: * The original image matrix A is of size <span class="math inline">\(m \times n\)</span>.</p>
+<ul>
+<li><p>After SVD, the storage required is:</p>
+<ul>
+<li><span class="math inline">\(U_k\)</span>: <span class="math inline">\(m \times k\)</span></li>
+<li><span class="math inline">\(Σ_k\)</span>: <span class="math inline">\(k \times k\)</span></li>
+<li><span class="math inline">\(V^T_k\)</span>: <span class="math inline">\(k \times n\)</span></li>
+</ul></li>
+<li><p>The total number of values needed to store the compressed image is <span class="math inline">\(mk+k2+kn\)</span>, which is much smaller compared to mnmnmn when k is small.</p></li>
+</ul>
 <div id="edcac796" class="cell" data-execution_count="50">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Choose the number of singular values to keep</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">1</span>  <span class="co"># adjust k based on the desired level of compression</span></span>
@@ -627,6 +664,7 @@ window.Quarto = {
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

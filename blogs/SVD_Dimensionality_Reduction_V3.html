@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Leila Mozaffari">
+<meta name="dcterms.date" content="2024-10-24">
+<meta name="description" content="Singular Value Decomposition (SVD) - Dimensionality Reduction">
 
-<title>Image Compression – NinjaLABO</title>
+<title>Low Rank Approximation Implementation 3/4 – NinjaLABO</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,8 +120,8 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta name="twitter:title" content="Image Compression – NinjaLABO">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="Low Rank Approximation Implementation 3/4 – NinjaLABO">
+<meta name="twitter:description" content="Singular Value Decomposition (SVD) - Dimensionality Reduction">
 <meta name="twitter:image" content="https://ninjalabo.github.io/blogs/images/logo.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -220,7 +223,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Image Compression</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Low Rank Approximation Implementation 3/4</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -385,7 +388,9 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#singular-value-decomposition-svd---dimensionality-reduction-single-image-pytorch" id="toc-singular-value-decomposition-svd---dimensionality-reduction-single-image-pytorch" class="nav-link active" data-scroll-target="#singular-value-decomposition-svd---dimensionality-reduction-single-image-pytorch">Singular Value Decomposition (SVD) - Dimensionality Reduction Single Image (PyTorch)</a></li>
+  <li><a href="#image-compression" id="toc-image-compression" class="nav-link active" data-scroll-target="#image-compression">Image Compression</a>
+  <ul class="collapse">
+  <li><a href="#singular-value-decomposition-svd---dimensionality-reduction-single-image-pytorch" id="toc-singular-value-decomposition-svd---dimensionality-reduction-single-image-pytorch" class="nav-link" data-scroll-target="#singular-value-decomposition-svd---dimensionality-reduction-single-image-pytorch">Singular Value Decomposition (SVD) - Dimensionality Reduction Single Image (PyTorch)</a></li>
   <li><a href="#download-and-load-the-dataset" id="toc-download-and-load-the-dataset" class="nav-link" data-scroll-target="#download-and-load-the-dataset">Download and Load the Dataset</a></li>
   <li><a href="#define-data-transformations" id="toc-define-data-transformations" class="nav-link" data-scroll-target="#define-data-transformations">Define Data Transformations</a></li>
   <li><a href="#load-dataset-with-dataloader" id="toc-load-dataset-with-dataloader" class="nav-link" data-scroll-target="#load-dataset-with-dataloader">Load Dataset with DataLoader</a></li>
@@ -395,6 +400,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
   <li><a href="#define-neural-network" id="toc-define-neural-network" class="nav-link" data-scroll-target="#define-neural-network">Define Neural Network</a></li>
   <li><a href="#train-the-model" id="toc-train-the-model" class="nav-link" data-scroll-target="#train-the-model">Train the Model</a></li>
   <li><a href="#evaluate-the-model" id="toc-evaluate-the-model" class="nav-link" data-scroll-target="#evaluate-the-model">Evaluate the Model</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/ninjalabo/ninjalabo.github.io/blob/main/blogs/SVD_Dimensionality_Reduction_V3.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -403,14 +409,34 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Image Compression</h1>
-</div>
+<h1 class="title">Low Rank Approximation Implementation 3/4</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Tech</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Singular Value Decomposition (SVD) - Dimensionality Reduction
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Leila Mozaffari <a href="mailto:leila.mozaffari@ninjalabo.ai" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 24, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -420,6 +446,8 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 </header>
 
 
+<section id="image-compression" class="level1">
+<h1>Image Compression</h1>
 <section id="singular-value-decomposition-svd---dimensionality-reduction-single-image-pytorch" class="level2">
 <h2 class="anchored" data-anchor-id="singular-value-decomposition-svd---dimensionality-reduction-single-image-pytorch">Singular Value Decomposition (SVD) - Dimensionality Reduction Single Image (PyTorch)</h2>
 <div id="2485f43a" class="cell" data-execution_count="3">
@@ -764,6 +792,7 @@ Training complete.</code></pre>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
