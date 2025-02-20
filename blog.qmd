@@ -1,7 +1,9 @@
 ---
 title: "Blog"
 listing:
-  sort: "date desc"
+  sort: 
+    - "date desc"
+    - "title desc"
   contents:
     - "blogs/*.qmd"
     - "blogs/*.ipynb"
