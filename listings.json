@@ -2,6 +2,8 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blogs/jetson_fastai.html",
+      "/blogs/jetson_pytorch.html",
       "/blogs/llmcam_demo_3.html",
       "/blogs/llmcam_demo_2.html",
       "/blogs/llmcam_demo_1.html",
