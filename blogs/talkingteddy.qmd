@@ -4,7 +4,7 @@ subtitle: "Real-time Interactive Projection for Children"
 author: 
  - name: "Hiroshi Doyu"
    email: hiroshi.doyu@ninjalabo.ai
-date: \today
+date: "04/25/2025"
 draft: false
 categories:
   - LLM
