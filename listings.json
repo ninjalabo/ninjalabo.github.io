@@ -2,6 +2,9 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blogs/programmable_gpt.html",
+      "/blogs/gpts_function_call_web.html",
+      "/blogs/talkingteddy.html",
       "/blogs/jetson_fastai.html",
       "/blogs/jetson_pytorch.html",
       "/blogs/llmcam_demo_3.html",
@@ -13,8 +16,6 @@
       "/blogs/SVD_Dimensionality_Reduction_V3.html",
       "/blogs/LRA_SVD_Compress_Convolutional_Layers_V2.html",
       "/blogs/LRA_SVD_Compress_Convolutional_Layers_V1.html",
-      "/blogs/programmable_gpt.html",
-      "/blogs/gpts_function_call_web.html",
       "/blogs/lang_vs_swarm.html",
       "/blogs/swarm.html",
       "/blogs/claude_vs_chatgpt.html",
@@ -38,6 +39,7 @@
       "/blogs/yolofaceid.html",
       "/blogs/pytorch_staticq.html",
       "/blogs/HU_Summer_2023.html",
+      "/blogs/kaukoschool.html",
       "/blogs/about.html",
       "/blogs/mvp6.html",
       "/blogs/edgeimplusestudio.html",
