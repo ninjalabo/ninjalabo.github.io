@@ -54,11 +54,11 @@ website:
           - href: blogs/about.qmd
             text: "About"
           - href: blog.qmd#category=News
-            text: "News 🌟"
-          - href: blog.qmd
-            text: "Blogs"
+            text: "News🌟"
       - href: pricing.qmd
         text: "Pricing"
+      - href: blog.qmd
+        text: "Blogs🌟"
     tools:
       - icon: twitter
         href: https://twitter.com/ninjalabo
