@@ -4,7 +4,7 @@ subtitle: "AI gamification of Youth Exercise Activation"
 author: 
  - name: "Hiroshi Doyu"
    email: hiroshi.doyu@ninjalabo.ai
-date: \today
+date: date: "04/24/2025"
 draft: false
 categories:
  - LLM
