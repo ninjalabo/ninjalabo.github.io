@@ -11,6 +11,8 @@ categories:
  - Helsinki
  - Jetson
 ---
+[https://youtu.be/WrS3L0PSNuo](https://youtu.be/WrS3L0PSNuo)
+
 ![](images/kaukoschool_1.png)
 Today I’m introducing KauKo:ClickBounce,
 

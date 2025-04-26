@@ -11,6 +11,8 @@ categories:
   - Helsinki
   - Jetson
 ---
+[https://youtu.be/XIAbEVsF6ZA](https://youtu.be/XIAbEVsF6ZA)
+
 ![](images/talkingteddy_01.png)
 Today, I want to introduce our proposal, AI avatar, named "TalkingTeddy".
 
