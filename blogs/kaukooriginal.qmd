@@ -1,0 +1,114 @@
+---
+title: "KauKo:ClickBounce"
+subtitle: "AI gamification of Youth Exercise Activation"
+author: 
+ - name: "Hiroshi Doyu"
+   email: hiroshi.doyu@ninjalabo.ai
+date: "01/13/2025"
+draft: false
+categories:
+ - LLM
+ - Helsinki
+ - Jetson
+---
+[https://youtu.be/WrS3L0PSNuo](https://youtu.be/WrS3L0PSNuo)
+
+![](images/KauKoOriginal-01.png)
+
+What if playgrounds were as exciting as video games?
+
+NinjaLABO transforms playgrounds into AI gaming spaces, making outdoor play as fun as video games.
+
+![](images/KauKoOriginal-02.png)
+
+Problem:
+
+1. Not all kids love ice hockey and equipments are expensive.
+2. OTOH, every kid likes to play digital games together.
+3. It's expensive to build a playground, and it's rarely updated.
+4. Immigrant child tends to be isolated because of language barriers.
+We are bringing the fun of digital games into the physical world, and making outdoor play as fun as video games.
+
+![](images/KauKoOriginal-03.png)
+
+We turn outdoor spaces into interactive gaming environments,
+by using a projector and AI camera.
+
+This is inspired by the "clear cycle road sign on snow" in Oulu, on the right bottom picture. It's seen so clearly.
+
+How KauKo works:
+1. A game screen is projected onto playground surfaces or walls.
+2. Kids movements are tracked by AI camera and turning their action into game controller.
+3. Imagine a giant digital "Snake game" on the playground—kids run, dodge, and chase items, all controlled by their movements!
+
+![](images/KauKoOriginal-04.png)
+
+Our PoC, starting with the simple setup:
+
+1. Projector
+2. Camera
+3. Laptop
+
+A kid throws a ball at a wall, and our AI detects the impact—turning a simple throw into a game controller input, a mouse click.
+
+This mouse clicking controls a game on a PC, while kids are always running to catch a ball and throw a ball back.
+
+Kids can even play Quizlet game to learn Finnish language by throwing a ball repeatedly.
+
+
+
+<<play a video here>>
+
+
+
+Here's RISK:
+High-end projectors may work even in daylight, but it costs more than __10,000__ EURO!
+
+But it's OK. we could survive with the low-end projector. In Finland, we don't see the sunshine, except today.
+
+![](images/KauKoOriginal-05.png)
+
+![](images/KauKoOriginal-06.png)
+
+![](images/KauKoOriginal-07.png)
+Here's ASK:
+1. The biggest risk is expensive high-lumen projectors. We'd like to talk with City of Oulu & LUX Helsinki, how they solved this issue. Once this is solved,
+2. We need a pilot location with a large, light-colored wall.
+3. Weekly meetings with teachers, to plan and execute the pilot, focusing on use cases, games, and apps.
+4. For actual piloting, we want ~200 kids from ~3 parties, scheduled before summer vacation starts. This piloting is co-managed by "CoreOrient".
+5. Also we are looking for the collaboration with Supercell and Rovio.
+
+![](images/KauKoOriginal-08.png)
+This project has the potential to turn every playground on Earth into a smart gaming, big business potential!
+
+By collaborating with game companies, we can bring famous game titles into real-world play.
+
+Kids can even learn programming by designing their own games!
+
+Teachers could use this for educational purpose, turning Quizlet into
+physical games.
+
+NinjaLABO is just a small AI research labo.
+
+And for the project execution & operation, we partner with CoreOrient, Harri Paloheimo.
+
+![](images/KauKoOriginal-09.png)
+Although the biggest risk is still expensive projector, NinjaLABO is shaping the future playground by combining the virtual and physical world together with the power of AI.
+ 
+Thanks!
+
+![](images/KauKoOriginal-10.png)
+
+![](images/KauKoOriginal-11.png)
+
+![](images/KauKoOriginal-12.png)
+
+![](images/KauKoOriginal-13.png)
+
+![](images/KauKoOriginal-14.png)
+
+![](images/KauKoOriginal-15.png)
+
+![](images/KauKoOriginal-16.png)
+
+![](images/KauKoOriginal-17.png)
