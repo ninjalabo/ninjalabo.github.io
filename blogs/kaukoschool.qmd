@@ -11,7 +11,15 @@ categories:
  - Helsinki
  - Jetson
 ---
-[https://youtu.be/WrS3L0PSNuo](https://youtu.be/WrS3L0PSNuo)
+# 🚀 Introducing KauKo:ClickBounce
+
+## Gamifying Movement with AI
+
+NinjaLABO's latest project, KauKo:ClickBounce, transforms any indoor wall into an interactive gaming surface using just a projector, camera, and AI-powered mini-computer. Designed to encourage physical activity among youth, it turns ball throws into virtual mouse clicks, enabling kids to play games like vocabulary quizzes or classic arcade titles by physically interacting with the wall.
+
+This portable, affordable system bridges the gap between digital engagement and physical exercise, making learning and movement fun, accessible, and scalable—especially in schools and community spaces.
+
+[Recorded Pitch](https://youtu.be/WrS3L0PSNuo)
 
 ![](images/kaukoschool_1.png)
 Today I’m introducing KauKo:ClickBounce,

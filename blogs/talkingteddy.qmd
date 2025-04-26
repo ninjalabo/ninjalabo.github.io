@@ -11,7 +11,15 @@ categories:
   - Helsinki
   - Jetson
 ---
-[https://youtu.be/XIAbEVsF6ZA](https://youtu.be/XIAbEVsF6ZA)
+# 🚀 Introducing TalkingTeddy: AI at the Edge, in a Hug
+
+NinjaLABO is pushing the boundaries of edge AI with its latest creation: an AI-powered teddy bear that can talk, feel, and respond to human interaction—all running entirely offline. This project showcases NinjaLABO’s commitment to "Cloudless AI," delivering real-time, privacy-preserving intelligence in a cuddly, embedded form factor.
+
+The Talking Teddy integrates sensory inputs to detect touch and context, enabling it to pause when spoken to and even recognize when it's being held. This blend of natural interaction and local processing exemplifies the company's mission to bring advanced AI to resource-constrained environments without relying on cloud infrastructure.
+
+This initiative not only demonstrates the potential of TinyML in consumer products but also opens up new possibilities for interactive, secure, and responsive AI applications at the very edge.
+
+[Recorded Pitch](https://youtu.be/XIAbEVsF6ZA)
 
 ![](images/talkingteddy_01.png)
 Today, I want to introduce our proposal, AI avatar, named "TalkingTeddy".

@@ -11,7 +11,15 @@ categories:
  - Helsinki
  - Jetson
 ---
-[https://youtu.be/WrS3L0PSNuo](https://youtu.be/WrS3L0PSNuo)
+# 🚀 Introducing KauKo:ClickBounce
+
+## AI-Powered Interactive Playgrounds
+
+NinjaLABO is revolutionizing outdoor play with KauKo:ClickBounce, transforming playgrounds into immersive gaming arenas using AI. By projecting games onto walls or surfaces and tracking children's movements with AI cameras, physical actions like throwing a ball become interactive game controls. This fusion of physical activity and digital gaming aims to make exercise more engaging, especially for children who might not be drawn to traditional sports.
+
+The system is designed to be cost-effective, utilizing readily available equipment like projectors and cameras. NinjaLABO is actively seeking collaborations with cities and educational institutions to pilot this innovative approach, with plans to involve around 200 children before the summer vacation. The project also envisions partnerships with game developers to bring popular titles into the physical realm, enhancing the appeal and educational value of outdoor play.
+
+[Recorded Pitch](https://youtu.be/WrS3L0PSNuo)
 
 ![](images/KauKoOriginal-01.png)
 
