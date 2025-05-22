@@ -1,0 +1,18 @@
+---
+title: "DataTalks - What If You Didn't Need App?"
+subtitle: "Citizens Simply Ask — And Services Are Instantly Created..."
+author: 
+ - name: "Hiroshi Doyu"
+   email: hiroshi.doyu@ninjalabo.ai
+date: "05/09/2025"
+draft: false
+categories:
+  - Agentic
+  - LLM
+  - Espoo
+---
+
+![](images/DataTalks0.png)
+
+
+![](images/DataTalks.png)

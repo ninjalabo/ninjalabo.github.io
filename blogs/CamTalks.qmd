@@ -1,0 +1,18 @@
+---
+title: "CamTalks"
+subtitle: "From Big Brother (1984) to Friendly Buddy (2025)"
+author: 
+ - name: "Hiroshi Doyu"
+   email: hiroshi.doyu@ninjalabo.ai
+date: "05/09/2025"
+draft: false
+categories:
+  - LLM
+  - Espoo
+  - Jetson
+---
+
+![](images/CamTalks0.png)
+
+
+![](images/CamTalks.png)
