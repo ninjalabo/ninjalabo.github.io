@@ -2,6 +2,8 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blogs/DataTalks.html",
+      "/blogs/CamTalks.html",
       "/blogs/talkingteddy.html",
       "/blogs/kaukoschool.html",
       "/blogs/jetson_fastai.html",
