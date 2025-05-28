@@ -1,0 +1,166 @@
+---
+title: "Distributed ML on Unikernel for IoT"
+subtitle: "Embedded Linux Conference Europe 2019"
+author:
+ - name: "Hiroshi Doyu"
+   email: hiroshi.doyu@ninjalabo.ai
+date: "05/28/2025"
+draft: false
+categories:
+  - Ericsson
+  - OCaml
+  - DNN
+  - Unikernel
+  - TinyML
+  - TinyMLaaS
+---
+# A slightly nostalgic look back at where this journey began.
+Back in 2019, it felt almost extreme to run a Deep Neural Network on a [Unikernel](http://unikernel.org/) ([MirageOS](https://mirage.io/)), written in a functional programming language ([OCaml](https://ocaml.org/)), running on a microcontroller like the [ESP32](https://www.espressif.com/en/products/socs/esp32), at [Embedded Linux Conference Europe 2019](https://events19.linuxfoundation.org/events/embedded-linux-conference-europe-2019/)
+
+> Machine Learning (ML) has been happening only in Cloud and some inference on Edge. But there's quite few ML happening in IoT where Linux cannot fit. This area is called TinyML. In order to democratize ML in IoT, I propose TinyML as-a-Service, which would bring ML onto microcontrollers with 3 enablers, (1) Unikernel, (2) ML compiler and (3) CoAP. In this session, I'll explain our end-to-end experiment of how we tackled to bring ML onto Edge & microcontrollers, show demo and also discuss future possibilites. The audience are not expected much. The following links may be helpful if you discuss this session deeper but I'll explain them, anyway;) Enjoy!!
+
+https://osseu19.sched.com/event/TLCJ/distributed-ml-on-unikernels-for-iot-hiroshi-doyu-ericsson
+
+![](images/elc2019-001.png)
+
+![](images/elc2019-002.png)
+
+![](images/elc2019-003.png)
+
+![](images/elc2019-004.png)
+
+![](images/elc2019-005.png)
+
+![](images/elc2019-006.png)
+
+![](images/elc2019-007.png)
+
+![](images/elc2019-008.png)
+
+![](images/elc2019-009.png)
+
+![](images/elc2019-010.png)
+
+![](images/elc2019-011.png)
+
+![](images/elc2019-012.png)
+
+![](images/elc2019-013.png)
+
+![](images/elc2019-014.png)
+
+![](images/elc2019-015.png)
+
+![](images/elc2019-016.png)
+
+![](images/elc2019-017.png)
+
+![](images/elc2019-018.png)
+
+![](images/elc2019-019.png)
+
+![](images/elc2019-020.png)
+
+![](images/elc2019-021.png)
+
+![](images/elc2019-022.png)
+
+![](images/elc2019-023.png)
+
+![](images/elc2019-024.png)
+
+![](images/elc2019-025.png)
+
+![](images/elc2019-026.png)
+
+![](images/elc2019-027.png)
+
+![](images/elc2019-028.png)
+
+![](images/elc2019-029.png)
+
+![](images/elc2019-030.png)
+
+![](images/elc2019-031.png)
+
+![](images/elc2019-032.png)
+
+![](images/elc2019-033.png)
+
+![](images/elc2019-034.png)
+
+![](images/elc2019-035.png)
+
+![](images/elc2019-036.png)
+
+![](images/elc2019-037.png)
+
+![](images/elc2019-038.png)
+
+![](images/elc2019-039.png)
+
+![](images/elc2019-040.png)
+
+![](images/elc2019-041.png)
+
+![](images/elc2019-042.png)
+
+![](images/elc2019-043.png)
+
+![](images/elc2019-044.png)
+
+![](images/elc2019-045.png)
+
+![](images/elc2019-046.png)
+
+![](images/elc2019-047.png)
+
+![](images/elc2019-048.png)
+
+![](images/elc2019-049.png)
+
+![](images/elc2019-050.png)
+
+![](images/elc2019-051.png)
+
+![](images/elc2019-052.png)
+
+![](images/elc2019-053.png)
+
+![](images/elc2019-054.png)
+
+![](images/elc2019-055.png)
+
+![](images/elc2019-056.png)
+
+![](images/elc2019-057.png)
+
+![](images/elc2019-058.png)
+
+![](images/elc2019-059.png)
+
+![](images/elc2019-060.png)
+
+![](images/elc2019-061.png)
+
+![](images/elc2019-062.png)
+
+![](images/elc2019-063.png)
+
+![](images/elc2019-064.png)
+
+![](images/elc2019-065.png)
+
+![](images/elc2019-066.png)
+
+![](images/elc2019-067.png)
+
+![](images/elc2019-068.png)
+
+![](images/elc2019-069.png)
+
+![](images/elc2019-070.png)
+
+![](images/elc2019-071.png)
+
+![](images/elc2019-072.png)
