@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Hiroshi Doyu">
-<meta name="dcterms.date" content="2024-09-26">
 
-<title>LLM on Camera as an Universal Sensor for Smart Mobility - Privacy-Preserving Edge AI PoC – NinjaLABO</title>
+<title>Distributed ML on Unikernel for IoT – NinjaLABO</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,11 +81,11 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta name="twitter:title" content="LLM on Camera as an Universal Sensor for Smart Mobility - Privacy-Preserving Edge AI PoC – NinjaLABO">
-<meta name="twitter:description" content="Beyond 1984: Smart Cities Powered by Ethical AI and Citizen Empowerment">
-<meta name="twitter:image" content="https://ninjalabo.github.io/blogs/images/llm_on_camera_example.png">
-<meta name="twitter:image-height" content="428">
-<meta name="twitter:image-width" content="597">
+<meta name="twitter:title" content="Distributed ML on Unikernel for IoT – NinjaLABO">
+<meta name="twitter:description" content="Embedded Linux Conference Europe 2019">
+<meta name="twitter:image" content="https://ninjalabo.github.io/blogs/images/elc2019-000.png">
+<meta name="twitter:image-height" content="511">
+<meta name="twitter:image-width" content="681">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -187,7 +186,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">LLM on Camera as an Universal Sensor for Smart Mobility - Privacy-Preserving Edge AI PoC</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Distributed ML on Unikernel for IoT</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -352,33 +351,24 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#proposal-llm-on-camera-as-a-universal-sensor-for-smart-mobility---privacy-preserving-edge-ai-poc" id="toc-proposal-llm-on-camera-as-a-universal-sensor-for-smart-mobility---privacy-preserving-edge-ai-poc" class="nav-link active" data-scroll-target="#proposal-llm-on-camera-as-a-universal-sensor-for-smart-mobility---privacy-preserving-edge-ai-poc">Proposal: <strong>LLM on Camera as a Universal Sensor for Smart Mobility - Privacy-Preserving Edge AI PoC</strong></a>
-  <ul class="collapse">
-  <li><a href="#executive-summary" id="toc-executive-summary" class="nav-link" data-scroll-target="#executive-summary">Executive Summary:</a></li>
-  <li><a href="#challenge-context" id="toc-challenge-context" class="nav-link" data-scroll-target="#challenge-context">Challenge Context:</a></li>
-  <li><a href="#solution-overview" id="toc-solution-overview" class="nav-link" data-scroll-target="#solution-overview">Solution Overview:</a>
-  <ul class="collapse">
-  <li><a href="#use-cases" id="toc-use-cases" class="nav-link" data-scroll-target="#use-cases">Use Cases:</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
-  </ul></li>
-  <li><a href="#technical-approach" id="toc-technical-approach" class="nav-link" data-scroll-target="#technical-approach">Technical Approach:</a></li>
-  <li><a href="#expected-outcomes-and-impact" id="toc-expected-outcomes-and-impact" class="nav-link" data-scroll-target="#expected-outcomes-and-impact">Expected Outcomes and Impact:</a></li>
-  <li><a href="#project-timeline-1.5-months" id="toc-project-timeline-1.5-months" class="nav-link" data-scroll-target="#project-timeline-1.5-months">Project Timeline (1.5 Months):</a></li>
-  <li><a href="#collaboration-and-ecosystem" id="toc-collaboration-and-ecosystem" class="nav-link" data-scroll-target="#collaboration-and-ecosystem">Collaboration and Ecosystem:</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion:</a></li>
-  </ul></li>
+  <li><a href="#a-slightly-nostalgic-look-back-at-where-this-journey-began." id="toc-a-slightly-nostalgic-look-back-at-where-this-journey-began." class="nav-link active" data-scroll-target="#a-slightly-nostalgic-look-back-at-where-this-journey-began.">A slightly nostalgic look back at where this journey began.</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blogs/llm_on_camera.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blogs/elc2019.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">LLM on Camera as an Universal Sensor for Smart Mobility - Privacy-Preserving Edge AI PoC</h1>
-<p class="subtitle lead">Beyond 1984: Smart Cities Powered by Ethical AI and Citizen Empowerment</p>
+<h1 class="title">Distributed ML on Unikernel for IoT</h1>
+<p class="subtitle lead">Embedded Linux Conference Europe 2019</p>
   <div class="quarto-categories">
-    <div class="quarto-category">UseCase</div>
+    <div class="quarto-category">Ericsson</div>
+    <div class="quarto-category">OCaml</div>
+    <div class="quarto-category">DNN</div>
+    <div class="quarto-category">Unikernel</div>
+    <div class="quarto-category">TinyML</div>
+    <div class="quarto-category">TinyMLaaS</div>
   </div>
   </div>
 
@@ -396,16 +386,10 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 26, 2024</p>
+      <p class="date">Invalid Date</p>
     </div>
   </div>
   
-    <div>
-    <div class="quarto-title-meta-heading">Modified</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date-modified">May 28, 2025</p>
-    </div>
-  </div>
     
   </div>
   
@@ -414,94 +398,87 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 </header>
 
 
-<section id="proposal-llm-on-camera-as-a-universal-sensor-for-smart-mobility---privacy-preserving-edge-ai-poc" class="level1">
-<h1>Proposal: <strong>LLM on Camera as a Universal Sensor for Smart Mobility - Privacy-Preserving Edge AI PoC</strong></h1>
-<section id="executive-summary" class="level2">
-<h2 class="anchored" data-anchor-id="executive-summary">Executive Summary:</h2>
-<p>NinjaLABO proposes a 1.5-month <strong><a href="https://en.wikipedia.org/wiki/Proof_of_concept">Proof of Concept (PoC)</a></strong> to demonstrate the transformative potential of <strong>Local Large Language Models (<a href="https://en.wikipedia.org/wiki/Language_model">LLMs</a>) on edge cameras</strong> as a <strong>Universal Sensor</strong> for smart mobility. Utilizing <strong><a href="https://developer.nvidia.com/embedded/jetson-orin">NVIDIA JETSON Orin AGX</a></strong> for high-performance, real-time image and data processing, our solution will empower both public authorities and citizens with localized insights.</p>
-<p>By ensuring full <strong><a href="https://gdpr-info.eu/">GDPR</a></strong> compliance through on-device processing, this solution opens new possibilities for smart city services. Citizens, via a public <strong>app interface</strong>, will be able to ask real-time questions about their immediate environment—from parking availability to public safety insights—unlocking a wide range of unseen use cases.</p>
-</section>
-<section id="challenge-context" class="level2">
-<h2 class="anchored" data-anchor-id="challenge-context">Challenge Context:</h2>
-<p>In modern cities, there is a growing demand for <strong>context-aware</strong>, real-time insights for mobility, safety, and general urban well-being. Current solutions may rely heavily on inflexible fixed purpose sensors or security camera with cloud infrastructure, which raises privacy concerns and introduces <strong><a href="https://en.wikipedia.org/wiki/Latency_(engineering)">latency</a></strong>. Our camera as an <strong>Universal Sensor</strong> approach, leveraging <strong><a href="https://developer.nvidia.com/jetson-agx-orin">NVIDIA JETSON Orin AGX</a></strong>, processes information locally, providing flexible, actionable insights without compromising privacy.</p>
-<p>This PoC will not only demonstrate how this system improves mobility management and public safety, but it will also introduce new unseen <strong>citizen-driven use cases</strong> by allowing anyone to communite with LLM on CAM at real-time via an WebApp, effectively democratizing urban data.</p>
-</section>
-<section id="solution-overview" class="level2">
-<h2 class="anchored" data-anchor-id="solution-overview">Solution Overview:</h2>
-<p>Our <strong>LLM on Camera as a Universal Sensor</strong> solution utilizes <strong>multimodal LLMs</strong> to interpret visual data (i.e.&nbsp;camera /video capture images) and answer questions in real-time. With the <strong>NVIDIA JETSON Orin AGX</strong>, which provides industry-leading computational power, the solution will demonstrate several impactful use cases:</p>
-<section id="use-cases" class="level3">
-<h3 class="anchored" data-anchor-id="use-cases">Use Cases:</h3>
-<ol type="1">
-<li><p><strong>Vacant Parking Slot Detection</strong>: Edge cameras detect available parking spaces and provide real-time updates to users by asking LLM, even with number of vacancy, size of such slot, and anything as long as LLM can understand or interpret.</p></li>
-<li><p><strong>Public Safety Monitoring</strong>: Detect disturbances or suspicious activity in public spaces. The system can instantly alert authorities to potential security threats, improving urban safety without exposing personal data by asking LLM with “any fights heppening?”.</p></li>
-<li><p><strong>Environmental Monitoring</strong>: Citizens or local governments can query the system about feeling of air quality, noise levels, or local weather conditions (e.g., slippery sidewalks during winter) by asking LLM what kind of cloths people wear, ensuring timely responses to environmental changes.</p></li>
-<li><p><strong>Traffic Flow and Congestion Analysis</strong>: The system tracks traffic patterns and provides real-time feedback on road congestion, alerting users to alternate routes or times to travel if needed via LLM.</p></li>
-<li><p><strong>Public Event Reporting</strong>: The app can report real-time crowd density and event status during festivals, concerts, or protests, helping citizens avoid overcrowded areas or plan their attendance.</p></li>
-<li><p><strong>Emergency Support</strong>: In the case of a disaster (e.g., a fire or flood), the system can help first responders by providing <strong>any</strong> type of localized data on obstacles, congestion, or affected areas.</p></li>
-<li><p><strong>Localized Queries from Citizens</strong>: Any citizen can ask the LLM on Camera specific questions about the local environment—e.g., “Are there available seats in the park?” or “Is there a bike rack near this building?”—unlocking real-time insights and enhancing city navigation.</p></li>
-</ol>
-<p>The flexibility of the <strong>Universal Sensor</strong> allows it to be expanded into sectors like tourism, disaster response, and public infrastructure management, enabling both <strong>real-time insights</strong> and enhanced <strong>citizen engagement</strong> as a part of City infrastructure.</p>
-</section>
-<section id="example" class="level3">
-<h3 class="anchored" data-anchor-id="example">Example</h3>
-<p>Normally the image itself won’t be seen by users but only conversation.</p>
-<p><img src="images/llm_on_camera_example.png" class="img-fluid"></p>
-<p>And you can withdraw any insights via LLM.</p>
-<p><img src="images/llm_on_camera_example2.png" class="img-fluid"></p>
-</section>
-</section>
-<section id="technical-approach" class="level2">
-<h2 class="anchored" data-anchor-id="technical-approach">Technical Approach:</h2>
-<p>The <strong>NVIDIA JETSON Orin AGX</strong> provides significant computational capacity for real-time AI applications, making it the ideal platform for running <strong><a href="https://arxiv.org/abs/2306.02060">multimodal LLMs</a></strong>. The PoC will utilize the following:</p>
-<ul>
-<li><p><strong>NVIDIA JETSON Orin AGX</strong>: A powerful edge AI platform capable of handling advanced computations with up to 200 TOPS of performance.</p></li>
-<li><p><strong>Multimodal LLM</strong>: Pre-trained LLMs that can interpret visual, textual, and contextual data in real-time, optimized for efficient on-device processing.</p></li>
-<li><p><strong>Advanced Model Compression</strong>: Techniques like <strong><a href="https://en.wikipedia.org/wiki/Quantization_(machine_learning)">quantization</a></strong> and <strong><a href="https://en.wikipedia.org/wiki/Pruning_(decision_trees)">pruning</a></strong> ensure that LLMs are optimized for running efficiently on the Orin AGX.</p></li>
-</ul>
-<p>By keeping data processing local, we eliminate the need for external data transmission, reducing latency while preserving privacy.</p>
-</section>
-<section id="expected-outcomes-and-impact" class="level2">
-<h2 class="anchored" data-anchor-id="expected-outcomes-and-impact">Expected Outcomes and Impact:</h2>
-<p>By the end of this 1.5-month PoC, we expect to demonstrate:</p>
-<ol type="1">
-<li><strong>Parking Slot Detection</strong>: Detecting vacant parking spaces and providing real-time updates.</li>
-<li><strong>Public Safety Monitoring</strong>: Detecting and responding to public safety incidents.</li>
-<li><strong>Citizen Engagement via WebApp</strong>: Offering citizens real-time access to the system’s insights by allowing them to query localized information through the app. This democratization of data will unlock <strong>unforeseen use cases</strong> that expand beyond mobility and safety.</li>
-<li><strong>Environmental and Traffic Monitoring</strong>: Demonstrating how the <strong>Universal Sensor</strong> can track and respond to environmental and traffic conditions in real time, supporting various urban planning initiatives.</li>
-</ol>
-</section>
-<section id="project-timeline-1.5-months" class="level2">
-<h2 class="anchored" data-anchor-id="project-timeline-1.5-months">Project Timeline (1.5 Months):</h2>
-<ol type="1">
-<li><strong>Week 1 - Initial Setup</strong>:
-<ul>
-<li>Install and configure <strong>NVIDIA JETSON Orin AGX</strong> and integrate multimodal LLMs for the core and extended use cases.</li>
-<li>Begin small-scale testing in a controlled environment.</li>
-</ul></li>
-<li><strong>Week 2-3 - Use Case Development</strong>:
-<ul>
-<li>Fine-tune parking slot detection, public safety monitoring, and citizen query capabilities.</li>
-<li>Develop app functionality for citizen interaction with the <strong>Universal Sensor</strong>.</li>
-</ul></li>
-<li><strong>Week 4-6 - Deployment and Validation</strong>:
-<ul>
-<li>Deploy the system in a small urban environment (e.g., a parking lot, public square).</li>
-<li>Test accuracy, latency, and app engagement, collecting feedback from stakeholders and citizens.</li>
-<li>Analyze results for further scalability.</li>
-</ul></li>
-</ol>
-</section>
-<section id="collaboration-and-ecosystem" class="level2">
-<h2 class="anchored" data-anchor-id="collaboration-and-ecosystem">Collaboration and Ecosystem:</h2>
-<p>We will collaborate with local municipalities and <strong><a href="https://www.nvidia.com/">NVIDIA</a></strong> to optimize the <strong>NVIDIA JETSON Orin AGX</strong> platform for smart mobility applications. Citizen engagement will be supported through partnerships with local app developers and parking management services.</p>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion:</h2>
-<p>NinjaLABO’s <strong>LLM on Camera as a Universal Sensor</strong> is a powerful, privacy-preserving tool designed to transform smart city services. By leveraging the advanced capabilities of <strong><a href="https://developer.nvidia.com/embedded/jetson-orin">NVIDIA JETSON Orin AGX</a></strong> and introducing an open <strong>citizen engagement app</strong>, this PoC will demonstrate the potential for real-time mobility management, public safety enhancement, and localized insights for citizens. The possibilities of new use cases emerging from public queries are vast, making this technology a cornerstone of <strong>smart city innovation</strong>.</p>
-<p>We look forward to showcasing how <strong>Universal Sensors</strong> can transform the way citizens interact with and benefit from their urban environments, fully aligning with Helsinki’s goals of <strong><a href="https://mobilitylab.hel.fi/ai-in-mobility-innovation-challenge/">AI-powered mobility</a></strong>.</p>
+<section id="a-slightly-nostalgic-look-back-at-where-this-journey-began." class="level1">
+<h1>A slightly nostalgic look back at where this journey began.</h1>
+<p>Back in 2019, it felt almost extreme to run a Deep Neural Network on a <a href="http://unikernel.org/">Unikernel</a> (<a href="https://mirage.io/">MirageOS</a>), written in a functional programming language (<a href="https://ocaml.org/">OCaml</a>), running on a microcontroller like the <a href="https://www.espressif.com/en/products/socs/esp32">ESP32</a>, at <a href="https://events19.linuxfoundation.org/events/embedded-linux-conference-europe-2019/">Embedded Linux Conference Europe 2019</a></p>
+<blockquote class="blockquote">
+<p>Machine Learning (ML) has been happening only in Cloud and some inference on Edge. But there’s quite few ML happening in IoT where Linux cannot fit. This area is called TinyML. In order to democratize ML in IoT, I propose TinyML as-a-Service, which would bring ML onto microcontrollers with 3 enablers, (1) Unikernel, (2) ML compiler and (3) CoAP. In this session, I’ll explain our end-to-end experiment of how we tackled to bring ML onto Edge &amp; microcontrollers, show demo and also discuss future possibilites. The audience are not expected much. The following links may be helpful if you discuss this session deeper but I’ll explain them, anyway;) Enjoy!!</p>
+</blockquote>
+<p>https://osseu19.sched.com/event/TLCJ/distributed-ml-on-unikernels-for-iot-hiroshi-doyu-ericsson</p>
+<p><img src="images/elc2019-000.png" class="img-fluid"></p>
+<p><img src="images/elc2019-001.png" class="img-fluid"></p>
+<p><img src="images/elc2019-002.png" class="img-fluid"></p>
+<p><img src="images/elc2019-003.png" class="img-fluid"></p>
+<p><img src="images/elc2019-004.png" class="img-fluid"></p>
+<p><img src="images/elc2019-005.png" class="img-fluid"></p>
+<p><img src="images/elc2019-006.png" class="img-fluid"></p>
+<p><img src="images/elc2019-007.png" class="img-fluid"></p>
+<p><img src="images/elc2019-008.png" class="img-fluid"></p>
+<p><img src="images/elc2019-009.png" class="img-fluid"></p>
+<p><img src="images/elc2019-010.png" class="img-fluid"></p>
+<p><img src="images/elc2019-011.png" class="img-fluid"></p>
+<p><img src="images/elc2019-012.png" class="img-fluid"></p>
+<p><img src="images/elc2019-013.png" class="img-fluid"></p>
+<p><img src="images/elc2019-014.png" class="img-fluid"></p>
+<p><img src="images/elc2019-015.png" class="img-fluid"></p>
+<p><img src="images/elc2019-016.png" class="img-fluid"></p>
+<p><img src="images/elc2019-017.png" class="img-fluid"></p>
+<p><img src="images/elc2019-018.png" class="img-fluid"></p>
+<p><img src="images/elc2019-019.png" class="img-fluid"></p>
+<p><img src="images/elc2019-020.png" class="img-fluid"></p>
+<p><img src="images/elc2019-021.png" class="img-fluid"></p>
+<p><img src="images/elc2019-022.png" class="img-fluid"></p>
+<p><img src="images/elc2019-023.png" class="img-fluid"></p>
+<p><img src="images/elc2019-024.png" class="img-fluid"></p>
+<p><img src="images/elc2019-025.png" class="img-fluid"></p>
+<p><img src="images/elc2019-026.png" class="img-fluid"></p>
+<p><img src="images/elc2019-027.png" class="img-fluid"></p>
+<p><img src="images/elc2019-028.png" class="img-fluid"></p>
+<p><img src="images/elc2019-029.png" class="img-fluid"></p>
+<p><img src="images/elc2019-030.png" class="img-fluid"></p>
+<p><img src="images/elc2019-031.png" class="img-fluid"></p>
+<p><img src="images/elc2019-032.png" class="img-fluid"></p>
+<p><img src="images/elc2019-033.png" class="img-fluid"></p>
+<p><img src="images/elc2019-034.png" class="img-fluid"></p>
+<p><img src="images/elc2019-035.png" class="img-fluid"></p>
+<p><img src="images/elc2019-036.png" class="img-fluid"></p>
+<p><img src="images/elc2019-037.png" class="img-fluid"></p>
+<p><img src="images/elc2019-038.png" class="img-fluid"></p>
+<p><img src="images/elc2019-039.png" class="img-fluid"></p>
+<p><img src="images/elc2019-040.png" class="img-fluid"></p>
+<p><img src="images/elc2019-041.png" class="img-fluid"></p>
+<p><img src="images/elc2019-042.png" class="img-fluid"></p>
+<p><img src="images/elc2019-043.png" class="img-fluid"></p>
+<p><img src="images/elc2019-044.png" class="img-fluid"></p>
+<p><img src="images/elc2019-045.png" class="img-fluid"></p>
+<p><img src="images/elc2019-046.png" class="img-fluid"></p>
+<p><img src="images/elc2019-047.png" class="img-fluid"></p>
+<p><img src="images/elc2019-048.png" class="img-fluid"></p>
+<p><img src="images/elc2019-049.png" class="img-fluid"></p>
+<p><img src="images/elc2019-050.png" class="img-fluid"></p>
+<p><img src="images/elc2019-051.png" class="img-fluid"></p>
+<p><img src="images/elc2019-052.png" class="img-fluid"></p>
+<p><img src="images/elc2019-053.png" class="img-fluid"></p>
+<p><img src="images/elc2019-054.png" class="img-fluid"></p>
+<p><img src="images/elc2019-055.png" class="img-fluid"></p>
+<p><img src="images/elc2019-056.png" class="img-fluid"></p>
+<p><img src="images/elc2019-057.png" class="img-fluid"></p>
+<p><img src="images/elc2019-058.png" class="img-fluid"></p>
+<p><img src="images/elc2019-059.png" class="img-fluid"></p>
+<p><img src="images/elc2019-060.png" class="img-fluid"></p>
+<p><img src="images/elc2019-061.png" class="img-fluid"></p>
+<p><img src="images/elc2019-062.png" class="img-fluid"></p>
+<p><img src="images/elc2019-063.png" class="img-fluid"></p>
+<p><img src="images/elc2019-064.png" class="img-fluid"></p>
+<p><img src="images/elc2019-065.png" class="img-fluid"></p>
+<p><img src="images/elc2019-066.png" class="img-fluid"></p>
+<p><img src="images/elc2019-067.png" class="img-fluid"></p>
+<p><img src="images/elc2019-068.png" class="img-fluid"></p>
+<p><img src="images/elc2019-069.png" class="img-fluid"></p>
+<p><img src="images/elc2019-070.png" class="img-fluid"></p>
+<p><img src="images/elc2019-071.png" class="img-fluid"></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -916,7 +893,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <li>For pricing and sales inquiries <a href="mailto:sales@ninjalabo.ai" class="email">sales@ninjalabo.ai</a></li>
 <li>Ask tech questions <a href="mailto:help@ninjalabo.ai" class="email">help@ninjalabo.ai</a></li>
 </ul>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blogs/llm_on_camera.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blogs/elc2019.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
