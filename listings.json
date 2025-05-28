@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blogs/elc2019.html",
       "/blogs/DataTalks.html",
       "/blogs/CamTalks.html",
       "/blogs/talkingteddy.html",
@@ -50,10 +51,9 @@
       "/blogs/iree.html",
       "/blogs/imagimobstudio.html",
       "/blogs/tinymlusecases.html",
+      "/blogs/aicompressionsaas.html",
       "/blogs/ericsson_blog2.html",
-      "/blogs/ericsson_blog1.html",
-      "/blogs/elc2019.html",
-      "/blogs/aicompressionsaas.html"
+      "/blogs/ericsson_blog1.html"
     ]
   }
 ]
