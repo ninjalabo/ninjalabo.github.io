@@ -78,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-710567d9ce3aafacac9b6493d3599c7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-cadef869a9e86d80ee9c2210e7313ebb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -494,12 +494,37 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <p>Jetson devices use integrated GPUs (iGPUs) while default CUDA backend of PyTorch is optimized for discrete GPUs (dGPUs). To enable PyTorch with GPU acceleration on Jetson, follow the custom installation available in <a href="https://docs.nvidia.com/deeplearning/frameworks/install-pytorch-jetson-platform/index.html">NVIDIA instructions</a> and <a href="https://forums.developer.nvidia.com/t/pytorch-for-jetson/72048">NVIDIA forums</a>. The supporting package torchvision also has to be built from source on the Jetson device.</p>
 <section id="installing-cusparselt" class="level3">
 <h3 class="anchored" data-anchor-id="installing-cusparselt">Installing cuSPARSELt</h3>
-<p>For PyTorch versions 24.06+ (see <a href="https://docs.nvidia.com/deeplearning/frameworks/install-pytorch-jetson-platform-release-notes/pytorch-jetson-rel.html#pytorch-jetson-rel">Compatibility Matrix</a>), cuSPARSELt is required. Install it with these <a href="https://developer.nvidia.com/cusparselt-downloads">instructions</a> by selecting Linux OS, aarch64-jetson architecture, and Ubuntu distribution:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> wget https://developer.download.nvidia.com/compute/cusparselt/0.7.0/local_installers/cusparselt-local-tegra-repo-ubuntu2204-0.7.0_1.0-1_arm64.deb</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo dpkg <span class="at">-i</span> cusparselt-local-tegra-repo-ubuntu2204-0.7.0_1.0-1_arm64.deb</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo cp /var/cusparselt-local-tegra-repo-ubuntu2204-0.7.0/cusparselt-<span class="pp">*</span>-keyring.gpg /usr/share/keyrings/</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo apt-get update</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo apt-get <span class="at">-y</span> install libcusparselt0 libcusparselt-dev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For PyTorch versions 24.06+ (see <a href="https://docs.nvidia.com/deeplearning/frameworks/install-pytorch-jetson-platform-release-notes/pytorch-jetson-rel.html#pytorch-jetson-rel">Compatibility Matrix</a>), cuSPARSELt is required. Navigate through the <a href="https://developer.download.nvidia.com/compute/cusparselt/redist/libcusparse_lt/">cuSPARSELt dists</a>, select the architecture for Jetson (<code>linux-aarch64</code>), and select a suitable version (e.g., <code>0.7.0</code>).</p>
+<p>Install cuSPARSELt with the following shell script:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> <span class="at">-ex</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># cuSPARSELt license: https://docs.nvidia.com/cuda/cusparselt/license.html</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="va">CUSPARSELT_URL</span><span class="op">=</span><span class="st">"https://developer.download.nvidia.com/compute/cusparselt/redist/libcusparse_lt/linux-aarch64"</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="va">CUSPARSELT_VERSION</span><span class="op">=</span><span class="st">"0.7.1.0"</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="va">CUSPARSELT_NAME</span><span class="op">=</span><span class="st">"libcusparse_lt-linux-aarch64-</span><span class="va">${CUSPARSELT_VERSION}</span><span class="st">-archive"</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create and enter temp working directory</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> tmp_cusparselt <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> tmp_cusparselt</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Download the archive</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">--retry</span> 3 <span class="at">-OLs</span> <span class="st">"</span><span class="va">${CUSPARSELT_URL}</span><span class="st">/</span><span class="va">${CUSPARSELT_NAME}</span><span class="st">.tar.xz"</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the archive</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> xf <span class="st">"</span><span class="va">${CUSPARSELT_NAME}</span><span class="st">.tar.xz"</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Install headers and libraries</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> <span class="at">-a</span> <span class="st">"</span><span class="va">${CUSPARSELT_NAME}</span><span class="st">/include/"</span><span class="pp">*</span> /usr/local/cuda/include/</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> <span class="at">-a</span> <span class="st">"</span><span class="va">${CUSPARSELT_NAME}</span><span class="st">/lib/"</span><span class="pp">*</span> /usr/local/cuda/lib64/</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean up</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ..</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> tmp_cusparselt</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Update linker cache</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="ex">ldconfig</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="installing-pytorch" class="level3">
 <h3 class="anchored" data-anchor-id="installing-pytorch">Installing PyTorch</h3>
@@ -556,6 +581,9 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 </ul>
 <div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pip install http://jetson.webredirect.org/jp6/cu126/+f/5cf/9ed17e35cb752/torch-2.5.0-cp310-cp310-linux_aarch64.whl#sha256=5cf9ed17e35cb7523812aeda9e7d6353c437048c5a6df1dc6617650333049092</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pip install http://jetson.webredirect.org/jp6/cu126/+f/5f9/67f920de3953f/torchvision-0.20.0-cp310-cp310-linux_aarch64.whl#sha256=5f967f920de3953f2a39d95154b1feffd5ccc06b4589e51540dc070021a9adb9</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>If building from source does not work, you can opt to use some pre-built binaries on <a href="https://pypi.jetson-ai-lab.dev/">Jetson AI Lab</a>. Select your JetPack version and CUDA version, then select the libraries that you need. Modify the URL to reach different versions of the libraries and download the provided pre-built binaries. However, note that these pre-built might encounter some errors due to cuDNN structure.</li>
+</ul>
 </section>
 </section>
 <section id="step-3---optional-setting-up-jupyter-notebook-for-remote-access-via-ssh-tunnel" class="level2">
