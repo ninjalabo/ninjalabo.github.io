@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,6 +12,9 @@
 
 <title>How to Easily Install PyTorch on Jetson Orin Nano running JetPack 6.2 – NinjaLABO</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -75,10 +78,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-cadef869a9e86d80ee9c2210e7313ebb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-48e3c32f59649f8e92e24b8873cdbc15.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -132,7 +135,8 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo">
+    <img src="../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo light-content">
+    <img src="../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo dark-content">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -478,16 +482,16 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <p>The Jetson device must be flashed with JetPack, which includes the Jetson Linux OS and necessary GPU computing libraries such as CUDA and cuDNN. Follow the official <a href="https://developer.nvidia.com/embedded/jetpack-sdk-62">NVIDIA JetPack installation guide</a> for instructions. Ensure that firmware version is updated to 36+ for JetPack &gt; 6.</p>
 <p>To flash Jetson Orin Nano, install <a href="https://docs.nvidia.com/sdk-manager/index.html">NVIDIA SDK Manager</a> on a Linux host machine and follow the setup steps. During flashing, select Jetson SDK Components to install CUDA toolkit in the <a href="https://docs.nvidia.com/sdk-manager/install-with-sdkm-jetson/index.html#step-02-review-components-and-accept-licenses">second step</a>. If CUDA is missing post-installation, follow the JetPack <a href="https://docs.nvidia.com/jetson/jetpack/install-setup/index.html#package-management-tool">package management guide</a>.</p>
 <p>CUDA installation can be verified with -</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nvcc <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nvcc <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>or</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nvidia-smi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nvidia-smi</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>which should show the same CUDA version.</p>
 <p>For additional verification, compile and run a CUDA sample from its Github repository:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clone suitable version for testing CUDA 12.6 </span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clone suitable version for testing CUDA 12.6 </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git clone <span class="at">--branch</span> v12.5 https://github.com/NVIDIA/cuda-samples.git</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd cuda-samples/Samples/1_Utilities/deviceQuery</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> make</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./deviceQuery</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./deviceQuery</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="step-2---installing-pytorch-and-torchvision" class="level2">
 <h2 class="anchored" data-anchor-id="step-2---installing-pytorch-and-torchvision">Step 2 - Installing PyTorch and torchvision</h2>
@@ -496,7 +500,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <h3 class="anchored" data-anchor-id="installing-cusparselt">Installing cuSPARSELt</h3>
 <p>For PyTorch versions 24.06+ (see <a href="https://docs.nvidia.com/deeplearning/frameworks/install-pytorch-jetson-platform-release-notes/pytorch-jetson-rel.html#pytorch-jetson-rel">Compatibility Matrix</a>), cuSPARSELt is required. Navigate through the <a href="https://developer.download.nvidia.com/compute/cusparselt/redist/libcusparse_lt/">cuSPARSELt dists</a>, select the architecture for Jetson (<code>linux-aarch64</code>), and select a suitable version (e.g., <code>0.7.0</code>).</p>
 <p>Install cuSPARSELt with the following shell script:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> <span class="at">-ex</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -524,15 +528,15 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> tmp_cusparselt</span>
 <span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Update linker cache</span></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="ex">ldconfig</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="ex">ldconfig</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="installing-pytorch" class="level3">
 <h3 class="anchored" data-anchor-id="installing-pytorch">Installing PyTorch</h3>
 <p>(Optional) Create a virtual environment:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo apt-get install virtualenv</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo apt-get install virtualenv</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd <span class="op">&lt;</span>target-directory<span class="op">&gt;</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python3 <span class="at">-m</span> virtualenv <span class="at">-p</span> python3 <span class="op">&lt;</span>venv-name<span class="op">&gt;</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> source <span class="op">&lt;</span>venv-name<span class="op">&gt;</span>/bin/activate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> source <span class="op">&lt;</span>venv-name<span class="op">&gt;</span>/bin/activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Install PyTorch with a custom wheel built by NVIDIA:</p>
 <ol type="1">
 <li>Check compatibility from <a href="https://docs.nvidia.com/deeplearning/frameworks/install-pytorch-jetson-platform-release-notes/pytorch-jetson-rel.html">NVIDIA Jetson PyTorch matrix</a>.<br>
@@ -541,11 +545,11 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 </li>
 <li>Install with pip -</li>
 </ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pip3 install <span class="at">--no-cache</span> https://developer.download.nvidia.com/compute/redist/jp/v<span class="va">$JP_VERSION</span>/pytorch/<span class="va">$PYT_VERSION</span> ... .whl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pip3 install <span class="at">--no-cache</span> https://developer.download.nvidia.com/compute/redist/jp/v<span class="va">$JP_VERSION</span>/pytorch/<span class="va">$PYT_VERSION</span> ... .whl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>In this tutorial, PyTorch version 2.5 for JetPack 6.1 (still compatible with 6.2) will be installed with:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pip3 install <span class="at">--no-cache</span> https://developer.download.nvidia.com/compute/redist/jp/v61/pytorch/torch-2.5.0a0+872d972e41.nv24.08.17622132-cp310-cp310-linux_aarch64.whl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pip3 install <span class="at">--no-cache</span> https://developer.download.nvidia.com/compute/redist/jp/v61/pytorch/torch-2.5.0a0+872d972e41.nv24.08.17622132-cp310-cp310-linux_aarch64.whl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Verify with Python Terminal:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python3</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python3</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> import <span class="ex">torch</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> print<span class="kw">(</span><span class="ex">torch.__version__</span><span class="kw">)</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> print<span class="kw">(</span><span class="st">'CUDA available: '</span> + str<span class="er">(</span><span class="fu">torch.cuda.is_available()</span><span class="kw">))</span>  <span class="co"># Should be True</span></span>
@@ -555,21 +559,21 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> b <span class="ex">=</span> torch.randn<span class="er">(</span><span class="ex">2</span><span class="kw">)</span><span class="fu">.cuda()</span></span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> print<span class="kw">(</span><span class="st">'Tensor b = '</span> + str<span class="er">(</span><span class="ex">b</span><span class="kw">))</span></span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> c <span class="ex">=</span> a + b</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> print<span class="kw">(</span><span class="st">'Tensor c = '</span> + str<span class="er">(</span><span class="ex">c</span><span class="kw">))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> print<span class="kw">(</span><span class="st">'Tensor c = '</span> + str<span class="er">(</span><span class="ex">c</span><span class="kw">))</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="installing-torchvision" class="level3">
 <h3 class="anchored" data-anchor-id="installing-torchvision">Installing torchvision</h3>
 <p>torchvision must be built from source. Select a compatible version of torchvision from <a href="https://pytorch.org/get-started/previous-versions/">PyTorch releases</a> and replaces <code>$VERSION</code> in the following commands:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo apt-get install libjpeg-dev zlib1g-dev libpython3-dev libopenblas-dev libavcodec-dev libavformat-dev libswscale-dev</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo apt-get install libjpeg-dev zlib1g-dev libpython3-dev libopenblas-dev libavcodec-dev libavformat-dev libswscale-dev</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git clone <span class="at">--branch</span> release/0.<span class="va">$VERSION</span> https://github.com/pytorch/vision torchvision</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd torchvision</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> export BUILD_VERSION=0.<span class="va">$VERSION</span>.0</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python3 setup.py install <span class="at">--user</span> <span class="co"># remove --user if installing in virtualenv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python3 setup.py install <span class="at">--user</span> <span class="co"># remove --user if installing in virtualenv</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>In this tutorial, torchvision version 0.20.0 is installed by replacing <code>$VERSION</code> with 20.</p>
 <p>Verify with Python terminal:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python3</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python3</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> import <span class="ex">torchvision</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> print<span class="kw">(</span><span class="ex">torchvision.__version__</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> print<span class="kw">(</span><span class="ex">torchvision.__version__</span><span class="kw">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="troubleshooting" class="level3">
 <h3 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h3>
@@ -579,8 +583,8 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 </li>
 <li>If you encounter this runtime error - <code>RuntimeError: operator torchvision::nms does not exist</code>, follow the instructions in <a href="https://forums.developer.nvidia.com/t/pytorch-and-torvision-version-issue-runtimeerror-operator-torchvision-nms-does-not-exist/312446">this NVIDIA forum post</a>. Specifically, install these pre-compiled binaries of <code>torch</code> and <code>torchvision</code>:</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pip install http://jetson.webredirect.org/jp6/cu126/+f/5cf/9ed17e35cb752/torch-2.5.0-cp310-cp310-linux_aarch64.whl#sha256=5cf9ed17e35cb7523812aeda9e7d6353c437048c5a6df1dc6617650333049092</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pip install http://jetson.webredirect.org/jp6/cu126/+f/5f9/67f920de3953f/torchvision-0.20.0-cp310-cp310-linux_aarch64.whl#sha256=5f967f920de3953f2a39d95154b1feffd5ccc06b4589e51540dc070021a9adb9</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pip install http://jetson.webredirect.org/jp6/cu126/+f/5cf/9ed17e35cb752/torch-2.5.0-cp310-cp310-linux_aarch64.whl#sha256=5cf9ed17e35cb7523812aeda9e7d6353c437048c5a6df1dc6617650333049092</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pip install http://jetson.webredirect.org/jp6/cu126/+f/5f9/67f920de3953f/torchvision-0.20.0-cp310-cp310-linux_aarch64.whl#sha256=5f967f920de3953f2a39d95154b1feffd5ccc06b4589e51540dc070021a9adb9</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>If building from source does not work, you can opt to use some pre-built binaries on <a href="https://pypi.jetson-ai-lab.dev/">Jetson AI Lab</a>. Select your JetPack version and CUDA version, then select the libraries that you need. Modify the URL to reach different versions of the libraries and download the provided pre-built binaries. However, note that these pre-built might encounter some errors due to cuDNN structure.</li>
 </ul>
@@ -589,17 +593,17 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <section id="step-3---optional-setting-up-jupyter-notebook-for-remote-access-via-ssh-tunnel" class="level2">
 <h2 class="anchored" data-anchor-id="step-3---optional-setting-up-jupyter-notebook-for-remote-access-via-ssh-tunnel">Step 3 - (Optional) Setting up Jupyter Notebook for Remote Access via SSH tunnel</h2>
 <p>If your Jetson device is connected to the same network as your other machines—or directly via USB or a serial cable—you can start a remote Jupyter server from the Jetson device for convenient headless operations. First, find the IP address of your Jetson device:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ip a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ip a</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Look for an IP address similar to 192.168.x.x or 10.x.x.x.</p>
 <p>(Optional) Control Jetson terminal via SSH. Log in with Jetson username (user of Linux OS running on Jetson) and enter password when prompted.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ssh <span class="op">&lt;</span>jetson-username<span class="op">&gt;</span>@<span class="op">&lt;</span>jetson-ip<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ssh <span class="op">&lt;</span>jetson-username<span class="op">&gt;</span>@<span class="op">&lt;</span>jetson-ip<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Install Jupyterlab or Jupyter Notebook on Jetson terminal (or SSH session):</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pip install jupyterlab</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pip isntall notebook</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pip install jupyterlab</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pip isntall notebook</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Start server from Jetson terminal (or SSH session):</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> jupyter notebook <span class="at">--no-browser</span> <span class="at">--port</span><span class="op">=</span>8888 <span class="at">--ip</span><span class="op">=</span>0.0.0.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> jupyter notebook <span class="at">--no-browser</span> <span class="at">--port</span><span class="op">=</span>8888 <span class="at">--ip</span><span class="op">=</span>0.0.0.0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>From your local PC, forward port 8888 using SSH:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-N</span> <span class="at">-L</span> 8888:localhost:8888 <span class="op">&lt;</span>jetson-username<span class="op">&gt;</span>@<span class="op">&lt;</span>jetson-ip<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-N</span> <span class="at">-L</span> 8888:localhost:8888 <span class="op">&lt;</span>jetson-username<span class="op">&gt;</span>@<span class="op">&lt;</span>jetson-ip<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>And access running Jupyter server with localhost on your PC: <code>http://localhost:8888/</code></p>
 </section>
 <section id="conclusion" class="level2">
@@ -661,13 +665,14 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

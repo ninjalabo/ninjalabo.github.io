@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Demonstratation of TinyMLaaS WebApp – NinjaLABO</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -74,10 +77,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-cadef869a9e86d80ee9c2210e7313ebb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-48e3c32f59649f8e92e24b8873cdbc15.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -133,7 +136,8 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo">
+    <img src="../../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo light-content">
+    <img src="../../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo dark-content">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -421,7 +425,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <p>This document will demonstrate the steps in TinyMLaaS app. Some pages have dependencies on other pages, so go through pages from top to bottom is recommended at the start.</p>
 <p>In order to run TinyMLaaS end-to-end following components need to be run: - The Frontend - The Backend - The Relay</p>
 <p>These can all easily be started with the help of docker using the <a href="https://github.com/TinyMLaas/TinyMLaaS/blob/main/docker-compose-with-bridge.yml">docker-compose-with-bridge.yml</a> file in the <a href="https://github.com/TinyMLaas/TinyMLaaS">Main repository</a>. The application can be started with</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up <span class="at">-f</span> docker-compose-with-brdige.yml <span class="at">-d</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up <span class="at">-f</span> docker-compose-with-brdige.yml <span class="at">-d</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="device" class="level2">
 <h2 class="anchored" data-anchor-id="device">Device</h2>
 <p>In order to install a model to a embedded device, the briging device of the wanted device and the device need to be selected.</p>
@@ -506,7 +510,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="installing">Installing</h2>
 <p>Now that a model has been compiled, it can be installed on the device that was selected on the <em>Device</em> page. The page shows a single button, <em>install</em>. When this is pressed, the software will install the selected compiled model to the selected device on the selected bridge.</p>
 <p>Be sure that the software has access to the device. If you are not sure, the next command will give all users permissions to read, write and execute to the machine</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> 777 /path/to/port</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> 777 /path/to/port</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This time, the device is connected to <code>/dev/ttyACM0</code>, so it was given permissions.</p>
 <p>Now, install the model to the device.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -581,13 +585,14 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

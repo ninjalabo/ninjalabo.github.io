@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,6 +12,9 @@
 
 <title>Low Rank Approximation Implementation 2/4 – NinjaLABO</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -75,10 +78,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-cadef869a9e86d80ee9c2210e7313ebb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-48e3c32f59649f8e92e24b8873cdbc15.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -132,7 +135,8 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo">
+    <img src="../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo light-content">
+    <img src="../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo dark-content">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -448,20 +452,20 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="singular-value-decomposition-svd---resnet50">Singular Value Decomposition (SVD) - Resnet50</h2>
 <p>SVD (a mathematical technique) helps us approximate complex weight matrices with simpler ones, to compress the model’s convolutional layers. * Goal: Reduce the model’s size and speed up computations without significantly sacrificing its accuracy.</p>
 <div id="f5f9cbf8" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.optim <span class="im">as</span> optim</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torchvision <span class="im">import</span> datasets, transforms, models</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch.utils.data <span class="im">import</span> DataLoader</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="download-and-load-the-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="download-and-load-the-dataset">Download and Load the Dataset</h2>
 <p>Using the Imagenette2-320 dataset, which is a smaller version of the ImageNet dataset. It has images that belong to just 10 classes (e.g., different breeds of dogs, cats, etc.).</p>
 <div id="e88379c8" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torchvision.datasets.utils <span class="im">import</span> download_and_extract_archive</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torchvision.datasets.utils <span class="im">import</span> download_and_extract_archive</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Download Imagenette2-320</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://s3.amazonaws.com/fast-ai-imageclas/imagenette2-320.tgz"</span></span>
@@ -469,7 +473,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>download_and_extract_archive(url, download_root<span class="op">=</span>root)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Set dataset path</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>dataset_path <span class="op">=</span> os.path.join(root, <span class="st">"imagenette2-320"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>dataset_path <span class="op">=</span> os.path.join(root, <span class="st">"imagenette2-320"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Using downloaded and verified file: ./data\imagenette2-320.tgz
 Extracting ./data\imagenette2-320.tgz to ./data</code></pre>
@@ -479,7 +483,7 @@ Extracting ./data\imagenette2-320.tgz to ./data</code></pre>
 <section id="prepare-the-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="prepare-the-dataset">Prepare the Dataset</h2>
 <div id="1bcd5c54" class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data transformation: Resize, Convert to Tensor, Normalize</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data transformation: Resize, Convert to Tensor, Normalize</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>transform <span class="op">=</span> transforms.Compose([</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    transforms.Resize((<span class="dv">224</span>, <span class="dv">224</span>)),  <span class="co"># Resize images to 224x224</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    transforms.ToTensor(),          <span class="co"># Convert images to PyTorch tensors</span></span>
@@ -492,25 +496,25 @@ Extracting ./data\imagenette2-320.tgz to ./data</code></pre>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Create DataLoaders</span></span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>train_loader <span class="op">=</span> DataLoader(train_dataset, batch_size<span class="op">=</span><span class="dv">32</span>, shuffle<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>valid_loader <span class="op">=</span> DataLoader(valid_dataset, batch_size<span class="op">=</span><span class="dv">32</span>, shuffle<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>valid_loader <span class="op">=</span> DataLoader(valid_dataset, batch_size<span class="op">=</span><span class="dv">32</span>, shuffle<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="load-the-pre-trained-resnet-50-model" class="level2">
 <h2 class="anchored" data-anchor-id="load-the-pre-trained-resnet-50-model">Load the Pre-trained ResNet-50 Model</h2>
 <div id="b04398a5" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load pre-trained ResNet-50 model</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load pre-trained ResNet-50 model</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> models.resnet50(pretrained<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Move model to device (CPU or GPU if available)</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>device <span class="op">=</span> torch.device(<span class="st">'cuda'</span> <span class="cf">if</span> torch.cuda.is_available() <span class="cf">else</span> <span class="st">'cpu'</span>)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> model.to(device)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> model.to(device)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="apply-svd-for-model-compression" class="level2">
 <h2 class="anchored" data-anchor-id="apply-svd-for-model-compression">Apply SVD for Model Compression</h2>
 <p>This technique reduces the size of the model by approximating its convolutional layers (layers that detect image features like edges, shapes, etc.).</p>
 <div id="385dddd7" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> svd_compress_conv_layer(conv_layer, rank):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> svd_compress_conv_layer(conv_layer, rank):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get the weight tensor of the convolutional layer</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    weight <span class="op">=</span> conv_layer.weight.data</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    out_channels, in_channels, h, w <span class="op">=</span> weight.shape</span>
@@ -536,14 +540,14 @@ Extracting ./data\imagenette2-320.tgz to ./data</code></pre>
 <span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Replace the original weights with the compressed weights</span></span>
 <span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    conv_layer.weight.data <span class="op">=</span> compressed_weight</span>
 <span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> conv_layer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> conv_layer</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="apply-svd-to-each-convolutional-layer-in-resnet-50" class="level2">
 <h2 class="anchored" data-anchor-id="apply-svd-to-each-convolutional-layer-in-resnet-50">Apply SVD to Each Convolutional Layer in ResNet-50</h2>
 <p>We apply SVD to every convolutional layer in the model. By keeping only the most important components (e.g., 20 components), we make each layer smaller and therefore reduce the entire model’s size.</p>
 <div id="49821238" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compress_resnet50(model, rank):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compress_resnet50(model, rank):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name, module <span class="kw">in</span> model.named_modules():</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">isinstance</span>(module, nn.Conv2d):</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Compressing layer: </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -551,7 +555,7 @@ Extracting ./data\imagenette2-320.tgz to ./data</code></pre>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>            <span class="bu">setattr</span>(model, name, compressed_layer)</span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Compress the model with a reduced rank (e.g., keep top 20 components)</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>compress_resnet50(model, rank<span class="op">=</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>compress_resnet50(model, rank<span class="op">=</span><span class="dv">20</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Compressing layer: conv1
 Compressing layer: layer1.0.conv1
@@ -614,7 +618,7 @@ Compressing layer: layer4.2.conv3</code></pre>
 <p>After compression, the model needs to be retrained slightly to adjust the weights.</p>
 <p>Compression changes the weights significantly, which may affect the model’s accuracy. Fine-tuning helps adjust these weights and bring back the accuracy closer to its original value.</p>
 <div id="0684a382" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>criterion <span class="op">=</span> nn.CrossEntropyLoss()</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>criterion <span class="op">=</span> nn.CrossEntropyLoss()</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>optimizer <span class="op">=</span> optim.Adam(model.parameters(), lr<span class="op">=</span><span class="fl">0.001</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>num_epochs <span class="op">=</span> <span class="dv">3</span></span>
@@ -640,7 +644,7 @@ Compressing layer: layer4.2.conv3</code></pre>
 <span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Epoch [</span><span class="sc">{</span>epoch<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>num_epochs<span class="sc">}</span><span class="ss">], Loss: </span><span class="sc">{</span>running_loss<span class="op">/</span><span class="bu">len</span>(train_loader)<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
 <span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Training complete."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Training complete."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Epoch [1/3], Loss: 1.4015
 Epoch [2/3], Loss: 0.8525
@@ -652,7 +656,7 @@ Training complete.</code></pre>
 <section id="evaluate-the-compressed-model" class="level2">
 <h2 class="anchored" data-anchor-id="evaluate-the-compressed-model">Evaluate the Compressed Model</h2>
 <div id="2754b3a4" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>model.<span class="bu">eval</span>()</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>model.<span class="bu">eval</span>()</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>correct <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -664,7 +668,7 @@ Training complete.</code></pre>
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>        total <span class="op">+=</span> labels.size(<span class="dv">0</span>)</span>
 <span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>        correct <span class="op">+=</span> (predicted <span class="op">==</span> labels).<span class="bu">sum</span>().item()</span>
 <span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Validation Accuracy after Compression: </span><span class="sc">{</span><span class="dv">100</span> <span class="op">*</span> correct <span class="op">/</span> total<span class="sc">:.2f}</span><span class="ss">%'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Validation Accuracy after Compression: </span><span class="sc">{</span><span class="dv">100</span> <span class="op">*</span> correct <span class="op">/</span> total<span class="sc">:.2f}</span><span class="ss">%'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Validation Accuracy after Compression: 72.20%</code></pre>
 </div>
@@ -726,13 +730,14 @@ Training complete.</code></pre>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

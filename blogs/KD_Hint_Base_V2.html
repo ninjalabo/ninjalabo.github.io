@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,6 +12,9 @@
 
 <title>Knowledge Distillation Implementation 2/3 – NinjaLABO</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -75,10 +78,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-cadef869a9e86d80ee9c2210e7313ebb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-48e3c32f59649f8e92e24b8873cdbc15.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -134,7 +137,8 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo">
+    <img src="../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo light-content">
+    <img src="../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo dark-content">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -452,7 +456,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <li>Romero, A., Ballas, N., Kahou, S. E., Chassang, A., Gatta, C., &amp; Bengio, Y. (2015). FitNets: Hints for Thin Deep Nets. arXiv preprint arXiv:1412.6550. Retrieved from https://arxiv.org/abs/1412.6550</li>
 </ul>
 <div id="7ab933a1" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.optim <span class="im">as</span> optim</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torchvision <span class="im">import</span> datasets, models, transforms</span>
@@ -485,13 +489,13 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>class_names <span class="op">=</span> image_datasets[<span class="st">'train'</span>].classes</span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Check device availability</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>device <span class="op">=</span> torch.device(<span class="st">"cuda:0"</span> <span class="cf">if</span> torch.cuda.is_available() <span class="cf">else</span> <span class="st">"cpu"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>device <span class="op">=</span> torch.device(<span class="st">"cuda:0"</span> <span class="cf">if</span> torch.cuda.is_available() <span class="cf">else</span> <span class="st">"cpu"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="define-teacher-and-student-models" class="level2">
 <h2 class="anchored" data-anchor-id="define-teacher-and-student-models">Define Teacher and Student Models</h2>
 <div id="63f6e9e2" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load pre-trained teacher (ResNet50) and student (ResNet18)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load pre-trained teacher (ResNet50) and student (ResNet18)</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>teacher_model <span class="op">=</span> models.resnet50(pretrained<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>student_model <span class="op">=</span> models.resnet18(pretrained<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -513,14 +517,14 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming teacher's layer3 outputs 1024 channels and student's layer3 outputs 256 channels</span></span>
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>conv_teacher_to_student <span class="op">=</span> nn.Conv2d(<span class="dv">1024</span>, <span class="dv">256</span>, kernel_size<span class="op">=</span><span class="dv">1</span>).to(device)</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="extract-intermediate-feature-representations" class="level2">
 <h2 class="anchored" data-anchor-id="extract-intermediate-feature-representations">Extract Intermediate Feature Representations</h2>
 <p>We need to extract intermediate features from both the teacher and the student models. One way to achieve this is by using forward hooks in PyTorch to capture activations at specific layers. In this case, we’ll extract features from a chosen layer in both models, for example, the output of the third residual block in both models.</p>
 <div id="239360b2" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Helper function to register a hook for feature extraction</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Helper function to register a hook for feature extraction</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> extract_features(module, <span class="bu">input</span>, output):</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> output</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -537,7 +541,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>teacher_model.layer3[<span class="dv">5</span>].register_forward_hook(register_hooks(teacher_model, teacher_features))</span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Register hook to extract features from student model (layer3 output)</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>student_model.layer3[<span class="dv">1</span>].register_forward_hook(register_hooks(student_model, student_features))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>student_model.layer3[<span class="dv">1</span>].register_forward_hook(register_hooks(student_model, student_features))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>&lt;torch.utils.hooks.RemovableHandle at 0x21cb76104c0&gt;</code></pre>
 </div>
@@ -558,7 +562,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 </ol></li>
 </ul>
 <div id="a3117a86" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> HintBasedDistillationLoss(nn.Module):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> HintBasedDistillationLoss(nn.Module):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, temperature<span class="op">=</span><span class="fl">3.0</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, beta<span class="op">=</span><span class="fl">0.5</span>):</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>(HintBasedDistillationLoss, <span class="va">self</span>).<span class="fu">__init__</span>()</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.temperature <span class="op">=</span> temperature</span>
@@ -583,13 +587,13 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>        feature_loss <span class="op">=</span> <span class="va">self</span>.l2_loss(student_features, teacher_features)</span>
 <span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Combined loss</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.alpha <span class="op">*</span> distillation_loss <span class="op">+</span> (<span class="fl">1.0</span> <span class="op">-</span> <span class="va">self</span>.alpha) <span class="op">*</span> student_loss <span class="op">+</span> <span class="va">self</span>.beta <span class="op">*</span> feature_loss</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.alpha <span class="op">*</span> distillation_loss <span class="op">+</span> (<span class="fl">1.0</span> <span class="op">-</span> <span class="va">self</span>.alpha) <span class="op">*</span> student_loss <span class="op">+</span> <span class="va">self</span>.beta <span class="op">*</span> feature_loss</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="implement-the-training-loop" class="level2">
 <h2 class="anchored" data-anchor-id="implement-the-training-loop">Implement the Training Loop</h2>
 <div id="736043f1" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train_student(teacher_model, student_model, dataloaders, criterion, optimizer, num_epochs<span class="op">=</span><span class="dv">25</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train_student(teacher_model, student_model, dataloaders, criterion, optimizer, num_epochs<span class="op">=</span><span class="dv">25</span>):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    since <span class="op">=</span> time.time()</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    best_model_wts <span class="op">=</span> student_model.state_dict()</span>
@@ -658,20 +662,20 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Load best model weights</span></span>
 <span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a>    student_model.load_state_dict(best_model_wts)</span>
-<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> student_model</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> student_model</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="training-and-evaluation" class="level2">
 <h2 class="anchored" data-anchor-id="training-and-evaluation">Training and Evaluation</h2>
 <div id="ea1b070b" class="cell" data-scrolled="true" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define optimizer</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define optimizer</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>optimizer <span class="op">=</span> optim.SGD(student_model.parameters(), lr<span class="op">=</span><span class="fl">0.01</span>, momentum<span class="op">=</span><span class="fl">0.9</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define hint-based distillation loss</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>criterion <span class="op">=</span> HintBasedDistillationLoss(temperature<span class="op">=</span><span class="fl">3.0</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, beta<span class="op">=</span><span class="fl">0.5</span>)</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Train the student model</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>trained_student <span class="op">=</span> train_student(teacher_model, student_model, dataloaders, criterion, optimizer, num_epochs<span class="op">=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>trained_student <span class="op">=</span> train_student(teacher_model, student_model, dataloaders, criterion, optimizer, num_epochs<span class="op">=</span><span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Epoch 0/4
 ----------
@@ -696,7 +700,7 @@ Best Acc: 0.9413</code></pre>
 <section id="evaluation" class="level2">
 <h2 class="anchored" data-anchor-id="evaluation">Evaluation</h2>
 <div id="9f393df2" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> evaluate_model(model, dataloaders):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> evaluate_model(model, dataloaders):</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    model.<span class="bu">eval</span>()  <span class="co"># Set to evaluation mode</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    running_corrects <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -713,7 +717,7 @@ Best Acc: 0.9413</code></pre>
 <span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Validation Accuracy: </span><span class="sc">{</span>accuracy<span class="sc">:.4f}</span><span class="ss">'</span>)</span>
 <span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate trained student model</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>evaluate_model(trained_student, dataloaders)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>evaluate_model(trained_student, dataloaders)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Validation Accuracy: 0.9735</code></pre>
 </div>
@@ -775,13 +779,14 @@ Best Acc: 0.9413</code></pre>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

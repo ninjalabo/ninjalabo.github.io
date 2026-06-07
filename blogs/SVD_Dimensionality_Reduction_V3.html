@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,6 +12,9 @@
 
 <title>Low Rank Approximation Implementation 3/4 – NinjaLABO</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -61,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -75,10 +78,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-cadef869a9e86d80ee9c2210e7313ebb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-48e3c32f59649f8e92e24b8873cdbc15.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -115,10 +118,10 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -136,7 +139,8 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo">
+    <img src="../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo light-content">
+    <img src="../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo dark-content">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -453,23 +457,23 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <section id="singular-value-decomposition-svd---dimensionality-reduction-single-image-pytorch" class="level2">
 <h2 class="anchored" data-anchor-id="singular-value-decomposition-svd---dimensionality-reduction-single-image-pytorch">Singular Value Decomposition (SVD) - Dimensionality Reduction Single Image (PyTorch)</h2>
 <div id="2485f43a" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install torch torchvision</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install torch torchvision</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="c520025d" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.optim <span class="im">as</span> optim</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torchvision <span class="im">import</span> datasets, transforms</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch.utils.data <span class="im">import</span> DataLoader</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> Image</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="download-and-load-the-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="download-and-load-the-dataset">Download and Load the Dataset</h2>
 <div id="54b7f618" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torchvision.datasets.utils <span class="im">import</span> download_and_extract_archive</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torchvision.datasets.utils <span class="im">import</span> download_and_extract_archive</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Download Imagenette2-320</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://s3.amazonaws.com/fast-ai-imageclas/imagenette2-320.tgz"</span></span>
@@ -477,7 +481,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>download_and_extract_archive(url, download_root<span class="op">=</span>root)</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Set dataset path</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>dataset_path <span class="op">=</span> os.path.join(root, <span class="st">"imagenette2-320"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>dataset_path <span class="op">=</span> os.path.join(root, <span class="st">"imagenette2-320"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Downloading https://s3.amazonaws.com/fast-ai-imageclas/imagenette2-320.tgz to ./data\imagenette2-320.tgz</code></pre>
 </div>
@@ -495,27 +499,27 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="define-data-transformations">Define Data Transformations</h2>
 <p>We need to prepare our images for the model. We do this by resizing them to a uniform size and converting them into tensors, which is a format that PyTorch can understand.</p>
 <div id="afbcbb66" class="cell" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define transformations with data augmentation</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define transformations with data augmentation</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>transform <span class="op">=</span> transforms.Compose([</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    transforms.Resize((<span class="dv">224</span>, <span class="dv">224</span>)),          <span class="co"># Resize images to 224x224</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    transforms.RandomHorizontalFlip(),      <span class="co"># Augment data with random horizontal flips</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    transforms.RandomRotation(<span class="dv">10</span>),          <span class="co"># Augment data with random rotation</span></span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    transforms.ToTensor(),                  <span class="co"># Convert images to PyTorch tensors</span></span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    transforms.Normalize([<span class="fl">0.485</span>, <span class="fl">0.456</span>, <span class="fl">0.406</span>], [<span class="fl">0.229</span>, <span class="fl">0.224</span>, <span class="fl">0.225</span>]),  <span class="co"># Normalization</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="load-dataset-with-dataloader" class="level2">
 <h2 class="anchored" data-anchor-id="load-dataset-with-dataloader">Load Dataset with DataLoader</h2>
 <div id="545cfcf4" class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Load datasets</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>train_dataset <span class="op">=</span> datasets.ImageFolder(root<span class="op">=</span>os.path.join(dataset_path, <span class="st">'train'</span>), transform<span class="op">=</span>transform)</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>valid_dataset <span class="op">=</span> datasets.ImageFolder(root<span class="op">=</span>os.path.join(dataset_path, <span class="st">'val'</span>), transform<span class="op">=</span>transform)</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create DataLoaders</span></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>train_loader <span class="op">=</span> DataLoader(train_dataset, batch_size<span class="op">=</span><span class="dv">32</span>, shuffle<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>valid_loader <span class="op">=</span> DataLoader(valid_dataset, batch_size<span class="op">=</span><span class="dv">32</span>, shuffle<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>valid_loader <span class="op">=</span> DataLoader(valid_dataset, batch_size<span class="op">=</span><span class="dv">32</span>, shuffle<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="perform-svd-for-dimensionality-reduction" class="level2">
@@ -528,7 +532,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <li>Retain Top k Features: We keep the top 100 components, which means we are compressing the data but keeping the main information.</li>
 </ul>
 <div id="7cdba804" class="cell" data-execution_count="34">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get a batch of images and labels</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get a batch of images and labels</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>images, labels <span class="op">=</span> <span class="bu">next</span>(<span class="bu">iter</span>(train_loader))</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Flatten images to apply SVD</span></span>
@@ -543,7 +547,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>U_reduced <span class="op">=</span> U[:, :k]  <span class="co"># Shape: (n_samples, k)</span></span>
 <span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Original shape: </span><span class="sc">{</span>images_flat<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Reduced shape after SVD: </span><span class="sc">{</span>U_reduced<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Reduced shape after SVD: </span><span class="sc">{</span>U_reduced<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Original shape: torch.Size([32, 150528])
 Reduced shape after SVD: torch.Size([32, 32])</code></pre>
@@ -557,7 +561,7 @@ Reduced shape after SVD: torch.Size([32, 32])</code></pre>
 <section id="define-custom-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="define-custom-dataset">Define Custom Dataset</h2>
 <div id="26e9c572" class="cell" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SVDImageDataset(torch.utils.data.Dataset):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SVDImageDataset(torch.utils.data.Dataset):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, loader, k):</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.loader <span class="op">=</span> loader</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.data <span class="op">=</span> []</span>
@@ -606,7 +610,7 @@ Reduced shape after SVD: torch.Size([32, 32])</code></pre>
 <span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Create DataLoaders</span></span>
 <span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a>svd_train_loader <span class="op">=</span> DataLoader(svd_train_dataset, batch_size<span class="op">=</span><span class="dv">32</span>, shuffle<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a>svd_valid_loader <span class="op">=</span> DataLoader(svd_valid_dataset, batch_size<span class="op">=</span><span class="dv">32</span>, shuffle<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a>svd_valid_loader <span class="op">=</span> DataLoader(svd_valid_dataset, batch_size<span class="op">=</span><span class="dv">32</span>, shuffle<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="define-neural-network" class="level2">
@@ -617,7 +621,7 @@ Reduced shape after SVD: torch.Size([32, 32])</code></pre>
 <li>Loss Function &amp; Optimizer: We use cross-entropy loss and Adam optimizer to train the model.</li>
 </ul>
 <div id="21d3f490" class="cell" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a simple fully connected neural network for classification</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a simple fully connected neural network for classification</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SimpleClassifier(nn.Module):</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, input_size, num_classes):</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>(SimpleClassifier, <span class="va">self</span>).<span class="fu">__init__</span>()</span>
@@ -637,13 +641,13 @@ Reduced shape after SVD: torch.Size([32, 32])</code></pre>
 <span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> SimpleClassifier(input_size, num_classes)</span>
 <span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>criterion <span class="op">=</span> nn.CrossEntropyLoss()</span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>optimizer <span class="op">=</span> optim.Adam(model.parameters(), lr<span class="op">=</span><span class="fl">0.001</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>optimizer <span class="op">=</span> optim.Adam(model.parameters(), lr<span class="op">=</span><span class="fl">0.001</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="train-the-model" class="level2">
 <h2 class="anchored" data-anchor-id="train-the-model">Train the Model</h2>
 <div id="fa373e87" class="cell" data-execution_count="40">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Training loop</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Training loop</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>num_epochs <span class="op">=</span> <span class="dv">100</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> epoch <span class="kw">in</span> <span class="bu">range</span>(num_epochs):</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    model.train()</span>
@@ -667,7 +671,7 @@ Reduced shape after SVD: torch.Size([32, 32])</code></pre>
 <span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Epoch [</span><span class="sc">{</span>epoch<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>num_epochs<span class="sc">}</span><span class="ss">], Loss: </span><span class="sc">{</span>running_loss<span class="op">/</span><span class="bu">len</span>(svd_train_loader)<span class="sc">:.4f}</span><span class="ss">'</span>)</span>
 <span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Training complete."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Training complete."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Epoch [1/100], Loss: 2.3018
 Epoch [2/100], Loss: 2.3018
@@ -776,7 +780,7 @@ Training complete.</code></pre>
 <section id="evaluate-the-model" class="level2">
 <h2 class="anchored" data-anchor-id="evaluate-the-model">Evaluate the Model</h2>
 <div id="5ccc0473" class="cell" data-execution_count="42">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a> <span class="co">#Validation loop</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a> <span class="co">#Validation loop</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>model.<span class="bu">eval</span>()</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>correct <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
@@ -787,7 +791,7 @@ Training complete.</code></pre>
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>        total <span class="op">+=</span> labels.size(<span class="dv">0</span>)</span>
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>        correct <span class="op">+=</span> (predicted <span class="op">==</span> labels).<span class="bu">sum</span>().item()</span>
 <span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Validation Accuracy: </span><span class="sc">{</span><span class="dv">100</span> <span class="op">*</span> correct <span class="op">/</span> total<span class="sc">:.2f}</span><span class="ss">%'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Validation Accuracy: </span><span class="sc">{</span><span class="dv">100</span> <span class="op">*</span> correct <span class="op">/</span> total<span class="sc">:.2f}</span><span class="ss">%'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Validation Accuracy: 9.10%</code></pre>
 </div>
@@ -849,13 +853,14 @@ Training complete.</code></pre>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

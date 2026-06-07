@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,6 +12,9 @@
 
 <title>Multi-stage Spectral-wise Transformer for Efficient Spectral Reconstruction (CVPRW 2022) – NinjaLABO</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -75,10 +78,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-cadef869a9e86d80ee9c2210e7313ebb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-48e3c32f59649f8e92e24b8873cdbc15.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -134,7 +137,8 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo">
+    <img src="../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo light-content">
+    <img src="../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo dark-content">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -514,12 +518,12 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <p>|–MST-plus-plus |–test_challenge_code |–test_develop_code |–train_code<br>
 |–dataset |–Train_Spec |–ARAD_1K_0001.mat |–ARAD_1K_0002.mat ： |–ARAD_1K_0950.mat |–Train_RGB |–ARAD_1K_0001.jpg |–ARAD_1K_0002.jpg ： |–ARAD_1K_0950.jpg |–Test_RGB |–ARAD_1K_0951.jpg |–ARAD_1K_0952.jpg ： |–ARAD_1K_1000.jpg |–split_txt |–train_list.txt |–valid_list.txt</p>
 <div id="d1eb0f48-873d-4105-a9a9-79841106840b" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create environment: conda create -n ostrack python=3.8</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create environment: conda create -n ostrack python=3.8</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># conda activate MST</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#cd MST-plus-plus/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#cd MST-plus-plus/</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="58a80fac-a9d7-45c0-a118-f78578c9ed86" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install -r requirements.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install -r requirements.txt</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="different-methods" class="level2">
@@ -540,7 +544,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <section id="mst_plus_plus" class="level4">
 <h4 class="anchored" data-anchor-id="mst_plus_plus">MST_Plus_Plus</h4>
 <div id="108bac33-84ff-431b-aeaa-51097a1808d3" class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.nn.functional <span class="im">as</span> F</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> einops <span class="im">import</span> rearrange</span>
@@ -832,13 +836,13 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <span id="cb3-290"><a href="#cb3-290" aria-hidden="true" tabindex="-1"></a>        h <span class="op">=</span> <span class="va">self</span>.body(x)</span>
 <span id="cb3-291"><a href="#cb3-291" aria-hidden="true" tabindex="-1"></a>        h <span class="op">=</span> <span class="va">self</span>.conv_out(h)</span>
 <span id="cb3-292"><a href="#cb3-292" aria-hidden="true" tabindex="-1"></a>        h <span class="op">+=</span> x</span>
-<span id="cb3-293"><a href="#cb3-293" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> h[:, :, :h_inp, :w_inp]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-293"><a href="#cb3-293" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> h[:, :, :h_inp, :w_inp]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="21a3223d-e03b-4ca9-8b76-a38e32d1d4fb" class="cell" data-scrolled="true" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># from architecture.mst_plus_plus import MST_Plus_Plus</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># from architecture.mst_plus_plus import MST_Plus_Plus</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> architecture</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> utils <span class="im">import</span> my_summary</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>my_summary(MST_Plus_Plus(), <span class="dv">256</span>, <span class="dv">256</span>, <span class="dv">3</span>, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>my_summary(MST_Plus_Plus(), <span class="dv">256</span>, <span class="dv">256</span>, <span class="dv">3</span>, <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>MST_Plus_Plus(
   (conv_in): Conv2d(3, 31, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
@@ -1372,7 +1376,7 @@ Params:1619625</code></pre>
 </div>
 </div>
 <div id="a25243af-8d0f-473c-8c5e-0cfde65345e5" class="cell" data-execution_count="38">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># import torch</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># import torch</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># # Instantiate the model</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># model = MST_Plus_Plus()</span></span>
@@ -1382,13 +1386,13 @@ Params:1619625</code></pre>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># # Extract the actual state_dict</span></span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># model.load_state_dict(checkpoint['state_dict'])  # Load only the 'state_dict' part</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># print(model)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># print(model)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="hscnn_plus" class="level4">
 <h4 class="anchored" data-anchor-id="hscnn_plus">HSCNN_Plus</h4>
 <div id="f0c7ae53-8a26-4c38-a639-a1db7341deec" class="cell" data-execution_count="40">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> dfus_block(nn.Module):</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, dim):</span>
@@ -1464,11 +1468,11 @@ Params:1619625</code></pre>
 <span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
 <span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a>        fea <span class="op">=</span> <span class="va">self</span>.ddfn(x)</span>
 <span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>        out <span class="op">=</span>  <span class="va">self</span>.conv_out(fea)</span>
-<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> out</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="bdf7695e-2656-45c5-82a7-4a8b05cc1d97" class="cell" data-execution_count="41">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> utils <span class="im">import</span> my_summary</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>my_summary(HSCNN_Plus(), <span class="dv">256</span>, <span class="dv">256</span>, <span class="dv">3</span>, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> utils <span class="im">import</span> my_summary</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>my_summary(HSCNN_Plus(), <span class="dv">256</span>, <span class="dv">256</span>, <span class="dv">3</span>, <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>HSCNN_Plus(
   (ddfn): ddfn(
@@ -1765,7 +1769,7 @@ Params:4645504</code></pre>
 <li><p>Run the following command to test the model on the testing RGB images.</p></li>
 </ol>
 <div id="94fbd6dd-0a00-48d7-8ac2-0ff96dab4232" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>cd test_challenge_code</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>cd test_challenge_code</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>/root/Ninjalabo/HSI/MST-plus-plus/MST-plus-plus/test_challenge_code</code></pre>
 </div>
@@ -1773,7 +1777,7 @@ Params:4645504</code></pre>
 <section id="test-mst-transformer-model" class="level4">
 <h4 class="anchored" data-anchor-id="test-mst-transformer-model">Test MST++ (Transformer Model)</h4>
 <div id="52893d20-9ab7-4040-b93f-5d9aa9a1b91f" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>python test.py <span class="op">--</span>data_root ..<span class="op">/</span>dataset<span class="op">/</span>  <span class="op">--</span>method mst_plus_plus <span class="op">--</span>pretrained_model_path .<span class="op">/</span>model_zoo<span class="op">/</span>mst_plus_plus.pth <span class="op">--</span>outf .<span class="op">/</span>exp<span class="op">/</span>mst_plus_plus<span class="op">/</span>  <span class="op">--</span>gpu_id <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>python test.py <span class="op">--</span>data_root ..<span class="op">/</span>dataset<span class="op">/</span>  <span class="op">--</span>method mst_plus_plus <span class="op">--</span>pretrained_model_path .<span class="op">/</span>model_zoo<span class="op">/</span>mst_plus_plus.pth <span class="op">--</span>outf .<span class="op">/</span>exp<span class="op">/</span>mst_plus_plus<span class="op">/</span>  <span class="op">--</span>gpu_id <span class="dv">0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>load model from ./model_zoo/mst_plus_plus.pth
 /root/Ninjalabo/HSI/MST-plus-plus/MST-plus-plus/test_challenge_code/architecture/__init__.py:38: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
@@ -1844,7 +1848,7 @@ Submission generated @ ./exp/mst_plus_plus//submission/submission.zip</code></pr
 <section id="test-hscnn" class="level4">
 <h4 class="anchored" data-anchor-id="test-hscnn">Test HSCNN+</h4>
 <div id="1a7f4698-5d2b-4f9c-895c-1c29f1cdc0e7" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>python test.py <span class="op">--</span>data_root ..<span class="op">/</span>dataset<span class="op">/</span>  <span class="op">--</span>method hscnn_plus <span class="op">--</span>pretrained_model_path .<span class="op">/</span>model_zoo<span class="op">/</span>hscnn_plus.pth <span class="op">--</span>outf .<span class="op">/</span>exp<span class="op">/</span>hscnn_plus<span class="op">/</span>  <span class="op">--</span>gpu_id <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>python test.py <span class="op">--</span>data_root ..<span class="op">/</span>dataset<span class="op">/</span>  <span class="op">--</span>method hscnn_plus <span class="op">--</span>pretrained_model_path .<span class="op">/</span>model_zoo<span class="op">/</span>hscnn_plus.pth <span class="op">--</span>outf .<span class="op">/</span>exp<span class="op">/</span>hscnn_plus<span class="op">/</span>  <span class="op">--</span>gpu_id <span class="dv">0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>load model from ./model_zoo/hscnn_plus.pth
 /root/Ninjalabo/HSI/MST-plus-plus/MST-plus-plus/test_challenge_code/architecture/__init__.py:38: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
@@ -1921,13 +1925,13 @@ Submission generated @ ./exp/hscnn_plus//submission/submission.zip</code></pre>
 <li><p>Run the following command to reconstruct your own RGB image.</p></li>
 </ol>
 <div id="fa02e0a1-c2b9-4aa3-9d59-a261256dfb27" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>cd ..</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>cd ..</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>/root/Ninjalabo/HSI/MST-plus-plus/MST-plus-plus</code></pre>
 </div>
 </div>
 <div id="72c89a68-b31f-4b33-b64b-dbc0aad97d35" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>cd predict_code<span class="op">/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>cd predict_code<span class="op">/</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>/root/Ninjalabo/HSI/MST-plus-plus/MST-plus-plus/predict_code</code></pre>
 </div>
@@ -1935,7 +1939,7 @@ Submission generated @ ./exp/hscnn_plus//submission/submission.zip</code></pre>
 <section id="reconstruct-by-mst" class="level4">
 <h4 class="anchored" data-anchor-id="reconstruct-by-mst">Reconstruct by MST++</h4>
 <div id="337bbb50-8e94-4e86-b34f-d90f298b3ce5" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>python test.py <span class="op">--</span>rgb_path .<span class="op">/</span>demo<span class="op">/</span>ARAD_1K_0912.jpg  <span class="op">--</span>method mst_plus_plus <span class="op">--</span>pretrained_model_path .<span class="op">/</span>model_zoo<span class="op">/</span>mst_plus_plus.pth <span class="op">--</span>outf .<span class="op">/</span>exp<span class="op">/</span>mst_plus_plus<span class="op">/</span>  <span class="op">--</span>gpu_id <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>python test.py <span class="op">--</span>rgb_path .<span class="op">/</span>demo<span class="op">/</span>ARAD_1K_0912.jpg  <span class="op">--</span>method mst_plus_plus <span class="op">--</span>pretrained_model_path .<span class="op">/</span>model_zoo<span class="op">/</span>mst_plus_plus.pth <span class="op">--</span>outf .<span class="op">/</span>exp<span class="op">/</span>mst_plus_plus<span class="op">/</span>  <span class="op">--</span>gpu_id <span class="dv">0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>load model from ./model_zoo/mst_plus_plus.pth
 /root/Ninjalabo/HSI/MST-plus-plus/MST-plus-plus/predict_code/architecture/__init__.py:38: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
@@ -1948,7 +1952,7 @@ The reconstructed hyper spectral image are saved as ./exp/mst_plus_plus/ARAD_1K_
 <section id="reconstruct-by-hscnn" class="level4">
 <h4 class="anchored" data-anchor-id="reconstruct-by-hscnn">Reconstruct by HSCNN+</h4>
 <div id="4fcc509f-be76-4928-96d0-c58d8069d6a7" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>python test.py <span class="op">--</span>rgb_path .<span class="op">/</span>demo<span class="op">/</span>ARAD_1K_1000.jpg  <span class="op">--</span>method hscnn_plus <span class="op">--</span>pretrained_model_path .<span class="op">/</span>model_zoo<span class="op">/</span>hscnn_plus.pth <span class="op">--</span>outf .<span class="op">/</span>exp<span class="op">/</span>hscnn_plus<span class="op">/</span>  <span class="op">--</span>gpu_id <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>python test.py <span class="op">--</span>rgb_path .<span class="op">/</span>demo<span class="op">/</span>ARAD_1K_1000.jpg  <span class="op">--</span>method hscnn_plus <span class="op">--</span>pretrained_model_path .<span class="op">/</span>model_zoo<span class="op">/</span>hscnn_plus.pth <span class="op">--</span>outf .<span class="op">/</span>exp<span class="op">/</span>hscnn_plus<span class="op">/</span>  <span class="op">--</span>gpu_id <span class="dv">0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>load model from ./model_zoo/hscnn_plus.pth
 /root/Ninjalabo/HSI/MST-plus-plus/MST-plus-plus/predict_code/architecture/__init__.py:38: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
@@ -1968,22 +1972,22 @@ The reconstructed hyper spectral image are saved as ./exp/hscnn_plus/ARAD_1K_100
 </ul>
 <p>Please put the reconstructed HSI from /MST-plus-plus/predict_code/exp/. to visualization/simulation_results/results/ and rename it as method.mat, e.g., mst_s.mat. (Please read <code>README.md</code>file in each folder)</p>
 <div id="1fd409e9-0f1b-41f6-9733-84f6f18e3539" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cd visualization</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cd visualization</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>/root/Ninjalabo/HSI/MST-plus-plus/MST-plus-plus/visualization</code></pre>
 </div>
 </div>
 <div id="aa4d6f9f-684a-40f7-9ba6-9d5ff3fb157f" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run show_simulation.m</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run show_simulation.m</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="a33a8981-c673-4dce-a927-2d5078b9fc06" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>cd ..</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>cd ..</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>/root/Ninjalabo/HSI/MST-plus-plus/MST-plus-plus</code></pre>
 </div>
 </div>
 <div id="0c767bb6-4ae7-46ad-a2db-d0ef05de2208" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> h5py</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> h5py</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -2027,7 +2031,7 @@ The reconstructed hyper spectral image are saved as ./exp/hscnn_plus/ARAD_1K_100
 <span id="cb31-42"><a href="#cb31-42" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-43"><a href="#cb31-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace with the path to your .mat file</span></span>
 <span id="cb31-44"><a href="#cb31-44" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">"./visualization/simulation_results/results/mst_plus_plus.mat"</span></span>
-<span id="cb31-45"><a href="#cb31-45" aria-hidden="true" tabindex="-1"></a>load_and_visualize_mat_v7_3(file_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-45"><a href="#cb31-45" aria-hidden="true" tabindex="-1"></a>load_and_visualize_mat_v7_3(file_path)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Data cube shape: (31, 512, 482)</code></pre>
 </div>
@@ -2054,13 +2058,13 @@ The reconstructed hyper spectral image are saved as ./exp/hscnn_plus/ARAD_1K_100
 <li><p>Run the following command to test the model on the validation RGB images.</p></li>
 </ol>
 <div id="dff341bb-6b4a-4318-bf2e-e3624d59cb91" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>cd test_develop_code</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>cd test_develop_code</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>/root/Ninjalabo/HSI/MST-plus-plus/MST-plus-plus/test_develop_code</code></pre>
 </div>
 </div>
 <div id="fd1f5007-4cb7-4b02-a813-4b25e92bd242" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>ls</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-blue-fg ansi-bold">__pycache__</span>/   <span class="ansi-blue-fg ansi-bold">exp</span>/            <span class="ansi-blue-fg ansi-bold">model_zoo</span>/  utils.py
@@ -2073,7 +2077,7 @@ The reconstructed hyper spectral image are saved as ./exp/hscnn_plus/ARAD_1K_100
 <section id="test-mst" class="level4">
 <h4 class="anchored" data-anchor-id="test-mst">Test MST++</h4>
 <div id="d8217b24-13be-4ae9-8ed8-8e026681d3a7" class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>python test.py <span class="op">--</span>data_root ..<span class="op">/</span>dataset<span class="op">/</span>  <span class="op">--</span>method mst_plus_plus <span class="op">--</span>pretrained_model_path .<span class="op">/</span>model_zoo<span class="op">/</span>mst_plus_plus.pth <span class="op">--</span>outf .<span class="op">/</span>exp<span class="op">/</span>mst_plus_plus<span class="op">/</span>  <span class="op">--</span>gpu_id <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>python test.py <span class="op">--</span>data_root ..<span class="op">/</span>dataset<span class="op">/</span>  <span class="op">--</span>method mst_plus_plus <span class="op">--</span>pretrained_model_path .<span class="op">/</span>model_zoo<span class="op">/</span>mst_plus_plus.pth <span class="op">--</span>outf .<span class="op">/</span>exp<span class="op">/</span>mst_plus_plus<span class="op">/</span>  <span class="op">--</span>gpu_id <span class="dv">0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>len(hyper_valid) of ntire2022 dataset:50
 len(bgr_valid) of ntire2022 dataset:50
@@ -2135,7 +2139,7 @@ method:mst_plus_plus, mrae:0.1645723432302475, rmse:0.02476534992456436, psnr:18
 <section id="test-hscnn-1" class="level4">
 <h4 class="anchored" data-anchor-id="test-hscnn-1">Test HSCNN+</h4>
 <div id="1f9d9738-0afd-4a28-8f28-e34b0952df53" class="cell" data-execution_count="39">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>python test.py <span class="op">--</span>data_root ..<span class="op">/</span>dataset<span class="op">/</span>  <span class="op">--</span>method hscnn_plus <span class="op">--</span>pretrained_model_path .<span class="op">/</span>model_zoo<span class="op">/</span>hscnn_plus.pth <span class="op">--</span>outf .<span class="op">/</span>exp<span class="op">/</span>hscnn_plus<span class="op">/</span>  <span class="op">--</span>gpu_id <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>python test.py <span class="op">--</span>data_root ..<span class="op">/</span>dataset<span class="op">/</span>  <span class="op">--</span>method hscnn_plus <span class="op">--</span>pretrained_model_path .<span class="op">/</span>model_zoo<span class="op">/</span>hscnn_plus.pth <span class="op">--</span>outf .<span class="op">/</span>exp<span class="op">/</span>hscnn_plus<span class="op">/</span>  <span class="op">--</span>gpu_id <span class="dv">0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>len(hyper_valid) of ntire2022 dataset:50
 len(bgr_valid) of ntire2022 dataset:50
@@ -2197,7 +2201,7 @@ method:hscnn_plus, mrae:0.38142824172973633, rmse:0.05884117633104324, psnr:26.3
 <section id="test-hdnet" class="level4">
 <h4 class="anchored" data-anchor-id="test-hdnet">Test HDNet</h4>
 <div id="76ecc877-6929-4534-bf59-a3c871192c23" class="cell" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>python test.py <span class="op">--</span>data_root ..<span class="op">/</span>dataset<span class="op">/</span>  <span class="op">--</span>method hdnet <span class="op">--</span>pretrained_model_path .<span class="op">/</span>model_zoo<span class="op">/</span>hdnet.pth <span class="op">--</span>outf .<span class="op">/</span>exp<span class="op">/</span>hdnet<span class="op">/</span>  <span class="op">--</span>gpu_id <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>python test.py <span class="op">--</span>data_root ..<span class="op">/</span>dataset<span class="op">/</span>  <span class="op">--</span>method hdnet <span class="op">--</span>pretrained_model_path .<span class="op">/</span>model_zoo<span class="op">/</span>hdnet.pth <span class="op">--</span>outf .<span class="op">/</span>exp<span class="op">/</span>hdnet<span class="op">/</span>  <span class="op">--</span>gpu_id <span class="dv">0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>len(hyper_valid) of ntire2022 dataset:50
 len(bgr_valid) of ntire2022 dataset:50
@@ -2260,13 +2264,13 @@ method:hdnet, mrae:0.20484349131584167, rmse:0.03170507773756981, psnr:32.129539
 <section id="traning" class="level2">
 <h2 class="anchored" data-anchor-id="traning">Traning</h2>
 <div id="08ab6704-b121-445e-a5e2-588ea53b1a27" class="cell" data-execution_count="45">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>cd train_code<span class="op">/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>cd train_code<span class="op">/</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>/root/Ninjalabo/HSI/MST-plus-plus/MST-plus-plus/train_code</code></pre>
 </div>
 </div>
 <div id="79375a38-71ec-45cb-94d4-4b3103fc4489" class="cell" data-execution_count="48">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># !python train.py --method mst_plus_plus  --batch_size 20 --end_epoch 300 --init_lr 4e-4 --outf ./exp/mst_plus_plus/ --data_root ../dataset/  --patch_size 128 --stride 8  --gpu_id 0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># !python train.py --method mst_plus_plus  --batch_size 20 --end_epoch 300 --init_lr 4e-4 --outf ./exp/mst_plus_plus/ --data_root ../dataset/  --patch_size 128 --stride 8  --gpu_id 0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="supported-algorithms" class="level2">
@@ -2349,13 +2353,14 @@ method:hdnet, mrae:0.20484349131584167, rmse:0.03170507773756981, psnr:32.129539
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
