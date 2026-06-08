@@ -153,7 +153,7 @@
     gap: 1rem;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 767.98px) {
     .panel-tabset .tab-pane {
         display: block;
     }
@@ -178,7 +178,7 @@
     border-radius: 1rem;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 767.98px) {
     .partner-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -203,7 +203,7 @@
     color: rgb(241, 240, 150);
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 767.98px) {
     .feature-card {
         display: block;
         padding-top: 2rem;
@@ -277,7 +277,7 @@
     background-color: rgb(184, 184, 107);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 991.98px) {
     .pricing-grid {
         flex-direction: column;
         align-items: center;
