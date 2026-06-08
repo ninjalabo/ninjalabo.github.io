@@ -1,2 +1,22 @@
 /*-- scss:defaults --*/
-$link-color: rgb(185, 185, 1);
+// Brand palette — single source of truth for the yellow/olive accents.
+$brand-accent:        rgb(185, 185, 1);
+$brand-accent-dark:   rgb(101, 100, 39);
+$brand-accent-light:  rgb(241, 240, 150);
+$brand-accent-soft:   rgb(184, 184, 107);
+$brand-bg-yellow:     rgb(73, 73, 45);
+$brand-accent-shadow: rgba(155, 154, 69, 0.63);
+
+$link-color: $brand-accent;
+
+/*-- scss:rules --*/
+// Expose the palette as CSS custom properties so plain CSS (styles.css)
+// and inline styles can reference the same source.
+:root {
+  --brand-accent:        #{$brand-accent};
+  --brand-accent-dark:   #{$brand-accent-dark};
+  --brand-accent-light:  #{$brand-accent-light};
+  --brand-accent-soft:   #{$brand-accent-soft};
+  --brand-bg-yellow:     #{$brand-bg-yellow};
+  --brand-accent-shadow: #{$brand-accent-shadow};
+}

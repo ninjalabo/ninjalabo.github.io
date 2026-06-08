@@ -1,19 +1,19 @@
 /* css styles */
 .btn-success {
     --bs-btn-color: #fff;
-    --bs-btn-bg: rgb(185, 185, 1);
-    --bs-btn-border-color: rgb(185, 185, 1);
+    --bs-btn-bg: var(--brand-accent);
+    --bs-btn-border-color: var(--brand-accent);
     --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: rgb(101, 100, 39);
-    --bs-btn-hover-border-color: rgb(101, 100, 39);
+    --bs-btn-hover-bg: var(--brand-accent-dark);
+    --bs-btn-hover-border-color: var(--brand-accent-dark);
     --bs-btn-focus-shadow-rgb: 38, 198, 157;
     --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: rgb(101, 100, 39);
-    --bs-btn-active-border-color: rgb(101, 100, 39);
+    --bs-btn-active-bg: var(--brand-accent-dark);
+    --bs-btn-active-border-color: var(--brand-accent-dark);
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: rgb(185, 185, 1);
-    --bs-btn-disabled-border-color: rgb(185, 185, 1);
+    --bs-btn-disabled-bg: var(--brand-accent);
+    --bs-btn-disabled-border-color: var(--brand-accent);
 }
 
 @media (max-width: 991.98px) {
@@ -27,7 +27,7 @@
 }
 
 .accented-text {
-    color: rgb(185, 185, 1);
+    color: var(--brand-accent);
 }
 
 .navbar-logo {
@@ -116,7 +116,7 @@
 }
 
 .bg-yellow {
-    background-color: rgb(73, 73, 45);
+    background-color: var(--brand-bg-yellow);
 }
 
 /* Performance */
@@ -137,9 +137,9 @@
     border: 0;
 }
 .panel-tabset .nav-link.active {
-    color: rgb(185, 185, 1);
+    color: var(--brand-accent);
     border: 0;
-    border-bottom: solid 2px rgb(185, 185, 1);
+    border-bottom: solid 2px var(--brand-accent);
 }
 .panel-tabset .tab-content {
     margin: 0;
@@ -200,7 +200,7 @@
 
 .feature-card h2 {
     margin-top: 0;
-    color: rgb(241, 240, 150);
+    color: var(--brand-accent-light);
 }
 
 @media screen and (max-width: 800px) {
@@ -257,7 +257,7 @@
     padding-right: 2rem;
     text-align: left;
     background-color: rgb(255, 255, 255);
-    box-shadow: 12px 12px 2px 1px rgba(155, 154, 69, 0.63);
+    box-shadow: 12px 12px 2px 1px var(--brand-accent-shadow);
     color: black;
     border-radius: 1rem;
     width: 30%;
@@ -274,7 +274,7 @@
 }
 
 .pricing-card.accented {
-    background-color: rgb(184, 184, 107);
+    background-color: var(--brand-accent-soft);
 }
 
 @media screen and (max-width: 900px) {
