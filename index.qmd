@@ -7,6 +7,15 @@ editor: source
 description: |
   AI compression as-a-Service with optimized tiny Runtime for Deep Neural Network (DNN)
 hide-description: true
+listing:
+  - id: latest-blogs
+    contents:
+      - "blogs/*.qmd"
+      - "blogs/*.ipynb"
+    sort: "date desc"
+    max-items: 3
+    type: default
+    fields: [title, description, date]
 ---
 
 ::: {.hero-title}
@@ -55,11 +64,12 @@ We are constantly working to improve our technology! See our latest progress in 
 </div>
 
 ## Blogs
-Check out our [latest blogs](blog.qmd) for exciting updates or up-to-date information about edge AI technology!
+Check out our latest posts for exciting updates and up-to-date information about edge AI technology!
 
-```{=html}
-<iframe width="100%" height="500" src="https://ninjalabo.ai/blog.html" scrolling="no" title="NinjaLABO Blogs" disabled></iframe>
-```
+::: {#latest-blogs}
+:::
+
+[See all blogs](blog.qmd)
 :::
 :::
 
