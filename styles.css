@@ -172,6 +172,20 @@
     }
 }
 
+/* Blogs listing tab: full width (override the perf tabs' 1fr/2fr split) */
+.panel-tabset .tab-pane:has(#listing-latest-blogs) {
+    display: block;
+}
+#listing-latest-blogs + p {
+    margin-top: 1.5rem;
+}
+
+/* Widen only the Latest Updates section that holds the tabset */
+.banner:has(.panel-tabset) {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
 /*Partners*/
 .partner-grid {
     display: grid;
