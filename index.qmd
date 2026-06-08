@@ -22,7 +22,7 @@ hide-description: true
 :::
 
 :::
-<video id="myVideo" autoplay muted playsinline loop controls style="width: 70%; height: auto; display: block; margin: 0 auto; border-radius: 1rem; padding: 0; margin-top: 50px;">
+<video id="myVideo" class="hero-video" autoplay muted playsinline loop controls>
   <source src="images/opening.mp4" type="video/mp4">
 </video>
 
@@ -43,7 +43,7 @@ Our latest technology shows significant increase from baseline Pytorch runtime i
 🚀 without largely lowering accuracy
 :::
 <div class="perf-container">
-  <img src="images/perf_bar.png" style="width: 100%;" alt="Performance Barchart">
+  <img src="images/perf_bar.png" alt="Performance Barchart">
 </div>
 
 ## Progress
@@ -51,7 +51,7 @@ Our latest technology shows significant increase from baseline Pytorch runtime i
 We are constantly working to improve our technology! See our latest progress in [Performance page](performance.ipynb).
 :::
 <div class="perf-container">
-  <img src="images/perf_progress.png" style="width: 100%;" alt="Performance Progress">
+  <img src="images/perf_progress.png" alt="Performance Progress">
 </div>
 
 ## Blogs

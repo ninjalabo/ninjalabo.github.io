@@ -90,6 +90,15 @@
     padding-bottom: 2rem;
 }
 
+.hero-video {
+    width: 70%;
+    height: auto;
+    display: block;
+    margin: 50px auto 0;
+    border-radius: 1rem;
+    padding: 0;
+}
+
 /*Sub-banners*/
 .banner {
     margin-top: 1rem;
@@ -122,6 +131,10 @@
 /* Performance */
 .perf-container {
     padding: 0;
+}
+
+.perf-container img {
+    width: 100%;
 }
 
 .panel-tabset {
