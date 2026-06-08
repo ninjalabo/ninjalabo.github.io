@@ -427,7 +427,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <p>Here, we visualize the performance of three runtimes: PyTorch, our custom-built tinyRuntime (both non-quantized and quantized versions), using the ResNet18 model and 100 images from the Imagenette dataset. We focus on four key metrics: accuracy, execution time, model size and memory usage.</p>
 <section id="amd64" class="level2">
 <h2 class="anchored" data-anchor-id="amd64">AMD64</h2>
-<div class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-06-08T06:49:22.251842Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-06-08T06:49:22.251654Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-06-08T06:49:24.363211Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-06-08T06:49:24.362673Z&quot;}}" data-execution_count="1">
+<div class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-06-08T06:49:33.790534Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-06-08T06:49:33.790268Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-06-08T06:49:36.007794Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-06-08T06:49:36.007050Z&quot;}}" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -494,7 +494,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>df_x86 <span class="op">=</span> df[df[<span class="st">"Architecture"</span>] <span class="op">==</span> <span class="st">"x86_64"</span>]</span>
 <span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>plot_perf_comp(df_x86)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div id="fig-amd" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-06-08T06:49:22.251842Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-06-08T06:49:22.251654Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-06-08T06:49:24.363211Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-06-08T06:49:24.362673Z&quot;}}" data-execution_count="1">
+<div id="fig-amd" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="1" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-06-08T06:49:33.790534Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-06-08T06:49:33.790268Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-06-08T06:49:36.007794Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-06-08T06:49:36.007050Z&quot;}}">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-amd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div id="fig-amd-1" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
@@ -562,7 +562,7 @@ Figure&nbsp;1
 </figure>
 </div>
 </div>
-<div id="cell-fig-amd-radar" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-06-08T06:49:24.365211Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-06-08T06:49:24.365016Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-06-08T06:49:24.393993Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-06-08T06:49:24.393328Z&quot;}}" data-execution_count="2">
+<div id="cell-fig-amd-radar" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-06-08T06:49:36.009965Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-06-08T06:49:36.009739Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-06-08T06:49:36.039106Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-06-08T06:49:36.038414Z&quot;}}" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_radar(df, save_image<span class="op">=</span><span class="va">False</span>):</span>
@@ -624,13 +624,13 @@ Figure&nbsp;2: Radar chart of time, memory, and accuracy for AMD64. Quantities a
 </section>
 <section id="arm64" class="level2">
 <h2 class="anchored" data-anchor-id="arm64">ARM64</h2>
-<div class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-06-08T06:49:24.395953Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-06-08T06:49:24.395776Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-06-08T06:49:49.879625Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-06-08T06:49:49.878911Z&quot;}}" data-execution_count="3">
+<div class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-06-08T06:49:36.041058Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-06-08T06:49:36.040834Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-06-08T06:49:47.428320Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-06-08T06:49:47.427597Z&quot;}}" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df_arm <span class="op">=</span> df[df[<span class="st">"Architecture"</span>] <span class="op">==</span> <span class="st">"arm64"</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plot_perf_comp(df_arm, save_image<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div id="fig-arm" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-06-08T06:49:24.395953Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-06-08T06:49:24.395776Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-06-08T06:49:49.879625Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-06-08T06:49:49.878911Z&quot;}}" data-execution_count="3">
+<div id="fig-arm" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="3" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-06-08T06:49:36.041058Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-06-08T06:49:36.040834Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-06-08T06:49:47.428320Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-06-08T06:49:47.427597Z&quot;}}">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-arm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div id="fig-arm-1" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
@@ -698,7 +698,7 @@ Figure&nbsp;3
 </figure>
 </div>
 </div>
-<div id="cell-fig-ard-radar" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-06-08T06:49:49.881701Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-06-08T06:49:49.881501Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-06-08T06:49:51.579869Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-06-08T06:49:51.579011Z&quot;}}" data-execution_count="4">
+<div id="cell-fig-ard-radar" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-06-08T06:49:47.430405Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-06-08T06:49:47.430216Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-06-08T06:49:49.169245Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-06-08T06:49:49.168446Z&quot;}}" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plot_radar(df_arm, save_image<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -718,7 +718,7 @@ Figure&nbsp;4: Radar chart of time, memory, and accuracy for ARM64. Quantities a
 </section>
 <section id="runtime-optimization-progress" class="level1">
 <h1>Runtime Optimization Progress</h1>
-<div id="cell-fig-time" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-06-08T06:49:51.582483Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-06-08T06:49:51.582259Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-06-08T06:49:53.364416Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-06-08T06:49:53.363540Z&quot;}}" data-execution_count="5">
+<div id="cell-fig-time" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-06-08T06:49:49.171800Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-06-08T06:49:49.171588Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-06-08T06:49:50.972434Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-06-08T06:49:50.971552Z&quot;}}" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_progress_subplot(fig, row, col, df, metric, showlegend):</span>
@@ -765,7 +765,7 @@ Figure&nbsp;5: Time
 </figure>
 </div>
 </div>
-<div id="cell-fig-memory" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-06-08T06:49:53.366802Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-06-08T06:49:53.366603Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-06-08T06:49:53.424086Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-06-08T06:49:53.423413Z&quot;}}" data-execution_count="6">
+<div id="cell-fig-memory" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-06-08T06:49:50.974998Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-06-08T06:49:50.974761Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-06-08T06:49:51.033050Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-06-08T06:49:51.032336Z&quot;}}" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>plot_progress(<span class="st">"Max memory"</span>, <span class="st">"Max memory usage (MB)"</span>, <span class="st">"Memory Usage"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -781,7 +781,7 @@ Figure&nbsp;6: Max memory usage
 </figure>
 </div>
 </div>
-<div id="cell-fig-accuracy" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-06-08T06:49:53.425882Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-06-08T06:49:53.425692Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-06-08T06:49:53.479479Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-06-08T06:49:53.478782Z&quot;}}" data-execution_count="7">
+<div id="cell-fig-accuracy" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-06-08T06:49:51.035063Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-06-08T06:49:51.034825Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-06-08T06:49:51.089626Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-06-08T06:49:51.088917Z&quot;}}" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>plot_progress(<span class="st">"Accuracy"</span>, <span class="st">"Accuracy (%)"</span>, <span class="st">"Accuracy"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
