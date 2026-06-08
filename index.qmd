@@ -13,9 +13,9 @@ listing:
       - "blogs/*.qmd"
       - "blogs/*.ipynb"
     sort: "date desc"
-    max-items: 3
-    type: default
-    fields: [title, description, date]
+    max-items: 5
+    type: grid
+    fields: [image, title, description, date]
 ---
 
 ::: {.hero-title}
@@ -43,6 +43,13 @@ Run by [NinjaLABO](https://ninjalabo.ai).
 # Latest Updates!
 ::: {.panel-tabset}
 
+## Blogs
+
+::: {#latest-blogs}
+:::
+
+[See all blogs](blog.qmd)
+
 ## Performance
 ::: {.perf-text}
 Our latest technology shows significant increase from baseline Pytorch runtime in terms of:
@@ -62,14 +69,6 @@ We are constantly working to improve our technology! See our latest progress in 
 <div class="perf-container">
   <img src="images/perf_progress.png" alt="Performance Progress">
 </div>
-
-## Blogs
-Check out our latest posts for exciting updates and up-to-date information about edge AI technology!
-
-::: {#latest-blogs}
-:::
-
-[See all blogs](blog.qmd)
 :::
 :::
 
