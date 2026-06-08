@@ -84,10 +84,10 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-description','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      page: 25,
+      valueNames: ['listing-image','listing-title','listing-description','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      page: 18,
     pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -271,9 +271,112 @@ window.Quarto = {
 <section id="latest-updates" class="banner bg-yellow">
 <h1>Latest Updates!</h1>
 <div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Performance</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Progress</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Blogs</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Blogs</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Performance</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Progress</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="listing-latest-blogs" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="RXJpY3Nzb24lMkNPQ2FtbCUyQ0ROTiUyQ1VuaWtlcm5lbCUyQ1RpbnlNTCUyQ1RpbnlNTGFhUw==" data-listing-date-sort="1748390400000" data-listing-file-modified-sort="1780920223020" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="146">
+<a href="./blogs/elc2019.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="blogs/images/elc2019-001.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Distributed ML on Unikernel for IoT
+</h5>
+<div class="card-text listing-description delink">
+Back in 2019, it felt almost extreme to run a Deep Neural Network on a Unikernel (MirageOS), written in a functional programming language (OCaml), running on a…
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+May 28, 2025
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="TExNJTJDRXNwb28lMkNKZXRzb24=" data-listing-date-sort="1746748800000" data-listing-file-modified-sort="1780920223016" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<a href="./blogs/CamTalks.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="blogs/images/CamTalks0.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+CamTalks
+</h5>
+<div class="card-text listing-description delink">
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+May 9, 2025
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="QWdlbnRpYyUyQ0xMTSUyQ0VzcG9v" data-listing-date-sort="1746748800000" data-listing-file-modified-sort="1780920223016" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<a href="./blogs/DataTalks.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="blogs/images/DataTalks0.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+DataTalks - What If You Didn’t Need App?
+</h5>
+<div class="card-text listing-description delink">
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+May 9, 2025
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="3" data-categories="TExNJTJDSGVsc2lua2klMkNKZXRzb24=" data-listing-date-sort="1745539200000" data-listing-file-modified-sort="1780920223433" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="879">
+<a href="./blogs/talkingteddy.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="blogs/images/talkingteddy_01.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+TalkingTeddy: The Future of Pediatric Patient Care
+</h5>
+<div class="card-text listing-description delink">
+NinjaLABO is pushing the boundaries of edge AI with its latest creation: an AI-powered teddy bear that can talk, feel, and respond to human interaction—all running entirely…
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Apr 25, 2025
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="TExNJTJDSGVsc2lua2klMkNKZXRzb24=" data-listing-date-sort="1745452800000" data-listing-file-modified-sort="1780920223422" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1035">
+<a href="./blogs/kaukoschool.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="blogs/images/kaukoschool_1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+KauKo:ClickBounce
+</h5>
+<div class="card-text listing-description delink">
+NinjaLABO’s latest project, KauKo:ClickBounce, transforms any indoor wall into an interactive gaming surface using just a projector, camera, and AI-powered mini-computer.…
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Apr 24, 2025
+</div>
+</div>
+</div>
+</div></a>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+<p><a href="./blog.html">See all blogs</a></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="perf-text">
 <p>Our latest technology shows significant increase from baseline Pytorch runtime in terms of:</p>
 <p>🚀 Model size<br>
@@ -284,73 +387,13 @@ window.Quarto = {
 <p><img src="images/perf_bar.png" alt="Performance Barchart"></p>
 </div>
 </div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="perf-text">
 <p>We are constantly working to improve our technology! See our latest progress in <a href="./performance.html">Performance page</a>.</p>
 </div>
 <div class="perf-container">
 <p><img src="images/perf_progress.png" alt="Performance Progress"></p>
 </div>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>Check out our latest posts for exciting updates and up-to-date information about edge AI technology!</p>
-<div id="listing-latest-blogs" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="RXJpY3Nzb24lMkNPQ2FtbCUyQ0ROTiUyQ1VuaWtlcm5lbCUyQ1RpbnlNTCUyQ1RpbnlNTGFhUw==" data-listing-date-sort="1748390400000" data-listing-file-modified-sort="1780902774934" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="146">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/elc2019.html" class="no-external">Distributed ML on Unikernel for IoT</a>
-</h3>
-<div class="delink listing-description"><a href="./blogs/elc2019.html" class="no-external">
-Back in 2019, it felt almost extreme to run a Deep Neural Network on a Unikernel (MirageOS), written in a functional programming language (OCaml), running on a…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./blogs/elc2019.html" class="no-external">
-<div class="listing-date">
-May 28, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="TExNJTJDRXNwb28lMkNKZXRzb24=" data-listing-date-sort="1746748800000" data-listing-file-modified-sort="1780902774930" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/CamTalks.html" class="no-external">CamTalks</a>
-</h3>
-<div class="delink listing-description"><a href="./blogs/CamTalks.html" class="no-external">
-
-</a></div>
-</div>
-<div class="metadata">
-<a href="./blogs/CamTalks.html" class="no-external">
-<div class="listing-date">
-May 9, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="QWdlbnRpYyUyQ0xMTSUyQ0VzcG9v" data-listing-date-sort="1746748800000" data-listing-file-modified-sort="1780902774930" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blogs/DataTalks.html" class="no-external">DataTalks - What If You Didn’t Need App?</a>
-</h3>
-<div class="delink listing-description"><a href="./blogs/DataTalks.html" class="no-external">
-
-</a></div>
-</div>
-<div class="metadata">
-<a href="./blogs/DataTalks.html" class="no-external">
-<div class="listing-date">
-May 9, 2025
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div>
-<p><a href="./blog.html">See all blogs</a></p>
 </div>
 </div>
 </div>
