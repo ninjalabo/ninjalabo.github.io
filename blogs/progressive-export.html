@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Hiroshi Doyu">
+<meta name="dcterms.date" content="2026-05-27">
 
-<title>Architecture – NinjaLABO</title>
+<title>Progressive Export: Harness Engineering for LLM Apps – NinjaLABO</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,26 +28,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../docs/tinymlaas/Background.html" rel="next">
-<link href="../../tutorials/runwalkthrough.html" rel="prev">
-<link href="../../images/favicon.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-2d7e81a4778b4d1aaa602c12f88c12e8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-2d7e81a4778b4d1aaa602c12f88c12e8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -84,12 +84,10 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 </script>
 
 
-<link rel="stylesheet" href="../../styles.css">
-<meta name="twitter:title" content="Architecture – NinjaLABO">
+<link rel="stylesheet" href="../styles.css">
+<meta name="twitter:title" content="Progressive Export: Harness Engineering for LLM Apps – NinjaLABO">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://ninjalabo.github.io/docs/tinymlaas/images/block_diagram.png">
-<meta name="twitter:image-height" content="551">
-<meta name="twitter:image-width" content="581">
+<meta name="twitter:image" content="https://ninjalabo.github.io/blogs/images/logo.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -100,9 +98,9 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo light-content">
-    <img src="../../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo dark-content">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo light-content">
+    <img src="../images/logo.jpg" alt="NinjaLABO log." class="navbar-logo dark-content">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -112,7 +110,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../../getstarted.html" aria-current="page"> 
+    <a class="nav-link active" href="../getstarted.html" aria-current="page"> 
 <span class="menu-text">Get Started</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -121,15 +119,15 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-resources">    
         <li>
-    <a class="dropdown-item" href="../../performance.html">
+    <a class="dropdown-item" href="../performance.html">
  <span class="dropdown-text">Performance 🚀</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../tutorials/runwalkthrough.html">
+    <a class="dropdown-item" href="../tutorials/runwalkthrough.html">
  <span class="dropdown-text">Tutorials</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../getstarted.html">
+    <a class="dropdown-item" href="../getstarted.html">
  <span class="dropdown-text">Documentations</span></a>
   </li>  
     </ul>
@@ -140,27 +138,27 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-company">    
         <li>
-    <a class="dropdown-item" href="../../blogs/about.html">
+    <a class="dropdown-item" href="../blogs/about.html">
  <span class="dropdown-text">About</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../blog.html#category=News">
+    <a class="dropdown-item" href="../blog.html#category=News">
  <span class="dropdown-text">News🌟</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../pricing.html"> 
+    <a class="nav-link" href="../pricing.html"> 
 <span class="menu-text">Pricing</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html"> 
+    <a class="nav-link" href="../blog.html"> 
 <span class="menu-text">Blogs🌟</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../getstarted.html"> 
+    <a class="nav-link" href="../getstarted.html"> 
 <span class="menu-text"><a href="https://studio.ninjalabo.ai/" style="background-color: var(--brand-accent); padding: 10px 20px; color: white; border: none; border-radius: 0.5rem; text-decoration: None; margin-right: 10px;">Try Free</a></span></a>
   </li>  
 </ul>
@@ -191,7 +189,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Documentation</li><li class="breadcrumb-item"><a href="../../docs/tinymlaas/Architecture.html">TinyMLaaS - summer 2023</a></li><li class="breadcrumb-item"><a href="../../docs/tinymlaas/Architecture.html">Architecture</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Progressive Export: Harness Engineering for LLM Apps</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -213,13 +211,13 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../blogs/about.html" class="sidebar-item-text sidebar-link">
+  <a href="../blogs/about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../getstarted.html" class="sidebar-item-text sidebar-link">
+  <a href="../getstarted.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Get Started</span></a>
   </div>
 </li>
@@ -234,7 +232,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../tutorials/runwalkthrough.html" class="sidebar-item-text sidebar-link">
+  <a href="../tutorials/runwalkthrough.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Run Walkthrough</span></a>
   </div>
 </li>
@@ -242,91 +240,91 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Documentation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">TinyMLaaS - summer 2023</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/tinymlaas/Architecture.html" class="sidebar-item-text sidebar-link active">
+  <a href="../docs/tinymlaas/Architecture.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Architecture</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/tinymlaas/Background.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/Background.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Background information and some literature sources</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/tinymlaas/Demonstration.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/Demonstration.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Demonstratation of TinyMLaaS WebApp</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/tinymlaas/Next_steps.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/Next_steps.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Suggestions for further development</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/tinymlaas/Software-Project-Summer-Kick-off.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/Software-Project-Summer-Kick-off.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project starting point</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/tinymlaas/Technologies.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/Technologies.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Technological choices</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/tinymlaas/TinyML-backend_README.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/TinyML-backend_README.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TinyML-backend</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/tinymlaas/TinyML-frontend_README.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/TinyML-frontend_README.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TinyML-frontend</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/tinymlaas/TinyML-MCU_arduino_README.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/TinyML-MCU_arduino_README.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Arduino sketch</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/tinymlaas/TinyML-MCU_README.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/TinyML-MCU_README.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TinyML-MCU</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/tinymlaas/TinyMLaaS_README.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/TinyMLaaS_README.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TinyMLaaS-main</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/tinymlaas/Use_cases.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/tinymlaas/Use_cases.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Use case scenarios</span></a>
   </div>
 </li>
@@ -336,13 +334,13 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../blog.html" class="sidebar-item-text sidebar-link">
+  <a href="../blog.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Blog</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../performance.html" class="sidebar-item-text sidebar-link">
+  <a href="../performance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Performance</span></a>
   </div>
 </li>
@@ -356,26 +354,48 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#block-diagram" id="toc-block-diagram" class="nav-link" data-scroll-target="#block-diagram">Block Diagram</a></li>
-  <li><a href="#key-components" id="toc-key-components" class="nav-link" data-scroll-target="#key-components">Key Components</a></li>
-  <li><a href="#database-diagram" id="toc-database-diagram" class="nav-link" data-scroll-target="#database-diagram">Database diagram</a></li>
+  <li><a href="#the-repl-analogy" id="toc-the-repl-analogy" class="nav-link active" data-scroll-target="#the-repl-analogy">The REPL Analogy</a></li>
+  <li><a href="#progressive-export" id="toc-progressive-export" class="nav-link" data-scroll-target="#progressive-export">Progressive Export</a></li>
+  <li><a href="#what-gets-exported" id="toc-what-gets-exported" class="nav-link" data-scroll-target="#what-gets-exported">What Gets Exported</a></li>
+  <li><a href="#export-only-when-it-hurts" id="toc-export-only-when-it-hurts" class="nav-link" data-scroll-target="#export-only-when-it-hurts">Export Only When It Hurts</a></li>
+  <li><a href="#what-stays-in-the-llm" id="toc-what-stays-in-the-llm" class="nav-link" data-scroll-target="#what-stays-in-the-llm">What Stays in the LLM</a></li>
+  <li><a href="#skill-vs-mcp" id="toc-skill-vs-mcp" class="nav-link" data-scroll-target="#skill-vs-mcp">Skill vs MCP</a></li>
+  <li><a href="#structured-output-still-matters" id="toc-structured-output-still-matters" class="nav-link" data-scroll-target="#structured-output-still-matters">Structured Output Still Matters</a></li>
+  <li><a href="#source-ideas" id="toc-source-ideas" class="nav-link" data-scroll-target="#source-ideas">Source Ideas</a></li>
+  <li><a href="#essay-thesis" id="toc-essay-thesis" class="nav-link" data-scroll-target="#essay-thesis">Essay Thesis</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.dev/ninjalabo/ninjalabo.github.io/blob/main/docs/tinymlaas/Architecture.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blogs/progressive-export.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Documentation</li><li class="breadcrumb-item"><a href="../../docs/tinymlaas/Architecture.html">TinyMLaaS - summer 2023</a></li><li class="breadcrumb-item"><a href="../../docs/tinymlaas/Architecture.html">Architecture</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Architecture</h1>
-</div>
+<h1 class="title">Progressive Export: Harness Engineering for LLM Apps</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Tech</div>
+    <div class="quarto-category">LLM</div>
+    <div class="quarto-category">Agents</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Hiroshi Doyu <a href="mailto:hiroshi.doyu@ninjalabo.ai" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 27, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -385,43 +405,164 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 </header>
 
 
-<p>This page contains general information about the architechture and how each component is related to each other.</p>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>TinyMLaaS consist of several components: - backend - streamlit frontend - cli - MCU components</p>
-<p>The different components are stored in their own repositories which can be found <a href="https://github.com/orgs/TinyMLaas/repositories">here</a>.</p>
-<p>The backend is the core component which contains all the API endpoints. By calling them you can execute all the tasks necessary for the workflow. The backend is responsible with communicating with the machine learing components, storing data in the database and installing &amp; managing MCU devices.</p>
-<p>Tensorflow machine learning components live in the main repository and need to be fetched for the backend seperately.</p>
-<p>MCU repository contains the bridge for communicating with the devices and the code needed for devices.</p>
-<p>We have implemented two different interfaces for the TinyMLaaS: CLI and website GUI using streamlit. Since you can make API calls directly to backend it’s extremely simple to build your own frontends in the future.</p>
-</section>
-<section id="block-diagram" class="level2">
-<h2 class="anchored" data-anchor-id="block-diagram">Block Diagram</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/block_diagram.png" class="img-fluid figure-img"></p>
-<figcaption>Block Diagram</figcaption>
-</figure>
-</div>
-<p>The backend is the main component that deals with calling the tensorflow functions and communicating with the MCU devices. Tensorflow is currently the supported UI but you can also make API calls directly or use the CLI. In the future the tensorflow components can be containarized as their own service.</p>
-</section>
-<section id="key-components" class="level2">
-<h2 class="anchored" data-anchor-id="key-components">Key Components</h2>
+<p>LLM apps change the center of application development. Before LLM apps, developers had to write the exact sequence of API calls that satisfied a user request. The application logic lived mostly in developer-written control flow:</p>
+<pre class="text"><code>user request
+-&gt; call API A
+-&gt; transform output
+-&gt; call API B
+-&gt; handle errors
+-&gt; return result</code></pre>
+<p>With LLM apps, the developer increasingly provides a set of available capabilities rather than a fixed sequence. The LLM decides which tools to call, how to interpret the outputs the computer executed, and how to sequence the work:</p>
+<pre class="text"><code>user request
+-&gt; LLM understands intent
+-&gt; LLM chooses tools/apps/MCPs
+-&gt; LLM sequences calls
+-&gt; Computer executes calls
+-&gt; LLM interprets outputs
+-&gt; result</code></pre>
+<p>This does not remove application architecture. It changes what architecture means. The important design question becomes: what capability surface should the LLM operate over, which parts should remain in the LLM, and which parts should be exported into reliable external tools?</p>
+<section id="the-repl-analogy" class="level2">
+<h2 class="anchored" data-anchor-id="the-repl-analogy">The REPL Analogy</h2>
+<p>LLM CLI can also be interpreted as the new REPL for agentic applications.</p>
+<p>In the old workflow, a developer used <code>ipython</code>, a shell, or another REPL to understand APIs before writing production code. The REPL was where the developer discovered:</p>
 <ul>
-<li>ML model training</li>
-<li>Data Storage and loading (database)</li>
-<li>ML model quantization and optimization</li>
-<li>ML model compilation for MCUs</li>
+<li>which APIs were needed</li>
+<li>how the APIs behaved</li>
+<li>what inputs and outputs looked like</li>
+<li>which errors occurred</li>
+<li>what error handling was necessary</li>
+<li>what sequence of calls satisfied the requirement</li>
+</ul>
+<p>After that exploration, the developer wrote a script, then extracted functions and modules.</p>
+<p>nbdev made this workflow more explicit. Exploration is executed and recorded in a notebook, library functions are implemented after that, tests are added right after each implementation (TDD), and stable functions are exported with <code>nbdev-export</code> into reusable modules.</p>
+<p>LLM CLI can be thought of as playing the same role for LLM apps. It is the place to explore the task before deciding what should become durable infrastructure.</p>
+</section>
+<section id="progressive-export" class="level2">
+<h2 class="anchored" data-anchor-id="progressive-export">Progressive Export</h2>
+<p>The practical development path is:</p>
+<pre class="text"><code>interactive LLM CLI exploration
+-&gt; LLM CLI with skills
+-&gt; LLM implements tools
+-&gt; LLM exports tools to MCP
+-&gt; LLM CLI with MCP tools
+-&gt; app with LLM calls using MCP tools
+-&gt; automated app or personal agent</code></pre>
+<p>The first stage should be loose and interactive. Let the LLM try to do the whole task. This reveals the real shape of the task: what the LLM handles well, what it gets wrong, which tool calls repeat, where output needs to be structured, and where deterministic code is safer.</p>
+<p>The next stage is skill. A skill records a reusable procedure that the LLM can follow. This is useful while the workflow is still exploratory or mostly interactive. It reduces reinvention, but the LLM still has to read the procedure, reason through it, call commands, and interpret outputs. A skill is slow and costly because it involves external LLM calls, but as a procedure written in natural language it takes little initial implementation effort.</p>
+<p>The next stage is Tool/MCP. Once a capability becomes stable, repeated, or important for reliability, cost, or speed, it should be promoted into a typed external tool. At that point, the LLM no longer needs to carry the full procedure in context. It only needs to choose a tool and provide structured arguments.</p>
+<p>The final app can then be small. Much of the unreliable or verbose behavior has already been exported into reliable external tools. The app replaces the interactive LLM CLI with its own LLM-call “loop”, but keeps the same task knowledge, MCP boundaries, schemas, and verification rules discovered during exploration.</p>
+<p>The app becomes a thin harness (loop) around those tools: UI, scheduling, persistence, permissions, observability, verification, and the remaining LLM calls.</p>
+<p>For an OpenClaw-like or Agent-Sin-like personal agent, the path becomes:</p>
+<pre class="text"><code>human + LLM CLI explores a task
+-&gt; repeated procedure becomes a skill
+-&gt; stable capability becomes MCP
+-&gt; app calls the LLM for intent/routing
+-&gt; app calls MCP tools for execution
+-&gt; scheduler/chat channel can run it without the interactive CLI</code></pre>
+<p>This path is not strictly linear. Building a skill or MCP tool often reveals new edge cases, and operating an app reveals new failure modes. Those observations should loop back into LLM CLI exploration. The loop is:</p>
+<pre class="text"><code>explore -&gt; export -&gt; operate -&gt; observe -&gt; explore again</code></pre>
+</section>
+<section id="what-gets-exported" class="level2">
+<h2 class="anchored" data-anchor-id="what-gets-exported">What Gets Exported</h2>
+<p>The key movement is exporting work out of the LLM.</p>
+<p>At first, interactive LLM conversation may do everything:</p>
+<pre class="text"><code>understand request
+-&gt; choose APIs
+-&gt; decide sequence
+-&gt; parse output
+-&gt; handle errors
+-&gt; summarize result</code></pre>
+<p>As the workflow matures, repeated and fragile parts move outward:</p>
+<pre class="text"><code>LLM: understand request, route, judge, summarize
+skill: remembered procedure for interactive use
+MCP: typed reliable execution boundary
+app: automation, persistence, verification, UX</code></pre>
+<p>This is harness engineering from the application side. The goal is not to eliminate the LLM. The goal is to leave the LLM with the smallest useful role and move execution, verification, persistence, and integration into deterministic components.</p>
+</section>
+<section id="export-only-when-it-hurts" class="level2">
+<h2 class="anchored" data-anchor-id="export-only-when-it-hurts">Export Only When It Hurts</h2>
+<p>The progression is not a rule that everything must become MCP. If an interactive LLM CLI workflow works, is used rarely, and failure is cheap, it can stay there.</p>
+<p>Export work only when there is pressure:</p>
+<ul>
+<li>repetition: the same procedure is used often</li>
+<li>cost: the LLM spends too many tokens rereading or rediscovering the procedure</li>
+<li>reliability: mistakes are no longer acceptable</li>
+<li>automation: the workflow must run without a human watching</li>
+<li>sharing: multiple agents, apps, or people need the same capability</li>
+<li>security: secrets, auth, permissions, or side effects need a stronger boundary</li>
+</ul>
+<p>This keeps the workflow aligned with YAGNI. Skill is often the right intermediate step because it is cheap to create and helps prove whether MCP is worth the maintenance cost.</p>
+</section>
+<section id="what-stays-in-the-llm" class="level2">
+<h2 class="anchored" data-anchor-id="what-stays-in-the-llm">What Stays in the LLM</h2>
+<p>The LLM should keep work where ambiguity is useful:</p>
+<ul>
+<li>understanding open-ended user intent</li>
+<li>routing between tools when the rules are not stable</li>
+<li>summarizing and explaining results</li>
+<li>judging tradeoffs that do not have a deterministic rule</li>
+<li>adapting to user-specific preferences</li>
+<li>handling exception patterns that are still changing</li>
+</ul>
+<p>Deterministic components should take over work where consistency is more valuable than flexibility:</p>
+<ul>
+<li>repeated API calls</li>
+<li>parsing and validation</li>
+<li>authentication and secrets handling</li>
+<li>persistence</li>
+<li>verification</li>
+<li>retries and failure classification</li>
+<li>latency-sensitive or high-frequency work</li>
+</ul>
+<p>This is the practical meaning of leaving the LLM with the smallest useful role.</p>
+</section>
+<section id="skill-vs-mcp" class="level2">
+<h2 class="anchored" data-anchor-id="skill-vs-mcp">Skill vs MCP</h2>
+<p>Skills are excellent while exploring and while a human is still in the loop. They are cheap to create, easy to edit, and close to how people naturally describe workflows.</p>
+<p>But skills can be expensive for production app usage. A skill may consume tokens every time the LLM reads or reasons through it. It may also leave too much room for command-construction mistakes or inconsistent interpretation.</p>
+<p>MCP is better when the capability needs to run often, run unattended, or be shared across clients. It gives the LLM a smaller and more structured interface:</p>
+<pre class="text"><code>tool_name(arguments) -&gt; structured result</code></pre>
+<p>For an app, this matters as opex and reliability. A frequently used skill can become ongoing token cost. A frequently used MCP tool becomes a stable service boundary.</p>
+<p>MCP also changes who can call the capability. A skill usually assumes an LLM CLI session: the LLM reads the skill, follows the procedure, and calls commands. MCP exposes a tool boundary that can be called by an LLM client, another agent, or an ordinary app. Once a capability is MCP, it no longer exists only inside an interactive LLM session.</p>
+<p>This is the key step that allows the interactive CLI to disappear from the final product. The app does not need to run Claude Code or Codex as its user interface. It can make its own LLM call, expose the same MCP tools, validate the structured tool results, and return a response through its own UI, chat channel, or scheduler.</p>
+<p>But replacing the CLI means the app must own the harness that the CLI used to provide implicitly:</p>
+<ul>
+<li>tool-call loop</li>
+<li>context injection</li>
+<li>permissions and approval flow</li>
+<li>structured output validation</li>
+<li>transcript and tool tracing</li>
+<li>error handling and retry policy</li>
+<li>sandbox or access boundaries</li>
+</ul>
+<p>So the final app is not just a raw LLM API call. It is a small LLM runtime around MCP tools.</p>
+</section>
+<section id="structured-output-still-matters" class="level2">
+<h2 class="anchored" data-anchor-id="structured-output-still-matters">Structured Output Still Matters</h2>
+<p>Even after work is moved into MCP tools, some LLM calls remain. Those calls should use structured output whenever possible. Pydantic-style schemas, typed results, validation, and explicit failure states are part of the harness.</p>
+<p>The same principle applies at every layer:</p>
+<ul>
+<li>reduce ambiguous free text</li>
+<li>define typed inputs and outputs</li>
+<li>validate results</li>
+<li>make failure visible</li>
+<li>keep the LLM’s degrees of freedom where they are useful</li>
+</ul>
+<p>Observability is also part of the harness. The app should record enough information to improve the system later: tool traces, validation failures, retries, cost, latency, user corrections, and cases where the LLM needed human help.</p>
+</section>
+<section id="source-ideas" class="level2">
+<h2 class="anchored" data-anchor-id="source-ideas">Source Ideas</h2>
+<p>This framing connects three ideas from the harness engineering discussion:</p>
+<ul>
+<li>Tejas Kumar: reliability can improve without changing the prompt when verification and deterministic handlers are added around the model</li>
+<li>Shingo Irie: useful personal agents separate what should be done by LLMs from what should be done by programs</li>
+<li>Newbee/Nishimi: understanding cannot be outsourced, which is why the initial exploration stage is not waste</li>
 </ul>
 </section>
-<section id="database-diagram" class="level2">
-<h2 class="anchored" data-anchor-id="database-diagram">Database diagram</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/db_diagram.png" class="img-fluid figure-img"></p>
-<figcaption>Database Diagram</figcaption>
-</figure>
-</div>
+<section id="essay-thesis" class="level2">
+<h2 class="anchored" data-anchor-id="essay-thesis">Essay Thesis</h2>
+<p>LLM CLI is the new REPL for agentic applications. We first explore the task interactively, then export repeated and fragile behavior into skills, promote stable capabilities into MCP tools, and finally replace the interactive CLI with a small app runtime that calls an LLM over those reliable tools.</p>
+<p>The deeper change is that application development is no longer only about writing control flow directly. It is about discovering, shaping, and hardening the harness that lets an LLM operate safely over useful capabilities. The best path is progressive export: start with the LLM, keep what benefits from ambiguity, and move the rest outward only when the pressure is real. The next step, I think, is to build a mechanism that lets the LLM implement skills automatically when they are needed (to be researched).</p>
 
 
 </section>
@@ -827,18 +968,6 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../tutorials/runwalkthrough.html" class="pagination-link" aria-label="Run Walkthrough">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Run Walkthrough</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../docs/tinymlaas/Background.html" class="pagination-link" aria-label="Background information and some literature sources">
-        <span class="nav-page-text">Background information and some literature sources</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -851,7 +980,7 @@ gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 <li>For pricing and sales inquiries <a href="mailto:sales@ninjalabo.ai" class="email">sales@ninjalabo.ai</a></li>
 <li>Ask tech questions <a href="mailto:help@ninjalabo.ai" class="email">help@ninjalabo.ai</a></li>
 </ul>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/ninjalabo/ninjalabo.github.io/blob/main/docs/tinymlaas/Architecture.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blogs/progressive-export.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
