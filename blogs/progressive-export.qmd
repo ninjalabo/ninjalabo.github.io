@@ -1,0 +1,219 @@
+---
+title: "Progressive Export: Harness Engineering for LLM Apps"
+author: 
+ - name: "Hiroshi Doyu"
+   email: hiroshi.doyu@ninjalabo.ai
+date: "5/27/2026"
+draft: false
+categories:
+  - Tech
+  - LLM
+  - Agents
+---
+
+LLM apps change the center of application development. Before LLM apps, developers had to write the exact sequence of API calls that satisfied a user request. The application logic lived mostly in developer-written control flow:
+
+```text
+user request
+-> call API A
+-> transform output
+-> call API B
+-> handle errors
+-> return result
+```
+
+With LLM apps, the developer increasingly provides a set of available capabilities rather than a fixed sequence. The LLM decides which tools to call, how to interpret the outputs the computer executed, and how to sequence the work:
+
+```text
+user request
+-> LLM understands intent
+-> LLM chooses tools/apps/MCPs
+-> LLM sequences calls
+-> Computer executes calls
+-> LLM interprets outputs
+-> result
+```
+
+This does not remove application architecture. It changes what architecture means. The important design question becomes: what capability surface should the LLM operate over, which parts should remain in the LLM, and which parts should be exported into reliable external tools?
+
+## The REPL Analogy
+
+LLM CLI can also be interpreted as the new REPL for agentic applications.
+
+In the old workflow, a developer used `ipython`, a shell, or another REPL to understand APIs before writing production code. The REPL was where the developer discovered:
+
+- which APIs were needed
+- how the APIs behaved
+- what inputs and outputs looked like
+- which errors occurred
+- what error handling was necessary
+- what sequence of calls satisfied the requirement
+
+After that exploration, the developer wrote a script, then extracted functions and modules.
+
+nbdev made this workflow more explicit. Exploration is executed and recorded in a notebook, library functions are implemented after that, tests are added right after each implementation (TDD), and stable functions are exported with `nbdev-export` into reusable modules.
+
+LLM CLI can be thought of as playing the same role for LLM apps. It is the place to explore the task before deciding what should become durable infrastructure.
+
+## Progressive Export
+
+The practical development path is:
+
+```text
+interactive LLM CLI exploration
+-> LLM CLI with skills
+-> LLM implements tools
+-> LLM exports tools to MCP
+-> LLM CLI with MCP tools
+-> app with LLM calls using MCP tools
+-> automated app or personal agent
+```
+
+The first stage should be loose and interactive. Let the LLM try to do the whole task. This reveals the real shape of the task: what the LLM handles well, what it gets wrong, which tool calls repeat, where output needs to be structured, and where deterministic code is safer.
+
+The next stage is skill. A skill records a reusable procedure that the LLM can follow. This is useful while the workflow is still exploratory or mostly interactive. It reduces reinvention, but the LLM still has to read the procedure, reason through it, call commands, and interpret outputs. A skill is slow and costly because it involves external LLM calls, but as a procedure written in natural language it takes little initial implementation effort.
+
+The next stage is Tool/MCP. Once a capability becomes stable, repeated, or important for reliability, cost, or speed, it should be promoted into a typed external tool. At that point, the LLM no longer needs to carry the full procedure in context. It only needs to choose a tool and provide structured arguments.
+
+The final app can then be small. Much of the unreliable or verbose behavior has already been exported into reliable external tools. The app replaces the interactive LLM CLI with its own LLM-call "loop", but keeps the same task knowledge, MCP boundaries, schemas, and verification rules discovered during exploration.
+
+The app becomes a thin harness (loop) around those tools: UI, scheduling, persistence, permissions, observability, verification, and the remaining LLM calls.
+
+For an OpenClaw-like or Agent-Sin-like personal agent, the path becomes:
+
+```text
+human + LLM CLI explores a task
+-> repeated procedure becomes a skill
+-> stable capability becomes MCP
+-> app calls the LLM for intent/routing
+-> app calls MCP tools for execution
+-> scheduler/chat channel can run it without the interactive CLI
+```
+
+This path is not strictly linear. Building a skill or MCP tool often reveals new edge cases, and operating an app reveals new failure modes. Those observations should loop back into LLM CLI exploration. The loop is:
+
+```text
+explore -> export -> operate -> observe -> explore again
+```
+
+## What Gets Exported
+
+The key movement is exporting work out of the LLM.
+
+At first, interactive LLM conversation may do everything:
+
+```text
+understand request
+-> choose APIs
+-> decide sequence
+-> parse output
+-> handle errors
+-> summarize result
+```
+
+As the workflow matures, repeated and fragile parts move outward:
+
+```text
+LLM: understand request, route, judge, summarize
+skill: remembered procedure for interactive use
+MCP: typed reliable execution boundary
+app: automation, persistence, verification, UX
+```
+
+This is harness engineering from the application side. The goal is not to eliminate the LLM. The goal is to leave the LLM with the smallest useful role and move execution, verification, persistence, and integration into deterministic components.
+
+## Export Only When It Hurts
+
+The progression is not a rule that everything must become MCP. If an interactive LLM CLI workflow works, is used rarely, and failure is cheap, it can stay there.
+
+Export work only when there is pressure:
+
+- repetition: the same procedure is used often
+- cost: the LLM spends too many tokens rereading or rediscovering the procedure
+- reliability: mistakes are no longer acceptable
+- automation: the workflow must run without a human watching
+- sharing: multiple agents, apps, or people need the same capability
+- security: secrets, auth, permissions, or side effects need a stronger boundary
+
+This keeps the workflow aligned with YAGNI. Skill is often the right intermediate step because it is cheap to create and helps prove whether MCP is worth the maintenance cost.
+
+## What Stays in the LLM
+
+The LLM should keep work where ambiguity is useful:
+
+- understanding open-ended user intent
+- routing between tools when the rules are not stable
+- summarizing and explaining results
+- judging tradeoffs that do not have a deterministic rule
+- adapting to user-specific preferences
+- handling exception patterns that are still changing
+
+Deterministic components should take over work where consistency is more valuable than flexibility:
+
+- repeated API calls
+- parsing and validation
+- authentication and secrets handling
+- persistence
+- verification
+- retries and failure classification
+- latency-sensitive or high-frequency work
+
+This is the practical meaning of leaving the LLM with the smallest useful role.
+
+## Skill vs MCP
+
+Skills are excellent while exploring and while a human is still in the loop. They are cheap to create, easy to edit, and close to how people naturally describe workflows.
+
+But skills can be expensive for production app usage. A skill may consume tokens every time the LLM reads or reasons through it. It may also leave too much room for command-construction mistakes or inconsistent interpretation.
+
+MCP is better when the capability needs to run often, run unattended, or be shared across clients. It gives the LLM a smaller and more structured interface:
+
+```text
+tool_name(arguments) -> structured result
+```
+
+For an app, this matters as opex and reliability. A frequently used skill can become ongoing token cost. A frequently used MCP tool becomes a stable service boundary.
+
+MCP also changes who can call the capability. A skill usually assumes an LLM CLI session: the LLM reads the skill, follows the procedure, and calls commands. MCP exposes a tool boundary that can be called by an LLM client, another agent, or an ordinary app. Once a capability is MCP, it no longer exists only inside an interactive LLM session.
+
+This is the key step that allows the interactive CLI to disappear from the final product. The app does not need to run Claude Code or Codex as its user interface. It can make its own LLM call, expose the same MCP tools, validate the structured tool results, and return a response through its own UI, chat channel, or scheduler.
+
+But replacing the CLI means the app must own the harness that the CLI used to provide implicitly:
+
+- tool-call loop
+- context injection
+- permissions and approval flow
+- structured output validation
+- transcript and tool tracing
+- error handling and retry policy
+- sandbox or access boundaries
+
+So the final app is not just a raw LLM API call. It is a small LLM runtime around MCP tools.
+
+## Structured Output Still Matters
+
+Even after work is moved into MCP tools, some LLM calls remain. Those calls should use structured output whenever possible. Pydantic-style schemas, typed results, validation, and explicit failure states are part of the harness.
+
+The same principle applies at every layer:
+
+- reduce ambiguous free text
+- define typed inputs and outputs
+- validate results
+- make failure visible
+- keep the LLM's degrees of freedom where they are useful
+
+Observability is also part of the harness. The app should record enough information to improve the system later: tool traces, validation failures, retries, cost, latency, user corrections, and cases where the LLM needed human help.
+
+## Source Ideas
+
+This framing connects three ideas from the harness engineering discussion:
+
+- Tejas Kumar: reliability can improve without changing the prompt when verification and deterministic handlers are added around the model
+- Shingo Irie: useful personal agents separate what should be done by LLMs from what should be done by programs
+- Newbee/Nishimi: understanding cannot be outsourced, which is why the initial exploration stage is not waste
+
+## Essay Thesis
+
+LLM CLI is the new REPL for agentic applications. We first explore the task interactively, then export repeated and fragile behavior into skills, promote stable capabilities into MCP tools, and finally replace the interactive CLI with a small app runtime that calls an LLM over those reliable tools.
+
+The deeper change is that application development is no longer only about writing control flow directly. It is about discovering, shaping, and hardening the harness that lets an LLM operate safely over useful capabilities. The best path is progressive export: start with the LLM, keep what benefits from ambiguity, and move the rest outward only when the pressure is real. The next step, I think, is to build a mechanism that lets the LLM implement skills automatically when they are needed (to be researched).
