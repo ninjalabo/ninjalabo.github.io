@@ -13,25 +13,37 @@ categories:
 
 LLM apps change the center of application development. Before LLM apps, developers had to write the exact sequence of API calls that satisfied a user request. The application logic lived mostly in developer-written control flow:
 
-```text
-user request
--> call API A
--> transform output
--> call API B
--> handle errors
--> return result
+```{mermaid}
+flowchart LR
+  request["User request"] --> apiA["Call API A"]
+  apiA --> transform["Transform output"]
+  transform --> apiB["Call API B"]
+  apiB --> errors["Handle errors"]
+  errors --> result["Return result"]
+
+  classDef user fill:#eef2ff,stroke:#4f46e5,color:#111827;
+  classDef code fill:#f8fafc,stroke:#64748b,color:#111827;
+  class request user;
+  class apiA,transform,apiB,errors,result code;
 ```
 
 With LLM apps, the developer increasingly provides a set of available capabilities rather than a fixed sequence. The LLM decides which tools to call, how to interpret the outputs the computer executed, and how to sequence the work:
 
-```text
-user request
--> LLM understands intent
--> LLM chooses tools/apps/MCPs
--> LLM sequences calls
--> Computer executes calls
--> LLM interprets outputs
--> result
+```{mermaid}
+flowchart LR
+  request["User request"] --> intent["LLM understands intent"]
+  intent --> choose["LLM chooses tools / apps / MCPs"]
+  choose --> sequence["LLM sequences calls"]
+  sequence --> execute["Computer executes calls"]
+  execute --> interpret["LLM interprets outputs"]
+  interpret --> result["Result"]
+
+  classDef user fill:#eef2ff,stroke:#4f46e5,color:#111827;
+  classDef llm fill:#ecfeff,stroke:#0891b2,color:#111827;
+  classDef system fill:#f0fdf4,stroke:#16a34a,color:#111827;
+  class request user;
+  class intent,choose,sequence,interpret llm;
+  class execute,result system;
 ```
 
 This does not remove application architecture. It changes what architecture means. The important design question becomes: what capability surface should the LLM operate over, which parts should remain in the LLM, and which parts should be exported into reliable external tools?
@@ -59,14 +71,23 @@ LLM CLI can be thought of as playing the same role for LLM apps. It is the place
 
 The practical development path is:
 
-```text
-interactive LLM CLI exploration
--> LLM CLI with skills
--> LLM implements tools
--> LLM exports tools to MCP
--> LLM CLI with MCP tools
--> app with LLM calls using MCP tools
--> automated app or personal agent
+```{mermaid}
+flowchart LR
+  explore["Interactive<br/>LLM CLI exploration"] --> skills["LLM CLI<br/>with skills"]
+  skills --> implement["LLM implements<br/>tools"]
+  implement --> export["LLM exports<br/>tools to MCP"]
+  export --> mcp["LLM CLI<br/>with MCP tools"]
+  mcp --> app["App runtime<br/>with LLM calls"]
+  app --> agent["Automated app<br/>or personal agent"]
+
+  classDef exploration fill:#eef2ff,stroke:#4f46e5,color:#111827;
+  classDef skill fill:#fff7ed,stroke:#ea580c,color:#111827;
+  classDef tool fill:#f0fdf4,stroke:#16a34a,color:#111827;
+  classDef appc fill:#f8fafc,stroke:#64748b,color:#111827;
+  class explore exploration;
+  class skills skill;
+  class implement,export,mcp tool;
+  class app,agent appc;
 ```
 
 The first stage should be loose and interactive. Let the LLM try to do the whole task. This reveals the real shape of the task: what the LLM handles well, what it gets wrong, which tool calls repeat, where output needs to be structured, and where deterministic code is safer.
@@ -81,19 +102,35 @@ The app becomes a thin harness (loop) around those tools: UI, scheduling, persis
 
 For an OpenClaw-like or Agent-Sin-like personal agent, the path becomes:
 
-```text
-human + LLM CLI explores a task
--> repeated procedure becomes a skill
--> stable capability becomes MCP
--> app calls the LLM for intent/routing
--> app calls MCP tools for execution
--> scheduler/chat channel can run it without the interactive CLI
+```{mermaid}
+flowchart LR
+  human["Human + LLM CLI<br/>explore a task"] --> skill["Repeated procedure<br/>becomes a skill"]
+  skill --> mcp["Stable capability<br/>becomes MCP"]
+  mcp --> intent["App calls LLM<br/>for intent / routing"]
+  intent --> execution["App calls MCP tools<br/>for execution"]
+  execution --> channel["Scheduler / chat channel<br/>runs without CLI"]
+
+  classDef exploration fill:#eef2ff,stroke:#4f46e5,color:#111827;
+  classDef skillc fill:#fff7ed,stroke:#ea580c,color:#111827;
+  classDef tool fill:#f0fdf4,stroke:#16a34a,color:#111827;
+  classDef appc fill:#f8fafc,stroke:#64748b,color:#111827;
+  class human exploration;
+  class skill skillc;
+  class mcp,execution tool;
+  class intent,channel appc;
 ```
 
 This path is not strictly linear. Building a skill or MCP tool often reveals new edge cases, and operating an app reveals new failure modes. Those observations should loop back into LLM CLI exploration. The loop is:
 
-```text
-explore -> export -> operate -> observe -> explore again
+```{mermaid}
+flowchart LR
+  explore["Explore"] --> export["Export"]
+  export --> operate["Operate"]
+  operate --> observe["Observe"]
+  observe --> explore
+
+  classDef loop fill:#f8fafc,stroke:#64748b,color:#111827;
+  class explore,export,operate,observe loop;
 ```
 
 ## What Gets Exported
@@ -102,22 +139,39 @@ The key movement is exporting work out of the LLM.
 
 At first, interactive LLM conversation may do everything:
 
-```text
-understand request
--> choose APIs
--> decide sequence
--> parse output
--> handle errors
--> summarize result
+```{mermaid}
+flowchart LR
+  request["Understand request"] --> apis["Choose APIs"]
+  apis --> sequence["Decide sequence"]
+  sequence --> parse["Parse output"]
+  parse --> errors["Handle errors"]
+  errors --> summary["Summarize result"]
+
+  classDef llm fill:#ecfeff,stroke:#0891b2,color:#111827;
+  class request,apis,sequence,parse,errors,summary llm;
 ```
 
 As the workflow matures, repeated and fragile parts move outward:
 
-```text
-LLM: understand request, route, judge, summarize
-skill: remembered procedure for interactive use
-MCP: typed reliable execution boundary
-app: automation, persistence, verification, UX
+```{mermaid}
+flowchart TB
+  llm["LLM<br/>understand request<br/>route<br/>judge<br/>summarize"]
+  skill["Skill<br/>remembered procedure<br/>for interactive use"]
+  mcp["MCP<br/>typed reliable<br/>execution boundary"]
+  app["App<br/>automation<br/>persistence<br/>verification<br/>UX"]
+
+  llm --> skill
+  llm --> mcp
+  mcp --> app
+
+  classDef llmc fill:#ecfeff,stroke:#0891b2,color:#111827;
+  classDef skillc fill:#fff7ed,stroke:#ea580c,color:#111827;
+  classDef tool fill:#f0fdf4,stroke:#16a34a,color:#111827;
+  classDef appc fill:#f8fafc,stroke:#64748b,color:#111827;
+  class llm llmc;
+  class skill skillc;
+  class mcp tool;
+  class app appc;
 ```
 
 This is harness engineering from the application side. The goal is not to eliminate the LLM. The goal is to leave the LLM with the smallest useful role and move execution, verification, persistence, and integration into deterministic components.
