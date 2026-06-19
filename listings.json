@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/blogs/jepa-world-models.html",
       "/blogs/progressive-export.html",
       "/blogs/elc2019.html",
       "/blogs/CamTalks.html",
@@ -60,6 +61,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blogs/jepa-world-models.html",
       "/blogs/progressive-export.html",
       "/blogs/elc2019.html",
       "/blogs/DataTalks.html",
