@@ -1,0 +1,122 @@
+---
+title: "The Bespoke Half: Teaching an Agent the Bookkeeping Work Software Left Behind"
+author:
+ - name: "Hiroshi Doyu"
+   email: hiroshi.doyu@ninjalabo.ai
+date: "8/6/2026"
+draft: false
+categories:
+  - Tech
+  - LLM
+  - Agents
+---
+
+*A field report on [Progressive Export](https://ninjalabo.ai/blogs/progressive-export.html) and white-collar work.*
+
+## Abstract
+
+Some white-collar work has survived automation not because it is intellectually difficult, but because it is too specific and too low-volume for software to be worth writing. Bookkeeping evidence collection is a clean instance: every company's receipts live in a different scatter of e-invoices, inboxes, and vendor portals, so no connector pays for itself.
+
+I tested a different economics on my own company's books: teach the procedure to an AI agent once, in natural language, and let the agent do the work from then on. One-time teaching cost roughly eight lines per vendor. The agent then handled 149 bank transactions across thirteen months — receipts from 19 vendors spread over bank e-invoices, two email accounts, and portals reachable only through an authenticated browser. 125 receipts now back every transaction that needs one; zero are missing. Even the handoff to my accounting firm, previously manual uploads and email attachments, became a small custom web app — software for an audience of one.
+
+Scoping, honestly: twelve of the thirteen months were reconstructed in one retrospective pass, the vendor notes were written from those same months, and exactly one month has been processed prospectively. And "collected" asserts that a document is filed, not that the document is correct.
+
+The finding is the division of labor that emerged, split by time-scale. Monthly, the human's role shrank to strong authentication, which the law pins to a person. Episodically, the human is called back to teach: when a new vendor first appears, and when a taught procedure breaks — both surfaced free of charge, because the bank statement is an external, statutory list of everything that must be accounted for, and anything the agent failed to retrieve shows up as *missing*. Permanently, the human keeps approval and accountability. Code arrived exactly where pressure justified it — the archive in git, the accountant's interface as a small web app — and nowhere else. Prose settled as the orchestration layer: at ten transactions a month, teaching was not a prototype of the automation. For that seam, it was the automation.
+
+This is the shape I expect white-collar replacement to actually take. Connectors amortize high fixed cost across many customers and win the standardized head; teaching costs almost nothing per procedure and wins the bespoke tail — much of what humans still do by hand. What stayed human was neither the difficult nor the intellectual: authentication legally pinned to a person, judgments too rare to be worth teaching, and accountability. Automation did not erase responsibility; it reallocated and concentrated it.
+
+It transfers where an external ground truth exists, failures surface cheaply, and volume stays below the software threshold.
+
+## 1. The claim
+
+Every company carries a pile of work that survived automation for a reason nobody states plainly: it was never worth automating. Not difficult — just too specific to one company and too low-volume to justify software. Mine was bookkeeping evidence: each month, find the receipt behind every bank transaction, wherever it happens to live, and hand the result to the accounting firm.
+
+The bet I tested is simple. Teach the procedure to an AI agent once, in natural language, and let the agent do the work from then on. When something new appears, teach once more. No connectors, no new accounting platform, no code unless a specific part of the workflow demands it.
+
+What I observed was not a job disappearing as a unit. The workflow split along its seams: repeated execution moved to the agent, stable sub-parts hardened into files and one small app, and the human's role contracted to teaching, exceptions, and accountability. A previous essay, [Progressive Export](https://ninjalabo.ai/blogs/progressive-export.html), laid out this pipeline as theory. This is the field report — including the parts that did not go as the theory's author (me) first read it.
+
+## 2. What I actually did — and did not do
+
+The substrate is my one-person company's books: 149 bank-statement rows across thirteen months, between 7 and 17 rows per month. Of those, 125 needed a receipt and now have one filed; 24 needed none (bank fees, tax payments, incoming transfers); zero are missing. Behind that sit 19 vendor-specific recipes, roughly eight lines of natural language each, plus one runbook the agent follows end to end.
+
+How it was actually run matters more than the totals. Twelve of the thirteen months were reconstructed in a single retrospective pass — vendor by vendor, in bulk: all of one vendor's missing months in one sweep, then the next vendor. The per-vendor recipes were written *from* that pass. Exactly one month has since been processed prospectively, the way the workflow is meant to run. So the held-out evidence is one month, and I flag it here rather than in a footnote: the dictionary was trained on twelve months and tested on one.
+
+One more definition, because the whole report leans on it. "Collected" means a document is filed against the transaction — nothing more. Failures come in two volumes. If the agent cannot retrieve a receipt, the transaction stays *missing*: loud, visible, free to detect. If the agent files a plausible but wrong document against the right transaction, it passes silently. Coverage of 1.0 measures collection completeness, not correctness. No correctness audit has been run.
+
+The delivery side changed too. Handing receipts and reconciled statements to the accounting firm used to mean manual uploads and email attachments. It is now a small read-only web app over the archive: password login, one page per month, each transaction linked to its document. It serves an audience of exactly one accounting firm, and when they ask for a change, I can ship it the same day.
+
+Not measured, and therefore not claimed: human hours saved, token cost, touch counts, or any "zero-touch rate."
+
+## 3. The work software left behind
+
+Why did this work survive two decades of accounting software? Look at where the receipts actually live. Some arrive as e-invoices retrievable from inside the bank's own UI. Some land in the company inbox; a handful land in my personal inbox, addressed to me personally, because that is how the account was created years ago. Some exist only as the body of an email, with no attachment to download. Some sit behind vendor portals that require a logged-in browser. One vendor bills twice in the same month from the same sender — a subscription in euros and API micro-charges in dollars — and the two must not be confused. Several bill in dollars while the bank debits euros, so the receipt amount never equals the statement amount. One adds Chinese VAT on top-ups.
+
+No two companies share this scatter. A software vendor would have to build and maintain a connector for each source, amortized across customers who each need a different subset. For the long tail, that arithmetic never closes. The work stayed manual not because it was hard but because it was *bespoke* — technically possible, economically irrational.
+
+I can testify to that arithmetic personally. This collection chore had been a headache since the company started. I spent twenty years as a kernel engineer; building a system to solve it was well within reach. I never did, because my own time budget failed the same test the software vendors' did.
+
+What changed is the cost of the initial implementation. I did not design a system. I sat with the agent and did the work — searched the inboxes, walked the portals, failed, retried — and the runs that succeeded were distilled into two artifacts: a per-vendor dictionary recording where each receipt lives and how to fetch it (about eight lines per vendor, gotchas included), and a runbook the agent follows each month. The previous essay called the LLM CLI "the new REPL"; that is exactly how it felt in practice. Architecture was not drawn first. It precipitated out of working sessions.
+
+## 4. One workflow, several maturity levels
+
+My first reading of the result was wrong, and the correction is the most useful thing in this report. I wanted to say "the pipeline stopped at the skill stage — prose was the destination." But the system as it exists today refuses that summary:
+
+| Seam | Where it lives today | Maturity |
+|---|---|---|
+| Vendor-specific knowledge | the dictionary | taught prose (procedural memory) |
+| Orchestration, exception judgment | the runbook | taught prose |
+| Email / browser / bank operations | existing typed tools | MCP |
+| Evidence and audit trail | archive, plain files in git | deterministic |
+| State and gap visibility | one status row per transaction | structured text |
+| Delivery to the accounting firm | the web app | code |
+| Unattended runtime (scheduling, retries) | — | not built |
+| Correctness verification | — | not built |
+
+The system did not stop at the skill stage. Only its orchestration settled there. Different seams of the same workflow exported to different depths — and the depths line up with the export pressures the previous essay listed, in both directions.
+
+Where pressure existed, export happened. The evidence trail needed to be durable and inspectable by someone other than me: it went to plain files under git on day one. The delivery needed to be consumed by an external party: it became a web app.
+
+Where pressure did not exist, export was attempted anyway — and failed. Twice I moved to replace part of the taught procedure with code. The first attempt reached working code: a deterministic matching engine with a regression bench. It taught me mainly that I had chosen the wrong seam — matching was the formalizable part, but retrieval was the bottleneck — and the bench itself turned out to train on the only month it was tested on. The second, heavier design was stopped before implementation, with the verdict recorded in its own header: *over-engineered for ~10 receipts/month*. At this volume, prose costs less than the code that would replace it, and far less than the benchmark needed to prove the code better.
+
+Where pressure exists but has not been paid: there is still no scheduler — a human launches the month — and no correctness verifier. And one seam cannot be exported at all: bank and government authentication is pinned to a person by law, no matter how good the tooling gets.
+
+So the previous essay's pipeline — explore, skill, MCP, app — is real, but it is not a ladder the whole application climbs. It is a pressure map, applied seam by seam. For the orchestration seam, at ten transactions a month, teaching was not a prototype of the automation. It was the automation.
+
+## 5. What moved, what stayed
+
+What moved to the agent is easy to list, because it is what used to make the chore a chore: remembering how to find each vendor's receipt; running the same searches, downloads, and file-namings; filing each document against its transaction; keeping the gap list; reassembling the whole procedure every month from scratch.
+
+What stayed human sorts cleanly by time-scale.
+
+**Monthly** — authentication. Bank login and strong identification are legally personal acts. This floor does not erode with better software; it is set by regulation, not by capability.
+
+**Episodically** — teaching and judgment. A new vendor appears: I teach its recipe once, a few minutes, and from the next month it is routine. A taught recipe breaks — a vendor changes its email format or portal: the failure surfaces on its own as a *missing* row, and I repair the recipe once. And occasionally a transaction needs an actual decision — a charge that was really a reimbursement, an order that was cancelled and re-confirmed — cases too rare to be worth teaching, decided by hand in the status file.
+
+**Permanently** — approval and accountability. Someone decides the month is ready for the accounting firm, and someone answers for the books. The accountant's signature is not a technical artifact, and no part of this experiment touched it.
+
+The teach-and-repair loop is what makes the arrangement stable rather than lucky. The bank statement is an external, statutory enumeration of everything that must be accounted for. Whatever the agent fails to retrieve shows up as a missing row at no monitoring cost. Loud failures police themselves; the silent kind — a wrong document filed as collected — remains this system's real exposure, and the honest statement is that its rate is unknown.
+
+Automation did not erase responsibility here. It reallocated and concentrated it: out of execution, into teaching, exceptions, and sign-off.
+
+## 6. Two economies, and the shape of white-collar replacement
+
+There are two ways to automate the bespoke half, and they have opposite cost structures.
+
+The **connector economy** builds integrations once and amortizes them across many customers. A Helsinki YC startup is running this bet in its strongest form: a vertically integrated accounting firm plus platform, with their own ledger, agents doing the manual work inside, and licensed accountants signing the result. High fixed cost per source; wins wherever work is standardized and volume is high. It is the correct architecture for the head of the distribution.
+
+The **teaching economy** — this experiment — carries almost no fixed cost per procedure. Eight lines of prose per vendor, taught by the one person who already knows the workflow. It wins precisely where connectors never pay: the long tail of company-specific scatter. The two are complements today, competitors at the margin, and one regime would merge them: much of what I taught is not actually specific to my company. "This bank delivers e-invoices you can download from the statement line." "Non-EU SaaS invoices are reverse-charge VAT." "Stripe receipts arrive as email bodies." Those are facts about the world. A recipe library for one-person companies in one country could ship them as a template, with only account specifics left private. The moment taught recipes become shareable, the teaching economy starts to look like a platform — and the distinction between the two economies dissolves.
+
+What does this one small experiment suggest about the larger claim — AI replacing white-collar work? Cautiously, four things.
+
+The unit of replacement is not the job title; it is the workflow seam. What goes first is not necessarily the "easy" work — it is the long tail that was never worth software, which is a different set. LLMs change the economics of codification before they replace judgment: the expensive step was never deciding what a receipt means, it was building retrieval for a market of one. And the realistic end state is not zero humans; it is a zero-touch happy path with a human on exceptions — the human moving from executor to teacher, exception owner, and signer.
+
+What this experiment still does not answer, so the next one can:
+
+- One prospective month. The next eleven will say more than this report can.
+- Human time and token cost were never measured; the efficiency claim is qualitative.
+- No correctness audit; the silent-failure rate is unknown.
+- No scheduler; a human still launches each month.
+- Portability untested — every taught skill here belongs to one person, one company, one scale.
+- The stack trades accounting-software lock-in for a dependence on one capable agent runtime. That is still lock-in, relocated.
+
+The previous essay ended with a question marked *(to be researched)*: a mechanism that lets the LLM create skills automatically when they are needed. This experiment did not build that mechanism. It did something smaller and, I think, prerequisite: it located where the missing machinery belongs — detecting export pressure, admitting a candidate skill, and verifying it after deployment. Verification, in this one domain, turned out to come free with the bank statement. That is one of the three pieces. The other two are the next experiment, and this workflow is now the field site where it can run.
