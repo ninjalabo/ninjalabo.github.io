@@ -6,11 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Leila Mozaffari">
-<meta name="dcterms.date" content="2024-10-07">
-<meta name="description" content="Overview of Low-rank approximation – Part2">
+<meta name="author" content="Hiroshi Doyu">
+<meta name="dcterms.date" content="2026-08-06">
 
-<title>Low-rank approximation 2/4 – NinjaLABO</title>
+<title>The Bespoke Half: Teaching an Agent the Bookkeeping Work Software Left Behind – NinjaLABO</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -87,42 +86,11 @@ gtag('js', new Date());
 gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
-<meta name="twitter:title" content="Low-rank approximation 2/4 – NinjaLABO">
-<meta name="twitter:description" content="Overview of Low-rank approximation – Part2">
-<meta name="twitter:image" content="https://ninjalabo.github.io/blogs/images/Singular_Value_Decomposition.png">
-<meta name="twitter:image-height" content="257">
-<meta name="twitter:image-width" content="220">
+<meta name="twitter:title" content="The Bespoke Half: Teaching an Agent the Bookkeeping Work Software Left Behind – NinjaLABO">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://ninjalabo.github.io/blogs/images/logo.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -224,7 +192,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Low-rank approximation 2/4</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">The Bespoke Half: Teaching an Agent the Bookkeeping Work Software Left Behind</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -389,30 +357,29 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#matrix-decomposition-techniques" id="toc-matrix-decomposition-techniques" class="nav-link active" data-scroll-target="#matrix-decomposition-techniques">1. <strong>Matrix Decomposition Techniques</strong></a></li>
-  <li><a href="#filter-factorization-techniques" id="toc-filter-factorization-techniques" class="nav-link" data-scroll-target="#filter-factorization-techniques">2. <strong>Filter Factorization Techniques</strong></a></li>
-  <li><a href="#quantization-techniques" id="toc-quantization-techniques" class="nav-link" data-scroll-target="#quantization-techniques">3. <strong>Quantization Techniques</strong></a></li>
-  <li><a href="#structured-low-rank-approximations" id="toc-structured-low-rank-approximations" class="nav-link" data-scroll-target="#structured-low-rank-approximations">4. <strong>Structured Low-Rank Approximations</strong></a></li>
-  <li><a href="#regularization-techniques" id="toc-regularization-techniques" class="nav-link" data-scroll-target="#regularization-techniques">5. <strong>Regularization Techniques</strong></a></li>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
+  <li><a href="#the-claim" id="toc-the-claim" class="nav-link" data-scroll-target="#the-claim">1. The claim</a></li>
+  <li><a href="#what-i-actually-did-and-did-not-do" id="toc-what-i-actually-did-and-did-not-do" class="nav-link" data-scroll-target="#what-i-actually-did-and-did-not-do">2. What I actually did — and did not do</a></li>
+  <li><a href="#the-work-software-left-behind" id="toc-the-work-software-left-behind" class="nav-link" data-scroll-target="#the-work-software-left-behind">3. The work software left behind</a></li>
+  <li><a href="#one-workflow-several-maturity-levels" id="toc-one-workflow-several-maturity-levels" class="nav-link" data-scroll-target="#one-workflow-several-maturity-levels">4. One workflow, several maturity levels</a></li>
+  <li><a href="#what-moved-what-stayed" id="toc-what-moved-what-stayed" class="nav-link" data-scroll-target="#what-moved-what-stayed">5. What moved, what stayed</a></li>
+  <li><a href="#two-economies-and-the-shape-of-white-collar-replacement" id="toc-two-economies-and-the-shape-of-white-collar-replacement" class="nav-link" data-scroll-target="#two-economies-and-the-shape-of-white-collar-replacement">6. Two economies, and the shape of white-collar replacement</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blogs/Low_Rank_Approximation-Part2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blogs/the-bespoke-half.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Low-rank approximation 2/4</h1>
+<h1 class="title">The Bespoke Half: Teaching an Agent the Bookkeeping Work Software Left Behind</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Tech</div>
+    <div class="quarto-category">LLM</div>
+    <div class="quarto-category">Agents</div>
   </div>
   </div>
 
-<div>
-  <div class="description">
-    Overview of Low-rank approximation – Part2
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -420,14 +387,14 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Leila Mozaffari <a href="mailto:leila.mozaffari@ninjalabo.ai" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+             <p>Hiroshi Doyu <a href="mailto:hiroshi.doyu@ninjalabo.ai" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 7, 2024</p>
+      <p class="date">August 6, 2026</p>
     </div>
   </div>
   
@@ -439,83 +406,129 @@ window.Quarto = {
 </header>
 
 
-<section id="matrix-decomposition-techniques" class="level3">
-<h3 class="anchored" data-anchor-id="matrix-decomposition-techniques">1. <strong>Matrix Decomposition Techniques</strong></h3>
-<ul>
-<li><p><strong>Singular Value Decomposition (SVD)</strong>: SVD is a linear algebra technique that decomposes a matrix into three other matrices. For a convolutional filter represented as a matrix <span class="math inline">\(W\)</span>, SVD finds matrices <span class="math inline">\(U\)</span>, <span class="math inline">\(\Sigma\)</span>, and <span class="math inline">\(V\)</span> such that <span class="math inline">\(W = U \Sigma V^T\)</span>.</p>
-<ul>
-<li><strong>Application</strong>: By keeping only the top <span class="math inline">\(k\)</span> singular values from <span class="math inline">\(\Sigma\)</span>, and the corresponding columns in <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span>, we can create a low-rank approximation of the original filter.</li>
-<li><strong>Benefits</strong>: This significantly reduces the number of parameters and computations involved.</li>
-</ul></li>
-</ul>
-<div style="text-align: center;">
-<p><a href="https://en.wikipedia.org/wiki/Singular_value_decomposition"><img src="./images/Singular_Value_Decomposition.png" class="img-fluid"></a></p>
-</div>
-<ul>
-<li><p><strong>Tucker Decomposition</strong>: Tucker decomposition generalizes SVD for tensors (multi-dimensional arrays). It decomposes a tensor into a core tensor and a matrix factorization of each mode (dimension).</p>
-<ul>
-<li><strong>Application</strong>: In CNNs, filters can be represented as 3D tensors (width, height, depth). Tucker decomposition approximates the filter as a smaller core tensor with smaller matrices for each dimension.</li>
-<li><strong>Benefits</strong>: Allows a more flexible approximation with potentially better representation capabilities compared to SVD.</li>
-</ul></li>
-</ul>
-<div style="text-align: center;">
-<p><a href="https://arxiv.org/pdf/2401.10341v1"><img src="./images/Tucker_Decomposition.png" class="img-fluid"></a></p>
-</div>
-<ul>
-<li><strong>CP (CANDECOMP/PARAFAC) Decomposition</strong>: CP decomposition also approximates a tensor by expressing it as the sum of a finite number of rank-one tensors.
-<ul>
-<li><strong>Application</strong>: In CNNs, it can help decompose filters into simpler components that capture the same information with fewer parameters.</li>
-<li><strong>Benefits</strong>: It can be simpler to implement in certain situations than Tucker decomposition.</li>
-</ul></li>
-</ul>
+<p><em>A field report on <a href="https://ninjalabo.ai/blogs/progressive-export.html">Progressive Export</a> and white-collar work.</em></p>
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<p>Some white-collar work has survived automation not because it is intellectually difficult, but because it is too specific and too low-volume for software to be worth writing. Bookkeeping evidence collection is a clean instance: every company’s receipts live in a different scatter of e-invoices, inboxes, and vendor portals, so no connector pays for itself.</p>
+<p>I tested a different economics on my own company’s books: teach the procedure to an AI agent once, in natural language, and let the agent do the work from then on. One-time teaching cost roughly eight lines per vendor. The agent then handled 149 bank transactions across thirteen months — receipts from 19 vendors spread over bank e-invoices, two email accounts, and portals reachable only through an authenticated browser. 125 receipts now back every transaction that needs one; zero are missing. Even the handoff to my accounting firm, previously manual uploads and email attachments, became a small custom web app — software for an audience of one.</p>
+<p>Scoping, honestly: twelve of the thirteen months were reconstructed in one retrospective pass, the vendor notes were written from those same months, and exactly one month has been processed prospectively. And “collected” asserts that a document is filed, not that the document is correct.</p>
+<p>The finding is the division of labor that emerged, split by time-scale. Monthly, the human’s role shrank to strong authentication, which the law pins to a person. Episodically, the human is called back to teach: when a new vendor first appears, and when a taught procedure breaks — both surfaced free of charge, because the bank statement is an external, statutory list of everything that must be accounted for, and anything the agent failed to retrieve shows up as <em>missing</em>. Permanently, the human keeps approval and accountability. Code arrived exactly where pressure justified it — the archive in git, the accountant’s interface as a small web app — and nowhere else. Prose settled as the orchestration layer: at ten transactions a month, teaching was not a prototype of the automation. For that seam, it was the automation.</p>
+<p>This is the shape I expect white-collar replacement to actually take. Connectors amortize high fixed cost across many customers and win the standardized head; teaching costs almost nothing per procedure and wins the bespoke tail — much of what humans still do by hand. What stayed human was neither the difficult nor the intellectual: authentication legally pinned to a person, judgments too rare to be worth teaching, and accountability. Automation did not erase responsibility; it reallocated and concentrated it.</p>
+<p>It transfers where an external ground truth exists, failures surface cheaply, and volume stays below the software threshold.</p>
 </section>
-<section id="filter-factorization-techniques" class="level3">
-<h3 class="anchored" data-anchor-id="filter-factorization-techniques">2. <strong>Filter Factorization Techniques</strong></h3>
-<ul>
-<li><strong>Two-Dimensional Factorization</strong>: Instead of using one large convolutional kernel, it decomposes it into two smaller kernels, typically one for spatial dimensions (width and height) and one for the depth dimension.
-<ul>
-<li><strong>Application</strong>: A <span class="math inline">\(k \times k \times d\)</span> filter can be approximated by multiplying a <span class="math inline">\(k \times k\)</span> filter with a <span class="math inline">\(k \times 1\)</span> filter for each depth slice.</li>
-<li><strong>Benefits</strong>: This reduces the computational complexity from <span class="math inline">\(O(k^2 \cdot d)\)</span> to <span class="math inline">\(O(k^2 + k \cdot d)\)</span>.</li>
-</ul></li>
-<li><strong>Depthwise Separable Convolutions</strong>: This technique separates the convolution process into two layers: a depthwise convolution (applies a single filter per input channel) followed by a pointwise convolution (1x1 convolution to combine the outputs).
-<ul>
-<li><strong>Application</strong>: MobileNets, for instance, use this technique extensively to reduce the number of parameters while maintaining performance.</li>
-<li><strong>Benefits</strong>: It reduces both computational and memory requirements significantly compared to standard convolutions.</li>
-</ul></li>
-</ul>
+<section id="the-claim" class="level2">
+<h2 class="anchored" data-anchor-id="the-claim">1. The claim</h2>
+<p>Every company carries a pile of work that survived automation for a reason nobody states plainly: it was never worth automating. Not difficult — just too specific to one company and too low-volume to justify software. Mine was bookkeeping evidence: each month, find the receipt behind every bank transaction, wherever it happens to live, and hand the result to the accounting firm.</p>
+<p>The bet I tested is simple. Teach the procedure to an AI agent once, in natural language, and let the agent do the work from then on. When something new appears, teach once more. No connectors, no new accounting platform, no code unless a specific part of the workflow demands it.</p>
+<p>What I observed was not a job disappearing as a unit. The workflow split along its seams: repeated execution moved to the agent, stable sub-parts hardened into files and one small app, and the human’s role contracted to teaching, exceptions, and accountability. A previous essay, <a href="https://ninjalabo.ai/blogs/progressive-export.html">Progressive Export</a>, laid out this pipeline as theory. This is the field report — including the parts that did not go as the theory’s author (me) first read it.</p>
 </section>
-<section id="quantization-techniques" class="level3">
-<h3 class="anchored" data-anchor-id="quantization-techniques">3. <strong>Quantization Techniques</strong></h3>
-<ul>
-<li><p><strong>Weight Quantization</strong>: Involves reducing the precision of the weights (e.g., using 8-bit integers instead of 32-bit floating-point numbers).</p>
-<ul>
-<li><strong>Application</strong>: After performing low-rank approximation, quantization can further reduce the model size and speed up inference on hardware with limited precision.</li>
-<li><strong>Benefits</strong>: Lower memory usage and faster computation, especially on specialized hardware like GPUs or TPUs.</li>
-</ul></li>
-</ul>
-<div style="text-align: center;">
-<p><a href="https://medium.com/@florian_algo/model-quantization-1-basic-concepts-860547ec6aa9"><img src="./images/Weight_Quantization.png" class="img-fluid"></a></p>
-</div>
+<section id="what-i-actually-did-and-did-not-do" class="level2">
+<h2 class="anchored" data-anchor-id="what-i-actually-did-and-did-not-do">2. What I actually did — and did not do</h2>
+<p>The substrate is my one-person company’s books: 149 bank-statement rows across thirteen months, between 7 and 17 rows per month. Of those, 125 needed a receipt and now have one filed; 24 needed none (bank fees, tax payments, incoming transfers); zero are missing. Behind that sit 19 vendor-specific recipes, roughly eight lines of natural language each, plus one runbook the agent follows end to end.</p>
+<p>How it was actually run matters more than the totals. Twelve of the thirteen months were reconstructed in a single retrospective pass — vendor by vendor, in bulk: all of one vendor’s missing months in one sweep, then the next vendor. The per-vendor recipes were written <em>from</em> that pass. Exactly one month has since been processed prospectively, the way the workflow is meant to run. So the held-out evidence is one month, and I flag it here rather than in a footnote: the dictionary was trained on twelve months and tested on one.</p>
+<p>One more definition, because the whole report leans on it. “Collected” means a document is filed against the transaction — nothing more. Failures come in two volumes. If the agent cannot retrieve a receipt, the transaction stays <em>missing</em>: loud, visible, free to detect. If the agent files a plausible but wrong document against the right transaction, it passes silently. Coverage of 1.0 measures collection completeness, not correctness. No correctness audit has been run.</p>
+<p>The delivery side changed too. Handing receipts and reconciled statements to the accounting firm used to mean manual uploads and email attachments. It is now a small read-only web app over the archive: password login, one page per month, each transaction linked to its document. It serves an audience of exactly one accounting firm, and when they ask for a change, I can ship it the same day.</p>
+<p>Not measured, and therefore not claimed: human hours saved, token cost, touch counts, or any “zero-touch rate.”</p>
 </section>
-<section id="structured-low-rank-approximations" class="level3">
-<h3 class="anchored" data-anchor-id="structured-low-rank-approximations">4. <strong>Structured Low-Rank Approximations</strong></h3>
-<ul>
-<li><strong>Low-Rank Convolutional Filters</strong>: Instead of fully dense filters, structured filters with fewer connections can be designed to maintain performance while reducing rank.
-<ul>
-<li><strong>Application</strong>: This may involve using predefined patterns or structures for the filters based on the spatial hierarchies present in the data.</li>
-<li><strong>Benefits</strong>: More efficient use of parameters while exploiting spatial correlation in images.</li>
-</ul></li>
-</ul>
+<section id="the-work-software-left-behind" class="level2">
+<h2 class="anchored" data-anchor-id="the-work-software-left-behind">3. The work software left behind</h2>
+<p>Why did this work survive two decades of accounting software? Look at where the receipts actually live. Some arrive as e-invoices retrievable from inside the bank’s own UI. Some land in the company inbox; a handful land in my personal inbox, addressed to me personally, because that is how the account was created years ago. Some exist only as the body of an email, with no attachment to download. Some sit behind vendor portals that require a logged-in browser. One vendor bills twice in the same month from the same sender — a subscription in euros and API micro-charges in dollars — and the two must not be confused. Several bill in dollars while the bank debits euros, so the receipt amount never equals the statement amount. One adds Chinese VAT on top-ups.</p>
+<p>No two companies share this scatter. A software vendor would have to build and maintain a connector for each source, amortized across customers who each need a different subset. For the long tail, that arithmetic never closes. The work stayed manual not because it was hard but because it was <em>bespoke</em> — technically possible, economically irrational.</p>
+<p>I can testify to that arithmetic personally. This collection chore had been a headache since the company started. I spent twenty years as a kernel engineer; building a system to solve it was well within reach. I never did, because my own time budget failed the same test the software vendors’ did.</p>
+<p>What changed is the cost of the initial implementation. I did not design a system. I sat with the agent and did the work — searched the inboxes, walked the portals, failed, retried — and the runs that succeeded were distilled into two artifacts: a per-vendor dictionary recording where each receipt lives and how to fetch it (about eight lines per vendor, gotchas included), and a runbook the agent follows each month. The previous essay called the LLM CLI “the new REPL”; that is exactly how it felt in practice. Architecture was not drawn first. It precipitated out of working sessions.</p>
 </section>
-<section id="regularization-techniques" class="level3">
-<h3 class="anchored" data-anchor-id="regularization-techniques">5. <strong>Regularization Techniques</strong></h3>
+<section id="one-workflow-several-maturity-levels" class="level2">
+<h2 class="anchored" data-anchor-id="one-workflow-several-maturity-levels">4. One workflow, several maturity levels</h2>
+<p>My first reading of the result was wrong, and the correction is the most useful thing in this report. I wanted to say “the pipeline stopped at the skill stage — prose was the destination.” But the system as it exists today refuses that summary:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Seam</th>
+<th>Where it lives today</th>
+<th>Maturity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Vendor-specific knowledge</td>
+<td>the dictionary</td>
+<td>taught prose (procedural memory)</td>
+</tr>
+<tr class="even">
+<td>Orchestration, exception judgment</td>
+<td>the runbook</td>
+<td>taught prose</td>
+</tr>
+<tr class="odd">
+<td>Email / browser / bank operations</td>
+<td>existing typed tools</td>
+<td>MCP</td>
+</tr>
+<tr class="even">
+<td>Evidence and audit trail</td>
+<td>archive, plain files in git</td>
+<td>deterministic</td>
+</tr>
+<tr class="odd">
+<td>State and gap visibility</td>
+<td>one status row per transaction</td>
+<td>structured text</td>
+</tr>
+<tr class="even">
+<td>Delivery to the accounting firm</td>
+<td>the web app</td>
+<td>code</td>
+</tr>
+<tr class="odd">
+<td>Unattended runtime (scheduling, retries)</td>
+<td>—</td>
+<td>not built</td>
+</tr>
+<tr class="even">
+<td>Correctness verification</td>
+<td>—</td>
+<td>not built</td>
+</tr>
+</tbody>
+</table>
+<p>The system did not stop at the skill stage. Only its orchestration settled there. Different seams of the same workflow exported to different depths — and the depths line up with the export pressures the previous essay listed, in both directions.</p>
+<p>Where pressure existed, export happened. The evidence trail needed to be durable and inspectable by someone other than me: it went to plain files under git on day one. The delivery needed to be consumed by an external party: it became a web app.</p>
+<p>Where pressure did not exist, export was attempted anyway — and failed. Twice I moved to replace part of the taught procedure with code. The first attempt reached working code: a deterministic matching engine with a regression bench. It taught me mainly that I had chosen the wrong seam — matching was the formalizable part, but retrieval was the bottleneck — and the bench itself turned out to train on the only month it was tested on. The second, heavier design was stopped before implementation, with the verdict recorded in its own header: <em>over-engineered for ~10 receipts/month</em>. At this volume, prose costs less than the code that would replace it, and far less than the benchmark needed to prove the code better.</p>
+<p>Where pressure exists but has not been paid: there is still no scheduler — a human launches the month — and no correctness verifier. And one seam cannot be exported at all: bank and government authentication is pinned to a person by law, no matter how good the tooling gets.</p>
+<p>So the previous essay’s pipeline — explore, skill, MCP, app — is real, but it is not a ladder the whole application climbs. It is a pressure map, applied seam by seam. For the orchestration seam, at ten transactions a month, teaching was not a prototype of the automation. It was the automation.</p>
+</section>
+<section id="what-moved-what-stayed" class="level2">
+<h2 class="anchored" data-anchor-id="what-moved-what-stayed">5. What moved, what stayed</h2>
+<p>What moved to the agent is easy to list, because it is what used to make the chore a chore: remembering how to find each vendor’s receipt; running the same searches, downloads, and file-namings; filing each document against its transaction; keeping the gap list; reassembling the whole procedure every month from scratch.</p>
+<p>What stayed human sorts cleanly by time-scale.</p>
+<p><strong>Monthly</strong> — authentication. Bank login and strong identification are legally personal acts. This floor does not erode with better software; it is set by regulation, not by capability.</p>
+<p><strong>Episodically</strong> — teaching and judgment. A new vendor appears: I teach its recipe once, a few minutes, and from the next month it is routine. A taught recipe breaks — a vendor changes its email format or portal: the failure surfaces on its own as a <em>missing</em> row, and I repair the recipe once. And occasionally a transaction needs an actual decision — a charge that was really a reimbursement, an order that was cancelled and re-confirmed — cases too rare to be worth teaching, decided by hand in the status file.</p>
+<p><strong>Permanently</strong> — approval and accountability. Someone decides the month is ready for the accounting firm, and someone answers for the books. The accountant’s signature is not a technical artifact, and no part of this experiment touched it.</p>
+<p>The teach-and-repair loop is what makes the arrangement stable rather than lucky. The bank statement is an external, statutory enumeration of everything that must be accounted for. Whatever the agent fails to retrieve shows up as a missing row at no monitoring cost. Loud failures police themselves; the silent kind — a wrong document filed as collected — remains this system’s real exposure, and the honest statement is that its rate is unknown.</p>
+<p>Automation did not erase responsibility here. It reallocated and concentrated it: out of execution, into teaching, exceptions, and sign-off.</p>
+</section>
+<section id="two-economies-and-the-shape-of-white-collar-replacement" class="level2">
+<h2 class="anchored" data-anchor-id="two-economies-and-the-shape-of-white-collar-replacement">6. Two economies, and the shape of white-collar replacement</h2>
+<p>There are two ways to automate the bespoke half, and they have opposite cost structures.</p>
+<p>The <strong>connector economy</strong> builds integrations once and amortizes them across many customers. A Helsinki YC startup is running this bet in its strongest form: a vertically integrated accounting firm plus platform, with their own ledger, agents doing the manual work inside, and licensed accountants signing the result. High fixed cost per source; wins wherever work is standardized and volume is high. It is the correct architecture for the head of the distribution.</p>
+<p>The <strong>teaching economy</strong> — this experiment — carries almost no fixed cost per procedure. Eight lines of prose per vendor, taught by the one person who already knows the workflow. It wins precisely where connectors never pay: the long tail of company-specific scatter. The two are complements today, competitors at the margin, and one regime would merge them: much of what I taught is not actually specific to my company. “This bank delivers e-invoices you can download from the statement line.” “Non-EU SaaS invoices are reverse-charge VAT.” “Stripe receipts arrive as email bodies.” Those are facts about the world. A recipe library for one-person companies in one country could ship them as a template, with only account specifics left private. The moment taught recipes become shareable, the teaching economy starts to look like a platform — and the distinction between the two economies dissolves.</p>
+<p>What does this one small experiment suggest about the larger claim — AI replacing white-collar work? Cautiously, four things.</p>
+<p>The unit of replacement is not the job title; it is the workflow seam. What goes first is not necessarily the “easy” work — it is the long tail that was never worth software, which is a different set. LLMs change the economics of codification before they replace judgment: the expensive step was never deciding what a receipt means, it was building retrieval for a market of one. And the realistic end state is not zero humans; it is a zero-touch happy path with a human on exceptions — the human moving from executor to teacher, exception owner, and signer.</p>
+<p>What this experiment still does not answer, so the next one can:</p>
 <ul>
-<li><strong>Low-Rank Regularization</strong>: Adding a low-rank regularization term to the loss function during training encourages the network to learn low-rank filters.
-<ul>
-<li><strong>Application</strong>: This could be achieved by penalizing the nuclear norm (sum of singular values) of the filter matrices in the loss function.</li>
-<li><strong>Benefits</strong>: Helps in obtaining low-rank approximations directly from the training process, maintaining a good trade-off between accuracy and model size.</li>
-</ul></li>
+<li>One prospective month. The next eleven will say more than this report can.</li>
+<li>Human time and token cost were never measured; the efficiency claim is qualitative.</li>
+<li>No correctness audit; the silent-failure rate is unknown.</li>
+<li>No scheduler; a human still launches each month.</li>
+<li>Portability untested — every taught skill here belongs to one person, one company, one scale.</li>
+<li>The stack trades accounting-software lock-in for a dependence on one capable agent runtime. That is still lock-in, relocated.</li>
 </ul>
+<p>The previous essay ended with a question marked <em>(to be researched)</em>: a mechanism that lets the LLM create skills automatically when they are needed. This experiment did not build that mechanism. It did something smaller and, I think, prerequisite: it located where the missing machinery belongs — detecting export pressure, admitting a candidate skill, and verifying it after deployment. Verification, in this one domain, turned out to come free with the bank statement. That is one of the three pieces. The other two are the next experiment, and this workflow is now the field site where it can run.</p>
 
 
 </section>
@@ -933,7 +946,7 @@ window.Quarto = {
 <li>For pricing and sales inquiries <a href="mailto:sales@ninjalabo.ai" class="email">sales@ninjalabo.ai</a></li>
 <li>Ask tech questions <a href="mailto:help@ninjalabo.ai" class="email">help@ninjalabo.ai</a></li>
 </ul>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blogs/Low_Rank_Approximation-Part2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blogs/the-bespoke-half.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
